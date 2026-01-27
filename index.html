@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PMHNP Billing | Psychiatric Billing Services</title>
     <meta name="description" content="Professional billing services for Psychiatric Mental Health Nurse Practitioners. Claims, prior authorizations, and revenue cycle management.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -15,9 +18,10 @@
             scroll-behavior: smooth;
         }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            line-height: 1.6;
-            color: #333;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: #374151;
+            background: #fff;
         }
         
         /* Navigation */
@@ -25,267 +29,290 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 2rem;
+            background: #fff;
+            padding: 1.25rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            border-bottom: 1px solid #e5e7eb;
         }
         .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #667eea;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1f2937;
+            letter-spacing: -0.025em;
         }
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
             list-style: none;
         }
         .nav-links a {
             text-decoration: none;
-            color: #555;
+            color: #6b7280;
+            font-size: 0.9rem;
             font-weight: 500;
-            transition: color 0.3s;
+            transition: color 0.2s;
         }
         .nav-links a:hover {
-            color: #667eea;
+            color: #1f2937;
         }
         
         /* Hero Section */
         .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
-            padding: 6rem 2rem 4rem;
-        }
-        .hero-content {
-            max-width: 800px;
+            padding: 10rem 2rem 6rem;
+            max-width: 1100px;
+            margin: 0 auto;
         }
         .hero h1 {
-            font-size: 3rem;
+            font-size: 2.75rem;
+            font-weight: 600;
+            color: #111827;
+            line-height: 1.2;
             margin-bottom: 1.5rem;
-            font-weight: 700;
+            max-width: 700px;
+            letter-spacing: -0.025em;
         }
         .hero p {
-            font-size: 1.25rem;
-            opacity: 0.95;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            font-size: 1.125rem;
+            color: #6b7280;
+            margin-bottom: 2.5rem;
+            max-width: 560px;
+            line-height: 1.8;
         }
         .btn {
             display: inline-block;
-            padding: 1rem 2.5rem;
-            background: white;
-            color: #667eea;
+            padding: 0.875rem 1.75rem;
+            background: #4f46e5;
+            color: white;
             text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: background 0.2s;
         }
         .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            background: #4338ca;
         }
         
         /* Sections */
         section {
             padding: 5rem 2rem;
         }
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-        .section-subtitle {
-            text-align: center;
-            color: #666;
-            max-width: 600px;
+        .section-header {
+            max-width: 1100px;
             margin: 0 auto 3rem;
-            font-size: 1.1rem;
+        }
+        .section-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #4f46e5;
+            margin-bottom: 0.75rem;
+        }
+        .section-title {
+            font-size: 1.875rem;
+            font-weight: 600;
+            color: #111827;
+            letter-spacing: -0.025em;
         }
         
         /* Services */
         .services {
-            background: #f8f9fa;
+            background: #f9fafb;
+            border-top: 1px solid #e5e7eb;
+            border-bottom: 1px solid #e5e7eb;
         }
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            max-width: 1100px;
             margin: 0 auto;
+            background: #e5e7eb;
         }
         .service-card {
-            background: white;
+            background: #f9fafb;
             padding: 2.5rem;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-        }
-        .service-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
         }
         .service-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-            color: #333;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: #111827;
         }
         .service-card p {
-            color: #666;
+            color: #6b7280;
+            font-size: 0.925rem;
+            line-height: 1.7;
         }
         
         /* About */
         .about {
-            background: white;
+            background: #fff;
         }
         .about-content {
-            max-width: 800px;
+            max-width: 680px;
             margin: 0 auto;
-            text-align: center;
         }
         .about-content p {
-            font-size: 1.15rem;
-            color: #555;
+            font-size: 1.05rem;
+            color: #4b5563;
             margin-bottom: 1.5rem;
         }
         
-        /* Why Choose */
-        .why-choose {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+        /* Trust Section */
+        .trust {
+            background: #f9fafb;
+            border-top: 1px solid #e5e7eb;
         }
-        .why-choose .section-title {
-            color: white;
-        }
-        .why-choose .section-subtitle {
-            color: rgba(255,255,255,0.9);
-        }
-        .benefits-grid {
+        .trust-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
         }
-        .benefit {
-            text-align: center;
-            padding: 1.5rem;
-        }
-        .benefit-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        .benefit h3 {
-            font-size: 1.2rem;
+        .trust-item h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #111827;
             margin-bottom: 0.5rem;
         }
-        .benefit p {
-            opacity: 0.9;
-            font-size: 0.95rem;
+        .trust-item p {
+            font-size: 0.875rem;
+            color: #6b7280;
         }
         
         /* Contact */
         .contact {
-            background: #f8f9fa;
+            background: #fff;
+            border-top: 1px solid #e5e7eb;
+        }
+        .contact-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.25fr;
+            gap: 4rem;
+        }
+        .contact-info h2 {
+            font-size: 1.875rem;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 1rem;
+            letter-spacing: -0.025em;
+        }
+        .contact-info p {
+            color: #6b7280;
+            font-size: 1rem;
+            line-height: 1.8;
         }
         .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            background: white;
-            padding: 3rem;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            background: #f9fafb;
+            padding: 2.5rem;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
         }
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+        .form-group.full {
+            grid-column: 1 / -1;
         }
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 500;
-            color: #333;
+            font-size: 0.875rem;
+            color: #374151;
         }
         .form-group input,
         .form-group textarea,
         .form-group select {
             width: 100%;
-            padding: 1rem;
-            border: 2px solid #e1e5e9;
-            border-radius: 8px;
-            font-size: 1rem;
+            padding: 0.75rem 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 0.95rem;
             font-family: inherit;
-            transition: border-color 0.3s;
+            background: #fff;
+            transition: border-color 0.2s, box-shadow 0.2s;
         }
         .form-group input:focus,
         .form-group textarea:focus,
         .form-group select:focus {
             outline: none;
-            border-color: #667eea;
+            border-color: #4f46e5;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
         }
         .form-group textarea {
-            min-height: 120px;
+            min-height: 100px;
             resize: vertical;
         }
         .submit-btn {
             width: 100%;
-            padding: 1rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 0.875rem;
+            background: #4f46e5;
             color: white;
             border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 600;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 500;
             cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: background 0.2s;
         }
         .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+            background: #4338ca;
         }
         
         /* Footer */
         footer {
-            background: #333;
-            color: white;
+            background: #111827;
+            color: #9ca3af;
             text-align: center;
             padding: 2rem;
-        }
-        footer p {
-            opacity: 0.8;
+            font-size: 0.875rem;
         }
         
         /* Mobile */
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .trust-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+        @media (max-width: 640px) {
             .nav-links {
                 display: none;
+            }
+            .hero {
+                padding: 8rem 1.5rem 4rem;
             }
             .hero h1 {
                 font-size: 2rem;
             }
-            .hero p {
-                font-size: 1rem;
+            section {
+                padding: 3.5rem 1.5rem;
             }
-            .section-title {
-                font-size: 2rem;
+            .trust-grid {
+                grid-template-columns: 1fr;
             }
-            .contact-form {
-                padding: 2rem;
+            .form-row {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -301,123 +328,125 @@
     </nav>
 
     <section class="hero">
-        <div class="hero-content">
-            <h1>Billing Made Simple for Psychiatric Providers</h1>
-            <p>Focus on your patients while I handle your revenue cycle. Professional billing services designed specifically for PMHNPs.</p>
-            <a href="#contact" class="btn">Get Started</a>
-        </div>
+        <h1>Billing services for psychiatric providers</h1>
+        <p>I handle claims, prior authorizations, and revenue cycle management so you can focus on patient care. Dedicated support for PMHNP practices.</p>
+        <a href="#contact" class="btn">Get in touch</a>
     </section>
 
     <section id="services" class="services">
-        <h2 class="section-title">Services</h2>
-        <p class="section-subtitle">Comprehensive billing support so you can focus on what matters most — your patients.</p>
+        <div class="section-header">
+            <div class="section-label">Services</div>
+            <h2 class="section-title">What I offer</h2>
+        </div>
         <div class="services-grid">
             <div class="service-card">
-                <div class="service-icon">📋</div>
                 <h3>Claims Management</h3>
-                <p>Accurate claim submission and follow-up to maximize your reimbursements and minimize denials.</p>
+                <p>Accurate claim submission with thorough follow-up. I track every claim to ensure timely reimbursement and minimize denials.</p>
             </div>
             <div class="service-card">
-                <div class="service-icon">✅</div>
                 <h3>Prior Authorizations</h3>
-                <p>Timely submission and tracking of prior authorizations to keep your patients' care on track.</p>
+                <p>Timely submission and tracking of prior authorizations so your patients receive uninterrupted care.</p>
             </div>
             <div class="service-card">
-                <div class="service-icon">💰</div>
                 <h3>Payment Posting</h3>
-                <p>Accurate posting of insurance payments and patient payments to keep your accounts current.</p>
+                <p>Accurate posting of insurance and patient payments to maintain clean, current accounts.</p>
             </div>
             <div class="service-card">
-                <div class="service-icon">📊</div>
                 <h3>Denial Management</h3>
-                <p>Expert appeals and follow-up on denied claims to recover the revenue you've earned.</p>
+                <p>Thorough review and appeals process for denied claims. I work to recover the revenue you've earned.</p>
             </div>
             <div class="service-card">
-                <div class="service-icon">📞</div>
                 <h3>Insurance Follow-Up</h3>
-                <p>Persistent follow-up with payers to ensure claims are processed and paid promptly.</p>
+                <p>Consistent communication with payers to resolve pending claims and ensure prompt payment.</p>
             </div>
             <div class="service-card">
-                <div class="service-icon">📈</div>
-                <h3>Revenue Optimization</h3>
-                <p>Identify missed revenue opportunities and streamline your billing processes.</p>
+                <h3>Revenue Review</h3>
+                <p>Periodic review of your billing processes to identify missed opportunities and improve cash flow.</p>
             </div>
         </div>
     </section>
 
     <section id="about" class="about">
-        <h2 class="section-title">About</h2>
+        <div class="section-header">
+            <div class="section-label">About</div>
+            <h2 class="section-title">How I work</h2>
+        </div>
         <div class="about-content">
-            <p>PMHNP Billing was founded with a simple mission: to help psychiatric mental health providers get paid for the important work they do — without the administrative headaches.</p>
-            <p>I understand the unique challenges of psychiatric billing, from complex prior authorization requirements to navigating mental health parity laws. With dedicated attention to your practice, I ensure nothing falls through the cracks.</p>
-            <p>When you work with me, you're not just another account number. You get personalized service and direct communication, because your success is my success.</p>
+            <p>I started PMHNP Billing to provide psychiatric providers with reliable, attentive billing support. Many billing services treat you as one of hundreds of accounts. I take a different approach.</p>
+            <p>When you work with me, you get direct communication and consistent follow-through. I understand the specific requirements of psychiatric billing—from complex authorization processes to mental health parity regulations—and handle them with care.</p>
+            <p>My goal is straightforward: accurate claims, timely submissions, and fewer headaches for you.</p>
         </div>
     </section>
 
-    <section class="why-choose">
-        <h2 class="section-title">Why Choose PMHNP Billing?</h2>
-        <p class="section-subtitle">Partner with someone who understands psychiatric practice.</p>
-        <div class="benefits-grid">
-            <div class="benefit">
-                <div class="benefit-icon">🎯</div>
-                <h3>PMHNP Specialized</h3>
-                <p>Expertise in psychiatric billing codes and requirements</p>
+    <section class="trust">
+        <div class="section-header">
+            <div class="section-label">Why work with me</div>
+            <h2 class="section-title">Built for psychiatric practices</h2>
+        </div>
+        <div class="trust-grid">
+            <div class="trust-item">
+                <h3>PMHNP Focused</h3>
+                <p>Specialized knowledge of psychiatric billing codes, payer requirements, and common challenges.</p>
             </div>
-            <div class="benefit">
-                <div class="benefit-icon">🤝</div>
-                <h3>Personal Service</h3>
-                <p>Direct access and communication — no call centers</p>
+            <div class="trust-item">
+                <h3>Direct Communication</h3>
+                <p>You work with me directly. No call centers, no ticket systems, no runaround.</p>
             </div>
-            <div class="benefit">
-                <div class="benefit-icon">⚡</div>
+            <div class="trust-item">
                 <h3>Quick Turnaround</h3>
-                <p>Claims submitted within 24-48 hours of service</p>
+                <p>Claims submitted within 24–48 hours. Prior auths handled promptly.</p>
             </div>
-            <div class="benefit">
-                <div class="benefit-icon">🔒</div>
+            <div class="trust-item">
                 <h3>Privacy-Focused Workflow</h3>
-                <p>Your data is handled with the utmost security</p>
+                <p>Your patient data is handled securely and in full compliance with regulations.</p>
             </div>
         </div>
     </section>
 
     <section id="contact" class="contact">
-        <h2 class="section-title">Let's Talk</h2>
-        <p class="section-subtitle">Ready to simplify your billing? Fill out the form below and I'll be in touch within one business day.</p>
-        <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h2>Let's talk</h2>
+                <p>Interested in working together? Fill out the form and I'll respond within one business day to discuss your practice's needs.</p>
             </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="phone">Phone (optional)</label>
-                <input type="tel" id="phone" name="phone">
-            </div>
-            <div class="form-group">
-                <label for="practice">Practice Name</label>
-                <input type="text" id="practice" name="practice">
-            </div>
-            <div class="form-group">
-                <label for="services">Services Interested In</label>
-                <select id="services" name="services">
-                    <option value="">Select an option</option>
-                    <option value="full-service">Full Service Billing</option>
-                    <option value="claims-only">Claims Management Only</option>
-                    <option value="prior-auth">Prior Authorizations Only</option>
-                    <option value="consulting">Billing Consultation</option>
-                    <option value="other">Other</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" placeholder="Tell me a bit about your practice and how I can help..."></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Send Message</button>
-        </form>
+            <form class="contact-form" action="https://formspree.io/f/xpwzgvqr" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="practice">Practice Name</label>
+                        <input type="text" id="practice" name="practice">
+                    </div>
+                </div>
+                <div class="form-group full">
+                    <label for="services">Services interested in</label>
+                    <select id="services" name="services">
+                        <option value="">Select an option</option>
+                        <option value="full-service">Full service billing</option>
+                        <option value="claims-only">Claims management</option>
+                        <option value="prior-auth">Prior authorizations</option>
+                        <option value="other">Other / Not sure yet</option>
+                    </select>
+                </div>
+                <div class="form-group full">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Tell me about your practice..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send message</button>
+            </form>
+        </div>
     </section>
 
     <footer>
