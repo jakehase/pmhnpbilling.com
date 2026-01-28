@@ -75,6 +75,23 @@
         }
         .nav-links a:hover { color: #2563eb; }
         
+        .nav-intake-btn {
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #6b7280;
+            padding: 0.4rem 0.9rem;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            transition: all 0.2s;
+            margin-left: 1rem;
+        }
+        .nav-intake-btn:hover {
+            color: #2563eb;
+            border-color: #2563eb;
+            background: rgba(37, 99, 235, 0.05);
+        }
+        
         /* Hamburger Menu */
         .menu-toggle {
             display: none;
@@ -118,6 +135,8 @@
             transition: color 0.2s;
         }
         .mobile-menu a:hover { color: #2563eb; }
+        .mobile-menu-divider { height: 1px; background: #e5e7eb; width: 100%; margin: 0.5rem 0; }
+        .mobile-intake-link { font-size: 0.9rem; color: #9ca3af !important; }
         
         /* Hero Section */
         .hero-wrapper {
@@ -348,6 +367,7 @@
         }
         @media (max-width: 768px) {
             .nav-links { display: none; }
+            .nav-intake-btn { display: none; }
             .menu-toggle { display: flex; }
             .hero h1 { font-size: 2.5rem; }
             .hero p { font-size: 1.1rem; }
@@ -379,21 +399,22 @@
             </span>
         </a>
         <ul class="nav-links">
-            <li><a href="https://intake.pmhnpbilling.com/s/cmkxjzgqu0001lb01grphh2qk" target="_blank">Client Intake</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+        <a href="https://intake.pmhnpbilling.com/s/cmkxjzgqu0001lb01grphh2qk" target="_blank" class="nav-intake-btn">Client Portal</a>
         <div class="menu-toggle" onclick="toggleMenu()">
             <span></span><span></span><span></span>
         </div>
     </nav>
     
     <div class="mobile-menu" id="mobileMenu">
-        <a href="https://intake.pmhnpbilling.com/s/cmkxjzgqu0001lb01grphh2qk" target="_blank" onclick="toggleMenu()">Client Intake</a>
         <a href="#services" onclick="toggleMenu()">Services</a>
         <a href="#about" onclick="toggleMenu()">About</a>
         <a href="#contact" onclick="toggleMenu()">Contact</a>
+        <div class="mobile-menu-divider"></div>
+        <a href="https://intake.pmhnpbilling.com/s/cmkxjzgqu0001lb01grphh2qk" target="_blank" onclick="toggleMenu()" class="mobile-intake-link">Client Portal</a>
     </div>
 
     <div class="hero-wrapper">
