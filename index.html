@@ -165,12 +165,37 @@
             box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
         }
         .hero-logo-text {
-            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 1.75rem;
+        }
+        .hero-logo-text .pmh {
             font-weight: 700;
             background: linear-gradient(135deg, #1e40af, #2563eb);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 2px;
+        }
+        .hero-logo-text .np {
+            font-weight: 700;
+            background: linear-gradient(135deg, #1e40af, #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-logo-text .dot {
+            width: 6px;
+            height: 6px;
+            background: #60a5fa;
+            border-radius: 50%;
+            margin: 0 0.15rem;
+        }
+        .hero-logo-text .billing {
+            font-weight: 500;
+            color: #374151;
         }
         .hero h1 {
             font-size: 3.25rem;
@@ -381,7 +406,9 @@
                     <path d="M10 12h9a6 6 0 010 12h-9V12zm3 3v6h6a3 3 0 000-6h-6z" fill="white"/>
                     <path d="M26 12h9a6 6 0 014.24 10.24L26 36V12zm3 3v12.5l7-7.5a3 3 0 00-4-4h-3z" fill="white" fill-opacity="0.85"/>
                 </svg>
-                <span class="hero-logo-text">PMHNP Billing</span>
+                <span class="hero-logo-text">
+                    <span class="pmh">PMH</span><span class="np">NP</span><span class="dot"></span><span class="billing">Billing</span>
+                </span>
             </div>
             <h1>Billing services for <span>psychiatric providers</span></h1>
             <p>I handle claims, prior authorizations, and revenue cycle management so you can focus on patient care.</p>
