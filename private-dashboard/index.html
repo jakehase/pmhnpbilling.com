@@ -358,46 +358,16 @@
             <!-- Urgent Actions -->
             <div class="card urgent">
                 <h2>🚨 URGENT (Next 5-10 Minutes)</h2>
-                <ul class="checklist">
-                    <li>
-                        <div class="checkbox" onclick="toggleCheck(this)"></div>
-                        <span>Update LinkedIn Profile - Focus on psychiatric billing services</span>
-                    </li>
-                    <li>
-                        <div class="checkbox" onclick="toggleCheck(this)"></div>
-                        <span>Confirm Communication Preferences - How do you want hot lead alerts?</span>
-                    </li>
-                    <li>
-                        <div class="checkbox" onclick="toggleCheck(this)"></div>
-                        <span>Test Prospect Search - Try "PMHNP Chicago" in LinkedIn</span>
-                    </li>
-                    <li>
-                        <div class="checkbox" onclick="toggleCheck(this)"></div>
-                        <span>Set Up Email Forwarding - Business email: jacobhasenkamp@pmhnpbilling.com</span>
-                    </li>
+                <ul class="checklist" id="urgentTasksList">
+                    <!-- Dynamic content loaded here -->
                 </ul>
             </div>
 
             <!-- Today's Priorities -->
             <div class="card high-priority">
                 <h2>📅 TODAY (High Priority)</h2>
-                <ul class="checklist">
-                    <li>
-                        <div class="checkbox" onclick="toggleCheck(this)"></div>
-                        <span>Identify First 5 Prospects - Solo practitioners in Chicago suburbs</span>
-                    </li>
-                    <li>
-                        <div class="checkbox" onclick="toggleCheck(this)"></div>
-                        <span>Send 3 Connection Requests - Use personalized templates</span>
-                    </li>
-                    <li>
-                        <div class="checkbox" onclick="toggleCheck(this)"></div>
-                        <span>Activate Monitoring - Let AI track all responses</span>
-                    </li>
-                    <li>
-                        <div class="checkbox" onclick="toggleCheck(this)"></div>
-                        <span>Establish Daily Routine - Morning/midday/evening checks</span>
-                    </li>
+                <ul class="checklist" id="todayTasksList">
+                    <!-- Dynamic content loaded here -->
                 </ul>
             </div>
         </div>
@@ -627,14 +597,45 @@
                 'Last Updated: ' + new Date().toLocaleString();
         }
 
-        // Toggle checklist items
-        function toggleCheck(element) {
-            element.classList.toggle('checked');
-            if (element.classList.contains('checked')) {
-                element.innerHTML = '✓';
-                updateProgress();
-            } else {
-                element.innerHTML = '';
+        // Toggle task completion
+        async function toggleTask(taskId, checkboxElement) {
+            const isCompleted = checkboxElement.classList.contains('checked');
+            const newState = !isCompleted;
+            
+            try {
+                const response = await fetch(`http://10.0.0.220:3001/api/tasks/${taskId}/toggle`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ completed: newState })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    // Update UI immediately
+                    if (newState) {
+                        checkboxElement.classList.add('checked');
+                        checkboxElement.innerHTML = '✓';
+                    } else {
+                        checkboxElement.classList.remove('checked');
+                        checkboxElement.innerHTML = '';
+                    }
+                    
+                    updateProgress();
+                    showMessage(newState ? '✅ Task completed' : 'Task unmarked', 'success');
+                    
+                    // Refresh tasks after a delay to get updates
+                    setTimeout(() => {
+                        fetchTasks();
+                    }, 1000);
+                    
+                } else {
+                    showMessage('❌ Failed to update task', 'error');
+                }
+                
+            } catch (error) {
+                console.error('Error toggling task:', error);
+                showMessage('❌ Network error', 'error');
             }
         }
 
@@ -642,10 +643,55 @@
         function updateProgress() {
             const checkboxes = document.querySelectorAll('.checkbox');
             const checked = document.querySelectorAll('.checkbox.checked');
-            const progress = (checked.length / checkboxes.length) * 100;
-            document.getElementById('progressBar').style.width = progress + '%';
-            document.getElementById('progressLabel').textContent = 
-                `Setup Progress: ${Math.round(progress)}%`;
+            if (checkboxes.length > 0) {
+                const progress = (checked.length / checkboxes.length) * 100;
+                document.getElementById('progressBar').style.width = progress + '%';
+                document.getElementById('progressLabel').textContent = 
+                    `Setup Progress: ${Math.round(progress)}%`;
+            }
+        }
+
+        // Fetch and display dynamic tasks
+        async function fetchTasks() {
+            try {
+                const response = await fetch('http://10.0.0.220:3001/api/tasks');
+                const data = await response.json();
+                
+                if (data.success) {
+                    displayTasks(data.tasks);
+                }
+            } catch (error) {
+                console.log('Tasks API not available (expected during initial setup)');
+                // Fallback to static tasks if API not available
+            }
+        }
+
+        // Display tasks in the dashboard
+        function displayTasks(tasks) {
+            displayTaskCategory('urgentTasksList', tasks.urgent || []);
+            displayTaskCategory('todayTasksList', tasks.today || []);
+            updateProgress();
+        }
+
+        // Display tasks for a specific category
+        function displayTaskCategory(containerId, taskList) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            
+            let html = '';
+            taskList.forEach(task => {
+                const checkboxClass = task.completed ? 'checkbox checked' : 'checkbox';
+                const checkboxContent = task.completed ? '✓' : '';
+                
+                html += `
+                    <li>
+                        <div class="${checkboxClass}" onclick="toggleTask('${task.id}', this)">${checkboxContent}</div>
+                        <span>${task.text}</span>
+                    </li>
+                `;
+            });
+            
+            container.innerHTML = html;
         }
 
         // Fetch live alerts from webhook system
@@ -893,12 +939,18 @@
             updateTimestamp();
             setInterval(updateTimestamp, 60000); // Update every minute
             
+            // Load dynamic tasks
+            fetchTasks();
+            
             // Start real-time monitoring
             fetchLiveAlerts();
             fetchDashboardStats();
             
-            // Refresh alerts every 30 seconds
-            setInterval(fetchLiveAlerts, 30000);
+            // Refresh everything periodically
+            setInterval(() => {
+                fetchTasks();
+                fetchLiveAlerts();
+            }, 30000); // Every 30 seconds
             
             // Refresh stats every 2 minutes
             setInterval(fetchDashboardStats, 120000);
