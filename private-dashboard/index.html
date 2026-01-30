@@ -930,6 +930,110 @@
             }
         }
 
+        // WebSocket for real-time updates
+        let websocket;
+        let reconnectAttempts = 0;
+        const maxReconnectAttempts = 5;
+
+        function connectWebSocket() {
+            try {
+                websocket = new WebSocket('ws://10.0.0.220:3001/');
+                
+                websocket.onopen = function() {
+                    console.log('📡 Real-time updates connected');
+                    reconnectAttempts = 0;
+                    showMessage('🔄 Real-time updates active', 'success');
+                };
+                
+                websocket.onmessage = function(event) {
+                    try {
+                        const message = JSON.parse(event.data);
+                        handleRealtimeUpdate(message);
+                    } catch (error) {
+                        console.error('Error parsing WebSocket message:', error);
+                    }
+                };
+                
+                websocket.onclose = function() {
+                    console.log('📡 Real-time connection closed');
+                    
+                    // Attempt reconnection with exponential backoff
+                    if (reconnectAttempts < maxReconnectAttempts) {
+                        const delay = Math.pow(2, reconnectAttempts) * 1000; // 1s, 2s, 4s, 8s, 16s
+                        setTimeout(() => {
+                            reconnectAttempts++;
+                            console.log(`🔄 Reconnecting... (attempt ${reconnectAttempts})`);
+                            connectWebSocket();
+                        }, delay);
+                    }
+                };
+                
+                websocket.onerror = function(error) {
+                    console.error('WebSocket error:', error);
+                };
+                
+            } catch (error) {
+                console.error('Failed to connect WebSocket:', error);
+                // Fallback to periodic updates if WebSocket fails
+                setInterval(() => {
+                    fetchTasks();
+                    fetchLiveAlerts();
+                    fetchDashboardStats();
+                }, 10000); // Every 10 seconds as fallback
+            }
+        }
+
+        function handleRealtimeUpdate(message) {
+            console.log('📡 Real-time update received:', message.type);
+            
+            switch (message.type) {
+                case 'connected':
+                    console.log('✅ Real-time updates established');
+                    break;
+                    
+                case 'hot_lead_alert':
+                    console.log('🔥 Hot lead alert received');
+                    fetchLiveAlerts(); // Refresh alerts immediately
+                    fetchDashboardStats(); // Update metrics
+                    showMessage('🔥 New hot lead detected!', 'error');
+                    
+                    // Flash the alert section
+                    const alertSection = document.getElementById('liveAlertsSection');
+                    if (alertSection) {
+                        alertSection.style.animation = 'pulse 1s ease-in-out 3';
+                    }
+                    break;
+                    
+                case 'task_update':
+                    console.log('📋 Task update received');
+                    fetchTasks(); // Refresh tasks immediately
+                    break;
+                    
+                case 'stats_update':
+                    console.log('📊 Stats update received');
+                    fetchDashboardStats(); // Update metrics immediately
+                    break;
+                    
+                case 'system_status':
+                    console.log('🔧 System status update received');
+                    updateSystemStatus(message.data);
+                    break;
+                    
+                default:
+                    console.log('Unknown message type:', message.type);
+            }
+            
+            // Update timestamp to show latest activity
+            updateTimestamp();
+        }
+
+        function updateSystemStatus(statusData) {
+            // Update any system status indicators on the dashboard
+            if (statusData && statusData.message) {
+                showMessage(statusData.message, statusData.type || 'info');
+            }
+        }
+
         // Initialize
         window.addEventListener('load', function() {
             if (!checkPassword()) {
@@ -939,21 +1043,20 @@
             updateTimestamp();
             setInterval(updateTimestamp, 60000); // Update every minute
             
-            // Load dynamic tasks
+            // Load initial data
             fetchTasks();
-            
-            // Start real-time monitoring
             fetchLiveAlerts();
             fetchDashboardStats();
             
-            // Refresh everything periodically
+            // Connect real-time updates
+            connectWebSocket();
+            
+            // Fallback periodic updates (less frequent since we have real-time)
             setInterval(() => {
                 fetchTasks();
                 fetchLiveAlerts();
-            }, 30000); // Every 30 seconds
-            
-            // Refresh stats every 2 minutes
-            setInterval(fetchDashboardStats, 120000);
+                fetchDashboardStats();
+            }, 60000); // Every 60 seconds as backup
         });
 
         // Quick action functions

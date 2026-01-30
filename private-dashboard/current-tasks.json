@@ -3,10 +3,11 @@
     {
       "id": "linkedin-profile-update",
       "text": "Update LinkedIn Profile - Focus on psychiatric billing services",
-      "completed": false,
+      "completed": true,
       "addedBy": "system",
       "addedAt": "2026-01-30T18:38:28.929Z",
-      "priority": "urgent"
+      "priority": "urgent",
+      "completedAt": "2026-01-30T18:42:59.397Z"
     },
     {
       "id": "communication-preferences",
@@ -19,18 +20,20 @@
     {
       "id": "prospect-search-test",
       "text": "Test Prospect Search - Search 'PMHNP Chicago' in LinkedIn",
-      "completed": false,
+      "completed": true,
       "addedBy": "system",
       "addedAt": "2026-01-30T18:38:28.929Z",
-      "priority": "urgent"
+      "priority": "urgent",
+      "completedAt": "2026-01-30T18:48:22.623Z"
     },
     {
       "id": "email-forwarding-setup",
       "text": "Set Up Email Forwarding - Business email: jacobhasenkamp@pmhnpbilling.com",
-      "completed": false,
+      "completed": true,
       "addedBy": "system",
       "addedAt": "2026-01-30T18:38:28.929Z",
-      "priority": "urgent"
+      "priority": "urgent",
+      "completedAt": "2026-01-30T18:43:02.574Z"
     }
   ],
   "today": [
