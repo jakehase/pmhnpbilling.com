@@ -10,7 +10,13 @@
       "practiceType": "Solo Practice",
       "linkedin": null,
       "website": "https://www.psychewellbeing.com",
-      "specialties": ["Bipolar Disorder", "Anxiety", "ADHD", "Depression", "Trauma and PTSD"],
+      "specialties": [
+        "Bipolar Disorder",
+        "Anxiety",
+        "ADHD",
+        "Depression",
+        "Trauma and PTSD"
+      ],
       "yearsInPractice": "14+",
       "phone": "(630) 344-9617",
       "email": "info@psychewellbeing.com",
@@ -30,7 +36,13 @@
       "practiceType": "Small Group Practice",
       "linkedin": null,
       "website": null,
-      "specialties": ["ADHD", "Anxiety", "Depression", "Bipolar Disorder", "Trauma and PTSD"],
+      "specialties": [
+        "ADHD",
+        "Anxiety",
+        "Depression",
+        "Bipolar Disorder",
+        "Trauma and PTSD"
+      ],
       "yearsInPractice": "3+",
       "phone": "(847) 884-0210",
       "email": null,
@@ -50,7 +62,13 @@
       "practiceType": "Solo Practice",
       "linkedin": null,
       "website": "https://www.eqmyhealth.com",
-      "specialties": ["Anxiety", "Bipolar Disorder", "Depression", "ADHD", "Chronic Pain"],
+      "specialties": [
+        "Anxiety",
+        "Bipolar Disorder",
+        "Depression",
+        "ADHD",
+        "Chronic Pain"
+      ],
       "yearsInPractice": "5+",
       "phone": "(312) 766-4496",
       "email": "contact@eqmyhealth.com",
@@ -68,9 +86,15 @@
       "location": "Glenview, IL",
       "practice": "LumiClinics Behavioral Wellness Center",
       "practiceType": "Solo Practice",
-      "linkedin": null,
+      "linkedin": "https://www.linkedin.com/in/christian-charvet-aprn-fpa-agnp-c-pmhnp-bc-adhd-ccsp-00205429",
       "website": null,
-      "specialties": ["ADHD", "Anxiety", "Depression", "OCD", "Child & Adult Psychiatry"],
+      "specialties": [
+        "ADHD",
+        "Anxiety",
+        "Depression",
+        "OCD",
+        "Child & Adult Psychiatry"
+      ],
       "yearsInPractice": "4+",
       "phone": "(847) 555-5678",
       "email": "info@lumiclinics.com",
@@ -90,7 +114,13 @@
       "practiceType": "Solo Practice",
       "linkedin": null,
       "website": null,
-      "specialties": ["Anxiety", "Depression", "ADHD", "Bipolar Disorder", "OCD"],
+      "specialties": [
+        "Anxiety",
+        "Depression",
+        "ADHD",
+        "Bipolar Disorder",
+        "OCD"
+      ],
       "yearsInPractice": "15+",
       "phone": "(847) 423-0462",
       "email": "moses@mentalwellnesschicago.com",
@@ -110,7 +140,13 @@
       "practiceType": "Solo Practice",
       "linkedin": null,
       "website": null,
-      "specialties": ["Child & Adolescent Psychiatry", "Depression", "Anxiety", "ADHD", "Autism"],
+      "specialties": [
+        "Child & Adolescent Psychiatry",
+        "Depression",
+        "Anxiety",
+        "ADHD",
+        "Autism"
+      ],
       "yearsInPractice": "8+",
       "phone": "(847) 555-7890",
       "email": "hparkerson@childpsychcare.com",
@@ -130,7 +166,13 @@
       "practiceType": "Solo Practice",
       "linkedin": null,
       "website": null,
-      "specialties": ["Stress", "Anxiety", "Depression", "Trauma", "Mood Disorders"],
+      "specialties": [
+        "Stress",
+        "Anxiety",
+        "Depression",
+        "Trauma",
+        "Mood Disorders"
+      ],
       "yearsInPractice": "6+",
       "phone": "(630) 555-1234",
       "email": "chi@mentalwellnesscare.com",
@@ -150,7 +192,13 @@
       "practiceType": "Solo Practice",
       "linkedin": null,
       "website": null,
-      "specialties": ["Anxiety", "Depression", "ADHD", "PTSD", "Postpartum Depression"],
+      "specialties": [
+        "Anxiety",
+        "Depression",
+        "ADHD",
+        "PTSD",
+        "Postpartum Depression"
+      ],
       "yearsInPractice": "5+",
       "phone": "(630) 555-5432",
       "email": "caryn@jurekpsychcare.com",
@@ -170,7 +218,13 @@
       "practiceType": "Solo Practice",
       "linkedin": null,
       "website": null,
-      "specialties": ["Anxiety", "Depression", "ADHD", "Bipolar Disorder", "Mental Health Emergencies"],
+      "specialties": [
+        "Anxiety",
+        "Depression",
+        "ADHD",
+        "Bipolar Disorder",
+        "Mental Health Emergencies"
+      ],
       "yearsInPractice": "6+",
       "phone": "(630) 555-6789",
       "email": "purity@comprehensivepsychcare.com",
@@ -190,7 +244,13 @@
       "practiceType": "Solo Practice",
       "linkedin": null,
       "website": null,
-      "specialties": ["Anxiety", "Mood Disorders", "Addiction", "Bipolar Disorder", "OCD"],
+      "specialties": [
+        "Anxiety",
+        "Mood Disorders",
+        "Addiction",
+        "Bipolar Disorder",
+        "OCD"
+      ],
       "yearsInPractice": "15+",
       "phone": "(847) 555-3456",
       "email": "tomilola@behavioralwellnesscare.com",
