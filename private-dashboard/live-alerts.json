@@ -1,16 +1,1 @@
-[
-  {
-    "id": "monitor-alert-1769800424790",
-    "timestamp": "2026-01-30T19:09:21.364Z",
-    "type": "HOT_LEAD",
-    "priority": "HOT",
-    "from": "realtime.test@example.com",
-    "subject": "URGENT: Realtime test - need billing help",
-    "preview": "Testing real-time dashboard updates. PMHNP billing help needed urgently.",
-    "leadScore": 3,
-    "hotScore": 1,
-    "status": "NEW",
-    "action": "RESPOND_IMMEDIATELY",
-    "displayUntil": 1769886824790
-  }
-]
+[]
