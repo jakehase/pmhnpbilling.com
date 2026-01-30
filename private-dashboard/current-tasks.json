@@ -38,6 +38,14 @@
   ],
   "today": [
     {
+      "id": "task-1769802791855",
+      "text": "Test task from agent",
+      "completed": false,
+      "addedBy": "Test Agent",
+      "addedAt": "2026-01-30T19:53:11.855Z",
+      "priority": "today"
+    },
+    {
       "id": "identify-prospects",
       "text": "✅ 10 Verified Prospects Found - Real PMHNPs in Schaumburg, Naperville, Evanston, Glenview",
       "completed": true,
