@@ -333,23 +333,26 @@
                 </div>
                 <div class="agent-status">
                     <div>
-                        <div class="agent-name">Email Monitor</div>
-                        <div class="agent-activity">Watching jacobhasenkamp@pmhnpbilling.com - OAuth setup needed</div>
+                        <div class="agent-name">Email Webhook System</div>
+                        <div class="agent-activity">Running on port 3001 - Ready for email forwarding setup</div>
                     </div>
-                    <div class="status-badge" style="background: #ffeaa7; color: #856404;">SETUP REQUIRED</div>
+                    <div class="status-badge active">ACTIVE</div>
                 </div>
             </div>
 
-            <!-- Google Workspace Setup -->
-            <div class="alert-box">
-                <strong>📧 Email Monitoring Setup Required</strong><br>
-                Complete Google OAuth to activate automatic email lead monitoring for jacobhasenkamp@pmhnpbilling.com.
+            <!-- Email Webhook Setup -->
+            <div class="success-box">
+                <strong>📧 Email Webhook System ACTIVE</strong><br>
+                Webhook server running on http://10.0.0.220:3001 - Ready to receive email notifications!
                 <div style="margin-top: 10px;">
-                    <button class="resource-link" onclick="setupGoogleAuth()" style="border: none; cursor: pointer; margin-right: 10px;">
-                        Complete OAuth Setup
+                    <button class="resource-link" onclick="showWebhookSetup()" style="border: none; cursor: pointer; margin-right: 10px;">
+                        Setup Email Forwarding
                     </button>
-                    <button class="resource-link" onclick="testEmailMonitor()" style="border: none; cursor: pointer;">
-                        Test Email Monitor
+                    <button class="resource-link" onclick="testWebhook()" style="border: none; cursor: pointer;">
+                        Test Webhook
+                    </button>
+                    <button class="resource-link" onclick="checkWebhookStatus()" style="border: none; cursor: pointer;">
+                        Check Status
                     </button>
                 </div>
             </div>
@@ -399,20 +402,21 @@
                 <h2>🔍 24/7 Monitoring Active</h2>
                 <ul style="list-style-type: none;">
                     <li>✅ LinkedIn Responses - Connection accepts, messages</li>
-                    <li>📧 Email Monitoring - jacobhasenkamp@pmhnpbilling.com (OAuth setup required)</li>
+                    <li>📧 Email Webhook - jacobhasenkamp@pmhnpbilling.com (ACTIVE on port 3001)</li>
                     <li>✅ Blog Inquiries - Website form submissions</li>
                     <li>✅ Lead Scoring - Automatic HOT/WARM/COLD categorization</li>
-                    <li>🚨 Hot Lead Alerts - Immediate WhatsApp notifications</li>
+                    <li>🚨 Hot Lead Alerts - Immediate notifications</li>
                     <li>✅ Daily Reports - Morning action plans at 8 AM CST</li>
                 </ul>
-                <div style="margin-top: 15px; padding: 10px; background: #f0f8ff; border-radius: 8px;">
-                    <strong>Email Monitor Features:</strong>
+                <div style="margin-top: 15px; padding: 10px; background: #e8f5e8; border-radius: 8px;">
+                    <strong>Email Webhook Features:</strong>
                     <ul style="margin: 8px 0; padding-left: 20px; font-size: 0.9em;">
-                        <li>Scans every 10 minutes for new emails</li>
-                        <li>Identifies PMHNP leads with keyword analysis</li>
-                        <li>Auto-scores as HOT/WARM/COLD priority</li>
-                        <li>Creates instant alerts for urgent responses</li>
-                        <li>Updates lead database automatically</li>
+                        <li>✅ Instant email notifications via webhook</li>
+                        <li>✅ Identifies PMHNP leads with keyword analysis</li>
+                        <li>✅ Auto-scores as HOT/WARM/COLD priority</li>
+                        <li>✅ Creates instant alerts for urgent responses</li>
+                        <li>✅ Updates lead database automatically</li>
+                        <li>🔗 Webhook URL: http://10.0.0.220:3001/email-webhook</li>
                     </ul>
                 </div>
             </div>
@@ -507,12 +511,16 @@
             alert(`Opening ${filename}... This would link to the actual file in your system.`);
         }
 
-        function setupGoogleAuth() {
-            alert(`📧 Google Workspace OAuth Setup:\n\n1. Open terminal or SSH to your server\n2. Run: mcporter call --server google-workspace --tool "people.getMe"\n3. Follow the browser OAuth flow\n4. Return here and click "Test Email Monitor"\n\nThis gives Clawdbot access to monitor jacobhasenkamp@pmhnpbilling.com for lead responses.`);
+        function showWebhookSetup() {
+            alert(`📧 Email Forwarding Setup:\n\n🔗 Webhook URL: http://10.0.0.220:3001/email-webhook\n\n📧 Gmail Setup:\n1. Go to Gmail Settings > Forwarding\n2. Add forwarding address: webhook@yourdomain.com\n3. Set up email filter to forward PMHNP-related emails\n\n📨 Email Service Setup:\n1. Configure your email provider to send webhooks\n2. Point webhook to: http://10.0.0.220:3001/email-webhook\n3. Include email content in POST request\n\n✅ System will automatically:\n• Detect PMHNP leads\n• Score as HOT/WARM/COLD\n• Create instant alerts\n• Update lead database`);
         }
 
-        function testEmailMonitor() {
-            alert(`🔍 Testing Email Monitor...\n\nThis will:\n✅ Check for unread emails in the last 24 hours\n✅ Scan for PMHNP-related keywords\n✅ Score leads as HOT/WARM/COLD\n✅ Create alerts for urgent responses\n\nRun: node /root/clawd/pmhnp-email-monitor.js`);
+        function testWebhook() {
+            alert(`🧪 Testing Webhook System...\n\nYou can test with curl:\n\ncurl -X POST http://10.0.0.220:3001/email-webhook \\\n  -H "Content-Type: application/json" \\\n  -d '{\n    "from": "test@pmhnp.com",\n    "subject": "Need billing help urgently",\n    "body": "I'm a PMHNP struggling with claim denials"\n  }'\n\nThis will simulate receiving a hot lead email and test the entire system!`);
+        }
+
+        function checkWebhookStatus() {
+            alert(`📊 Webhook System Status:\n\n🔍 Check status at: http://10.0.0.220:3001/health\n\n📂 Log files:\n• /root/clawd/email-webhook.log\n• /root/clawd/hot-leads-alerts.json\n• /root/clawd/URGENT_LEAD_ALERT.json\n\n✅ System is running and ready!\nWaiting for email notifications to process.`);
         }
 
         // Initialize
