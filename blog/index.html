@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | PMHNP Billing</title>
+    <meta name="description" content="Expert insights on psychiatric billing for PMHNPs in the Chicago area. Prior authorizations, mental health parity, and billing best practices.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='48' y2='48'%3E%3Cstop stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%230ea5e9'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='url(%23g)'/%3E%3Cpath d='M10 12h9a6 6 0 010 12h-9V12zm3 3v6h6a3 3 0 000-6h-6z' fill='white'/%3E%3Cpath d='M26 12h9a6 6 0 014.24 10.24L26 36V12zm3 3v12.5l7-7.5a3 3 0 00-4-4h-3z' fill='white' fill-opacity='0.85'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: #374151;
+            background: #fff;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            text-decoration: none;
+        }
+        .logo-icon { width: 36px; height: 36px; border-radius: 8px; }
+        .logo-text { display: flex; align-items: center; gap: 0.35rem; font-size: 1.1rem; }
+        .logo-text .pmh {
+            font-weight: 700;
+            background: linear-gradient(135deg, #1e40af, #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            border-bottom: 2px solid #2563eb;
+            padding-bottom: 1px;
+        }
+        .logo-text .dot {
+            color: #9ca3af;
+            font-weight: 500;
+        }
+        .logo-text .billing {
+            font-weight: 600;
+            color: #1f2937;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+        nav a {
+            text-decoration: none;
+            color: #374151;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        nav a:hover { color: #2563eb; }
+        
+        /* Main Content */
+        main {
+            margin-top: 80px;
+            padding: 4rem 2rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .page-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+        
+        .page-subtitle {
+            font-size: 1.25rem;
+            color: #6b7280;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Blog Posts */
+        .blog-posts {
+            display: grid;
+            gap: 3rem;
+        }
+        
+        .blog-post {
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 2.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .blog-post:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .post-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 1rem;
+            text-decoration: none;
+        }
+        
+        .post-title:hover {
+            color: #2563eb;
+        }
+        
+        .post-excerpt {
+            color: #6b7280;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .post-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #9ca3af;
+        }
+        
+        .read-more {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .read-more:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav { padding: 1rem; }
+            main { padding: 2rem 1rem; }
+            .page-title { font-size: 2rem; }
+            .blog-post { padding: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="../" class="logo">
+            <svg class="logo-icon" viewBox="0 0 48 48">
+                <defs>
+                    <linearGradient id="logoGrad" x1="0" y1="0" x2="48" y2="48">
+                        <stop stop-color="#2563eb"/>
+                        <stop offset="1" stop-color="#0ea5e9"/>
+                    </linearGradient>
+                </defs>
+                <rect width="48" height="48" rx="12" fill="url(#logoGrad)"/>
+                <path d="M10 12h9a6 6 0 010 12h-9V12zm3 3v6h6a3 3 0 000-6h-6z" fill="white"/>
+                <path d="M26 12h9a6 6 0 014.24 10.24L26 36V12zm3 3v12.5l7-7.5a3 3 0 00-4-4h-3z" fill="white" fill-opacity="0.85"/>
+            </svg>
+            <div class="logo-text">
+                <span class="pmh">PMH</span>
+                <span class="dot">•</span>
+                <span class="billing">Billing</span>
+            </div>
+        </a>
+        <ul>
+            <li><a href="../">Home</a></li>
+            <li><a href="../#services">Services</a></li>
+            <li><a href="../#about">About</a></li>
+            <li><a href="./">Blog</a></li>
+            <li><a href="../#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <header class="page-header">
+            <h1 class="page-title">Billing Insights</h1>
+            <p class="page-subtitle">Expert guidance on psychiatric billing for Chicago-area PMHNPs. Navigate prior authorizations, compliance, and revenue optimization.</p>
+        </header>
+        
+        <div class="blog-posts">
+            <article class="blog-post">
+                <h2><a href="./prior-authorization-guide.html" class="post-title">Navigating the Prior Authorization Maze: A Chicago PMHNP's Guide to Getting Medications Approved</a></h2>
+                <p class="post-excerpt">As a psychiatric mental health nurse practitioner in Chicago, you know the frustration. Your patient desperately needs their medication, but the insurance company wants prior authorization. Learn how to navigate this complex process more effectively and reduce costly delays.</p>
+                <div class="post-meta">
+                    <span>January 30, 2026</span>
+                    <a href="./prior-authorization-guide.html" class="read-more">Read More →</a>
+                </div>
+            </article>
+            
+            <article class="blog-post">
+                <h2><a href="./mental-health-parity-illinois.html" class="post-title">Mental Health Parity in Illinois: What Chicago PMHNPs Must Know About Insurance Compliance</a></h2>
+                <p class="post-excerpt">Mental health parity sounds straightforward—insurance should cover mental health treatment the same way they cover physical health treatment. In practice, it's anything but simple. Understand your rights and how to challenge parity violations in the Chicago healthcare landscape.</p>
+                <div class="post-meta">
+                    <span>January 30, 2026</span>
+                    <a href="./mental-health-parity-illinois.html" class="read-more">Read More →</a>
+                </div>
+            </article>
+            
+            <article class="blog-post">
+                <h2><a href="./costly-billing-mistakes.html" class="post-title">The $50,000 Mistake: Common Billing Errors Costing Chicago PMHNPs Thousands Each Year</a></h2>
+                <p class="post-excerpt">I recently reviewed billing for a Chicago PMHNP who was losing over $4,000 monthly to completely preventable billing errors. That's nearly $50,000 annually. Learn about the most costly billing mistakes that drain revenue from PMHNPs and how to avoid them.</p>
+                <div class="post-meta">
+                    <span>January 30, 2026</span>
+                    <a href="./costly-billing-mistakes.html" class="read-more">Read More →</a>
+                </div>
+            </article>
+        </div>
+    </main>
+</body>
+</html>
