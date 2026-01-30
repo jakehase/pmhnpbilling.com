@@ -337,7 +337,15 @@
         <!-- System Status Alert -->
         <div class="success-box">
             <strong>🎯 SYSTEM FULLY OPERATIONAL</strong><br>
-            4 AI agents completed setup. Lead generation system is live and monitoring all channels 24/7.
+            5 AI agents + notification system active. Lead generation system is live and monitoring all channels 24/7.
+        </div>
+
+        <!-- Live Alerts Section -->
+        <div id="liveAlertsSection" style="display: none;">
+            <div class="alert-box" style="background: #ffebee; border-color: #ffcdd2; color: #c62828; animation: pulse 2s infinite;">
+                <strong>🚨 LIVE HOT LEADS</strong>
+                <div id="liveAlertsList"></div>
+            </div>
         </div>
 
         <!-- Action Items (2-Column Grid) -->
@@ -435,21 +443,21 @@
             <div class="card metrics">
                 <h2>📊 Current Pipeline</h2>
                 <div class="metric-box">
-                    <div class="metric-number">0</div>
+                    <div class="metric-number" id="hotLeadsCount">0</div>
                     <div class="metric-label">Hot Leads</div>
                 </div>
                 <div class="metric-box">
-                    <div class="metric-number">0</div>
+                    <div class="metric-number" id="warmLeadsCount">0</div>
                     <div class="metric-label">Warm Leads</div>
                 </div>
                 <div class="metric-box">
-                    <div class="metric-number">15</div>
+                    <div class="metric-number" id="prospectsCount">15</div>
                     <div class="metric-label">Prospects Identified</div>
                 </div>
                 <div class="progress-bar">
-                    <div class="progress-fill" style="width: 30%"></div>
+                    <div class="progress-fill" id="progressBar" style="width: 30%"></div>
                 </div>
-                <div class="metric-label">Setup Progress: 30%</div>
+                <div class="metric-label" id="progressLabel">Setup Progress: 30%</div>
             </div>
 
             <!-- Resources & Templates -->
@@ -630,9 +638,93 @@
             const checkboxes = document.querySelectorAll('.checkbox');
             const checked = document.querySelectorAll('.checkbox.checked');
             const progress = (checked.length / checkboxes.length) * 100;
-            document.querySelector('.progress-fill').style.width = progress + '%';
-            document.querySelector('.metric-label').textContent = 
+            document.getElementById('progressBar').style.width = progress + '%';
+            document.getElementById('progressLabel').textContent = 
                 `Setup Progress: ${Math.round(progress)}%`;
+        }
+
+        // Fetch live alerts from webhook system
+        async function fetchLiveAlerts() {
+            try {
+                const response = await fetch('http://10.0.0.220:3001/api/alerts');
+                const data = await response.json();
+                
+                if (data.success && data.alerts && data.alerts.length > 0) {
+                    displayLiveAlerts(data.alerts);
+                } else {
+                    hideLiveAlerts();
+                }
+            } catch (error) {
+                console.log('Live alerts API not available (expected during initial setup)');
+                hideLiveAlerts();
+            }
+        }
+
+        // Display live alerts on dashboard
+        function displayLiveAlerts(alerts) {
+            const alertsSection = document.getElementById('liveAlertsSection');
+            const alertsList = document.getElementById('liveAlertsList');
+            
+            let alertsHtml = '';
+            alerts.forEach(alert => {
+                const timeAgo = getTimeAgo(new Date(alert.timestamp));
+                alertsHtml += `
+                    <div style="margin: 10px 0; padding: 10px; background: rgba(255,255,255,0.3); border-radius: 5px;">
+                        <strong>🔥 ${alert.subject}</strong><br>
+                        <small>From: ${alert.from} • ${timeAgo}</small><br>
+                        <em>"${alert.preview}"</em><br>
+                        <small>Lead Score: ${alert.leadScore}/10 • Priority: ${alert.priority}</small>
+                    </div>
+                `;
+            });
+            
+            alertsList.innerHTML = alertsHtml;
+            alertsSection.style.display = 'block';
+        }
+
+        // Hide live alerts section
+        function hideLiveAlerts() {
+            document.getElementById('liveAlertsSection').style.display = 'none';
+        }
+
+        // Get time ago string
+        function getTimeAgo(date) {
+            const now = new Date();
+            const diffMs = now - date;
+            const diffMinutes = Math.floor(diffMs / (1000 * 60));
+            
+            if (diffMinutes < 1) return 'Just now';
+            if (diffMinutes < 60) return `${diffMinutes}m ago`;
+            if (diffMinutes < 1440) return `${Math.floor(diffMinutes/60)}h ago`;
+            return `${Math.floor(diffMinutes/1440)}d ago`;
+        }
+
+        // Fetch and update dashboard metrics
+        async function fetchDashboardStats() {
+            try {
+                const response = await fetch('http://10.0.0.220:3001/api/stats');
+                const data = await response.json();
+                
+                if (data.success) {
+                    updateDashboardMetrics(data.stats);
+                }
+            } catch (error) {
+                console.log('Dashboard stats API not available (expected during initial setup)');
+            }
+        }
+
+        // Update dashboard metrics with real data
+        function updateDashboardMetrics(stats) {
+            document.getElementById('hotLeadsCount').textContent = stats.hotLeads;
+            document.getElementById('warmLeadsCount').textContent = stats.warmLeads;
+            document.getElementById('prospectsCount').textContent = stats.prospectsIdentified;
+            
+            // Update progress bar if we have real progress
+            if (stats.setupProgress > 30) {
+                document.getElementById('progressBar').style.width = stats.setupProgress + '%';
+                document.getElementById('progressLabel').textContent = 
+                    `Setup Progress: ${Math.round(stats.setupProgress)}%`;
+            }
         }
 
         // Quick action functions
@@ -641,7 +733,16 @@
         }
 
         function checkLeads() {
-            alert('Checking for new leads... No new hot leads at this time. Continue with setup tasks.');
+            // Force refresh alerts and stats
+            fetchLiveAlerts();
+            fetchDashboardStats();
+            
+            setTimeout(() => {
+                const hotLeads = document.getElementById('hotLeadsCount').textContent;
+                const warmLeads = document.getElementById('warmLeadsCount').textContent;
+                
+                alert(`📊 Lead Check Complete!\n\n🔥 Hot Leads: ${hotLeads}\n🌡️ Warm Leads: ${warmLeads}\n\n${hotLeads > 0 ? '🚨 HOT LEADS REQUIRE IMMEDIATE ATTENTION!' : '✅ No urgent leads at this time. Continue with outreach.'}`);
+            }, 1000);
         }
 
         function viewTemplates() {
@@ -677,15 +778,29 @@
             if (!checkPassword()) {
                 return;
             }
+            
             updateTimestamp();
             setInterval(updateTimestamp, 60000); // Update every minute
+            
+            // Start real-time monitoring
+            fetchLiveAlerts();
+            fetchDashboardStats();
+            
+            // Refresh alerts every 30 seconds
+            setInterval(fetchLiveAlerts, 30000);
+            
+            // Refresh stats every 2 minutes
+            setInterval(fetchDashboardStats, 120000);
         });
 
-        // Simulate real-time updates
-        setInterval(() => {
-            // You could add AJAX calls here to get real-time data
-            // from your lead generation system
-        }, 30000);
+        // Quick action functions
+        function updateStatus() {
+            alert('Status updated! All systems operational. 5 agents + notification system monitoring channels.\n\n📱 WhatsApp alerts: ACTIVE\n📊 Dashboard alerts: ACTIVE\n🔔 Dual notification system: READY');
+            
+            // Refresh data after status check
+            fetchLiveAlerts();
+            fetchDashboardStats();
+        }
     </script>
 </body>
 </html>

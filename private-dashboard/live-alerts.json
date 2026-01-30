@@ -1,0 +1,19 @@
+[
+  {
+    "id": "alert-1769797116715",
+    "timestamp": "2026-01-30T17:44:26.111Z",
+    "type": "HOT_LEAD",
+    "priority": "HOT",
+    "from": "test.pmhnp@gmail.com",
+    "subject": "Urgent: Need billing help ASAP",
+    "preview": "Hi Jacob, I am a PMHNP in Chicago struggling with denied claims and prior authorization delays. Can you help me immediately? This is costing me thousands. Please call me.",
+    "leadScore": 5,
+    "hotScore": 7,
+    "keywords": [],
+    "hotKeywords": [],
+    "status": "NEW",
+    "action": "RESPOND_IMMEDIATELY",
+    "notified": true,
+    "displayUntil": 1769883516715
+  }
+]
