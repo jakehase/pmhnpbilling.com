@@ -288,6 +288,15 @@
             background: #2ed573;
         }
         
+        .btn-delete {
+            background: #ff4757;
+            color: white;
+        }
+        
+        .btn-delete:hover {
+            background: #ff6b81;
+        }
+        
         .message-preview {
             display: none;
             background: white;
@@ -509,9 +518,9 @@
                         </div>
                     </div>
                     <div class="card-actions">
-                        <a href="${prospect.linkedin}" target="_blank" class="action-btn btn-linkedin">
+                        ${prospect.linkedin ? `<a href="${prospect.linkedin}" target="_blank" class="action-btn btn-linkedin">
                             💼 Open LinkedIn
-                        </a>
+                        </a>` : ''}
                         ${prospect.website ? `<a href="${prospect.website}" target="_blank" class="action-btn btn-website">
                             🌐 Website
                         </a>` : ''}
@@ -520,6 +529,9 @@
                         </button>
                         <button class="action-btn btn-contacted ${isContacted ? 'done' : ''}" onclick="markContacted('${prospect.id}')">
                             ${isContacted ? '✅ Contacted' : '📤 Mark Contacted'}
+                        </button>
+                        <button class="action-btn btn-delete" onclick="deleteProspect(${prospect.id}, '${prospect.name.replace(/'/g, "\\'")}')">
+                            🗑️ Delete
                         </button>
                     </div>
                 </div>
@@ -576,6 +588,33 @@
             setTimeout(() => {
                 toast.classList.remove('visible');
             }, 3000);
+        }
+
+        // Delete prospect
+        async function deleteProspect(id, name) {
+            if (!confirm(`🗑️ Delete "${name}" from prospects?\n\nThis cannot be undone.`)) {
+                return;
+            }
+            
+            try {
+                const response = await fetch(`http://10.0.0.220:3001/api/prospects/${id}`, {
+                    method: 'DELETE'
+                });
+                
+                if (response.ok) {
+                    // Remove from local data and re-render
+                    prospectsData.prospects = prospectsData.prospects.filter(p => p.id !== id);
+                    prospectsData.totalProspects = prospectsData.prospects.length;
+                    renderStats();
+                    renderProspects('all');
+                    showToast('🗑️ Prospect deleted');
+                } else {
+                    showToast('❌ Failed to delete prospect');
+                }
+            } catch (error) {
+                console.error('Delete error:', error);
+                showToast('❌ Error deleting prospect');
+            }
         }
 
         // Password check (same as main dashboard)

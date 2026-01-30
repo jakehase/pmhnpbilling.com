@@ -92,6 +92,38 @@ class PMHNPEmailWebhookSystem {
         app.post('/api/tasks/add', (req, res) => {
             this.addTask(req, res);
         });
+
+        // Delete a prospect
+        app.delete('/api/prospects/:id', (req, res) => {
+            this.deleteProspect(req, res);
+        });
+    }
+
+    deleteProspect(req, res) {
+        try {
+            const prospectId = parseInt(req.params.id);
+            const prospectsFile = '/root/clawd/pmnhp-billing/private-dashboard/prospects.json';
+            
+            const data = JSON.parse(fs.readFileSync(prospectsFile, 'utf8'));
+            const originalLength = data.prospects.length;
+            
+            data.prospects = data.prospects.filter(p => p.id !== prospectId);
+            
+            if (data.prospects.length === originalLength) {
+                return res.status(404).json({ error: 'Prospect not found' });
+            }
+            
+            data.totalProspects = data.prospects.length;
+            data.lastUpdated = new Date().toISOString();
+            
+            fs.writeFileSync(prospectsFile, JSON.stringify(data, null, 2));
+            
+            console.log(`🗑️ Deleted prospect ID ${prospectId}`);
+            res.json({ success: true, remaining: data.prospects.length });
+        } catch (error) {
+            console.error('Error deleting prospect:', error);
+            res.status(500).json({ error: 'Failed to delete prospect' });
+        }
     }
 
     handleEmailWebhook(req, res) {
