@@ -242,8 +242,13 @@
         <!-- Header -->
         <div class="header">
             <h1><span class="status-indicator"></span>PMHNP Lead Generation Command Center</h1>
-            <p>Private Dashboard - Jake's Eyes Only</p>
-            <div class="time-stamp" id="lastUpdate">Last Updated: Loading...</div>
+            <p>🔐 Private Dashboard - Jake's Eyes Only</p>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+                <div class="time-stamp" id="lastUpdate">Last Updated: Loading...</div>
+                <button onclick="logout()" style="background: #ff4757; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 0.8em;">
+                    🔒 Logout
+                </button>
+            </div>
         </div>
 
         <!-- System Status Alert -->
@@ -382,17 +387,20 @@
             <div class="card">
                 <h2>📋 Resources Created</h2>
                 <div class="resource-links">
-                    <a href="#" class="resource-link" onclick="showFile('PMHNP_LEAD_DATABASE.md')">
-                        Lead Database
+                    <a href="resources/PMHNP_LEAD_DATABASE.md" target="_blank" class="resource-link">
+                        📊 Lead Database
                     </a>
-                    <a href="#" class="resource-link" onclick="showFile('linkedin-outreach-templates.md')">
-                        LinkedIn Templates
+                    <a href="resources/linkedin-outreach-templates.md" target="_blank" class="resource-link">
+                        💼 LinkedIn Templates
                     </a>
-                    <a href="#" class="resource-link" onclick="showFile('lead_nurturing_sequence.md')">
-                        Email Sequences
+                    <a href="resources/lead_nurturing_sequence.md" target="_blank" class="resource-link">
+                        📧 Email Sequences
                     </a>
-                    <a href="#" class="resource-link" onclick="showFile('pmhnp-activity-tracker.md')">
-                        Activity Tracker
+                    <a href="resources/pmhnp-activity-tracker.md" target="_blank" class="resource-link">
+                        📈 Activity Tracker
+                    </a>
+                    <a href="resources/EMAIL_WEBHOOK_SETUP_GUIDE.md" target="_blank" class="resource-link">
+                        🔧 Email Setup Guide
                     </a>
                 </div>
             </div>
@@ -462,6 +470,23 @@
     </div>
 
     <script>
+        // Simple password protection for GitHub Pages
+        function checkPassword() {
+            const password = localStorage.getItem('dashboardAuth');
+            if (password !== 'Dashboard2024!') {
+                const userPassword = prompt('🔐 Private Dashboard Access Required\n\nUsername: jake\nPassword:');
+                if (userPassword === 'Dashboard2024!') {
+                    localStorage.setItem('dashboardAuth', userPassword);
+                    return true;
+                } else {
+                    alert('❌ Access Denied\n\nIncorrect password. Contact Jake for access.');
+                    window.location.href = 'https://pmhnpbilling.com';
+                    return false;
+                }
+            }
+            return true;
+        }
+
         // Update timestamp
         function updateTimestamp() {
             document.getElementById('lastUpdate').textContent = 
@@ -507,9 +532,7 @@
             alert('Daily reports scheduled for 8:00 AM CST. First report will include actual prospect results.');
         }
 
-        function showFile(filename) {
-            alert(`Opening ${filename}... This would link to the actual file in your system.`);
-        }
+        // Removed old showFile function - now using direct file links
 
         function showWebhookSetup() {
             alert(`📧 Email Forwarding Setup:\n\n🔗 Webhook URL: http://10.0.0.220:3001/email-webhook\n\n📧 Gmail Setup:\n1. Go to Gmail Settings > Forwarding\n2. Add forwarding address: webhook@yourdomain.com\n3. Set up email filter to forward PMHNP-related emails\n\n📨 Email Service Setup:\n1. Configure your email provider to send webhooks\n2. Point webhook to: http://10.0.0.220:3001/email-webhook\n3. Include email content in POST request\n\n✅ System will automatically:\n• Detect PMHNP leads\n• Score as HOT/WARM/COLD\n• Create instant alerts\n• Update lead database`);
@@ -523,9 +546,22 @@
             alert(`📊 Webhook System Status:\n\n🔍 Check status at: http://10.0.0.220:3001/health\n\n📂 Log files:\n• /root/clawd/email-webhook.log\n• /root/clawd/hot-leads-alerts.json\n• /root/clawd/URGENT_LEAD_ALERT.json\n\n✅ System is running and ready!\nWaiting for email notifications to process.`);
         }
 
+        function logout() {
+            if (confirm('🔒 Logout from Private Dashboard?\n\nYou will need to re-enter the password to access again.')) {
+                localStorage.removeItem('dashboardAuth');
+                alert('✅ Logged out successfully!\n\nRedirecting to main website...');
+                window.location.href = 'https://pmhnpbilling.com';
+            }
+        }
+
         // Initialize
-        updateTimestamp();
-        setInterval(updateTimestamp, 60000); // Update every minute
+        window.addEventListener('load', function() {
+            if (!checkPassword()) {
+                return;
+            }
+            updateTimestamp();
+            setInterval(updateTimestamp, 60000); // Update every minute
+        });
 
         // Simulate real-time updates
         setInterval(() => {
