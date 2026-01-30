@@ -518,7 +518,7 @@
                         </div>
                     </div>
                     <div class="card-actions">
-                        ${prospect.linkedin ? `<a href="${prospect.linkedin}" target="_blank" class="action-btn btn-linkedin">
+                        ${prospect.linkedin && prospect.linkedin.startsWith('http') ? `<a href="${prospect.linkedin}" target="_blank" class="action-btn btn-linkedin">
                             💼 Open LinkedIn
                         </a>` : ''}
                         ${prospect.website ? `<a href="${prospect.website}" target="_blank" class="action-btn btn-website">
@@ -530,7 +530,7 @@
                         <button class="action-btn btn-contacted ${isContacted ? 'done' : ''}" onclick="markContacted('${prospect.id}')">
                             ${isContacted ? '✅ Contacted' : '📤 Mark Contacted'}
                         </button>
-                        <button class="action-btn btn-delete" onclick="deleteProspect(${prospect.id}, '${prospect.name.replace(/'/g, "\\'")}')">
+                        <button class="action-btn btn-delete" onclick="deleteProspect('${prospect.id}', '${prospect.name.replace(/'/g, "\\'")}')">
                             🗑️ Delete
                         </button>
                     </div>

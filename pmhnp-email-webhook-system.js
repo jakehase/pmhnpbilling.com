@@ -101,7 +101,7 @@ class PMHNPEmailWebhookSystem {
 
     deleteProspect(req, res) {
         try {
-            const prospectId = parseInt(req.params.id);
+            const prospectId = req.params.id;
             const prospectsFile = '/root/clawd/pmnhp-billing/private-dashboard/prospects.json';
             
             const data = JSON.parse(fs.readFileSync(prospectsFile, 'utf8'));
