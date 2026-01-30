@@ -343,7 +343,12 @@
         <!-- Live Alerts Section -->
         <div id="liveAlertsSection" style="display: none;">
             <div class="alert-box" style="background: #ffebee; border-color: #ffcdd2; color: #c62828; animation: pulse 2s infinite;">
-                <strong>🚨 LIVE HOT LEADS</strong>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                    <strong>🚨 LIVE HOT LEADS</strong>
+                    <button onclick="clearAllAlerts()" style="background: #ff4757; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 0.8em;">
+                        Clear All
+                    </button>
+                </div>
                 <div id="liveAlertsList"></div>
             </div>
         </div>
@@ -669,11 +674,20 @@
             alerts.forEach(alert => {
                 const timeAgo = getTimeAgo(new Date(alert.timestamp));
                 alertsHtml += `
-                    <div style="margin: 10px 0; padding: 10px; background: rgba(255,255,255,0.3); border-radius: 5px;">
-                        <strong>🔥 ${alert.subject}</strong><br>
-                        <small>From: ${alert.from} • ${timeAgo}</small><br>
-                        <em>"${alert.preview}"</em><br>
-                        <small>Lead Score: ${alert.leadScore}/10 • Priority: ${alert.priority}</small>
+                    <div id="alert-${alert.id}" style="margin: 10px 0; padding: 10px; background: rgba(255,255,255,0.3); border-radius: 5px; position: relative;">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                            <div style="flex: 1;">
+                                <strong>🔥 ${alert.subject}</strong><br>
+                                <small>From: ${alert.from} • ${timeAgo}</small><br>
+                                <em>"${alert.preview}${alert.preview.length >= 200 ? '' : '...'}"</em><br>
+                                <small>Lead Score: ${alert.leadScore}/10 • Priority: ${alert.priority}</small>
+                                ${alert.hotKeywords && alert.hotKeywords.length > 0 ? `<br><small>🚨 Hot Keywords: ${alert.hotKeywords.join(', ')}</small>` : ''}
+                            </div>
+                            <button onclick="dismissAlert('${alert.id}')" 
+                                    style="background: #2ed573; color: white; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-size: 0.7em; margin-left: 10px;">
+                                ✓ Handled
+                            </button>
+                        </div>
                     </div>
                 `;
             });
@@ -763,6 +777,103 @@
 
         function checkWebhookStatus() {
             alert(`📊 Webhook System Status:\n\n🔍 Check status at: http://10.0.0.220:3001/health\n\n📂 Log files:\n• /root/clawd/email-webhook.log\n• /root/clawd/hot-leads-alerts.json\n• /root/clawd/URGENT_LEAD_ALERT.json\n\n✅ System is running and ready!\nWaiting for email notifications to process.`);
+        }
+
+        // Dismiss individual alert
+        async function dismissAlert(alertId) {
+            if (!confirm('Mark this lead as handled?\n\nThis will remove it from your dashboard.')) {
+                return;
+            }
+            
+            try {
+                const response = await fetch(`http://10.0.0.220:3001/api/dismiss/${alertId}`, {
+                    method: 'POST'
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    // Remove from display immediately
+                    const alertElement = document.getElementById(`alert-${alertId}`);
+                    if (alertElement) {
+                        alertElement.style.transition = 'opacity 0.3s';
+                        alertElement.style.opacity = '0';
+                        setTimeout(() => {
+                            alertElement.remove();
+                            // Check if any alerts left
+                            const alertsList = document.getElementById('liveAlertsList');
+                            if (alertsList.children.length === 0) {
+                                hideLiveAlerts();
+                            }
+                        }, 300);
+                    }
+                    
+                    // Refresh stats
+                    fetchDashboardStats();
+                    
+                    // Show success message briefly
+                    showMessage('✅ Lead marked as handled', 'success');
+                } else {
+                    showMessage('❌ Failed to dismiss alert', 'error');
+                }
+                
+            } catch (error) {
+                console.error('Error dismissing alert:', error);
+                showMessage('❌ Network error - alert not dismissed', 'error');
+            }
+        }
+
+        // Clear all alerts
+        async function clearAllAlerts() {
+            if (!confirm('Clear all lead alerts?\n\nThis will remove all current alerts from your dashboard.')) {
+                return;
+            }
+            
+            try {
+                const response = await fetch('http://10.0.0.220:3001/api/clear-all', {
+                    method: 'POST'
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    hideLiveAlerts();
+                    fetchDashboardStats();
+                    showMessage('✅ All alerts cleared', 'success');
+                } else {
+                    showMessage('❌ Failed to clear alerts', 'error');
+                }
+                
+            } catch (error) {
+                console.error('Error clearing alerts:', error);
+                showMessage('❌ Network error - alerts not cleared', 'error');
+            }
+        }
+
+        // Show temporary message
+        function showMessage(message, type = 'info') {
+            const messageDiv = document.createElement('div');
+            messageDiv.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 10px 20px;
+                border-radius: 5px;
+                color: white;
+                font-weight: bold;
+                z-index: 10000;
+                transition: opacity 0.3s;
+                background: ${type === 'success' ? '#2ed573' : type === 'error' ? '#ff4757' : '#5a67d8'};
+            `;
+            messageDiv.textContent = message;
+            document.body.appendChild(messageDiv);
+            
+            setTimeout(() => {
+                messageDiv.style.opacity = '0';
+                setTimeout(() => {
+                    document.body.removeChild(messageDiv);
+                }, 300);
+            }, 3000);
         }
 
         function logout() {
