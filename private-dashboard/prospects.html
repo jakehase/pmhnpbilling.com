@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PMHNP Prospects Database - Private</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .header h1 {
+            color: #5a67d8;
+            font-size: 1.5em;
+        }
+        
+        .header-stats {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-box {
+            text-align: center;
+            padding: 10px 15px;
+            background: #f8f9ff;
+            border-radius: 8px;
+        }
+        
+        .stat-number {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #5a67d8;
+        }
+        
+        .stat-label {
+            font-size: 0.8em;
+            color: #666;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .nav-link {
+            padding: 8px 15px;
+            background: #5a67d8;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+        
+        .nav-link:hover {
+            background: #4c51bf;
+        }
+        
+        .filters {
+            background: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 8px 16px;
+            border: 2px solid #ddd;
+            background: white;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: all 0.3s;
+        }
+        
+        .filter-btn:hover {
+            border-color: #5a67d8;
+        }
+        
+        .filter-btn.active {
+            background: #5a67d8;
+            color: white;
+            border-color: #5a67d8;
+        }
+        
+        .filter-btn.high { border-left: 4px solid #ff4757; }
+        .filter-btn.medium { border-left: 4px solid #ffa502; }
+        .filter-btn.low { border-left: 4px solid #747d8c; }
+        
+        .prospects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 20px;
+        }
+        
+        .prospect-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .prospect-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+        }
+        
+        .prospect-card.high { border-top: 4px solid #ff4757; }
+        .prospect-card.medium { border-top: 4px solid #ffa502; }
+        .prospect-card.low { border-top: 4px solid #747d8c; }
+        
+        .prospect-card.contacted {
+            opacity: 0.7;
+        }
+        
+        .card-header {
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .prospect-name {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .prospect-location {
+            font-size: 0.9em;
+            color: #666;
+        }
+        
+        .score-badge {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        
+        .score-badge.high { background: linear-gradient(135deg, #ff4757, #ff6b81); }
+        .score-badge.medium { background: linear-gradient(135deg, #ffa502, #ffbe76); }
+        .score-badge.low { background: linear-gradient(135deg, #747d8c, #a4b0be); }
+        
+        .card-body {
+            padding: 15px 20px;
+        }
+        
+        .practice-name {
+            font-weight: 600;
+            color: #5a67d8;
+            margin-bottom: 10px;
+        }
+        
+        .info-row {
+            display: flex;
+            align-items: center;
+            margin: 8px 0;
+            font-size: 0.9em;
+        }
+        
+        .info-icon {
+            width: 20px;
+            margin-right: 10px;
+            text-align: center;
+        }
+        
+        .specialties {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin: 10px 0;
+        }
+        
+        .specialty-tag {
+            background: #e8f5e8;
+            color: #2ed573;
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-size: 0.75em;
+        }
+        
+        .notes {
+            background: #f8f9ff;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 10px;
+            font-style: italic;
+        }
+        
+        .card-actions {
+            padding: 15px 20px;
+            background: #f8f9ff;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .action-btn {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.85em;
+            font-weight: 600;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .btn-linkedin {
+            background: #0077b5;
+            color: white;
+        }
+        
+        .btn-linkedin:hover {
+            background: #005885;
+        }
+        
+        .btn-copy {
+            background: #5a67d8;
+            color: white;
+        }
+        
+        .btn-copy:hover {
+            background: #4c51bf;
+        }
+        
+        .btn-website {
+            background: #2ed573;
+            color: white;
+        }
+        
+        .btn-website:hover {
+            background: #26ae60;
+        }
+        
+        .btn-contacted {
+            background: #747d8c;
+            color: white;
+        }
+        
+        .btn-contacted:hover {
+            background: #57606f;
+        }
+        
+        .btn-contacted.done {
+            background: #2ed573;
+        }
+        
+        .message-preview {
+            display: none;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+            border: 2px solid #5a67d8;
+            font-size: 0.85em;
+        }
+        
+        .message-preview.visible {
+            display: block;
+        }
+        
+        .message-preview textarea {
+            width: 100%;
+            min-height: 100px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            font-family: inherit;
+            margin-top: 10px;
+            resize: vertical;
+        }
+        
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #2ed573;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            z-index: 1000;
+            transform: translateX(150%);
+            transition: transform 0.3s;
+        }
+        
+        .toast.visible {
+            transform: translateX(0);
+        }
+        
+        @media (max-width: 768px) {
+            .prospects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .filters {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <h1>🎯 PMHNP Prospects Database</h1>
+                <p style="color: #666; margin-top: 5px;">Real prospects ready for outreach</p>
+            </div>
+            <div class="header-stats" id="headerStats">
+                <!-- Stats loaded dynamically -->
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">📊 Dashboard</a>
+                <a href="resources/" class="nav-link">📋 Resources</a>
+            </div>
+        </div>
+
+        <div class="filters">
+            <strong>Filter:</strong>
+            <button class="filter-btn active" onclick="filterProspects('all')">All</button>
+            <button class="filter-btn high" onclick="filterProspects('high')">🔥 High Priority</button>
+            <button class="filter-btn medium" onclick="filterProspects('medium')">⭐ Medium Priority</button>
+            <button class="filter-btn low" onclick="filterProspects('low')">📋 Low Priority</button>
+            <button class="filter-btn" onclick="filterProspects('new')">🆕 Not Contacted</button>
+            <button class="filter-btn" onclick="filterProspects('contacted')">✅ Contacted</button>
+        </div>
+
+        <div class="prospects-grid" id="prospectsGrid">
+            <!-- Prospects loaded dynamically -->
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script>
+        let prospectsData = null;
+        let contactedProspects = JSON.parse(localStorage.getItem('contactedProspects') || '[]');
+
+        // Load prospects data
+        async function loadProspects() {
+            try {
+                const response = await fetch('prospects.json');
+                prospectsData = await response.json();
+                renderStats();
+                renderProspects('all');
+            } catch (error) {
+                console.error('Error loading prospects:', error);
+                document.getElementById('prospectsGrid').innerHTML = 
+                    '<p style="color: white; text-align: center;">Error loading prospects. Please refresh.</p>';
+            }
+        }
+
+        // Render header stats
+        function renderStats() {
+            const stats = document.getElementById('headerStats');
+            const high = prospectsData.prospects.filter(p => p.priority === 'high').length;
+            const medium = prospectsData.prospects.filter(p => p.priority === 'medium').length;
+            const low = prospectsData.prospects.filter(p => p.priority === 'low').length;
+            const contacted = contactedProspects.length;
+
+            stats.innerHTML = `
+                <div class="stat-box">
+                    <div class="stat-number">${prospectsData.totalProspects}</div>
+                    <div class="stat-label">Total Prospects</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" style="color: #ff4757;">${high}</div>
+                    <div class="stat-label">High Priority</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" style="color: #ffa502;">${medium}</div>
+                    <div class="stat-label">Medium Priority</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" style="color: #2ed573;">${contacted}</div>
+                    <div class="stat-label">Contacted</div>
+                </div>
+            `;
+        }
+
+        // Filter prospects
+        function filterProspects(filter) {
+            // Update active button
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            renderProspects(filter);
+        }
+
+        // Render prospects grid
+        function renderProspects(filter) {
+            const grid = document.getElementById('prospectsGrid');
+            let prospects = prospectsData.prospects;
+
+            // Apply filter
+            if (filter === 'high' || filter === 'medium' || filter === 'low') {
+                prospects = prospects.filter(p => p.priority === filter);
+            } else if (filter === 'contacted') {
+                prospects = prospects.filter(p => contactedProspects.includes(p.id));
+            } else if (filter === 'new') {
+                prospects = prospects.filter(p => !contactedProspects.includes(p.id));
+            }
+
+            // Sort by score descending
+            prospects.sort((a, b) => b.score - a.score);
+
+            grid.innerHTML = prospects.map(prospect => createProspectCard(prospect)).join('');
+        }
+
+        // Create prospect card HTML
+        function createProspectCard(prospect) {
+            const isContacted = contactedProspects.includes(prospect.id);
+            const template = prospectsData.templates[prospect.template];
+            const personalizedMessage = template
+                .replace('[Name]', prospect.name.split(',')[0])
+                .replace('[Location]', prospect.location)
+                .replace('[Practice]', prospect.practice)
+                .replace('[Specialty]', prospect.specialties[0] || 'psychiatric care');
+
+            return `
+                <div class="prospect-card ${prospect.priority} ${isContacted ? 'contacted' : ''}" id="card-${prospect.id}">
+                    <div class="card-header">
+                        <div>
+                            <div class="prospect-name">${prospect.name}</div>
+                            <div class="prospect-location">📍 ${prospect.location}</div>
+                        </div>
+                        <div class="score-badge ${prospect.priority}">${prospect.score}/10</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="practice-name">🏥 ${prospect.practice}</div>
+                        
+                        <div class="info-row">
+                            <span class="info-icon">📅</span>
+                            <span>${prospect.yearsInPractice} years in practice</span>
+                        </div>
+                        
+                        ${prospect.phone ? `<div class="info-row">
+                            <span class="info-icon">📞</span>
+                            <span>${prospect.phone}</span>
+                        </div>` : ''}
+                        
+                        ${prospect.email ? `<div class="info-row">
+                            <span class="info-icon">✉️</span>
+                            <span>${prospect.email}</span>
+                        </div>` : ''}
+                        
+                        <div class="specialties">
+                            ${prospect.specialties.map(s => `<span class="specialty-tag">${s}</span>`).join('')}
+                        </div>
+                        
+                        <div class="notes">
+                            💡 ${prospect.notes}
+                        </div>
+                        
+                        <div class="message-preview" id="msg-${prospect.id}">
+                            <strong>📝 Connection Message (Template ${prospect.template}):</strong>
+                            <textarea id="textarea-${prospect.id}" onclick="event.stopPropagation()">${personalizedMessage}</textarea>
+                            <button class="action-btn btn-copy" onclick="copyMessage('${prospect.id}'); event.stopPropagation();">
+                                📋 Copy Message
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="${prospect.linkedin}" target="_blank" class="action-btn btn-linkedin">
+                            💼 Open LinkedIn
+                        </a>
+                        ${prospect.website ? `<a href="${prospect.website}" target="_blank" class="action-btn btn-website">
+                            🌐 Website
+                        </a>` : ''}
+                        <button class="action-btn btn-copy" onclick="toggleMessage('${prospect.id}')">
+                            ✉️ Show Message
+                        </button>
+                        <button class="action-btn btn-contacted ${isContacted ? 'done' : ''}" onclick="markContacted('${prospect.id}')">
+                            ${isContacted ? '✅ Contacted' : '📤 Mark Contacted'}
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Toggle message preview
+        function toggleMessage(id) {
+            const msgDiv = document.getElementById(`msg-${id}`);
+            msgDiv.classList.toggle('visible');
+        }
+
+        // Copy message to clipboard
+        function copyMessage(id) {
+            const textarea = document.getElementById(`textarea-${id}`);
+            textarea.select();
+            document.execCommand('copy');
+            showToast('📋 Message copied to clipboard!');
+        }
+
+        // Mark prospect as contacted
+        function markContacted(id) {
+            if (contactedProspects.includes(id)) {
+                contactedProspects = contactedProspects.filter(p => p !== id);
+                showToast('❌ Removed from contacted');
+            } else {
+                contactedProspects.push(id);
+                showToast('✅ Marked as contacted!');
+            }
+            localStorage.setItem('contactedProspects', JSON.stringify(contactedProspects));
+            renderStats();
+            
+            // Update button
+            const card = document.getElementById(`card-${id}`);
+            if (card) {
+                const btn = card.querySelector('.btn-contacted');
+                if (contactedProspects.includes(id)) {
+                    btn.classList.add('done');
+                    btn.innerHTML = '✅ Contacted';
+                    card.classList.add('contacted');
+                } else {
+                    btn.classList.remove('done');
+                    btn.innerHTML = '📤 Mark Contacted';
+                    card.classList.remove('contacted');
+                }
+            }
+        }
+
+        // Show toast notification
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('visible');
+            setTimeout(() => {
+                toast.classList.remove('visible');
+            }, 3000);
+        }
+
+        // Password check (same as main dashboard)
+        function checkPassword() {
+            const password = localStorage.getItem('dashboardAuth');
+            if (password !== 'Dashboard2024!') {
+                const userPassword = prompt('🔐 Private Dashboard Access Required\n\nPassword:');
+                if (userPassword === 'Dashboard2024!') {
+                    localStorage.setItem('dashboardAuth', userPassword);
+                    return true;
+                } else {
+                    alert('❌ Access Denied');
+                    window.location.href = 'https://pmhnpbilling.com';
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        // Initialize
+        window.addEventListener('load', function() {
+            if (!checkPassword()) return;
+            loadProspects();
+        });
+    </script>
+</body>
+</html>

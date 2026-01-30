@@ -326,11 +326,16 @@
         <div class="header">
             <h1><span class="status-indicator"></span>PMHNP Lead Generation Command Center</h1>
             <p>🔐 Private Dashboard - Jake's Eyes Only</p>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; flex-wrap: wrap; gap: 10px;">
                 <div class="time-stamp" id="lastUpdate">Last Updated: Loading...</div>
-                <button onclick="logout()" style="background: #ff4757; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 0.8em;">
-                    🔒 Logout
-                </button>
+                <div style="display: flex; gap: 10px;">
+                    <a href="prospects.html" style="background: #2ed573; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 0.8em; text-decoration: none;">
+                        🎯 View Prospects
+                    </a>
+                    <button onclick="logout()" style="background: #ff4757; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 0.8em;">
+                        🔒 Logout
+                    </button>
+                </div>
             </div>
         </div>
 
