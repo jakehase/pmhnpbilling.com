@@ -38,6 +38,22 @@
   ],
   "today": [
     {
+      "id": "task-1769803562047",
+      "text": "Review 2 new prospects found by Prospect Hunter",
+      "completed": false,
+      "addedBy": "Prospect Hunter",
+      "addedAt": "2026-01-30T20:06:02.047Z",
+      "priority": "today"
+    },
+    {
+      "id": "task-1769803452087",
+      "text": "Review 22 new prospects found by Prospect Hunter",
+      "completed": false,
+      "addedBy": "Prospect Hunter",
+      "addedAt": "2026-01-30T20:04:12.087Z",
+      "priority": "today"
+    },
+    {
       "id": "task-1769802791855",
       "completed": false,
       "addedAt": "2026-01-30T19:53:11.855Z",
