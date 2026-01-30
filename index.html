@@ -75,6 +75,23 @@
         }
         .nav-links a:hover { color: #2563eb; }
         
+        .nav-intake-btn {
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #6b7280;
+            padding: 0.4rem 0.9rem;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            transition: all 0.2s;
+            margin-left: 1rem;
+        }
+        .nav-intake-btn:hover {
+            color: #2563eb;
+            border-color: #2563eb;
+            background: rgba(37, 99, 235, 0.05);
+        }
+        
         /* Hamburger Menu */
         .menu-toggle {
             display: none;
@@ -118,6 +135,8 @@
             transition: color 0.2s;
         }
         .mobile-menu a:hover { color: #2563eb; }
+        .mobile-menu-divider { height: 1px; background: #e5e7eb; width: 100%; margin: 0.5rem 0; }
+        .mobile-intake-link { font-size: 0.9rem; color: #9ca3af !important; }
         
         /* Hero Section */
         .hero-wrapper {
@@ -151,6 +170,51 @@
             width: 100%;
             position: relative;
             z-index: 1;
+        }
+        .hero-logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .hero-logo svg {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
+        }
+        .hero-logo-text {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 1.75rem;
+        }
+        .hero-logo-text .pmh {
+            font-weight: 700;
+            background: linear-gradient(135deg, #1e40af, #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 2px;
+        }
+        .hero-logo-text .np {
+            font-weight: 700;
+            background: linear-gradient(135deg, #1e40af, #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-logo-text .dot {
+            width: 6px;
+            height: 6px;
+            background: #60a5fa;
+            border-radius: 50%;
+            margin: 0 0.15rem;
+        }
+        .hero-logo-text .billing {
+            font-weight: 500;
+            color: #374151;
         }
         .hero h1 {
             font-size: 3.25rem;
@@ -303,6 +367,7 @@
         }
         @media (max-width: 768px) {
             .nav-links { display: none; }
+            .nav-intake-btn { display: none; }
             .menu-toggle { display: flex; }
             .hero h1 { font-size: 2.5rem; }
             .hero p { font-size: 1.1rem; }
@@ -339,6 +404,7 @@
             <li><a href="blog/">Blog</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+        <a href="https://intake.pmhnpbilling.com/s/cmkxjzgqu0001lb01grphh2qk" target="_blank" class="nav-intake-btn">Client Portal</a>
         <div class="menu-toggle" onclick="toggleMenu()">
             <span></span><span></span><span></span>
         </div>
@@ -349,11 +415,24 @@
         <a href="#about" onclick="toggleMenu()">About</a>
         <a href="blog/" onclick="toggleMenu()">Blog</a>
         <a href="#contact" onclick="toggleMenu()">Contact</a>
+        <div class="mobile-menu-divider"></div>
+        <a href="https://intake.pmhnpbilling.com/s/cmkxjzgqu0001lb01grphh2qk" target="_blank" onclick="toggleMenu()" class="mobile-intake-link">Client Portal</a>
     </div>
 
     <div class="hero-wrapper">
         <div class="hero-bg"></div>
         <section class="hero">
+            <div class="hero-logo">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs><linearGradient id="hero-logo-grad" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#2563eb"/><stop offset="1" stop-color="#0ea5e9"/></linearGradient></defs>
+                    <rect width="48" height="48" rx="12" fill="url(#hero-logo-grad)"/>
+                    <path d="M10 12h9a6 6 0 010 12h-9V12zm3 3v6h6a3 3 0 000-6h-6z" fill="white"/>
+                    <path d="M26 12h9a6 6 0 014.24 10.24L26 36V12zm3 3v12.5l7-7.5a3 3 0 00-4-4h-3z" fill="white" fill-opacity="0.85"/>
+                </svg>
+                <span class="hero-logo-text">
+                    <span class="pmh">PMH</span><span class="np">NP</span><span class="dot"></span><span class="billing">Billing</span>
+                </span>
+            </div>
             <h1>Billing services for <span>psychiatric providers</span></h1>
             <p>I handle claims, prior authorizations, and revenue cycle management so you can focus on patient care.</p>
             <a href="#contact" class="btn">
@@ -443,39 +522,13 @@
         </div>
     </section>
 
-    <!-- Client Portal Section -->
-    <section id="portal" class="portal" style="background: #fff; padding: 5rem 2rem;">
-        <div style="max-width: 1100px; margin: 0 auto; text-align: center;">
-            <div class="section-header fade-in">
-                <h2 style="font-size: 2.5rem; font-weight: 600; color: #111827; margin-bottom: 1.5rem; letter-spacing: -0.025em;">Client Portal</h2>
-                <p style="color: #6b7280; font-size: 1.25rem; max-width: 600px; margin: 0 auto 3rem;">Secure access for current clients to view reports, submit documents, and manage billing information.</p>
-            </div>
-            <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 16px; padding: 3rem; max-width: 500px; margin: 0 auto;">
-                <div style="margin-bottom: 2rem;">
-                    <svg style="width: 48px; height: 48px; color: #2563eb; margin: 0 auto 1rem;" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd"></path>
-                    </svg>
-                    <h3 style="font-size: 1.25rem; font-weight: 600; color: #111827; margin-bottom: 1rem;">Secure Login</h3>
-                    <p style="color: #6b7280; font-size: 0.95rem; line-height: 1.6;">Privacy-Focused Workflow portal for reviewing billing statements, submitting documents, and accessing reports.</p>
-                </div>
-                <a href="#" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #2563eb; color: #fff; padding: 0.875rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 500; transition: background-color 0.2s;" onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#2563eb'">
-                    Access Portal
-                    <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                    </svg>
-                </a>
-                <p style="margin-top: 1rem; font-size: 0.8rem; color: #9ca3af;">For current clients only</p>
-            </div>
-        </div>
-    </section>
-
     <section id="contact" class="contact">
         <div class="contact-wrapper">
             <div class="contact-info fade-in">
                 <h2>Let's talk</h2>
                 <p>Interested in working together? Fill out the form and I'll respond within one business day to discuss your practice's needs.</p>
             </div>
-            <form class="contact-form fade-in" action="https://formspree.io/f/your-form-id" method="POST">
+            <form class="contact-form fade-in" action="https://formspree.io/f/xkorlzor" method="POST">
                 <div class="form-row">
                     <div class="form-group"><label for="name">Name</label><input type="text" id="name" name="name" required></div>
                     <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" required></div>
@@ -523,4 +576,3 @@
     </script>
 </body>
 </html>
-<!-- Cache bust: Fri Jan 30 10:34:04 CST 2026 -->
