@@ -1,0 +1,15 @@
+AuthType Basic
+AuthName "PMHNP Lead Dashboard - Authorized Access Only"
+AuthUserFile /root/clawd/pmnhp-billing/private-dashboard/.htpasswd
+Require valid-user
+
+# Additional security headers
+Header always set X-Frame-Options "SAMEORIGIN"
+Header always set X-Content-Type-Options "nosniff"
+Header always set X-XSS-Protection "1; mode=block"
+
+# Prevent directory browsing
+Options -Indexes
+
+# Disable server signature
+ServerSignature Off
