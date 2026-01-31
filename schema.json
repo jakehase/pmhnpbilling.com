@@ -1,0 +1,64 @@
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "PMHNP Billing",
+  "description": "Professional billing services for Psychiatric Mental Health Nurse Practitioners in the Chicago area",
+  "url": "https://pmhnpbilling.com",
+  "telephone": "+1-XXX-XXX-XXXX",
+  "email": "contact@pmhnpbilling.com",
+  "areaServed": {
+    "@type": "City",
+    "name": "Chicago",
+    "containedInPlace": {
+      "@type": "State",
+      "name": "Illinois"
+    }
+  },
+  "serviceType": [
+    "Medical Billing Services",
+    "Claims Management",
+    "Prior Authorization Services",
+    "Revenue Cycle Management"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "PMHNP Billing Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Claims Management",
+          "description": "Accurate claim submission with thorough follow-up and tracking"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Prior Authorizations",
+          "description": "Timely submission and tracking of prior authorizations"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Payment Posting",
+          "description": "Accurate posting of insurance and patient payments"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Denial Management",
+          "description": "Thorough review and appeals process for denied claims"
+        }
+      }
+    ]
+  },
+  "sameAs": [
+    "https://github.com/jakehase/pmhnpbilling.com"
+  ]
+}
