@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-01-31T01:24:16.710Z",
+  "lastUpdated": "2026-01-31T01:44:22.821Z",
   "totalProspects": 6,
   "prospects": [
     {
@@ -8,7 +8,7 @@
       "location": "Naperville, IL",
       "practice": "Kim Behavioral Health",
       "practiceType": "Solo Practice",
-      "linkedin": "https://www.linkedin.com/in/david-kim-pmhnp",
+      "linkedin": null,
       "website": null,
       "specialties": [
         "ADHD",
@@ -33,7 +33,7 @@
       "location": "Arlington Heights, IL",
       "practice": "Thompson Psychiatric Care",
       "practiceType": "Solo Practice",
-      "linkedin": "https://www.linkedin.com/in/amanda-thompson-pmhnp",
+      "linkedin": null,
       "website": null,
       "specialties": [
         "Anxiety",
@@ -58,7 +58,7 @@
       "location": "Elgin, IL",
       "practice": "Rodriguez Mental Wellness",
       "practiceType": "Solo Practice",
-      "linkedin": "https://www.linkedin.com/in/maria-rodriguez-pmhnp",
+      "linkedin": null,
       "website": null,
       "specialties": [
         "Trauma",
@@ -83,7 +83,7 @@
       "location": "Buffalo Grove, IL",
       "practice": "Chen Mental Health Services",
       "practiceType": "Solo Practice",
-      "linkedin": "https://www.linkedin.com/in/alex-chen-pmhnp",
+      "linkedin": null,
       "website": null,
       "specialties": [
         "Child and Adolescent Psychiatry",
@@ -108,7 +108,7 @@
       "location": "Palatine, IL",
       "practice": "Johnson Behavioral Health",
       "practiceType": "Solo Practice",
-      "linkedin": "https://www.linkedin.com/in/nicole-johnson-pmhnp",
+      "linkedin": null,
       "website": null,
       "specialties": [
         "Women's Mental Health",
@@ -133,7 +133,7 @@
       "location": "Des Plaines, IL",
       "practice": "Williams Psychiatric Services",
       "practiceType": "Solo Practice",
-      "linkedin": "https://www.linkedin.com/in/brian-williams-pmhnp",
+      "linkedin": null,
       "website": null,
       "specialties": [
         "Addiction",
