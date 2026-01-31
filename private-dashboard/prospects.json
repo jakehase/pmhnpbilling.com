@@ -1,32 +1,7 @@
 {
-  "lastUpdated": "2026-01-31T01:10:35.061Z",
-  "totalProspects": 7,
+  "lastUpdated": "2026-01-31T01:24:16.710Z",
+  "totalProspects": 6,
   "prospects": [
-    {
-      "id": "jessica-ramirez-2024",
-      "name": "Jessica Ramirez, PMHNP",
-      "location": "Schaumburg, IL",
-      "practice": "Ramirez Mental Health",
-      "practiceType": "Solo Practice",
-      "linkedin": "https://www.linkedin.com/in/jessica-ramirez-pmhnp",
-      "website": null,
-      "specialties": [
-        "Anxiety",
-        "Depression",
-        "ADHD",
-        "Postpartum Depression"
-      ],
-      "yearsInPractice": "1-2",
-      "phone": null,
-      "email": null,
-      "score": 9,
-      "priority": "high",
-      "onlinePresence": "LinkedIn profile shows 2024 graduation from Rush University PMHNP program",
-      "notes": "Newly graduated PMHNP from Rush University (2024). Starting solo practice in Schaumburg. Specializes in women's mental health and postpartum care.",
-      "action": "Send LinkedIn connection request",
-      "template": "A",
-      "status": "new"
-    },
     {
       "id": "david-kim-2023",
       "name": "David Kim, PMHNP",

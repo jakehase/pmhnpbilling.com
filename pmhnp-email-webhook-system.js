@@ -14,6 +14,9 @@ const wss = new WebSocket.Server({ server });
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 
+// Serve dashboard directly from API server (avoids HTTPS mixed content issues)
+app.use('/dashboard', express.static('/root/clawd/pmnhp-billing/private-dashboard'));
+
 // Add CORS headers for dashboard API access
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');

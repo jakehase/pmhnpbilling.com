@@ -393,17 +393,20 @@
         let prospectsData = null;
         let contactedProspects = JSON.parse(localStorage.getItem('contactedProspects') || '[]');
 
+        // API base URL - use local server if accessing from there, otherwise use direct IP
+        const API_BASE = window.location.port === '3001' ? '' : 'http://10.0.0.220:3001';
+        
         // Load prospects data from API (not GitHub) so deletes persist
         async function loadProspects() {
             try {
-                const response = await fetch('http://10.0.0.220:3001/api/prospects');
+                const response = await fetch(`${API_BASE}/api/prospects`);
                 prospectsData = await response.json();
                 renderStats();
                 renderProspects('all');
             } catch (error) {
                 console.error('Error loading prospects:', error);
                 document.getElementById('prospectsGrid').innerHTML = 
-                    '<p style="color: white; text-align: center;">Error loading prospects. Make sure the API server is running.</p>';
+                    '<p style="color: white; text-align: center;">Error loading prospects. Access via <a href="http://10.0.0.220:3001/dashboard/prospects.html" style="color: #ffd700;">http://10.0.0.220:3001/dashboard/prospects.html</a> instead.</p>';
             }
         }
 
@@ -597,7 +600,7 @@
             }
             
             try {
-                const response = await fetch(`http://10.0.0.220:3001/api/prospects/${id}`, {
+                const response = await fetch(`${API_BASE}/api/prospects/${id}`, {
                     method: 'DELETE'
                 });
                 
