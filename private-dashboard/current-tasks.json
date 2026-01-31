@@ -40,24 +40,27 @@
     {
       "id": "task-1769803562047",
       "text": "Review 2 new prospects found by Prospect Hunter",
-      "completed": false,
+      "completed": true,
       "addedBy": "Prospect Hunter",
       "addedAt": "2026-01-30T20:06:02.047Z",
-      "priority": "today"
+      "priority": "today",
+      "completedAt": "2026-01-31T01:10:07.849Z"
     },
     {
       "id": "task-1769803452087",
       "text": "Review 22 new prospects found by Prospect Hunter",
-      "completed": false,
+      "completed": true,
       "addedBy": "Prospect Hunter",
       "addedAt": "2026-01-30T20:04:12.087Z",
-      "priority": "today"
+      "priority": "today",
+      "completedAt": "2026-01-31T01:10:07.055Z"
     },
     {
       "id": "task-1769802791855",
-      "completed": false,
+      "completed": true,
       "addedAt": "2026-01-30T19:53:11.855Z",
-      "priority": "today"
+      "priority": "today",
+      "completedAt": "2026-01-31T01:10:09.177Z"
     },
     {
       "id": "identify-prospects",
@@ -71,10 +74,11 @@
     {
       "id": "connection-requests",
       "text": "Send 3 Connection Requests - Use personalized templates",
-      "completed": false,
+      "completed": true,
       "addedBy": "system",
       "addedAt": "2026-01-30T18:38:28.929Z",
-      "priority": "today"
+      "priority": "today",
+      "completedAt": "2026-01-31T01:10:10.890Z"
     },
     {
       "id": "activate-monitoring",
@@ -87,10 +91,11 @@
     {
       "id": "daily-routine",
       "text": "Establish Daily Routine - Morning/midday/evening checks",
-      "completed": false,
+      "completed": true,
       "addedBy": "system",
       "addedAt": "2026-01-30T18:38:28.929Z",
-      "priority": "today"
+      "priority": "today",
+      "completedAt": "2026-01-31T01:10:12.870Z"
     }
   ],
   "suggested": []

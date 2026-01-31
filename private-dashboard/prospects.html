@@ -393,17 +393,17 @@
         let prospectsData = null;
         let contactedProspects = JSON.parse(localStorage.getItem('contactedProspects') || '[]');
 
-        // Load prospects data
+        // Load prospects data from API (not GitHub) so deletes persist
         async function loadProspects() {
             try {
-                const response = await fetch('prospects.json');
+                const response = await fetch('http://10.0.0.220:3001/api/prospects');
                 prospectsData = await response.json();
                 renderStats();
                 renderProspects('all');
             } catch (error) {
                 console.error('Error loading prospects:', error);
                 document.getElementById('prospectsGrid').innerHTML = 
-                    '<p style="color: white; text-align: center;">Error loading prospects. Please refresh.</p>';
+                    '<p style="color: white; text-align: center;">Error loading prospects. Make sure the API server is running.</p>';
             }
         }
 

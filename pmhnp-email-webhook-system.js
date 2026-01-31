@@ -97,6 +97,22 @@ class PMHNPEmailWebhookSystem {
         app.delete('/api/prospects/:id', (req, res) => {
             this.deleteProspect(req, res);
         });
+
+        // Get all prospects (serve from local file, not GitHub)
+        app.get('/api/prospects', (req, res) => {
+            this.getProspects(req, res);
+        });
+    }
+
+    getProspects(req, res) {
+        try {
+            const prospectsFile = '/root/clawd/pmnhp-billing/private-dashboard/prospects.json';
+            const data = JSON.parse(fs.readFileSync(prospectsFile, 'utf8'));
+            res.json(data);
+        } catch (error) {
+            console.error('Error reading prospects:', error);
+            res.status(500).json({ error: 'Failed to load prospects' });
+        }
     }
 
     deleteProspect(req, res) {
