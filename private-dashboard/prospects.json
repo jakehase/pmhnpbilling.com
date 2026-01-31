@@ -1,139 +1,158 @@
 {
-  "lastUpdated": "2026-01-31T01:50:00.000Z",
+  "lastUpdated": "2026-01-31T03:17:44.918Z",
   "totalProspects": 7,
   "prospects": [
     {
-      "id": 1,
+      "id": "andrew-clavijo",
       "name": "Andrew Clavijo",
-      "title": "Psychiatric Nurse Practitioner, PMHNP",
       "location": "Chicago, IL 60602",
-      "practiceType": "Solo Practice (Virtual)",
-      "graduationYear": 2024,
-      "school": "University of St. Francis",
-      "contact": {
-        "phone": "(773) 985-1486",
-        "email": null,
-        "website": "https://www.psychologytoday.com/us/psychiatrists/andrew-clavijo-chicago-il/1645996"
-      },
-      "linkedin": null,
-      "specialties": ["Mood Disorders", "Anxiety", "Trauma and PTSD"],
-      "notes": "Newly graduated in 2024, offers virtual sessions, accepts insurance through Headway",
-      "verificationStatus": "Verified via Psychology Today",
-      "priority": "High - Recent graduate starting solo practice"
-    },
-    {
-      "id": 2,
-      "name": "Ely Yin (Haoxin 'Eileen' Yin)",
-      "title": "Psychiatric Nurse Practitioner, PMHNP",
-      "location": "Downers Grove, IL 60515 / Chicago, IL 60607",
-      "practiceType": "Solo Practice (Virtual)",
-      "graduationYear": 2023,
-      "school": "Vanderbilt University School of Nursing",
-      "contact": {
-        "phone": "(630) 626-8322",
-        "email": null,
-        "website": "https://www.psychologytoday.com/us/psychiatrists/ely-yin-downers-grove-il/1614899"
-      },
-      "linkedin": null,
-      "specialties": ["ADHD", "Depression", "Anxiety"],
-      "notes": "Recent graduate (2023), offers virtual medication management, works with BlueSky Telepsych",
-      "verificationStatus": "Verified via Psychology Today",
-      "priority": "High - Recent graduate, virtual practice"
-    },
-    {
-      "id": 3,
-      "name": "Angela Jalloh",
-      "title": "Psychiatric Nurse Practitioner, PMHNP",
-      "location": "Chicago, IL 60611",
-      "practiceType": "Solo Practice (Virtual)",
-      "graduationYear": 2023,
-      "school": "Northern Kentucky University",
-      "contact": {
-        "phone": "(872) 295-8870",
-        "email": null,
-        "website": "https://www.psychologytoday.com/us/psychiatrists/angela-jalloh-chicago-il/1428897"
-      },
-      "linkedin": null,
-      "specialties": ["ADHD", "Depression", "Trauma and PTSD"],
-      "notes": "Recent PMHNP graduate (2023) with 21 years RN experience, works with Reparo Health, offers telehealth",
-      "verificationStatus": "Verified via Psychology Today",
-      "priority": "High - Recent graduate, established healthcare background"
-    },
-    {
-      "id": 4,
-      "name": "Michael Bonifacio",
-      "title": "Psychiatric Nurse Practitioner, PMHNP, APRN",
-      "location": "Chicago, IL 60611 / Frankfort, IL 60423",
-      "practiceType": "Beth Psychiatry (Solo Practice)",
-      "graduationYear": 2023,
-      "school": "Chamberlain University",
-      "contact": {
-        "phone": "(773) 985-3539",
-        "email": "contact@bethpsychiatry.com",
-        "website": "https://bethpsychiatry.com/meet-our-providers/michael-bonifacio/"
-      },
-      "linkedin": null,
-      "specialties": ["ADHD", "Depression", "Anxiety"],
-      "notes": "Recent graduate (2023), owns Beth Psychiatry, over 20 years healthcare experience",
-      "verificationStatus": "Verified via Psychology Today and practice website",
-      "priority": "High - Practice owner, recent graduate"
-    },
-    {
-      "id": 5,
-      "name": "Daisy Creatore",
-      "title": "Psychiatric Nurse Practitioner, PMHNP",
-      "location": "Downers Grove, IL 60515 / Naperville, IL 60540",
-      "practiceType": "Solo Practice (Virtual)",
-      "graduationYear": 2023,
-      "school": "Chamberlain University",
-      "contact": {
-        "phone": "(630) 593-0569",
-        "email": null,
-        "website": "https://www.psychologytoday.com/us/psychiatrists/daisy-creatore-downers-grove-il/1383394"
-      },
-      "linkedin": null,
-      "specialties": ["Depression", "ADHD", "Anxiety"],
-      "notes": "Recent graduate (2023), offers virtual sessions, works with BlueSky Telepsych",
-      "verificationStatus": "Verified via Psychology Today",
-      "priority": "High - Recent graduate, virtual practice"
-    },
-    {
-      "id": 6,
-      "name": "Gebreyesus Hidad",
-      "title": "Psychiatric Nurse Practitioner, PMHNP-BC",
-      "location": "Lisle, IL 60532",
-      "practiceType": "LifeStance Health (Group Practice)",
-      "graduationYear": 2023,
-      "school": "University of Illinois",
-      "contact": {
-        "phone": "(331) 261-4919",
-        "email": null,
-        "website": "https://www.psychologytoday.com/us/psychiatrists/gebreyesus-hidad-lisle-il/1551442"
-      },
-      "linkedin": null,
-      "specialties": ["Grief", "Substance Abuse", "Trauma"],
-      "notes": "Recent graduate (2023), works with LifeStance Health, provides telehealth services",
-      "verificationStatus": "Verified via Psychology Today",
-      "priority": "Medium - Recent graduate but in group practice"
-    },
-    {
-      "id": 7,
-      "name": "Ron McCaslin",
-      "title": "Psychiatric Nurse Practitioner",
-      "location": "Batavia, IL",
+      "practice": "Solo Practice (Virtual)",
       "practiceType": "Solo Practice",
-      "graduationYear": 2023,
-      "school": "University of St. Francis",
-      "contact": {
-        "phone": null,
-        "email": null,
-        "website": "https://www.psychologytoday.com/us/psychiatrists/ron-mccaslin-batavia-il/1461045"
-      },
       "linkedin": null,
-      "specialties": ["General Psychiatry"],
+      "website": "https://www.psychologytoday.com/us/psychiatrists/andrew-clavijo-chicago-il/1645996",
+      "phone": "(773) 985-1486",
+      "email": null,
+      "specialties": [
+        "Mood Disorders",
+        "Anxiety",
+        "Trauma and PTSD"
+      ],
+      "yearsInPractice": "1-2",
+      "score": 9,
+      "priority": "high",
+      "notes": "Newly graduated in 2024, offers virtual sessions, accepts insurance through Headway",
+      "template": "A",
+      "status": "new"
+    },
+    {
+      "id": "ely-yin-haoxin-eileen-yin",
+      "name": "Ely Yin (Haoxin 'Eileen' Yin)",
+      "location": "Downers Grove, IL 60515 / Chicago, IL 60607",
+      "practice": "Solo Practice (Virtual)",
+      "practiceType": "Solo Practice",
+      "linkedin": null,
+      "website": "https://www.psychologytoday.com/us/psychiatrists/ely-yin-downers-grove-il/1614899",
+      "phone": "(630) 626-8322",
+      "email": null,
+      "specialties": [
+        "ADHD",
+        "Depression",
+        "Anxiety"
+      ],
+      "yearsInPractice": "1-2",
+      "score": 9,
+      "priority": "high",
+      "notes": "Recent graduate (2023), offers virtual medication management, works with BlueSky Telepsych",
+      "template": "A",
+      "status": "new"
+    },
+    {
+      "id": "angela-jalloh",
+      "name": "Angela Jalloh",
+      "location": "Chicago, IL 60611",
+      "practice": "Solo Practice (Virtual)",
+      "practiceType": "Solo Practice",
+      "linkedin": null,
+      "website": "https://www.psychologytoday.com/us/psychiatrists/angela-jalloh-chicago-il/1428897",
+      "phone": "(872) 295-8870",
+      "email": null,
+      "specialties": [
+        "ADHD",
+        "Depression",
+        "Trauma and PTSD"
+      ],
+      "yearsInPractice": "1-2",
+      "score": 9,
+      "priority": "high",
+      "notes": "Recent PMHNP graduate (2023) with 21 years RN experience, works with Reparo Health, offers telehealth",
+      "template": "A",
+      "status": "new"
+    },
+    {
+      "id": "michael-bonifacio",
+      "name": "Michael Bonifacio",
+      "location": "Chicago, IL 60611 / Frankfort, IL 60423",
+      "practice": "Beth Psychiatry (Solo Practice)",
+      "practiceType": "Solo Practice",
+      "linkedin": null,
+      "website": "https://bethpsychiatry.com/meet-our-providers/michael-bonifacio/",
+      "phone": "(773) 985-3539",
+      "email": "contact@bethpsychiatry.com",
+      "specialties": [
+        "ADHD",
+        "Depression",
+        "Anxiety"
+      ],
+      "yearsInPractice": "1-2",
+      "score": 9,
+      "priority": "high",
+      "notes": "Recent graduate (2023), owns Beth Psychiatry, over 20 years healthcare experience",
+      "template": "A",
+      "status": "new"
+    },
+    {
+      "id": "daisy-creatore",
+      "name": "Daisy Creatore",
+      "location": "Downers Grove, IL 60515 / Naperville, IL 60540",
+      "practice": "Solo Practice (Virtual)",
+      "practiceType": "Solo Practice",
+      "linkedin": null,
+      "website": "https://www.psychologytoday.com/us/psychiatrists/daisy-creatore-downers-grove-il/1383394",
+      "phone": "(630) 593-0569",
+      "email": null,
+      "specialties": [
+        "Depression",
+        "ADHD",
+        "Anxiety"
+      ],
+      "yearsInPractice": "1-2",
+      "score": 9,
+      "priority": "high",
+      "notes": "Recent graduate (2023), offers virtual sessions, works with BlueSky Telepsych",
+      "template": "A",
+      "status": "new"
+    },
+    {
+      "id": "gebreyesus-hidad",
+      "name": "Gebreyesus Hidad",
+      "location": "Lisle, IL 60532",
+      "practice": "LifeStance Health (Group Practice)",
+      "practiceType": "Solo Practice",
+      "linkedin": null,
+      "website": "https://www.psychologytoday.com/us/psychiatrists/gebreyesus-hidad-lisle-il/1551442",
+      "phone": "(331) 261-4919",
+      "email": null,
+      "specialties": [
+        "Grief",
+        "Substance Abuse",
+        "Trauma"
+      ],
+      "yearsInPractice": "1-2",
+      "score": 7,
+      "priority": "medium",
+      "notes": "Recent graduate (2023), works with LifeStance Health, provides telehealth services",
+      "template": "A",
+      "status": "new"
+    },
+    {
+      "id": "ron-mccaslin",
+      "name": "Ron McCaslin",
+      "location": "Batavia, IL",
+      "practice": "Solo Practice",
+      "practiceType": "Solo Practice",
+      "linkedin": null,
+      "website": "https://www.psychologytoday.com/us/psychiatrists/ron-mccaslin-batavia-il/1461045",
+      "phone": null,
+      "email": null,
+      "specialties": [
+        "General Psychiatry"
+      ],
+      "yearsInPractice": "1-2",
+      "score": 9,
+      "priority": "high",
       "notes": "Recent graduate (2023), licensed in Illinois with 14 years healthcare experience",
-      "verificationStatus": "Verified via Psychology Today",
-      "priority": "High - Recent graduate, potential solo practice"
+      "template": "A",
+      "status": "new"
     }
   ],
   "templates": {
