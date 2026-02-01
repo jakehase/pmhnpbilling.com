@@ -10,6 +10,13 @@ Tracks performance of blog posts to inform future content strategy.
 
 ## Post Performance Log
 
+### 2026-02-01 - Essential CPT Codes for PMHNPs: The Complete 2026 Billing Guide
+- **URL**: /blog/essential-cpt-codes-pmhnp-guide.html
+- **Target Keywords**: cpt codes pmhnp, psychiatric billing codes, 90791 90792 billing, psychotherapy cpt codes, medication management billing
+- **Status**: 🟡 Not yet indexed
+- **Week 1**: Pending...
+- **Notes**: Fills keyword gap - CPT codes not previously covered. High-intent topic with practical tables and reimbursement data.
+
 ### 2026-01-31 - Telehealth Billing for Illinois PMHNPs: 2026 Compliance Guide
 - **URL**: /blog/illinois-telehealth-billing-guide.html
 - **Target Keywords**: illinois telehealth billing, pmhnp telehealth, telehealth reimbursement 2026
