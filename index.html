@@ -637,7 +637,11 @@
             .form-row { grid-template-columns: 1fr; }
             .section-title { font-size: 1.75rem; }
             .testimonial-quote { font-size: 1.1rem; }
-            .floating-shape { display: none; }
+            /* Show fewer floating shapes on mobile */
+            .floating-shape { opacity: 0.06; }
+            .floating-shape-1 { width: 150px; height: 150px; top: -50px; right: -30px; }
+            .floating-shape-2 { width: 100px; height: 100px; bottom: -40px; left: 5%; }
+            .floating-shape-3, .floating-shape-4 { display: none; }
             /* Show fewer, repositioned shapes on mobile */
             .hero-shape { opacity: 0.3; }
             .hero-shape-3, .hero-shape-6 { display: none; }
