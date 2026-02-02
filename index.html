@@ -71,11 +71,7 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='48' y2='48'%3E%3Cstop stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%230ea5e9'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='url(%23g)'/%3E%3Cpath d='M10 12h9a6 6 0 010 12h-9V12zm3 3v6h6a3 3 0 000-6h-6z' fill='white'/%3E%3Cpath d='M26 12h9a6 6 0 014.24 10.24L26 36V12zm3 3v12.5l7-7.5a3 3 0 00-4-4h-3z' fill='white' fill-opacity='0.85'/%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="dns-prefetch" href="https://images.unsplash.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Performance: Preload critical resources -->
-    <link rel="preload" href="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=1920&q=80" as="image" fetchpriority="high">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
@@ -211,6 +207,7 @@
             display: flex;
             align-items: center;
             overflow: hidden;
+            min-height: 100vh;
         }
         .hero-bg {
             position: absolute;
@@ -218,43 +215,68 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=1920&q=80') center/cover no-repeat;
+            background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 50%, #f0f9ff 100%);
             z-index: 0;
         }
         .hero-bg::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.85) 50%, rgba(255,255,255,0.75) 100%);
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 150%;
+            background: radial-gradient(ellipse, rgba(37, 99, 235, 0.08) 0%, transparent 70%);
+            animation: pulse-bg 8s ease-in-out infinite;
+        }
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 60%;
+            height: 100%;
+            background: radial-gradient(ellipse, rgba(14, 165, 233, 0.06) 0%, transparent 70%);
+            animation: pulse-bg 10s ease-in-out infinite reverse;
+        }
+        @keyframes pulse-bg {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
         }
         .hero {
-            padding: 12rem 2rem 8rem;
+            padding: 10rem 2rem 6rem;
             max-width: 1100px;
             margin: 0 auto;
             width: 100%;
             position: relative;
             z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
         .hero-logo {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
         }
         .hero-logo svg {
-            width: 64px;
-            height: 64px;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
+            width: 120px;
+            height: 120px;
+            border-radius: 28px;
+            box-shadow: 0 8px 40px rgba(37, 99, 235, 0.25);
+            animation: float-logo 6s ease-in-out infinite;
+        }
+        @keyframes float-logo {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
         }
         .hero-logo-text {
             display: flex;
             align-items: center;
-            gap: 0.4rem;
-            font-size: 1.75rem;
+            gap: 0.5rem;
+            font-size: 2.25rem;
         }
         .hero-logo-text .pmh {
             font-weight: 700;
@@ -273,23 +295,23 @@
             background-clip: text;
         }
         .hero-logo-text .dot {
-            width: 6px;
-            height: 6px;
+            width: 8px;
+            height: 8px;
             background: #60a5fa;
             border-radius: 50%;
-            margin: 0 0.15rem;
+            margin: 0 0.2rem;
         }
         .hero-logo-text .billing {
             font-weight: 500;
             color: #374151;
         }
         .hero h1 {
-            font-size: 3.25rem;
+            font-size: 3rem;
             font-weight: 600;
             color: #111827;
-            line-height: 1.15;
+            line-height: 1.2;
             margin-bottom: 1.5rem;
-            max-width: 550px;
+            max-width: 600px;
             letter-spacing: -0.035em;
         }
         .hero h1 span {
@@ -299,10 +321,10 @@
             background-clip: text;
         }
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: #6b7280;
             margin-bottom: 2.5rem;
-            max-width: 480px;
+            max-width: 520px;
             line-height: 1.75;
         }
         .btn {
@@ -350,17 +372,27 @@
             padding: 2rem;
             border-radius: 12px;
             border: 1px solid #e5e7eb;
-            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+            transition: all 0.3s ease;
         }
-        .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.06); border-color: #bfdbfe; }
+        .service-card:hover { 
+            transform: translateY(-6px); 
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.1); 
+            border-color: #93c5fd;
+        }
         .service-icon {
-            width: 44px; height: 44px;
+            width: 48px; height: 48px;
             background: linear-gradient(135deg, #eff6ff, #dbeafe);
-            border-radius: 10px;
+            border-radius: 12px;
             display: flex; align-items: center; justify-content: center;
             margin-bottom: 1.25rem;
+            transition: all 0.3s ease;
         }
-        .service-icon svg { width: 22px; height: 22px; color: #2563eb; }
+        .service-icon svg { width: 24px; height: 24px; color: #2563eb; transition: all 0.3s ease; }
+        .service-card:hover .service-icon { 
+            background: linear-gradient(135deg, #2563eb, #0ea5e9);
+            transform: scale(1.05);
+        }
+        .service-card:hover .service-icon svg { color: white; }
         .service-card h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.6rem; color: #111827; }
         .service-card p { color: #6b7280; font-size: 0.9rem; line-height: 1.65; }
         
@@ -400,12 +432,43 @@
         }
         .trust::before {
             content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
             pointer-events: none;
+        }
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.08);
+            pointer-events: none;
+        }
+        .floating-shape-1 {
+            width: 300px; height: 300px;
+            top: -100px; right: -50px;
+            animation: float-shape 12s ease-in-out infinite;
+        }
+        .floating-shape-2 {
+            width: 200px; height: 200px;
+            bottom: -80px; left: 10%;
+            animation: float-shape 10s ease-in-out infinite reverse;
+        }
+        .floating-shape-3 {
+            width: 150px; height: 150px;
+            top: 50%; right: 15%;
+            animation: float-shape 14s ease-in-out infinite 2s;
+        }
+        .floating-shape-4 {
+            width: 80px; height: 80px;
+            top: 20%; left: 5%;
+            animation: float-shape 8s ease-in-out infinite 1s;
+        }
+        @keyframes float-shape {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(15px, -20px) scale(1.05); }
+            66% { transform: translate(-10px, 15px) scale(0.95); }
         }
         .trust .section-label { color: rgba(255,255,255,0.8); }
         .trust .section-title { color: white; }
-        .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; max-width: 1100px; margin: 0 auto; position: relative; }
+        .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
         .trust-item { text-align: center; padding: 1.5rem; }
         .trust-item-icon {
             width: 52px; height: 52px;
@@ -417,6 +480,43 @@
         .trust-item-icon svg { width: 26px; height: 26px; color: white; }
         .trust-item h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem; }
         .trust-item p { font-size: 0.875rem; opacity: 0.85; line-height: 1.6; }
+        
+        /* Testimonial */
+        .testimonial { background: #fff; border-top: 1px solid #e5e7eb; }
+        .testimonial-content { max-width: 700px; margin: 0 auto; text-align: center; }
+        .testimonial-quote {
+            font-size: 1.35rem;
+            color: #374151;
+            line-height: 1.8;
+            font-style: italic;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .testimonial-quote::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: -10px;
+            font-size: 4rem;
+            color: #dbeafe;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        .testimonial-author {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        .testimonial-author-name {
+            font-weight: 600;
+            color: #111827;
+            font-size: 1.05rem;
+        }
+        .testimonial-author-title {
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
         
         /* Contact */
         .contact { background: #f9fafb; border-top: 1px solid #e5e7eb; }
@@ -456,17 +556,25 @@
             .nav-links { display: none; }
             .nav-intake-btn { display: none; }
             .menu-toggle { display: flex; }
-            .hero h1 { font-size: 2.5rem; }
-            .hero p { font-size: 1.1rem; }
+            .hero h1 { font-size: 2.25rem; }
+            .hero p { font-size: 1.05rem; }
+            .hero-logo svg { width: 100px; height: 100px; }
+            .hero-logo-text { font-size: 1.75rem; }
+            .testimonial-quote { font-size: 1.15rem; }
         }
         @media (max-width: 640px) {
-            .hero { padding: 7rem 1.5rem 4rem; }
-            .hero h1 { font-size: 2rem; }
+            .hero-wrapper { min-height: auto; }
+            .hero { padding: 8rem 1.5rem 5rem; }
+            .hero h1 { font-size: 1.85rem; }
+            .hero-logo svg { width: 80px; height: 80px; border-radius: 20px; }
+            .hero-logo-text { font-size: 1.5rem; }
             section { padding: 4rem 1.5rem; }
             .services-grid { grid-template-columns: 1fr; }
             .trust-grid { grid-template-columns: 1fr; gap: 1rem; }
             .form-row { grid-template-columns: 1fr; }
             .section-title { font-size: 1.75rem; }
+            .testimonial-quote { font-size: 1.1rem; }
+            .floating-shape { display: none; }
         }
     </style>
 </head>
@@ -513,7 +621,7 @@
         <section class="hero">
             <div class="hero-logo">
                 <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <defs><linearGradient id="hero-logo-grad" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#0ea5e9"/><stop offset="1" stop-color="#2563eb"/></linearGradient></defs>
+                    <defs><linearGradient id="hero-logo-grad" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#2563eb"/><stop offset="1" stop-color="#0ea5e9"/></linearGradient></defs>
                     <rect width="48" height="48" rx="12" fill="url(#hero-logo-grad)"/>
                     <path d="M10 12h9a6 6 0 010 12h-9V12zm3 3v6h6a3 3 0 000-6h-6z" fill="white"/>
                     <path d="M26 12h9a6 6 0 014.24 10.24L26 36V12zm3 3v12.5l7-7.5a3 3 0 00-4-4h-3z" fill="white" fill-opacity="0.85"/>
@@ -608,6 +716,10 @@
     </section>
 
     <section class="trust">
+        <div class="floating-shape floating-shape-1"></div>
+        <div class="floating-shape floating-shape-2"></div>
+        <div class="floating-shape floating-shape-3"></div>
+        <div class="floating-shape floating-shape-4"></div>
         <div class="section-header fade-in">
             <div class="section-label">Why work with me</div>
             <h2 class="section-title">Built for psychiatric practices</h2>
@@ -632,6 +744,20 @@
                 <div class="trust-item-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg></div>
                 <h3>Privacy-Focused Workflow</h3>
                 <p>Your patient data is handled securely</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial">
+        <div class="section-header fade-in">
+            <div class="section-label">Testimonial</div>
+            <h2 class="section-title">What clients say</h2>
+        </div>
+        <div class="testimonial-content fade-in">
+            <p class="testimonial-quote">Working with PMHNP Billing has been a game-changer for my practice. I used to spend hours every week on claims and follow-ups. Now I can focus entirely on my patients, knowing the billing is handled with care and expertise.</p>
+            <div class="testimonial-author">
+                <span class="testimonial-author-name">Kate</span>
+                <span class="testimonial-author-title">Katie's Hope</span>
             </div>
         </div>
     </section>
