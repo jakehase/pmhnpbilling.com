@@ -266,12 +266,75 @@
             height: 120px;
             border-radius: 28px;
             box-shadow: 0 8px 40px rgba(37, 99, 235, 0.25);
-            animation: float-logo 6s ease-in-out infinite;
+            animation: float-logo 4s ease-in-out infinite;
         }
         @keyframes float-logo {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
+            0%, 100% { transform: translateY(0); box-shadow: 0 8px 40px rgba(37, 99, 235, 0.25); }
+            50% { transform: translateY(-14px); box-shadow: 0 20px 50px rgba(37, 99, 235, 0.35); }
         }
+        /* Hero floating shapes */
+        .hero-shape {
+            position: absolute;
+            opacity: 0.4;
+            pointer-events: none;
+        }
+        .hero-shape-1 {
+            width: 12px; height: 12px;
+            background: #3b82f6;
+            border-radius: 50%;
+            top: 20%; left: 8%;
+            animation: hero-float 8s ease-in-out infinite;
+        }
+        .hero-shape-2 {
+            width: 8px; height: 8px;
+            background: #0ea5e9;
+            border-radius: 2px;
+            transform: rotate(45deg);
+            top: 35%; right: 12%;
+            animation: hero-float 10s ease-in-out infinite 1s;
+        }
+        .hero-shape-3 {
+            width: 16px; height: 16px;
+            border: 2px solid #3b82f6;
+            border-radius: 50%;
+            bottom: 30%; left: 12%;
+            animation: hero-float 12s ease-in-out infinite 2s;
+        }
+        .hero-shape-4 {
+            width: 6px; height: 6px;
+            background: #2563eb;
+            border-radius: 50%;
+            top: 25%; right: 20%;
+            animation: hero-float 7s ease-in-out infinite 0.5s;
+        }
+        .hero-shape-5 {
+            width: 10px; height: 10px;
+            border: 2px solid #0ea5e9;
+            border-radius: 2px;
+            transform: rotate(45deg);
+            bottom: 35%; right: 8%;
+            animation: hero-float 9s ease-in-out infinite 1.5s;
+        }
+        .hero-shape-6 {
+            width: 14px; height: 2px;
+            background: #3b82f6;
+            top: 45%; left: 5%;
+            animation: hero-float 11s ease-in-out infinite 3s;
+        }
+        .hero-shape-6::after {
+            content: '';
+            position: absolute;
+            width: 2px; height: 14px;
+            background: #3b82f6;
+            left: 6px; top: -6px;
+        }
+        @keyframes hero-float {
+            0%, 100% { transform: translate(0, 0) rotate(var(--rotate, 0deg)); }
+            25% { transform: translate(8px, -12px) rotate(var(--rotate, 0deg)); }
+            50% { transform: translate(-5px, -8px) rotate(var(--rotate, 0deg)); }
+            75% { transform: translate(10px, 5px) rotate(var(--rotate, 0deg)); }
+        }
+        .hero-shape-2, .hero-shape-5 { --rotate: 45deg; }
         .hero-logo-text {
             display: flex;
             align-items: center;
@@ -575,6 +638,7 @@
             .section-title { font-size: 1.75rem; }
             .testimonial-quote { font-size: 1.1rem; }
             .floating-shape { display: none; }
+            .hero-shape { display: none; }
         }
     </style>
 </head>
@@ -618,6 +682,12 @@
 
     <div class="hero-wrapper">
         <div class="hero-bg"></div>
+        <div class="hero-shape hero-shape-1"></div>
+        <div class="hero-shape hero-shape-2"></div>
+        <div class="hero-shape hero-shape-3"></div>
+        <div class="hero-shape hero-shape-4"></div>
+        <div class="hero-shape hero-shape-5"></div>
+        <div class="hero-shape hero-shape-6"></div>
         <section class="hero">
             <div class="hero-logo">
                 <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
