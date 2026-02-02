@@ -638,7 +638,13 @@
             .section-title { font-size: 1.75rem; }
             .testimonial-quote { font-size: 1.1rem; }
             .floating-shape { display: none; }
-            .hero-shape { display: none; }
+            /* Show fewer, repositioned shapes on mobile */
+            .hero-shape { opacity: 0.3; }
+            .hero-shape-3, .hero-shape-6 { display: none; }
+            .hero-shape-1 { top: 15%; left: 5%; }
+            .hero-shape-2 { top: 20%; right: 5%; }
+            .hero-shape-4 { bottom: 25%; left: 8%; }
+            .hero-shape-5 { bottom: 20%; right: 5%; }
         }
     </style>
 </head>
