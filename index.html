@@ -373,56 +373,24 @@
             line-height: 1; margin-right: 0.75rem; margin-top: 0.1rem; color: #2563eb;
         }
         
-        /* Pricing */
-        .pricing { background: #fff; }
-        .pricing-content { max-width: 480px; margin: 0 auto; text-align: center; }
-        .pricing-card {
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-            border: 2px solid #bae6fd;
-            border-radius: 20px;
-            padding: 3rem 2.5rem;
+        /* FAQ */
+        .faq { background: #fff; }
+        .faq-content { max-width: 720px; margin: 0 auto; }
+        .faq-item {
+            padding: 1.75rem 0;
+            border-bottom: 1px solid #e5e7eb;
         }
-        .pricing-rate {
-            font-size: 5rem;
-            font-weight: 700;
-            color: #1e40af;
-            line-height: 1;
-            margin-bottom: 0.25rem;
+        .faq-item:last-child { border-bottom: none; }
+        .faq-item h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 0.75rem;
         }
-        .pricing-rate .percent {
-            font-size: 2.5rem;
-            vertical-align: super;
-            margin-left: 0.1rem;
-        }
-        .pricing-description {
-            font-size: 1.25rem;
-            color: #2563eb;
-            font-weight: 500;
-            margin-bottom: 1rem;
-        }
-        .pricing-detail {
+        .faq-item p {
             color: #6b7280;
             font-size: 1rem;
-            margin-bottom: 2rem;
-            line-height: 1.6;
-        }
-        .pricing-includes {
-            list-style: none;
-            text-align: left;
-            margin-bottom: 2rem;
-        }
-        .pricing-includes li {
-            padding: 0.5rem 0;
-            color: #374151;
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-        .pricing-includes li::before {
-            content: '✓';
-            color: #2563eb;
-            font-weight: 600;
+            line-height: 1.7;
         }
         
         /* Trust */
@@ -519,8 +487,8 @@
         </a>
         <ul class="nav-links">
             <li><a href="#services">Services</a></li>
-            <li><a href="#pricing">Pricing</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#faq">FAQ</a></li>
             <li><a href="blog/">Blog</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -532,8 +500,8 @@
     
     <div class="mobile-menu" id="mobileMenu">
         <a href="#services" onclick="toggleMenu()">Services</a>
-        <a href="#pricing" onclick="toggleMenu()">Pricing</a>
         <a href="#about" onclick="toggleMenu()">About</a>
+        <a href="#faq" onclick="toggleMenu()">FAQ</a>
         <a href="blog/" onclick="toggleMenu()">Blog</a>
         <a href="#contact" onclick="toggleMenu()">Contact</a>
         <div class="mobile-menu-divider"></div>
@@ -614,24 +582,27 @@
         </div>
     </section>
 
-    <section id="pricing" class="pricing">
+    <section id="faq" class="faq">
         <div class="section-header fade-in">
-            <div class="section-label">Pricing</div>
-            <h2 class="section-title">Simple, transparent pricing</h2>
+            <div class="section-label">FAQ</div>
+            <h2 class="section-title">Common questions</h2>
         </div>
-        <div class="pricing-content fade-in">
-            <div class="pricing-card">
-                <div class="pricing-rate">6<span class="percent">%</span></div>
-                <div class="pricing-description">of collections</div>
-                <p class="pricing-detail">No setup fees. No monthly minimums. You only pay when you get paid.</p>
-                <ul class="pricing-includes">
-                    <li>Full claims management</li>
-                    <li>Prior authorizations</li>
-                    <li>Payment posting</li>
-                    <li>Denial management</li>
-                    <li>Insurance follow-up</li>
-                </ul>
-                <a href="#contact" class="btn">Get started</a>
+        <div class="faq-content fade-in">
+            <div class="faq-item">
+                <h3>What do you charge?</h3>
+                <p>I charge 6% of collections—no setup fees, no monthly minimums. You only pay when you get paid. Prior authorizations are billed separately at $25 each.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What's included?</h3>
+                <p>Full claims management, payment posting, denial management, insurance follow-up, and periodic revenue reviews. Everything you need to keep your billing running smoothly.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How does onboarding work?</h3>
+                <p>After our initial conversation, you'll complete a short intake through the Client Portal. Once I have access to your EHR or billing system, I can typically start submitting claims within a few days.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Do you work with my EHR?</h3>
+                <p>I work with most major EHR and practice management systems used by psychiatric providers. If you're unsure, just ask—I'm happy to check compatibility.</p>
             </div>
         </div>
     </section>
