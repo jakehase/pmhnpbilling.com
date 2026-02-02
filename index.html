@@ -373,6 +373,58 @@
             line-height: 1; margin-right: 0.75rem; margin-top: 0.1rem; color: #2563eb;
         }
         
+        /* Pricing */
+        .pricing { background: #fff; }
+        .pricing-content { max-width: 480px; margin: 0 auto; text-align: center; }
+        .pricing-card {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border: 2px solid #bae6fd;
+            border-radius: 20px;
+            padding: 3rem 2.5rem;
+        }
+        .pricing-rate {
+            font-size: 5rem;
+            font-weight: 700;
+            color: #1e40af;
+            line-height: 1;
+            margin-bottom: 0.25rem;
+        }
+        .pricing-rate .percent {
+            font-size: 2.5rem;
+            vertical-align: super;
+            margin-left: 0.1rem;
+        }
+        .pricing-description {
+            font-size: 1.25rem;
+            color: #2563eb;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        .pricing-detail {
+            color: #6b7280;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        .pricing-includes {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+        .pricing-includes li {
+            padding: 0.5rem 0;
+            color: #374151;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .pricing-includes li::before {
+            content: '✓';
+            color: #2563eb;
+            font-weight: 600;
+        }
+        
         /* Trust */
         .trust {
             background: linear-gradient(135deg, #1e40af 0%, #2563eb 50%, #0ea5e9 100%);
@@ -467,6 +519,7 @@
         </a>
         <ul class="nav-links">
             <li><a href="#services">Services</a></li>
+            <li><a href="#pricing">Pricing</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="blog/">Blog</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -479,6 +532,7 @@
     
     <div class="mobile-menu" id="mobileMenu">
         <a href="#services" onclick="toggleMenu()">Services</a>
+        <a href="#pricing" onclick="toggleMenu()">Pricing</a>
         <a href="#about" onclick="toggleMenu()">About</a>
         <a href="blog/" onclick="toggleMenu()">Blog</a>
         <a href="#contact" onclick="toggleMenu()">Contact</a>
@@ -557,6 +611,28 @@
             <p>I started PMHNP Billing to provide psychiatric providers with reliable, attentive billing support. Many billing services treat you as one of hundreds of accounts. I take a different approach.</p>
             <p>When you work with me, you get direct communication and consistent follow-through. I understand the specific requirements of psychiatric billing—from complex authorization processes to mental health parity regulations—and handle them with care.</p>
             <p>My goal is straightforward: accurate claims, timely submissions, and fewer headaches for you.</p>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing">
+        <div class="section-header fade-in">
+            <div class="section-label">Pricing</div>
+            <h2 class="section-title">Simple, transparent pricing</h2>
+        </div>
+        <div class="pricing-content fade-in">
+            <div class="pricing-card">
+                <div class="pricing-rate">6<span class="percent">%</span></div>
+                <div class="pricing-description">of collections</div>
+                <p class="pricing-detail">No setup fees. No monthly minimums. You only pay when you get paid.</p>
+                <ul class="pricing-includes">
+                    <li>Full claims management</li>
+                    <li>Prior authorizations</li>
+                    <li>Payment posting</li>
+                    <li>Denial management</li>
+                    <li>Insurance follow-up</li>
+                </ul>
+                <a href="#contact" class="btn">Get started</a>
+            </div>
         </div>
     </section>
 
