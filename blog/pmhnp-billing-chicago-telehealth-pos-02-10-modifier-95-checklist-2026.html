@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PMHNP Billing in Chicago: Telehealth POS 02 vs 10, Modifier 95, and Claim QA Checklist (2026) | PMHNP Billing</title>
+    <meta name="description" content="A Chicago-focused 2026 telehealth billing playbook for PMHNPs: POS 02 vs POS 10 selection, modifier 95 usage, documentation standards, and a claim QA checklist to reduce denials.">
+
+    <link rel="canonical" href="https://pmhnpbilling.com/blog/pmhnp-billing-chicago-telehealth-pos-02-10-modifier-95-checklist-2026.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "PMHNP Billing in Chicago: Telehealth POS 02 vs 10, Modifier 95, and Claim QA Checklist (2026)",
+      "description": "A Chicago-focused 2026 telehealth billing playbook for PMHNPs: POS 02 vs POS 10 selection, modifier 95 usage, documentation standards, and a claim QA checklist to reduce denials.",
+      "url": "https://pmhnpbilling.com/blog/pmhnp-billing-chicago-telehealth-pos-02-10-modifier-95-checklist-2026.html",
+      "datePublished": "2026-02-24",
+      "dateModified": "2026-02-24",
+      "author": {
+        "@type": "Organization",
+        "name": "PMHNP Billing",
+        "url": "https://pmhnpbilling.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "PMHNP Billing",
+        "url": "https://pmhnpbilling.com"
+      }
+    }
+    </script>
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='48' y2='48'%3E%3Cstop stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%230ea5e9'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='url(%23g)'/%3E%3Cpath d='M10 12h9a6 6 0 010 12h-9V12zm3 3v6h6a3 3 0 000-6h-6z' fill='white'/%3E%3Cpath d='M26 12h9a6 6 0 014.24 10.24L26 36V12zm3 3v12.5l7-7.5a3 3 0 00-4-4h-3z' fill='white' fill-opacity='0.85'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: #374151;
+            background: #fff;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            text-decoration: none;
+        }
+        .logo-icon { width: 36px; height: 36px; border-radius: 8px; }
+        .logo-text { display: flex; align-items: center; gap: 0.35rem; font-size: 1.1rem; }
+        .logo-text .pmh {
+            font-weight: 700;
+            background: linear-gradient(135deg, #1e40af, #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            border-bottom: 2px solid #2563eb;
+            padding-bottom: 1px;
+        }
+        .logo-text .dot { color: #9ca3af; font-weight: 500; }
+        .logo-text .billing { font-weight: 600; color: #1f2937; }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+        nav a {
+            text-decoration: none;
+            color: #374151;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        nav a:hover { color: #2563eb; }
+
+        .article-container {
+            margin-top: 80px;
+            max-width: 820px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 4rem 2rem;
+        }
+
+        .article-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .article-title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .article-subtitle {
+            font-size: 1.2rem;
+            color: #6b7280;
+            font-style: italic;
+            max-width: 700px;
+            margin: 0 auto 1.25rem;
+        }
+
+        .article-meta { font-size: 0.9rem; color: #9ca3af; }
+
+        .article-content {
+            font-size: 1.08rem;
+            line-height: 1.8;
+        }
+
+        .article-content h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin: 3rem 0 1.5rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .article-content h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin: 2rem 0 0.9rem 0;
+        }
+
+        .article-content p { margin-bottom: 1.25rem; }
+        .article-content strong { color: #1f2937; }
+        .article-content ul, .article-content ol { margin: 0.75rem 0 1.5rem 1.4rem; }
+        .article-content li { margin-bottom: 0.6rem; }
+
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+        }
+
+        .matrix-table th {
+            background: #f9fafb;
+            padding: 0.9rem;
+            text-align: left;
+            font-weight: 600;
+            color: #1f2937;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .matrix-table td {
+            padding: 0.9rem;
+            border-bottom: 1px solid #e5e7eb;
+            vertical-align: top;
+        }
+
+        .matrix-table tr:hover { background: #f9fafb; }
+
+        .highlight-box {
+            background: #eff6ff;
+            border-left: 4px solid #2563eb;
+            padding: 1.25rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .warning-box {
+            background: #fff7ed;
+            border-left: 4px solid #f97316;
+            padding: 1.25rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .cta-section {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .cta-text { font-style: italic; color: #6b7280; }
+
+        .back-to-blog { text-align: center; margin-top: 3rem; }
+        .back-to-blog a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .back-to-blog a:hover { text-decoration: underline; }
+
+        @media (max-width: 768px) {
+            nav { padding: 1rem; }
+            nav ul { display: none; }
+            .article-container { padding: 2rem 1rem; }
+            .article-title { font-size: 1.95rem; }
+            .matrix-table { font-size: 0.85rem; }
+            .matrix-table th, .matrix-table td { padding: 0.65rem 0.45rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="../" class="logo">
+            <svg class="logo-icon" viewBox="0 0 48 48">
+                <defs>
+                    <linearGradient id="logoGrad" x1="0" y1="0" x2="48" y2="48">
+                        <stop stop-color="#2563eb"/>
+                        <stop offset="1" stop-color="#0ea5e9"/>
+                    </linearGradient>
+                </defs>
+                <rect width="48" height="48" rx="12" fill="url(#logoGrad)"/>
+                <path d="M10 12h9a6 6 0 010 12h-9V12zm3 3v6h6a3 3 0 000-6h-6z" fill="white"/>
+                <path d="M26 12h9a6 6 0 014.24 10.24L26 36V12zm3 3v12.5l7-7.5a3 3 0 00-4-4h-3z" fill="white" fill-opacity="0.85"/>
+            </svg>
+            <div class="logo-text">
+                <span class="pmh">PMH</span>
+                <span class="dot">•</span>
+                <span class="billing">Billing</span>
+            </div>
+        </a>
+        <ul>
+            <li><a href="../">Home</a></li>
+            <li><a href="../#services">Services</a></li>
+            <li><a href="../#about">About</a></li>
+            <li><a href="./">Blog</a></li>
+            <li><a href="../#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="article-container">
+        <header class="article-header">
+            <h1 class="article-title">PMHNP Billing in Chicago: Telehealth POS 02 vs 10, Modifier 95, and Claim QA Checklist (2026)</h1>
+            <p class="article-subtitle">If your telehealth claims are getting delayed or denied, it is usually not one major error—it is a stack of small coding and documentation misses. This guide gives Chicago PMHNP practices a practical fix.</p>
+            <div class="article-meta">Published February 24, 2026 • 11 min read</div>
+        </header>
+
+        <article class="article-content">
+            <p>Telehealth is no longer a side channel for psychiatric care in Illinois—it is core production. But many PMHNP practices in Chicago still lose reimbursement on visits that were clinically solid because claim formatting, POS selection, or telehealth documentation was inconsistent across providers and billers.</p>
+
+            <p>This post is a <strong>deeper, operational companion</strong> to broader telehealth compliance guidance. Instead of re-covering policy at a high level, it focuses on execution: <strong>POS 02 vs POS 10 logic, modifier 95 consistency, and a same-day QA workflow</strong> that prevents avoidable denials.</p>
+
+            <div class="highlight-box">
+                <strong>Quick takeaway:</strong> Most telehealth denials in outpatient psych are process failures, not payer hostility. If your team standardizes intake location capture, coding logic, and pre-submit QA, clean-claim rates improve fast.
+            </div>
+
+            <h2>Why this matters for "PMHNP billing Chicago" search intent</h2>
+            <p>Practices searching for PMHNP billing support in Chicago are usually not asking for theory—they need claim-level decisions they can apply today. This article targets that practical intent by giving billing teams a rule set they can operationalize in one week.</p>
+
+            <h2>POS 02 vs POS 10: decision matrix for psychiatric telehealth claims</h2>
+            <p>At a minimum, your workflow needs one consistent question captured at scheduling and re-validated at check-in: <strong>where was the patient physically located at the time of service?</strong></p>
+
+            <table class="matrix-table">
+                <thead>
+                    <tr>
+                        <th>Scenario</th>
+                        <th>Recommended POS</th>
+                        <th>Modifier baseline</th>
+                        <th>Documentation note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Patient seen by video while at home</td>
+                        <td>POS 10</td>
+                        <td>95 (if payer requires)</td>
+                        <td>Record patient home location and start/stop times</td>
+                    </tr>
+                    <tr>
+                        <td>Patient seen by video at non-home originating site</td>
+                        <td>POS 02</td>
+                        <td>95 (if payer requires)</td>
+                        <td>Record site type and reason care occurred there</td>
+                    </tr>
+                    <tr>
+                        <td>Audio-only encounter (payer allows for code)</td>
+                        <td>Payer-specific</td>
+                        <td>Payer-specific</td>
+                        <td>Include audio-only rationale and patient consent</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><strong>Important:</strong> POS and modifier rules can vary by payer contract and plan product. Your internal SOP should define default logic plus payer overrides, and your billers should work from that SOP—not memory.</p>
+
+            <h2>Modifier 95 consistency: where teams usually break</h2>
+            <p>Modifier denials commonly happen when one provider follows payer-specific rules while another uses a universal template. Build an encounter-type map for each top payer and train both clinical and billing teams from the same matrix.</p>
+
+            <h3>Three controls that materially reduce modifier-related rework</h3>
+            <ol>
+                <li><strong>Template lock:</strong> Visit templates pre-populate telehealth fields and required attestation language.</li>
+                <li><strong>Claim scrub rule:</strong> Claims with telehealth indicators cannot submit until POS/modifier pair validates.</li>
+                <li><strong>Denial loop:</strong> Top 5 telehealth denial codes reviewed weekly with root-cause notes.</li>
+            </ol>
+
+            <h2>Same-day telehealth claim QA checklist</h2>
+            <p>Use this before batch submission:</p>
+            <ul>
+                <li>Patient physical location captured and matches chosen POS.</li>
+                <li>Encounter modality (video vs audio-only) documented clearly.</li>
+                <li>CPT code supports documented service intensity and time.</li>
+                <li>Modifier requirements checked against payer-specific matrix.</li>
+                <li>Rendering and billing provider NPIs validated.</li>
+                <li>Diagnosis-code linkage reviewed for medical necessity narrative.</li>
+                <li>Telehealth consent and state-licensure requirements documented.</li>
+            </ul>
+
+            <div class="warning-box">
+                <strong>Operational risk:</strong> If your team corrects telehealth errors only after ERA denials arrive, your AR days and staff time balloon. Move detection earlier—at scheduling and pre-submit QA.
+            </div>
+
+            <h2>Denial prevention workflow (7-day implementation)</h2>
+            <h3>Days 1–2: Baseline and denial tagging</h3>
+            <p>Pull the last 60–90 days of telehealth denials and tag each by root cause: POS mismatch, missing/incorrect modifier, documentation gap, payer edit, or eligibility issue.</p>
+
+            <h3>Days 3–4: SOP + template updates</h3>
+            <p>Finalize one payer matrix, update encounter templates, and lock required fields in intake/check-in processes.</p>
+
+            <h3>Days 5–7: QA launch and KPI tracking</h3>
+            <p>Run daily mini-audits on submitted telehealth claims. Track clean-claim rate, first-pass paid rate, and telehealth denial reversal rate.</p>
+
+            <h2>KPI targets for Chicago PMHNP practices</h2>
+            <table class="matrix-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Starting benchmark (common)</th>
+                        <th>30-day target</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Telehealth clean-claim rate</td>
+                        <td>85%–90%</td>
+                        <td>&gt;95%</td>
+                    </tr>
+                    <tr>
+                        <td>Telehealth denial rate</td>
+                        <td>10%–15%</td>
+                        <td>&lt;6%</td>
+                    </tr>
+                    <tr>
+                        <td>Average correction touches per denied claim</td>
+                        <td>2.0–3.0</td>
+                        <td>&lt;1.5</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Final word</h2>
+            <p>For PMHNP billing in Chicago, telehealth profitability depends less on adding more appointments and more on reducing preventable billing friction. Practices that win here treat telehealth coding and documentation as a production system—not a one-off billing task.</p>
+
+            <div class="cta-section">
+                <p class="cta-text">Need a second set of eyes on your telehealth claim workflow? PMHNP Billing helps Chicago-area practices tighten coding consistency, reduce denials, and improve first-pass reimbursement outcomes.</p>
+            </div>
+        </article>
+
+        <div class="back-to-blog">
+            <a href="./">← Back to Blog</a>
+        </div>
+    </main>
+</body>
+</html>
