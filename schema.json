@@ -18,7 +18,8 @@
     "Medical Billing Services",
     "Claims Management",
     "Prior Authorization Services",
-    "Revenue Cycle Management"
+    "Revenue Cycle Management",
+    "Billing Workflow Support (Pilot)"
   ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
@@ -54,6 +55,14 @@
           "@type": "Service",
           "name": "Denial Management",
           "description": "Thorough review and appeals process for denied claims"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "PMHNP Billing AI Agent (Pilot)",
+          "description": "Optional workflow support pilot with human review before any action"
         }
       }
     ]
