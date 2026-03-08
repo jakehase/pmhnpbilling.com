@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PMHNP Billing AI Agent | Onboarding Intake</title>
+  <meta name="description" content="Onboarding intake for PMHNP Billing AI Agent pilot. Generate a local intake packet and request pilot-assisted Tebra connection.">
+  <link rel="canonical" href="https://pmhnpbilling.com/app/intake.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="/" class="brand">PMHNP Billing</a>
+      <nav class="topnav">
+        <a href="/app/">Client App</a>
+        <a href="/ai-agent.html">AI Agent Details</a>
+        <a href="/">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card intake-card">
+      <p class="eyebrow">Onboarding</p>
+      <h1>Connect Tebra Intake (Pilot)</h1>
+      <p>
+        This flow gives you a working intake path now. It creates a local onboarding packet you can download immediately.
+        Pilot team setup is manual after you share the packet.
+      </p>
+
+      <div class="notice">
+        <strong>Working now:</strong> this intake packet builder and manual pilot connection request.
+        <br>
+        <strong>Not yet live:</strong> direct in-app Tebra OAuth login and automatic account provisioning.
+      </div>
+
+      <form id="intakeForm" class="intake-grid">
+        <div>
+          <label for="practiceName">Practice name</label>
+          <input id="practiceName" name="practice_name" required>
+        </div>
+        <div>
+          <label for="contactName">Primary contact</label>
+          <input id="contactName" name="contact_name" required>
+        </div>
+        <div>
+          <label for="contactEmail">Contact email</label>
+          <input id="contactEmail" type="email" name="contact_email" required>
+        </div>
+        <div>
+          <label for="contactPhone">Contact phone</label>
+          <input id="contactPhone" type="tel" name="contact_phone">
+        </div>
+        <div>
+          <label for="tebraEnvironment">Tebra environment</label>
+          <select id="tebraEnvironment" name="tebra_environment" required>
+            <option value="">Select one</option>
+            <option value="prod">Production</option>
+            <option value="sandbox">Sandbox</option>
+            <option value="unknown">Not sure yet</option>
+          </select>
+        </div>
+        <div>
+          <label for="tebraTenantId">Tebra tenant ID (if known)</label>
+          <input id="tebraTenantId" name="tebra_tenant_id" placeholder="Optional">
+        </div>
+
+        <div class="full">
+          <label for="connectMode">Connection mode</label>
+          <select id="connectMode" name="connection_mode" required>
+            <option value="pilot-assisted">Pilot-assisted setup (recommended, available now)</option>
+            <option value="direct-oauth-not-live">Direct OAuth self-serve (not yet live)</option>
+          </select>
+        </div>
+
+        <div class="full">
+          <label for="notes">Notes for onboarding team</label>
+          <textarea id="notes" name="notes" placeholder="Optional notes: payer mix, target go-live date, office workflow details..."></textarea>
+        </div>
+
+        <div class="full">
+          <button type="submit" class="btn-primary">Generate intake packet</button>
+        </div>
+      </form>
+
+      <div id="intakeResult" class="notice" hidden></div>
+      <div id="oauthWarning" class="notice warn" hidden>
+        You selected direct OAuth self-serve. That path is not live yet in this app. Please continue with pilot-assisted setup to move forward now.
+      </div>
+
+      <div class="flow-actions">
+        <a class="btn-secondary" href="mailto:pilot@pmhnpbilling.com?subject=PMHNP%20AI%20Agent%20Onboarding%20Packet">Email pilot@pmhnpbilling.com</a>
+        <a class="btn-secondary" href="/app/">Back to dashboard</a>
+      </div>
+
+      <p class="fine-print">Safety note: this intake form does not connect to payer systems and does not submit claims. It prepares onboarding details for manual review.</p>
+    </section>
+  </main>
+
+  <script>
+    const form = document.getElementById('intakeForm');
+    const result = document.getElementById('intakeResult');
+    const oauthWarning = document.getElementById('oauthWarning');
+    const connectModeSelect = document.getElementById('connectMode');
+
+    connectModeSelect.addEventListener('change', () => {
+      oauthWarning.hidden = connectModeSelect.value !== 'direct-oauth-not-live';
+    });
+
+    function toPacket(formData) {
+      return {
+        packet_version: 'pmhnp_onboarding_v1',
+        generated_at: new Date().toISOString(),
+        status: 'intake_created_locally',
+        truths: {
+          live_tebra_oauth: false,
+          live_client_auth_provisioning: false,
+          pilot_manual_connection_request: true
+        },
+        practice: {
+          practice_name: formData.get('practice_name'),
+          contact_name: formData.get('contact_name'),
+          contact_email: formData.get('contact_email'),
+          contact_phone: formData.get('contact_phone') || null
+        },
+        tebra: {
+          environment: formData.get('tebra_environment'),
+          tenant_id: formData.get('tebra_tenant_id') || null,
+          connection_mode: formData.get('connection_mode')
+        },
+        notes: formData.get('notes') || null,
+        next_step: 'Share this packet with PMHNP Billing pilot team for manual setup and confirmation.'
+      };
+    }
+
+    function downloadPacket(packet) {
+      const blob = new Blob([JSON.stringify(packet, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `pmhnp-onboarding-${Date.now()}.json`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    }
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const formData = new FormData(form);
+      const packet = toPacket(formData);
+
+      localStorage.setItem('pmhnp_onboarding_packet_latest', JSON.stringify(packet));
+      downloadPacket(packet);
+
+      result.hidden = false;
+      result.innerHTML = '<strong>Intake packet generated.</strong> We saved it in your browser and downloaded a JSON file. Next: email the packet to pilot@pmhnpbilling.com for manual Tebra setup.';
+    });
+  </script>
+</body>
+</html>
