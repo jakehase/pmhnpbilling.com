@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Keep private and utility pages out of discovery
+Disallow: /private-dashboard/
+Disallow: /logo-preview.html
+Disallow: /logo-text-options.html
+Disallow: /app/
+
+Sitemap: https://pmhnpbilling.com/sitemap.xml
