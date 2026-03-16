@@ -3,13 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PMHNP Billing Client App | Dashboard & Guided Onboarding</title>
+  <title>PMHNP Billing AI Agent | Client App (Pilot)</title>
   <meta name="robots" content="noindex, nofollow, noarchive">
-  <meta name="description" content="Client app for PMHNP Billing: secure dashboard access, guided office-language workflow support, and premium onboarding into the AI agent pilot.">
+  <meta name="description" content="Client app shell for PMHNP Billing AI Agent pilot: priorities, risk review, human-review queue, onboarding, and ask-agent support.">
   <link rel="canonical" href="https://pmhnpbilling.com/app/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "PMHNP Billing Client App (Pilot)",
+    "description": "Client app dashboard for PMHNP Billing pilot workflows and human-review operations.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "url": "https://pmhnpbilling.com/app/",
+    "publisher": {"@type": "Organization", "name": "PMHNP Billing", "url": "https://pmhnpbilling.com"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://pmhnpbilling.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Client App", "item": "https://pmhnpbilling.com/app/"}
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
@@ -18,8 +40,7 @@
       <a href="/" class="brand">PMHNP Billing</a>
       <nav class="topnav">
         <a href="/">Home</a>
-        <a href="/services/pmhnp-billing-services.html">Services</a>
-        <a href="/ai-agent.html">AI Agent</a>
+        <a href="/ai-agent.html">AI Agent Details</a>
         <a href="/app/intake.html">Onboarding Intake</a>
       </nav>
     </div>
@@ -28,24 +49,29 @@
   <main class="container app-layout">
     <section class="hero">
       <div>
-        <p class="eyebrow">Client workspace</p>
-        <h1>One client-facing surface for dashboard visibility, guided questions, and onboarding.</h1>
-        <p class="hero-copy">The app now looks and reads like the same premium PMHNP Billing brand as the public site—while preserving the existing secure access, snapshot loading, and guided intake flows underneath.</p>
+        <p class="eyebrow">Client app (pilot)</p>
+        <h1>PMHNP Billing AI Agent Dashboard</h1>
+        <p class="hero-copy">This app shell is designed for non-technical office use. It surfaces priorities, risk, and human-review tasks without auto-submitting claims.</p>
       </div>
       <div class="status-badges">
-        <span class="badge ok">Working now: secure dashboard token mode, local snapshot fallback, and guided intake packet flow</span>
-        <span class="badge warn">Pilot-gated: direct Tebra OAuth and fully automated provisioning remain intentionally not live</span>
+        <span class="badge ok">Works now: dashboard + intake packet builder</span>
+        <span class="badge warn">Pilot-gated: direct Tebra OAuth + live auto-sync</span>
       </div>
     </section>
 
     <section class="card">
-      <h2>Secure dashboard access</h2>
-      <p class="subtle">If PMHNP Billing shared a secure access token, use it here to try live dashboard mode. Without one, the app stays in local pilot snapshot mode.</p>
+      <h2>Secure Access (Live Dashboard)</h2>
+      <p class="subtle">
+        If your PMHNP Billing team shared a secure access token, paste it here to load live dashboard data.
+        If not, this app will stay on local pilot snapshot mode.
+      </p>
       <form id="clientAccessForm" class="ask-form">
         <label for="clientApiBase">Dashboard API URL (optional)</label>
-        <input id="clientApiBase" type="url" placeholder="Default: same origin /client/snapshot">
+        <input id="clientApiBase" type="url" placeholder="Default: same origin /client/snapshot" />
+
         <label for="clientAccessToken">Secure access token</label>
-        <textarea id="clientAccessToken" rows="3" placeholder="Paste the secure token shared by PMHNP Billing"></textarea>
+        <textarea id="clientAccessToken" rows="3" placeholder="Paste token from PMHNP Billing team"></textarea>
+
         <div class="flow-actions">
           <button type="submit" class="btn-primary">Save secure access</button>
           <button id="clearClientAccessBtn" type="button" class="btn-secondary">Clear token</button>
@@ -56,31 +82,38 @@
 
     <section class="snapshot-meta card">
       <div>
-        <h2>Data source</h2>
-        <p id="dataSourceLine">Loading dashboard snapshot…</p>
+        <h2>Data Source</h2>
+        <p id="dataSourceLine">Loading dashboard snapshot...</p>
       </div>
       <button id="reloadSnapshotBtn" class="btn-secondary" type="button">Reload snapshot</button>
     </section>
 
     <section class="grid-two">
       <article class="card">
-        <h2>Today’s priorities</h2>
+        <h2>Today’s Priorities</h2>
         <ul id="prioritiesList" class="stack-list"></ul>
       </article>
+
       <article class="card">
-        <h2>Needs review</h2>
-        <p class="subtle">High-impact items that still require human review before action.</p>
+        <h2>Needs Review</h2>
+        <p class="subtle">High-impact items that still require human approval.</p>
         <ul id="needsReviewList" class="stack-list"></ul>
       </article>
     </section>
 
     <section class="card">
-      <h2>Claims at risk</h2>
-      <p class="subtle">This pilot shell keeps identifiers redacted and surfaces the operational pattern instead of pretending to auto-resolve it.</p>
+      <h2>Claims at Risk</h2>
+      <p class="subtle">Claim IDs are redacted in this pilot shell.</p>
       <div class="table-wrap">
         <table>
           <thead>
-            <tr><th>Claim</th><th>Severity</th><th>Findings</th><th>Categories</th><th>Recommended next step</th></tr>
+            <tr>
+              <th>Claim</th>
+              <th>Severity</th>
+              <th>Findings</th>
+              <th>Categories</th>
+              <th>Recommended Next Step</th>
+            </tr>
           </thead>
           <tbody id="claimsTableBody"></tbody>
         </table>
@@ -89,8 +122,8 @@
 
     <section class="grid-two">
       <article class="card">
-        <h2>Ask the agent</h2>
-        <p class="subtle">Office-language guidance grounded in the current snapshot context.</p>
+        <h2>Ask the Agent</h2>
+        <p class="subtle">Guided office-language assistant over current snapshot context.</p>
         <div id="suggestedPrompts" class="prompt-chips"></div>
         <form id="askAgentForm" class="ask-form">
           <label for="agentQuestion">Question</label>
@@ -99,19 +132,22 @@
         </form>
         <div id="agentResponse" class="agent-response">Ask a question to get a grounded response.</div>
       </article>
+
       <article class="card">
-        <h2>Connect Tebra (guided onboarding)</h2>
+        <h2>Connect Tebra (Onboarding)</h2>
         <ol class="onboarding-steps">
-          <li><strong>Working now:</strong> complete intake and generate a local onboarding packet.</li>
-          <li><strong>Working now:</strong> request pilot-assisted connection review with PMHNP Billing.</li>
-          <li><strong>Not live yet:</strong> direct self-serve in-browser Tebra OAuth.</li>
-          <li><strong>Not live yet:</strong> automatic client account provisioning.</li>
+          <li><strong>Working now:</strong> Complete onboarding intake and generate a local packet.</li>
+          <li><strong>Working now:</strong> Request pilot-assisted connection setup with PMHNP Billing team.</li>
+          <li><strong>Not live yet:</strong> Self-serve Tebra OAuth in-browser login.</li>
+          <li><strong>Not live yet:</strong> Automatic client account provisioning.</li>
         </ol>
+
         <div class="flow-actions">
-          <a class="btn-primary" href="/app/intake.html">Start onboarding intake</a>
-          <a class="btn-secondary" href="mailto:pilot@pmhnpbilling.com?subject=PMHNP%20AI%20Agent%20Pilot%20Connection%20Request">Email pilot team</a>
+          <a class="btn-primary" href="/app/intake.html">Start Onboarding Intake</a>
+          <a class="btn-secondary" href="mailto:pilot@pmhnpbilling.com?subject=PMHNP%20AI%20Agent%20Pilot%20Connection%20Request">Email Pilot Team</a>
         </div>
-        <p class="fine-print">Safety boundary: this app does not submit claims to payers. Recommendations remain draft-only and human reviewed.</p>
+
+        <p class="fine-print">Safety boundary: this app does not submit, edit, or transmit claims to payers. Recommendations remain draft-only and human-reviewed.</p>
       </article>
     </section>
   </main>
