@@ -10,6 +10,13 @@ Tracks performance of blog posts to inform future content strategy.
 
 ## Post Performance Log
 
+### 2026-03-16 - PMHNP Billing in Chicago: Prior Authorization Expiration, Units, and Visit-Limit Tracking Checklist (2026)
+- **URL**: /blog/pmhnp-billing-chicago-prior-authorization-expiration-units-visit-limit-tracking-checklist-2026.html
+- **Target Keywords**: pmhnp prior authorization tracking, prior authorization expiration, authorization units psychiatric billing, visit limit denial prevention, chicago pmhnp billing
+- **Status**: 🟡 Newly published
+- **Week 1**: Pending...
+- **Notes**: Chosen as a high-intent denial-prevention gap between existing prior authorization workflow content and denial appeals content. Focuses on post-approval operational controls rather than initial auth submission.
+
 ### 2026-02-01 - Essential CPT Codes for PMHNPs: The Complete 2026 Billing Guide
 - **URL**: /blog/essential-cpt-codes-pmhnp-guide.html
 - **Target Keywords**: cpt codes pmhnp, psychiatric billing codes, 90791 90792 billing, psychotherapy cpt codes, medication management billing
@@ -76,5 +83,5 @@ Based on performance data:
 3. 
 
 ---
-*Last Updated*: 2026-02-01
-*Next Review*: 2026-02-08 (after SEO index check)
+*Last Updated*: 2026-03-16
+*Next Review*: 2026-03-23 (after SEO index check)
