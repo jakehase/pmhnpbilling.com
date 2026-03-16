@@ -1,440 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PMHNP Billing Blog: Credentialing, Denials & Telehealth Guides</title>
-    <meta name="description" content="Actionable PMHNP billing guides on credentialing, prior authorization, telehealth, coding, and denial prevention for psychiatric practices.">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://pmhnpbilling.com/blog/">
-    
-    <!-- Breadcrumb Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://pmhnpbilling.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Blog",
-          "item": "https://pmhnpbilling.com/blog/"
-        }
-      ]
-    }
-    </script>
-    
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='48' y2='48'%3E%3Cstop stop-color='%232563eb'/%3E%3Cstop offset='1' stop-color='%230ea5e9'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='url(%23g)'/%3E%3Cpath d='M10 12h9a6 6 0 010 12h-9V12zm3 3v6h6a3 3 0 000-6h-6z' fill='white'/%3E%3Cpath d='M26 12h9a6 6 0 014.24 10.24L26 36V12zm3 3v12.5l7-7.5a3 3 0 00-4-4h-3z' fill='white' fill-opacity='0.85'/%3E%3C/svg%3E">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.7;
-            color: #374151;
-            background: #fff;
-        }
-        
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(0,0,0,0.06);
-        }
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.7rem;
-            text-decoration: none;
-        }
-        .logo-icon { width: 36px; height: 36px; border-radius: 8px; }
-        .logo-text { display: flex; align-items: center; gap: 0.35rem; font-size: 1.1rem; }
-        .logo-text .pmh {
-            font-weight: 700;
-            background: linear-gradient(135deg, #1e40af, #2563eb);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            border-bottom: 2px solid #2563eb;
-            padding-bottom: 1px;
-        }
-        .logo-text .dot {
-            color: #9ca3af;
-            font-weight: 500;
-        }
-        .logo-text .billing {
-            font-weight: 600;
-            color: #1f2937;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-            align-items: center;
-        }
-        nav a {
-            text-decoration: none;
-            color: #374151;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-        nav a:hover { color: #2563eb; }
-        
-        /* Main Content */
-        main {
-            margin-top: 80px;
-            padding: 4rem 2rem;
-            max-width: 1000px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .page-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-        
-        .page-title {
-            font-size: 3rem;
-            font-weight: 700;
-            color: #1f2937;
-            margin-bottom: 1rem;
-        }
-        
-        .page-subtitle {
-            font-size: 1.25rem;
-            color: #6b7280;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .priority-links {
-            margin: 1rem auto 0;
-            max-width: 760px;
-            font-size: 0.98rem;
-            color: #4b5563;
-        }
-
-        .priority-links a {
-            color: #2563eb;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .priority-links a:hover {
-            text-decoration: underline;
-        }
-        
-        /* Blog Posts */
-        .blog-posts {
-            display: grid;
-            gap: 3rem;
-        }
-        
-        .blog-post {
-            background: #fff;
-            border: 1px solid #e5e7eb;
-            border-radius: 12px;
-            padding: 2.5rem;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        
-        .blog-post:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-        
-        .post-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #1f2937;
-            margin-bottom: 1rem;
-            text-decoration: none;
-        }
-        
-        .post-title:hover {
-            color: #2563eb;
-        }
-        
-        .post-excerpt {
-            color: #6b7280;
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-        }
-        
-        .post-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.9rem;
-            color: #9ca3af;
-        }
-        
-        .read-more {
-            color: #2563eb;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        
-        .read-more:hover {
-            text-decoration: underline;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            nav { padding: 1rem; }
-            main { padding: 2rem 1rem; }
-            .page-title { font-size: 2rem; }
-            .blog-post { padding: 2rem; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PMHNP Billing Blog | PMHNP Credentialing, Denials & Telehealth Guides</title>
+  <meta name="description" content="Execution-focused PMHNP billing guides on credentialing, denials, coding, prior authorization, telehealth, and psychiatric revenue operations.">
+  <link rel="canonical" href="https://pmhnpbilling.com/blog/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
-    <nav>
-        <a href="../" class="logo">
-            <svg class="logo-icon" viewBox="0 0 48 48">
-                <defs>
-                    <linearGradient id="logoGrad" x1="0" y1="0" x2="48" y2="48">
-                        <stop stop-color="#2563eb"/>
-                        <stop offset="1" stop-color="#0ea5e9"/>
-                    </linearGradient>
-                </defs>
-                <rect width="48" height="48" rx="12" fill="url(#logoGrad)"/>
-                <path d="M10 12h9a6 6 0 010 12h-9V12zm3 3v6h6a3 3 0 000-6h-6z" fill="white"/>
-                <path d="M26 12h9a6 6 0 014.24 10.24L26 36V12zm3 3v12.5l7-7.5a3 3 0 00-4-4h-3z" fill="white" fill-opacity="0.85"/>
-            </svg>
-            <div class="logo-text">
-                <span class="pmh">PMH</span>
-                <span class="dot">•</span>
-                <span class="billing">Billing</span>
-            </div>
-        </a>
-        <ul>
-            <li><a href="../">Home</a></li>
-            <li><a href="../#services">Services</a></li>
-            <li><a href="../#about">About</a></li>
-            <li><a href="./">Blog</a></li>
-            <li><a href="../#contact">Contact</a></li>
-        </ul>
-    </nav>
-    
-    <main>
-        <header class="page-header">
-            <h1 class="page-title">Billing Insights</h1>
-            <p class="page-subtitle">Expert PMHNP billing guidance on credentialing, denial prevention, telehealth compliance, and payer workflow execution.</p>
-            <p class="priority-links"><strong>Start with priority guides:</strong> <a href="./prior-authorization-guide.html">Prior Authorization</a> · <a href="./pmhnp-billing-chicago-claim-denial-appeals-playbook-2026.html">Denial Appeals Playbook</a> · <a href="./pmhnp-billing-chicago-90791-90792-em-psychotherapy-add-on-coding-guide-2026.html">Psychiatric Coding Guide</a> · <a href="./illinois-telehealth-billing-guide.html">Illinois Telehealth Billing</a><br><strong>Need implementation help?</strong> <a href="/services/pmhnp-billing-services.html">PMHNP Billing Services</a> · <a href="/services/pmhnp-credentialing-services.html">Credentialing Services</a> · <a href="/services/denial-management-appeals-pmhnp.html">Denial Management &amp; Appeals</a></p>
-        </header>
-        
-        <div class="blog-posts">
-            <article class="blog-post">
-                <h2><a href="./pmhnp-billing-chicago-prior-authorization-expiration-units-visit-limit-tracking-checklist-2026.html" class="post-title">PMHNP Billing in Chicago: Prior Authorization Expiration, Units, and Visit-Limit Tracking Checklist (2026)</a></h2>
-                <p class="post-excerpt">A Chicago-focused PMHNP billing guide for 2026: how to track prior authorization dates, units, visit limits, and provider/modality details so approved visits stay billable.</p>
-                <div class="post-meta">
-                    <span>March 16, 2026</span>
-                    <a href="./pmhnp-billing-chicago-prior-authorization-expiration-units-visit-limit-tracking-checklist-2026.html" class="read-more">Read More →</a>
-                </div>
-            </article>
-
-            <article class="blog-post">
-                <h2><a href="./pmhnp-billing-chicago-insurance-credentialing-group-vs-individual-npi-eft-era-first-paid-claim-checklist-2026.html" class="post-title">PMHNP Billing in Chicago: Insurance Credentialing Group vs Individual NPI, EFT/ERA Setup, and First-Paid-Claim Checklist (2026)</a></h2>
-                <p class="post-excerpt">A Chicago-focused PMHNP credentialing operations guide for 2026: how to align group vs individual NPI enrollment, activate EFT/ERA correctly, and reach first paid claim with fewer avoidable denials.</p>
-                <div class="post-meta">
-                    <span>March 13, 2026</span>
-                    <a href="./pmhnp-billing-chicago-insurance-credentialing-group-vs-individual-npi-eft-era-first-paid-claim-checklist-2026.html" class="read-more">Read More →</a>
-                </div>
-            </article>
-
-            <article class="blog-post">
-                <h2><a href="./pmhnp-billing-chicago-eligibility-verification-cob-front-end-denial-prevention-checklist-2026.html" class="post-title">PMHNP Billing in Chicago: Eligibility Verification Workflow, COB Rules, and Front-End Denial Prevention Checklist (2026)</a></h2>
-                <p class="post-excerpt">A Chicago-focused PMHNP billing guide to eligibility verification workflows, coordination of benefits (COB), and front-end denial prevention controls that reduce avoidable rework in 2026.</p>
-                <div class="post-meta">
-                    <span>March 12, 2026</span>
-                    <a href="./pmhnp-billing-chicago-eligibility-verification-cob-front-end-denial-prevention-checklist-2026.html" class="read-more">Read More →</a>
-                </div>
-            </article>
-
-            <article class="blog-post">
-                <h2><a href="./illinois-telehealth-billing-pmhnps-chicago-pos-02-10-modifier-95-denial-fixes-2026.html" class="post-title">Illinois Telehealth Billing for PMHNPs: Chicago POS 02 vs 10, Modifier 95 Denial Fixes, and 2026 FAQ</a></h2>
-                <p class="post-excerpt">A Chicago-focused Illinois telehealth billing guide for PMHNP practices: how to choose POS 02 vs 10, align modifier 95 rules by payer, and implement denial-prevention controls with a practical FAQ.</p>
-                <div class="post-meta">
-                    <span>March 9, 2026</span>
-                    <a href="./illinois-telehealth-billing-pmhnps-chicago-pos-02-10-modifier-95-denial-fixes-2026.html" class="read-more">Read More →</a>
-                </div>
-            </article>
-
-            <article class="blog-post">
-                <h2><a href="./pmhnp-billing-chicago-timely-filing-limits-corrected-claims-reconsideration-timeline-checklist-2026.html" class="post-title">PMHNP Billing in Chicago: Timely Filing Limits, Corrected Claims, and Reconsideration Timeline Checklist (2026)</a></h2>
-                <p class="post-excerpt">A Chicago-focused revenue-protection guide for PMHNP practices: how to control timely filing limits, corrected claim workflows, and reconsideration deadlines to prevent avoidable write-offs in 2026.</p>
-                <div class="post-meta">
-                    <span>March 7, 2026</span>
-                    <a href="./pmhnp-billing-chicago-timely-filing-limits-corrected-claims-reconsideration-timeline-checklist-2026.html" class="read-more">Read More →</a>
-                </div>
-            </article>
-
-            <article class="blog-post">
-                <h2><a href="./pmhnp-billing-chicago-npi-taxonomy-caqh-alignment-checklist-eligibility-denials-2026.html" class="post-title">PMHNP Billing in Chicago: NPI, Taxonomy, and CAQH Alignment Checklist to Prevent Eligibility Denials (2026)</a></h2>
-                <p class="post-excerpt">A Chicago-focused enrollment integrity guide for PMHNP practices: how to align NPI, taxonomy, and CAQH data across payer systems to prevent avoidable eligibility denials and payment holds.</p>
-                <div class="post-meta">
-                    <span>March 5, 2026</span>
-                    <a href="./pmhnp-billing-chicago-npi-taxonomy-caqh-alignment-checklist-eligibility-denials-2026.html" class="read-more">Read More →</a>
-                </div>
-            </article>
-
-            <article class="blog-post">
-                <h2><a href="./pmhnp-billing-chicago-caqh-reattestation-recredentialing-checklist-2026.html" class="post-title">PMHNP Billing in Chicago: CAQH Re-Attestation and Re-Credentialing Checklist (2026)</a></h2>
-                <p class="post-excerpt">A Chicago-focused credentialing maintenance guide for PMHNP practices: CAQH re-attestation workflow, re-credentialing calendar controls, and claim-hold prevention steps for 2026.</p>
-                <div class="post-meta">
-                    <span>March 3, 2026</span>
-                    <a href="./pmhnp-billing-chicago-caqh-reattestation-recredentialing-checklist-2026.html" class="read-more">Read More →</a>
-                </div>
-            </article>
-
-            <article class="blog-post">
-                <h2><a href="./pmhnp-billing-chicago-90791-90792-em-psychotherapy-add-on-coding-guide-2026.html" class="post-title">PMHNP Billing in Chicago: 90791 vs 90792 and E/M + Psychotherapy Add-On Coding Guide (2026)</a></h2>
-                <p class="post-excerpt">A Chicago-focused psychiatric CPT guide for PMHNPs: how to choose 90791 vs 90792, pair E/M with psychotherapy add-ons correctly, and prevent common coding denials.</p>
-                <div class="post-meta">
-                    <span>March 1, 2026</span>
-                    <a href="./pmhnp-billing-chicago-90791-90792-em-psychotherapy-add-on-coding-guide-2026.html" class="read-more">Read More →</a>
-                </div>
-            </article>
-
-            <article class="blog-post">
-                <h2><a href="./pmhnp-billing-chicago-prior-authorization-workflow-appeal-packet-templates-2026.html" class="post-title">PMHNP Billing in Chicago: Prior Authorization Workflow and Appeal Packet Templates (2026)</a></h2>
-                <p class="post-excerpt">A Chicago-focused prior authorization operations guide for PMHNP practices: intake-to-decision workflow, denial-prevention controls, and appeal packet templates to accelerate medication approvals.</p>
-                <div class="post-meta">
-                    <span>February 27, 2026</span>
-                    <a href="./pmhnp-billing-chicago-prior-authorization-workflow-appeal-packet-templates-2026.html" class="read-more">Read More →</a>
-                </div>
-            </article>
-
-            <article class="blog-post">
-                <h2><a href="./pmhnp-billing-chicago-psychiatric-cpt-coding-matrix-documentation-audit-checklist-2026.html" class="post-title">PMHNP Billing in Chicago: Psychiatric CPT Coding Matrix and Documentation Audit Checklist (2026)</a></h2>
-                <p class="post-excerpt">A Chicago-focused CPT operations guide for PMHNPs: when to use common psychiatry code paths, how to document E/M + psychotherapy add-ons correctly, and a same-day audit checklist to reduce denials.</p>
-                <div class="post-meta">
-                    <span>February 25, 2026</span>
-                    <a href="./pmhnp-billing-chicago-psychiatric-cpt-coding-matrix-documentation-audit-checklist-2026.html" class="read-more">Read More →</a>
-                </div>
-            </article>
-
-            <article class="blog-post">
-                <h2><a href="./pmhnp-billing-chicago-telehealth-pos-02-10-modifier-95-checklist-2026.html" class="post-title">PMHNP Billing in Chicago: Telehealth POS 02 vs 10, Modifier 95, and Claim QA Checklist (2026)</a></h2>
-                <p class="post-excerpt">A Chicago-focused telehealth operations guide for PMHNPs: when to use POS 02 vs 10, how to standardize modifier 95 by payer, and the same-day claim QA checklist that prevents denials.</p>
-                <div class="post-meta">
-                    <span>February 24, 2026</span>
-                    <a href="./pmhnp-billing-chicago-telehealth-pos-02-10-modifier-95-checklist-2026.html" class="read-more">Read More →</a>
-                </div>
-            </article>
-
-            <article class="blog-post">
-                <h2><a href="./pmhnp-billing-chicago-claim-denial-appeals-playbook-2026.html" class="post-title">PMHNP Billing in Chicago: Claim Denial Appeals Playbook (2026)</a></h2>
-                <p class="post-excerpt">A Chicago-focused denial recovery framework for PMHNP practices: 24-hour triage, appeal packet checklist, letter structure, and KPI tracking to recover revenue faster.</p>
-                <div class="post-meta">
-                    <span>February 24, 2026</span>
-                    <a href="./pmhnp-billing-chicago-claim-denial-appeals-playbook-2026.html" class="read-more">Read More →</a>
-                </div>
-            </article>
-
-            <article class="blog-post">
-                <h2><a href="./pmhnp-billing-chicago-credentialing-first-claim-checklist.html" class="post-title">PMHNP Billing in Chicago: Insurance Credentialing Timeline and First-Claim Checklist (2026)</a></h2>
-                <p class="post-excerpt">A local, execution-focused guide for Chicago PMHNPs: credentialing sequence, CPT/telehealth billing controls, and first-claim QA steps to reduce denials and accelerate reimbursement.</p>
-                <div class="post-meta">
-                    <span>February 24, 2026</span>
-                    <a href="./pmhnp-billing-chicago-credentialing-first-claim-checklist.html" class="read-more">Read More →</a>
-                </div>
-            </article>
-
-            <article class="blog-post">
-                <h2><a href="./starting-private-practice-pmhnp-billing-roadmap.html" class="post-title">Starting a PMHNP Private Practice in Illinois: Billing Setup Checklist Before Your First Claim</a></h2>
-                <p class="post-excerpt">Launching your private practice? Use this billing-first roadmap to set up credentialing, CPT coding workflows, telehealth compliance, and first-claim QA before patient volume ramps.</p>
-                <div class="post-meta">
-                    <span>February 21, 2026</span>
-                    <a href="./starting-private-practice-pmhnp-billing-roadmap.html" class="read-more">Read More →</a>
-                </div>
-            </article>
-
-            <article class="blog-post">
-                <h2><a href="./insurance-credentialing-pmhnp-illinois.html" class="post-title">Insurance Credentialing for Illinois PMHNPs: The 90-Day Roadmap to Get In-Network Faster</a></h2>
-                <p class="post-excerpt">Credentialing delays can stall your revenue cycle before your practice even stabilizes. This step-by-step roadmap shows Illinois PMHNPs how to complete CAQH, prioritize payers, avoid preventable delays, and activate in-network billing faster.</p>
-                <div class="post-meta">
-                    <span>February 21, 2026</span>
-                    <a href="./insurance-credentialing-pmhnp-illinois.html" class="read-more">Read More →</a>
-                </div>
-            </article>
-
-            <article class="blog-post">
-                <h2><a href="./appeal-denied-claims-guide.html" class="post-title">How to Appeal Denied Insurance Claims: A Step-by-Step Guide for PMHNPs</a></h2>
-                <p class="post-excerpt">60-70% of denied psychiatric claims can be overturned on appeal. Learn the proven strategies PMHNPs use to recover thousands in lost revenue, including appeal letter templates and escalation tactics.</p>
-                <div class="post-meta">
-                    <span>February 3, 2026</span>
-                    <a href="./appeal-denied-claims-guide.html" class="read-more">Read More →</a>
-                </div>
-            </article>
-            
-            <article class="blog-post">
-                <h2><a href="./essential-cpt-codes-pmhnp-guide.html" class="post-title">Essential CPT Codes for PMHNPs: The Complete 2026 Billing Guide</a></h2>
-                <p class="post-excerpt">Master the essential CPT codes every PMHNP needs. From psychiatric diagnostic evaluations (90791/90792) to psychotherapy sessions (90834/90837) and crisis intervention (90839), this comprehensive guide covers billing codes with 2026 reimbursement rates, modifiers, and documentation requirements.</p>
-                <div class="post-meta">
-                    <span>February 1, 2026</span>
-                    <a href="./essential-cpt-codes-pmhnp-guide.html" class="read-more">Read More →</a>
-                </div>
-            </article>
-            
-            <article class="blog-post">
-                <h2><a href="./illinois-telehealth-billing-guide.html" class="post-title">Illinois Telehealth Billing Guide for PMHNPs (2026)</a></h2>
-                <p class="post-excerpt">A practical Illinois telehealth billing guide for PMHNPs: 2026 Medicaid thresholds, POS 02 vs 10 decisions, modifier alignment, documentation controls, and denial prevention steps.</p>
-                <div class="post-meta">
-                    <span>January 31, 2026</span>
-                    <a href="./illinois-telehealth-billing-guide.html" class="read-more">Read More →</a>
-                </div>
-            </article>
-            
-            <article class="blog-post">
-                <h2><a href="./prior-authorization-guide.html" class="post-title">Navigating the Prior Authorization Maze: A Chicago PMHNP's Guide to Getting Medications Approved</a></h2>
-                <p class="post-excerpt">As a psychiatric mental health nurse practitioner in Chicago, you know the frustration. Your patient desperately needs their medication, but the insurance company wants prior authorization. Learn how to navigate this complex process more effectively and reduce costly delays.</p>
-                <div class="post-meta">
-                    <span>January 30, 2026</span>
-                    <a href="./prior-authorization-guide.html" class="read-more">Read More →</a>
-                </div>
-            </article>
-            
-            <article class="blog-post">
-                <h2><a href="./mental-health-parity-illinois.html" class="post-title">Illinois Mental Health Parity Guide: PMHNP Billing Compliance in Chicago</a></h2>
-                <p class="post-excerpt">Illinois mental health parity guide for PMHNPs covering treatment-limit disparities, prior authorization parity risk, documentation standards, and complaint escalation paths.</p>
-                <div class="post-meta">
-                    <span>January 30, 2026</span>
-                    <a href="./mental-health-parity-illinois.html" class="read-more">Read More →</a>
-                </div>
-            </article>
-            
-            <article class="blog-post">
-                <h2><a href="./costly-billing-mistakes.html" class="post-title">The $50,000 Mistake: Common Billing Errors Costing Chicago PMHNPs Thousands Each Year</a></h2>
-                <p class="post-excerpt">I recently reviewed billing for a Chicago PMHNP who was losing over $4,000 monthly to completely preventable billing errors. That's nearly $50,000 annually. Learn about the most costly billing mistakes that drain revenue from PMHNPs and how to avoid them.</p>
-                <div class="post-meta">
-                    <span>January 30, 2026</span>
-                    <a href="./costly-billing-mistakes.html" class="read-more">Read More →</a>
-                </div>
-            </article>
-        </div>
-    </main>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="/" class="site-brand">
+        <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <defs><linearGradient id="brand-g" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#2563eb"/><stop offset="1" stop-color="#0ea5e9"/></linearGradient></defs>
+          <rect width="48" height="48" rx="12" fill="url(#brand-g)"/>
+          <path d="M10 12h9a6 6 0 010 12h-9V12zm3 3v6h6a3 3 0 000-6h-6z" fill="white"/>
+          <path d="M26 12h9a6 6 0 014.24 10.24L26 36V12zm3 3v12.5l7-7.5a3 3 0 00-4-4h-3z" fill="white" fill-opacity="0.85"/>
+        </svg>
+        <span class="brand-lockup"><strong>PMHNP Billing</strong><span>Premium psychiatric revenue operations</span></span>
+      </a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav class="site-nav">
+        <a href="/">Home</a>
+        <a href="/services/pmhnp-billing-services.html">Services</a>
+        <a href="/blog/">Blog</a>
+        <a href="/ai-agent.html">AI Agent</a>
+        <a href="/app/">Client App</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+      <div class="site-header__actions">
+        <a class="button button--secondary" href="/app/">Client app</a>
+        <a class="button button--primary" href="/app/intake.html">Start intake</a>
+      </div>
+    </div>
+  </header>
+  <section class="hero hero--compact hero--single">
+    <div class="hero__content">
+      <div class="eyebrow">Editorial library</div>
+      <h1 class="display">PMHNP billing guides built for operators, not just search traffic.</h1>
+      <p class="lead">A unified editorial surface for psychiatric billing, credentialing, denial prevention, telehealth, and launch readiness—now visually aligned with the rest of the PMHNP Billing site.</p>
+      <div class="hero__actions">
+        <input class="filter-input" type="search" data-blog-filter placeholder="Filter guides by keyword, topic, or city…">
+        <a class="button button--ghost" href="/services/pmhnp-billing-services.html">View services</a>
+      </div>
+    </div>
+  </section>
+  <section class="section section--wide">
+    <div class="blog-featured">
+      <p class="eyebrow">Start here</p>
+      <h3>Priority reads for credentialing, denials, coding, and telehealth control.</h3>
+      <div class="badge-row"><a class="badge badge--light" href="./prior-authorization-guide.html">Prior authorization</a><a class="badge badge--light" href="./pmhnp-billing-chicago-claim-denial-appeals-playbook-2026.html">Denial appeals</a><a class="badge badge--light" href="./pmhnp-billing-chicago-90791-90792-em-psychotherapy-add-on-coding-guide-2026.html">Coding guide</a><a class="badge badge--light" href="./illinois-telehealth-billing-guide.html">Telehealth</a></div>
+    </div>
+  </section>
+  <main class="section section--wide">
+    <div class="blog-list-grid">
+<article class="article-card blog-index-card" data-blog-card data-search="How PMHNPs Can Appeal Denied Claims (Step-by-Step) Step-by-step denial appeal process for PMHNP practices, including documentation checklists, letter strategy, and escalation paths."><p class="item-meta">February 3, 2026</p><h3>How PMHNPs Can Appeal Denied Claims (Step-by-Step)</h3><p>Step-by-step denial appeal process for PMHNP practices, including documentation checklists, letter strategy, and escalation paths.</p><a href="./appeal-denied-claims-guide.html">Read guide →</a></article><article class="article-card blog-index-card" data-blog-card data-search="Costly PMHNP Billing Mistakes (and How to Fix Them) See the common billing mistakes that drain PMHNP revenue and the operational fixes that improve clean-claim performance."><p class="item-meta">January 30, 2026</p><h3>Costly PMHNP Billing Mistakes (and How to Fix Them)</h3><p>See the common billing mistakes that drain PMHNP revenue and the operational fixes that improve clean-claim performance.</p><a href="./costly-billing-mistakes.html">Read guide →</a></article><article class="article-card blog-index-card" data-blog-card data-search="Essential PMHNP CPT Codes for Psychiatric Billing (2026) Reference the essential PMHNP CPT codes with practical coding guidance, documentation reminders, and reimbursement context for 2026."><p class="item-meta">February 1, 2026</p><h3>Essential PMHNP CPT Codes for Psychiatric Billing (2026)</h3><p>Reference the essential PMHNP CPT codes with practical coding guidance, documentation reminders, and reimbursement context for 2026.</p><a href="./essential-cpt-codes-pmhnp-guide.html">Read guide →</a></article><article class="article-card blog-index-card" data-blog-card data-search="Illinois Telehealth Billing for PMHNPs (2026) Illinois PMHNP telehealth billing guide covering Medicaid rules, POS 02/10 decisions, modifier usage, and denial-prevention controls."><p class="item-meta">January 31, 2026</p><h3>Illinois Telehealth Billing for PMHNPs (2026)</h3><p>Illinois PMHNP telehealth billing guide covering Medicaid rules, POS 02/10 decisions, modifier usage, and denial-prevention controls.</p><a href="./illinois-telehealth-billing-guide.html">Read guide →</a></article><article class="article-card blog-index-card" data-blog-card data-search="Illinois PMHNP Telehealth FAQ: POS 02/10 + Modifier 95 Illinois PMHNP telehealth billing FAQ covering POS 02 vs 10, modifier 95 payer behavior, denial fixes, and documentation controls."><p class="item-meta">March 9, 2026</p><h3>Illinois PMHNP Telehealth FAQ: POS 02/10 + Modifier 95</h3><p>Illinois PMHNP telehealth billing FAQ covering POS 02 vs 10, modifier 95 payer behavior, denial fixes, and documentation controls.</p><a href="./illinois-telehealth-billing-pmhnps-chicago-pos-02-10-modifier-95-denial-fixes-2026.html">Read guide →</a></article><article class="article-card blog-index-card" data-blog-card data-search="Illinois PMHNP Insurance Credentialing Roadmap (90 Days) Use this 90-day credentialing roadmap to complete CAQH, prioritize payers, and start in-network PMHNP billing faster in Illinois."><p class="item-meta">February 21, 2026</p><h3>Illinois PMHNP Insurance Credentialing Roadmap (90 Days)</h3><p>Use this 90-day credentialing roadmap to complete CAQH, prioritize payers, and start in-network PMHNP billing faster in Illinois.</p><a href="./insurance-credentialing-pmhnp-illinois.html">Read guide →</a></article><article class="article-card blog-index-card" data-blog-card data-search="Illinois Mental Health Parity Guide for PMHNP Practices Identify parity violations, document payer non-compliance, and escalate Illinois PMHNP billing issues with a clear evidence trail."><p class="item-meta">January 30, 2026</p><h3>Illinois Mental Health Parity Guide for PMHNP Practices</h3><p>Identify parity violations, document payer non-compliance, and escalate Illinois PMHNP billing issues with a clear evidence trail.</p><a href="./mental-health-parity-illinois.html">Read guide →</a></article><article class="article-card blog-index-card" data-blog-card data-search="PMHNP Coding Guide: 90791 vs 90792 + E/M Add-Ons (2026) Choose 90791 vs 90792 correctly, pair E/M with psychotherapy add-ons, and reduce avoidable PMHNP coding denials."><p class="item-meta">March 1, 2026</p><h3>PMHNP Coding Guide: 90791 vs 90792 + E/M Add-Ons (2026)</h3><p>Choose 90791 vs 90792 correctly, pair E/M with psychotherapy add-ons, and reduce avoidable PMHNP coding denials.</p><a href="./pmhnp-billing-chicago-90791-90792-em-psychotherapy-add-on-coding-guide-2026.html">Read guide →</a></article><article class="article-card blog-index-card" data-blog-card data-search="PMHNP CAQH Re-Attestation & Re-Credentialing Checklist (2026) Maintain CAQH and payer re-credentialing on schedule with a PMHNP operations checklist that prevents claim holds."><p class="item-meta">March 3, 2026</p><h3>PMHNP CAQH Re-Attestation & Re-Credentialing Checklist (2026)</h3><p>Maintain CAQH and payer re-credentialing on schedule with a PMHNP operations checklist that prevents claim holds.</p><a href="./pmhnp-billing-chicago-caqh-reattestation-recredentialing-checklist-2026.html">Read guide →</a></article><article class="article-card blog-index-card" data-blog-card data-search="PMHNP Claim Denial Appeals Playbook (2026) Use this PMHNP denial appeals framework to triage denials, build stronger packets, and improve overturn rates."><p class="item-meta">February 24, 2026</p><h3>PMHNP Claim Denial Appeals Playbook (2026)</h3><p>Use this PMHNP denial appeals framework to triage denials, build stronger packets, and improve overturn rates.</p><a href="./pmhnp-billing-chicago-claim-denial-appeals-playbook-2026.html">Read guide →</a></article><article class="article-card blog-index-card" data-blog-card data-search="PMHNP Credentialing Timeline & First-Claim Checklist (2026) Follow a PMHNP credentialing timeline that gets enrollment live, tightens first-claim QA, and reduces avoidable denials."><p class="item-meta">February 24, 2026</p><h3>PMHNP Credentialing Timeline & First-Claim Checklist (2026)</h3><p>Follow a PMHNP credentialing timeline that gets enrollment live, tightens first-claim QA, and reduces avoidable denials.</p><a href="./pmhnp-billing-chicago-credentialing-first-claim-checklist.html">Read guide →</a></article><article class="article-card blog-index-card" data-blog-card data-search="PMHNP Eligibility Verification & COB Checklist (2026) Use this PMHNP checklist to verify eligibility, fix COB order, and prevent front-end denials before claims are submitted."><p class="item-meta">March 12, 2026</p><h3>PMHNP Eligibility Verification & COB Checklist (2026)</h3><p>Use this PMHNP checklist to verify eligibility, fix COB order, and prevent front-end denials before claims are submitted.</p><a href="./pmhnp-billing-chicago-eligibility-verification-cob-front-end-denial-prevention-checklist-2026.html">Read guide →</a></article><article class="article-card blog-index-card" data-blog-card data-search="PMHNP Credentialing: Group vs Individual NPI + EFT/ERA (2026) Compare group vs individual NPI enrollment, set up EFT/ERA correctly, and follow a first-paid-claim checklist for PMHNP practices."><p class="item-meta">March 13, 2026</p><h3>PMHNP Credentialing: Group vs Individual NPI + EFT/ERA (2026)</h3><p>Compare group vs individual NPI enrollment, set up EFT/ERA correctly, and follow a first-paid-claim checklist for PMHNP practices.</p><a href="./pmhnp-billing-chicago-insurance-credentialing-group-vs-individual-npi-eft-era-first-paid-claim-checklist-2026.html">Read guide →</a></article><article class="article-card blog-index-card" data-blog-card data-search="PMHNP NPI, Taxonomy & CAQH Alignment Checklist (2026) Use this PMHNP checklist to align NPI, taxonomy, and CAQH data before submission and prevent eligibility denials."><p class="item-meta">March 5, 2026</p><h3>PMHNP NPI, Taxonomy & CAQH Alignment Checklist (2026)</h3><p>Use this PMHNP checklist to align NPI, taxonomy, and CAQH data before submission and prevent eligibility denials.</p><a href="./pmhnp-billing-chicago-npi-taxonomy-caqh-alignment-checklist-eligibility-denials-2026.html">Read guide →</a></article><article class="article-card blog-index-card" data-blog-card data-search="PMHNP Prior Authorization Tracking Checklist (2026) Use this PMHNP prior authorization tracking checklist to control expiration dates, units, visit limits, and prevent avoidable denials in 2026."><p class="item-meta">March 16, 2026</p><h3>PMHNP Prior Authorization Tracking Checklist (2026)</h3><p>Use this PMHNP prior authorization tracking checklist to control expiration dates, units, visit limits, and prevent avoidable denials in 2026.</p><a href="./pmhnp-billing-chicago-prior-authorization-expiration-units-visit-limit-tracking-checklist-2026.html">Read guide →</a></article><article class="article-card blog-index-card" data-blog-card data-search="PMHNP Prior Authorization Workflow & Appeal Templates (2026) Build a denial-resistant prior authorization workflow with PMHNP-specific intake checks, follow-up controls, and appeal templates."><p class="item-meta">February 27, 2026</p><h3>PMHNP Prior Authorization Workflow & Appeal Templates (2026)</h3><p>Build a denial-resistant prior authorization workflow with PMHNP-specific intake checks, follow-up controls, and appeal templates.</p><a href="./pmhnp-billing-chicago-prior-authorization-workflow-appeal-packet-templates-2026.html">Read guide →</a></article><article class="article-card blog-index-card" data-blog-card data-search="PMHNP Psychiatric CPT Coding Matrix & Audit Checklist (2026) Apply a PMHNP CPT coding matrix, audit documentation fast, and reduce denials tied to code selection and note quality."><p class="item-meta">February 25, 2026</p><h3>PMHNP Psychiatric CPT Coding Matrix & Audit Checklist (2026)</h3><p>Apply a PMHNP CPT coding matrix, audit documentation fast, and reduce denials tied to code selection and note quality.</p><a href="./pmhnp-billing-chicago-psychiatric-cpt-coding-matrix-documentation-audit-checklist-2026.html">Read guide →</a></article><article class="article-card blog-index-card" data-blog-card data-search="PMHNP Telehealth Billing: POS 02 vs 10 + Modifier 95 (2026) Use this PMHNP telehealth checklist to select POS 02/10, standardize modifier 95 usage, and prevent claim denials."><p class="item-meta">February 24, 2026</p><h3>PMHNP Telehealth Billing: POS 02 vs 10 + Modifier 95 (2026)</h3><p>Use this PMHNP telehealth checklist to select POS 02/10, standardize modifier 95 usage, and prevent claim denials.</p><a href="./pmhnp-billing-chicago-telehealth-pos-02-10-modifier-95-checklist-2026.html">Read guide →</a></article><article class="article-card blog-index-card" data-blog-card data-search="PMHNP Timely Filing & Corrected Claims Checklist (2026) Control timely filing deadlines, corrected-claim workflows, and reconsideration timelines to reduce PMHNP revenue leakage."><p class="item-meta">March 7, 2026</p><h3>PMHNP Timely Filing & Corrected Claims Checklist (2026)</h3><p>Control timely filing deadlines, corrected-claim workflows, and reconsideration timelines to reduce PMHNP revenue leakage.</p><a href="./pmhnp-billing-chicago-timely-filing-limits-corrected-claims-reconsideration-timeline-checklist-2026.html">Read guide →</a></article><article class="article-card blog-index-card" data-blog-card data-search="PMHNP Prior Authorization Guide: Faster Medication Approvals Practical prior authorization workflow guidance for PMHNP practices to reduce delays, avoid denials, and improve medication access."><p class="item-meta">January 30, 2026</p><h3>PMHNP Prior Authorization Guide: Faster Medication Approvals</h3><p>Practical prior authorization workflow guidance for PMHNP practices to reduce delays, avoid denials, and improve medication access.</p><a href="./prior-authorization-guide.html">Read guide →</a></article><article class="article-card blog-index-card" data-blog-card data-search="PMHNP Private Practice Billing Setup Checklist (Illinois, 2026) Launch your PMHNP practice with a billing-first checklist for credentialing, coding workflows, telehealth setup, and first-claim QA."><p class="item-meta">February 21, 2026</p><h3>PMHNP Private Practice Billing Setup Checklist (Illinois, 2026)</h3><p>Launch your PMHNP practice with a billing-first checklist for credentialing, coding workflows, telehealth setup, and first-claim QA.</p><a href="./starting-private-practice-pmhnp-billing-roadmap.html">Read guide →</a></article>
+    </div>
+    <div class="notice" data-blog-empty hidden>No guides match that filter yet.</div>
+  </main>
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="footer-grid">
+        <div><h4>PMHNP Billing</h4><p>Premium revenue operations support for psychiatric and PMHNP practices.</p></div>
+        <div><h4>Services</h4><ul><li><a href="/services/pmhnp-billing-services.html">Billing</a></li><li><a href="/services/pmhnp-credentialing-services.html">Credentialing</a></li><li><a href="/services/denial-management-appeals-pmhnp.html">Denials</a></li></ul></div>
+        <div><h4>Client flow</h4><ul><li><a href="/app/">Client app</a></li><li><a href="/app/intake.html">Onboarding intake</a></li><li><a href="/blog/">Blog</a></li></ul></div>
+      </div>
+      <div class="hr"></div>
+      <p>© <span data-current-year></span> PMHNP Billing. Human-reviewed billing operations for psychiatric practices.</p>
+    </div>
+  </footer>
+  <script src="/assets/site.js" defer></script>
 </body>
 </html>

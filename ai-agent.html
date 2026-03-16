@@ -1,309 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PMHNP Billing AI Agent (Pilot) | Office Workflow Support</title>
-    <meta name="description" content="Learn about the PMHNP Billing AI Agent pilot: office-friendly billing workflow support with clear human review and safety expectations.">
-
-    <meta property="og:title" content="PMHNP Billing AI Agent (Pilot)">
-    <meta property="og:description" content="A separate pilot page for PMHNP Billing AI Agent workflow support, with manual review and trust-focused safeguards.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://pmhnpbilling.com/ai-agent.html">
-
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="PMHNP Billing AI Agent (Pilot)">
-    <meta name="twitter:description" content="Optional workflow support for PMHNP billing offices with human oversight.">
-
-    <link rel="canonical" href="https://pmhnpbilling.com/ai-agent.html">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://pmhnpbilling.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "AI Agent Pilot",
-          "item": "https://pmhnpbilling.com/ai-agent.html"
-        }
-      ]
-    }
-    </script>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "PMHNP Billing AI Agent (Pilot)",
-      "description": "Optional workflow support for PMHNP billing offices. Human staff review is required before any action.",
-      "url": "https://pmhnpbilling.com/ai-agent.html",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "PMHNP Billing",
-        "url": "https://pmhnpbilling.com"
-      },
-      "audience": {
-        "@type": "Audience",
-        "audienceType": "PMHNP and psychiatric office teams"
-      },
-      "offers": {
-        "@type": "Offer",
-        "availability": "https://schema.org/LimitedAvailability",
-        "url": "https://pmhnpbilling.com/ai-agent.html"
-      }
-    }
-    </script>
-
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: #374151;
-            line-height: 1.7;
-            background: #f8fafc;
-        }
-        .container { width: min(1080px, 92vw); margin: 0 auto; }
-
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(255, 255, 255, 0.96);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid #e5e7eb;
-        }
-        .nav-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 1rem;
-            padding: 0.9rem 0;
-            flex-wrap: wrap;
-        }
-        .brand {
-            text-decoration: none;
-            font-weight: 700;
-            color: #1e3a8a;
-            letter-spacing: -0.02em;
-        }
-        .links {
-            list-style: none;
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-        .links a {
-            text-decoration: none;
-            color: #4b5563;
-            font-size: 0.92rem;
-            font-weight: 500;
-        }
-        .links a:hover { color: #1d4ed8; }
-
-        .hero {
-            padding: 4rem 0 2.4rem;
-        }
-        .eyebrow {
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            font-size: 0.78rem;
-            font-weight: 600;
-            color: #1d4ed8;
-            margin-bottom: 0.7rem;
-        }
-        h1 {
-            font-size: clamp(2rem, 5vw, 3rem);
-            color: #0f172a;
-            line-height: 1.15;
-            letter-spacing: -0.03em;
-            max-width: 18ch;
-        }
-        .hero p {
-            margin-top: 1rem;
-            max-width: 64ch;
-            color: #4b5563;
-            font-size: 1.06rem;
-        }
-        .hero-actions {
-            margin-top: 1.5rem;
-            display: flex;
-            gap: 0.7rem;
-            flex-wrap: wrap;
-        }
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 500;
-            font-size: 0.92rem;
-            padding: 0.72rem 1.05rem;
-            border: 1px solid transparent;
-        }
-        .btn-primary {
-            background: #2563eb;
-            color: #fff;
-        }
-        .btn-primary:hover { background: #1d4ed8; }
-        .btn-ghost {
-            border-color: #bfdbfe;
-            background: #eff6ff;
-            color: #1d4ed8;
-        }
-        .btn-ghost:hover { background: #dbeafe; }
-
-        section { padding: 1.6rem 0 2.5rem; }
-        .panel {
-            background: #fff;
-            border: 1px solid #dbeafe;
-            border-radius: 14px;
-            padding: 1.35rem;
-            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.08);
-        }
-        .panel h2 {
-            font-size: 1.4rem;
-            color: #111827;
-            margin-bottom: 0.7rem;
-            letter-spacing: -0.02em;
-        }
-        .panel p { color: #4b5563; }
-
-        .checklist {
-            margin: 0.9rem 0 0 1.2rem;
-            color: #4b5563;
-        }
-        .checklist li { margin-bottom: 0.5rem; }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        .card {
-            background: #fff;
-            border: 1px solid #e5e7eb;
-            border-radius: 12px;
-            padding: 1rem;
-        }
-        .card h3 {
-            font-size: 1.02rem;
-            color: #111827;
-            margin-bottom: 0.45rem;
-        }
-        .card p { color: #4b5563; font-size: 0.95rem; }
-
-        .notice {
-            margin-top: 1rem;
-            background: #eff6ff;
-            border: 1px solid #bfdbfe;
-            border-radius: 10px;
-            padding: 0.9rem 1rem;
-            color: #1f2937;
-            font-size: 0.94rem;
-        }
-
-        footer {
-            border-top: 1px solid #e5e7eb;
-            padding: 1.3rem 0 2rem;
-            color: #6b7280;
-            font-size: 0.88rem;
-        }
-
-        @media (max-width: 760px) {
-            .grid { grid-template-columns: 1fr; }
-            .hero { padding-top: 2.8rem; }
-        }
-    </style>
-</head>
-<body>
-    <nav>
-        <div class="container nav-inner">
-            <a class="brand" href="/">PMHNP Billing</a>
-            <ul class="links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/blog/">Blog</a></li>
-                <li><a href="/#contact">Contact</a></li>
-                <li><a href="/app/">Client App</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <header class="hero">
-        <div class="container">
-            <div class="eyebrow">Separate product page</div>
-            <h1>PMHNP Billing AI Agent (Pilot)</h1>
-            <p>This page covers our optional AI Agent pilot for office workflow support. It is separate from our core billing services so you can review it clearly and decide if it is a fit for your team.</p>
-            <div class="hero-actions">
-                <a href="/app/" class="btn btn-primary">Open client app</a>
-                <a href="/app/intake.html" class="btn btn-ghost">Start onboarding intake</a>
-            </div>
-        </div>
-    </header>
-
-    <main>
-        <section>
-            <div class="container panel">
-                <h2>What this pilot is for</h2>
-                <p>The AI Agent is designed to support day-to-day billing operations in a practical, office-friendly way:</p>
-                <ul class="checklist">
-                    <li>Organize daily billing priorities and follow-up tasks</li>
-                    <li>Help teams keep claim notes and action items in one place</li>
-                    <li>Surface items that may need human attention sooner</li>
-                </ul>
-                <p class="notice"><strong>Trust and safety:</strong> This is a pilot support tool. Human review is required before decisions or claim actions. It does not replace professional billing judgment, payer policy review, or compliance processes.</p>
-            </div>
-        </section>
-
-        <section>
-            <div class="container">
-                <div class="grid">
-                    <article class="card">
-                        <h3>1) Discovery and fit</h3>
-                        <p>We start with a brief conversation about your workflow, payer mix, and team needs so expectations are clear before rollout.</p>
-                    </article>
-                    <article class="card">
-                        <h3>2) Guided setup</h3>
-                        <p>Setup is completed with your office in mind. We keep the process simple and document who reviews what.</p>
-                    </article>
-                    <article class="card">
-                        <h3>3) Pilot period</h3>
-                        <p>Your team uses the AI Agent in a controlled pilot window with manual checks and practical feedback loops.</p>
-                    </article>
-                    <article class="card">
-                        <h3>4) Review and next steps</h3>
-                        <p>At the end of pilot, we review what helped, what did not, and whether to continue, pause, or refine.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="container panel">
-                <h2>What it does not promise</h2>
-                <ul class="checklist">
-                    <li>No guarantee of automatic claim approval or reimbursement outcomes</li>
-                    <li>No "set it and forget it" billing replacement</li>
-                    <li>No removal of staff responsibility for final review and compliance</li>
-                </ul>
-                <p>Questions are welcome. If you want to explore whether this pilot is appropriate for your office, start with the Client App intake flow and we can review your workflow together.</p>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">&copy; 2026 PMHNP Billing. Pilot availability may vary based on capacity and practice fit.</div>
-    </footer>
-</body>
-</html>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>PMHNP Billing AI Agent | Guided Workflow Support for Psychiatric Offices</title><meta name="description" content="Review the PMHNP Billing AI Agent pilot: guided workflow support for psychiatric offices with clear human-review boundaries and premium onboarding paths."><link rel="canonical" href="https://pmhnpbilling.com/ai-agent.html"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/assets/site.css"></head><body>  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="/" class="site-brand">
+        <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <defs><linearGradient id="brand-g" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#2563eb"/><stop offset="1" stop-color="#0ea5e9"/></linearGradient></defs>
+          <rect width="48" height="48" rx="12" fill="url(#brand-g)"/>
+          <path d="M10 12h9a6 6 0 010 12h-9V12zm3 3v6h6a3 3 0 000-6h-6z" fill="white"/>
+          <path d="M26 12h9a6 6 0 014.24 10.24L26 36V12zm3 3v12.5l7-7.5a3 3 0 00-4-4h-3z" fill="white" fill-opacity="0.85"/>
+        </svg>
+        <span class="brand-lockup"><strong>PMHNP Billing</strong><span>Premium psychiatric revenue operations</span></span>
+      </a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav class="site-nav">
+        <a href="/">Home</a>
+        <a href="/services/pmhnp-billing-services.html">Services</a>
+        <a href="/blog/">Blog</a>
+        <a href="/ai-agent.html">AI Agent</a>
+        <a href="/app/">Client App</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+      <div class="site-header__actions">
+        <a class="button button--secondary" href="/app/">Client app</a>
+        <a class="button button--primary" href="/app/intake.html">Start intake</a>
+      </div>
+    </div>
+  </header>
+<section class="hero hero--compact"><div class="hero__content"><div class="eyebrow">Optional pilot product</div><h1 class="display">AI-assisted workflow support for psychiatric billing teams.</h1><p class="lead">This page presents the PMHNP Billing AI Agent as a separate product lane: useful, premium, operationally grounded, and explicitly human-reviewed.</p><div class="hero__actions"><a class="button button--primary" href="/app/">Open client app</a><a class="button button--ghost" href="/app/intake.html">Start onboarding intake</a></div><ul class="hero-points"><li>Built to support office prioritization and workflow visibility</li><li>Does not replace payer policy review or human billing judgment</li><li>Uses controlled pilot framing instead of overpromising automation</li></ul></div><aside class="hero-card"><p class="eyebrow eyebrow--light">Trust boundary</p><h2>Human review stays in the loop</h2><p class="section-copy">The pilot is designed to surface priorities, keep notes organized, and support office workflows. It does not promise autonomous claim submission or hands-off compliance.</p><div class="notice"><strong>Pilot stance:</strong> recommendations remain draft-oriented and human reviewed before action.</div></aside></section>
+<section class="section"><div class="process-timeline"><article class="process-card" data-step="1"><h3>Discovery</h3><p>Review your office workflow, payer mix, and support goals.</p></article><article class="process-card" data-step="2"><h3>Guided setup</h3><p>Use the intake flow to create a structured onboarding request and local packet.</p></article><article class="process-card" data-step="3"><h3>Pilot use</h3><p>Operate with manual checks, dashboard visibility, and office-friendly prompts.</p></article><article class="process-card" data-step="4"><h3>Review</h3><p>Decide whether to refine, continue, or pause after practical use.</p></article></div></section>
+<section class="section"><div class="grid-two"><article class="card"><h3>What it helps with</h3><ul class="check-list"><li>Daily billing priorities and triage visibility</li><li>Human-review queue organization</li><li>Office-language guidance over current snapshot context</li></ul></article><article class="card"><h3>What it does not promise</h3><ul class="check-list"><li>No automatic claim approval outcomes</li><li>No set-it-and-forget-it replacement for staff</li><li>No removal of compliance responsibility from the office</li></ul></article></div></section>
+<section class="section"><div class="cta-section"><h3>Want to evaluate the pilot properly?</h3><p>Start with the same premium onboarding path used across the redesigned site: client app first, intake second, human review always visible.</p><div class="inline-actions"><a class="button button--primary" href="/app/">Open client app</a><a class="button button--secondary" href="/app/intake.html">Start intake</a></div></div></section>
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="footer-grid">
+        <div><h4>PMHNP Billing</h4><p>Premium revenue operations support for psychiatric and PMHNP practices.</p></div>
+        <div><h4>Services</h4><ul><li><a href="/services/pmhnp-billing-services.html">Billing</a></li><li><a href="/services/pmhnp-credentialing-services.html">Credentialing</a></li><li><a href="/services/denial-management-appeals-pmhnp.html">Denials</a></li></ul></div>
+        <div><h4>Client flow</h4><ul><li><a href="/app/">Client app</a></li><li><a href="/app/intake.html">Onboarding intake</a></li><li><a href="/blog/">Blog</a></li></ul></div>
+      </div>
+      <div class="hr"></div>
+      <p>© <span data-current-year></span> PMHNP Billing. Human-reviewed billing operations for psychiatric practices.</p>
+    </div>
+  </footer>
+  <script src="/assets/site.js" defer></script></body></html>
