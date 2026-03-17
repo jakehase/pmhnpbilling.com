@@ -1,5 +1,4 @@
-
-// PMHNP blog search + bidirectional motion layer
+// PMHNP live-template blog search + bidirectional motion layer
 (function () {
   var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -7,6 +6,9 @@
   var searchMeta = document.getElementById('blogSearchMeta');
   if (searchInput) {
     var items = Array.prototype.slice.call(document.querySelectorAll('.blog-search-item'));
+    if (!items.length) {
+      items = Array.prototype.slice.call(document.querySelectorAll('.blog-post'));
+    }
     var updateSearch = function () {
       var query = (searchInput.value || '').trim().toLowerCase();
       var visible = 0;
@@ -26,7 +28,7 @@
     updateSearch();
   }
 
-  var revealItems = Array.prototype.slice.call(document.querySelectorAll('[data-scroll-reveal]'));
+  var revealItems = Array.prototype.slice.call(document.querySelectorAll('[data-scroll-reveal], .fade-in'));
   if (revealItems.length) {
     if (!prefersReducedMotion && 'IntersectionObserver' in window) {
       var revealObserver = new IntersectionObserver(function (entries) {
@@ -64,7 +66,7 @@
     updateMotion();
     window.addEventListener('scroll', updateMotion, { passive: true });
 
-    Array.prototype.slice.call(document.querySelectorAll('.motion-hero-section, .why-work-section, .offer-section, .blog-search-panel, .service-card, .card, article')).forEach(function (panel) {
+    Array.prototype.slice.call(document.querySelectorAll('.motion-surface, .motion-hero-section, .why-work-section, .offer-section, .blog-search-panel, .service-card, .card, article, .faq-item, .trust-item, .testimonial-content, .contact-info, .contact-form, .panel')).forEach(function (panel) {
       panel.addEventListener('mousemove', function (event) {
         var rect = panel.getBoundingClientRect();
         var x = (event.clientX - rect.left) / rect.width - 0.5;

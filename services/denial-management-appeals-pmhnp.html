@@ -61,6 +61,7 @@
       @media (max-width: 760px) { h1 { font-size: 1.8rem; } .nav-links { display: none; } }
     </style>
 
+    <link rel="stylesheet" href="../assets/live-fixes.css">
 </head>
 <body>
     <nav>
@@ -75,12 +76,12 @@
       </div>
     </nav>
 
-    <main>
-      <p class="eyebrow">Service</p>
-      <h1>Denial Management & Appeals for PMHNP Practices</h1>
-      <p class="lead">Structured denial recovery and prevention workflows that improve overturn rates and lower repeat denials.</p>
+    <main class="offer-section" data-has-orbs="true">
+      <p class="eyebrow" data-scroll-reveal>Service</p>
+      <h1 data-scroll-reveal data-reveal-delay="40">Denial Management & Appeals for PMHNP Practices</h1>
+      <p class="lead" data-scroll-reveal data-reveal-delay="90">Structured denial recovery and prevention workflows that improve overturn rates and lower repeat denials.</p>
 
-      <section>
+      <section class="motion-surface" data-scroll-reveal>
         <h2>What this service includes</h2>
         <ul>
         <li>Denial categorization by root cause and financial impact</li>
@@ -91,12 +92,12 @@
         </ul>
       </section>
 
-      <section>
+      <section class="motion-surface" data-scroll-reveal>
         <h2>Who this is a fit for</h2>
         <p>Best for PMHNP teams with growing denial backlogs, inconsistent appeal outcomes, or poor visibility into denial trends.</p>
       </section>
 
-      <section class="related">
+      <section class="related motion-surface" data-scroll-reveal>
         <h2>Related PMHNP billing guides</h2>
         <ul>
         <li><a href="https://pmhnpbilling.com/blog/appeal-denied-claims-guide.html">How PMHNPs Can Appeal Denied Claims</a></li>
@@ -105,9 +106,10 @@
         </ul>
       </section>
 
-      <section class="cta">
+      <section class="cta motion-surface" data-scroll-reveal>
         <p><strong>Next step:</strong> if you want implementation help, <a href="/#contact">request a billing consult</a> or start with the <a href="/app/intake.html">onboarding intake</a>.</p>
       </section>
     </main>
+    <script src="../script.js" defer></script>
 </body>
 </html>

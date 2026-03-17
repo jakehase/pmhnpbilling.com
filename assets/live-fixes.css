@@ -1,0 +1,217 @@
+/* Live-template motion + search patch */
+:root {
+  --live-fix-ease: cubic-bezier(.2, .8, .2, 1);
+}
+
+.is-filtered-out {
+  display: none !important;
+}
+
+[data-scroll-reveal],
+.fade-in {
+  opacity: 0;
+  transform: translateY(26px) scale(0.985);
+  filter: blur(6px);
+  transition:
+    opacity .72s ease,
+    transform .72s var(--live-fix-ease),
+    filter .72s ease;
+  will-change: opacity, transform, filter;
+}
+
+[data-scroll-reveal].is-in-view,
+.fade-in.is-in-view,
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+.motion-hero-section,
+.offer-section,
+.why-work-section,
+[data-has-orbs="true"] {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  --scroll-progress: 0;
+}
+
+.motion-hero-section::before,
+.motion-hero-section::after,
+.offer-section::before,
+.offer-section::after,
+.why-work-section::before,
+.why-work-section::after,
+[data-has-orbs="true"]::before,
+[data-has-orbs="true"]::after {
+  content: "";
+  position: absolute;
+  border-radius: 999px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.55;
+  filter: blur(10px);
+}
+
+.motion-hero-section::before,
+.offer-section::before,
+.why-work-section::before,
+[data-has-orbs="true"]::before {
+  width: clamp(180px, 24vw, 340px);
+  height: clamp(180px, 24vw, 340px);
+  top: clamp(-110px, -8vw, -40px);
+  right: clamp(-110px, -6vw, -24px);
+  background: radial-gradient(circle at 35% 35%, rgba(96, 165, 250, 0.42), rgba(96, 165, 250, 0) 72%);
+  transform: translate3d(0, calc(var(--scroll-progress, 0) * 22px), 0);
+}
+
+.motion-hero-section::after,
+.offer-section::after,
+.why-work-section::after,
+[data-has-orbs="true"]::after {
+  width: clamp(150px, 18vw, 260px);
+  height: clamp(150px, 18vw, 260px);
+  bottom: clamp(-120px, -9vw, -40px);
+  left: clamp(-90px, -4vw, -18px);
+  background: radial-gradient(circle at 35% 35%, rgba(14, 165, 233, 0.28), rgba(14, 165, 233, 0) 72%);
+  transform: translate3d(0, calc(var(--scroll-progress, 0) * -18px), 0);
+}
+
+.motion-surface,
+.blog-search-panel,
+.blog-post,
+.service-card,
+.faq-item,
+.trust-item,
+.testimonial-content,
+.contact-info,
+.contact-form,
+.panel,
+.card,
+main.offer-section section {
+  transform:
+    perspective(1000px)
+    rotateX(var(--tilt-y, 0deg))
+    rotateY(var(--tilt-x, 0deg));
+  transform-style: preserve-3d;
+  transition:
+    transform .22s ease,
+    box-shadow .22s ease,
+    border-color .22s ease;
+  will-change: transform;
+}
+
+.blog-search-panel,
+.blog-post,
+.service-card,
+.faq-item,
+.trust-item,
+.testimonial-content,
+.contact-info,
+.contact-form,
+.panel,
+.card,
+main.offer-section section {
+  position: relative;
+  z-index: 1;
+}
+
+.blog-search-panel:hover,
+.blog-post:hover,
+.service-card:hover,
+.faq-item:hover,
+.trust-item:hover,
+.testimonial-content:hover,
+.contact-info:hover,
+.contact-form:hover,
+.panel:hover,
+.card:hover,
+main.offer-section section:hover {
+  box-shadow: 0 16px 34px rgba(15, 23, 42, 0.08);
+}
+
+.blog-search-panel {
+  margin: 0 auto 2rem;
+  max-width: 780px;
+  padding: 1.15rem;
+  border: 1px solid #dbeafe;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(239, 246, 255, 0.98), rgba(255, 255, 255, 0.98));
+}
+
+.blog-search-label {
+  display: block;
+  margin-bottom: 0.7rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.blog-search-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 1rem;
+  border-radius: 14px;
+  border: 1px solid #bfdbfe;
+  background: #fff;
+}
+
+.blog-search-input-wrap svg {
+  width: 18px;
+  height: 18px;
+  color: #2563eb;
+  flex: 0 0 auto;
+}
+
+#blogSearch {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #0f172a;
+}
+
+#blogSearch::placeholder {
+  color: #94a3b8;
+}
+
+.blog-search-meta {
+  margin-top: 0.75rem;
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-scroll-reveal],
+  .fade-in,
+  .motion-surface,
+  .blog-search-panel,
+  .blog-post,
+  .service-card,
+  .faq-item,
+  .trust-item,
+  .testimonial-content,
+  .contact-info,
+  .contact-form,
+  .panel,
+  .card,
+  main.offer-section section {
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .motion-hero-section::before,
+  .motion-hero-section::after,
+  .offer-section::before,
+  .offer-section::after,
+  .why-work-section::before,
+  .why-work-section::after,
+  [data-has-orbs="true"]::before,
+  [data-has-orbs="true"]::after {
+    display: none;
+  }
+}

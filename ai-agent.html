@@ -226,6 +226,7 @@
             .hero { padding-top: 2.8rem; }
         }
     </style>
+    <link rel="stylesheet" href="assets/live-fixes.css">
 </head>
 <body>
     <nav>
@@ -240,7 +241,7 @@
         </div>
     </nav>
 
-    <header class="hero">
+    <header class="hero motion-hero-section" data-has-orbs="true">
         <div class="container">
             <div class="eyebrow">Separate product page</div>
             <h1>PMHNP Billing AI Agent (Pilot)</h1>
@@ -252,9 +253,9 @@
         </div>
     </header>
 
-    <main>
+    <main class="offer-section">
         <section>
-            <div class="container panel">
+            <div class="container panel motion-surface" data-scroll-reveal>
                 <h2>What this pilot is for</h2>
                 <p>The AI Agent is designed to support day-to-day billing operations in a practical, office-friendly way:</p>
                 <ul class="checklist">
@@ -269,19 +270,19 @@
         <section>
             <div class="container">
                 <div class="grid">
-                    <article class="card">
+                    <article class="card motion-surface" data-scroll-reveal>
                         <h3>1) Discovery and fit</h3>
                         <p>We start with a brief conversation about your workflow, payer mix, and team needs so expectations are clear before rollout.</p>
                     </article>
-                    <article class="card">
+                    <article class="card motion-surface" data-scroll-reveal>
                         <h3>2) Guided setup</h3>
                         <p>Setup is completed with your office in mind. We keep the process simple and document who reviews what.</p>
                     </article>
-                    <article class="card">
+                    <article class="card motion-surface" data-scroll-reveal>
                         <h3>3) Pilot period</h3>
                         <p>Your team uses the AI Agent in a controlled pilot window with manual checks and practical feedback loops.</p>
                     </article>
-                    <article class="card">
+                    <article class="card motion-surface" data-scroll-reveal>
                         <h3>4) Review and next steps</h3>
                         <p>At the end of pilot, we review what helped, what did not, and whether to continue, pause, or refine.</p>
                     </article>
@@ -290,7 +291,7 @@
         </section>
 
         <section>
-            <div class="container panel">
+            <div class="container panel motion-surface" data-scroll-reveal>
                 <h2>What it does not promise</h2>
                 <ul class="checklist">
                     <li>No guarantee of automatic claim approval or reimbursement outcomes</li>
@@ -305,5 +306,6 @@
     <footer>
         <div class="container">&copy; 2026 PMHNP Billing. Pilot availability may vary based on capacity and practice fit.</div>
     </footer>
+    <script src="script.js" defer></script>
 </body>
 </html>
