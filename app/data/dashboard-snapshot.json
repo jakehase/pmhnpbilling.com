@@ -10,7 +10,9 @@
     "live_client_auth_provisioning": false,
     "claim_auto_submission": false,
     "pilot_manual_connection_request": true,
-    "local_onboarding_packet_builder": true
+    "local_onboarding_packet_builder": true,
+    "tebra_export_upload": false,
+    "tebra_admin_assisted_sync": true
   },
   "dashboard": {
     "today_priorities": [
@@ -157,7 +159,9 @@
       "What should my biller do first this morning?",
       "What is the highest-risk claim in this dashboard?",
       "Summarize what is in Needs Review and why.",
-      "What is ready now vs pilot-only in Connect Tebra?"
+      "What is ready now vs pilot-only in Connect Tebra?",
+      "What access and BAA controls still need verification?",
+      "Which client-approved source system should this practice use?"
     ],
     "top_finding_preview": {
       "what_happened": "The agent detected a critical risk for timely filing based on rule PMHNP-R005.",

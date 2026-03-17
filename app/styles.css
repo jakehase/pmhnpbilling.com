@@ -159,6 +159,7 @@ td { font-size: .9rem; }
 
 .onboarding-steps { margin: 0; padding-left: 1.2rem; display: grid; gap: .45rem; }
 .flow-actions { margin-top: .9rem; display: flex; gap: .6rem; flex-wrap: wrap; }
+.inline-actions { margin-top: .75rem; display: flex; gap: .5rem; flex-wrap: wrap; }
 
 .btn-primary,
 .btn-secondary,
@@ -178,6 +179,10 @@ button.btn-secondary {
   background: #eff6ff;
   color: #1d4ed8;
   border-color: #bfdbfe;
+}
+button[disabled] {
+  opacity: .6;
+  cursor: not-allowed;
 }
 
 .intake-card { max-width: 900px; margin: 1.4rem auto; }
@@ -215,6 +220,36 @@ input:focus, select:focus, textarea:focus {
   border-color: #fdba74;
   background: #fff7ed;
   color: #9a3412;
+}
+
+.lane-grid {
+  display: grid;
+  gap: .75rem;
+}
+
+.lane-option {
+  display: grid;
+  gap: .35rem;
+  border: 1px solid #dbeafe;
+  background: #f8fbff;
+  border-radius: 12px;
+  padding: .9rem;
+  cursor: pointer;
+}
+
+.lane-option input {
+  width: auto;
+  margin: 0;
+}
+
+.lane-option__title {
+  font-weight: 700;
+  color: #111827;
+}
+
+.lane-option__meta {
+  color: #4b5563;
+  font-size: .92rem;
 }
 
 @media (max-width: 860px) {
