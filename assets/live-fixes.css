@@ -249,8 +249,9 @@ main.offer-section section:hover {
 }
 
 .site-footer__inner {
+  width: min(760px, calc(100vw - 2rem));
   display: grid;
-  grid-template-columns: minmax(0, 1.3fr) repeat(2, minmax(180px, 0.85fr));
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
   gap: 1rem;
 }
 
