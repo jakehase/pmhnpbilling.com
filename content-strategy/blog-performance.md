@@ -10,6 +10,13 @@ Tracks performance of blog posts to inform future content strategy.
 
 ## Post Performance Log
 
+### 2026-03-18 - PMHNP Billing in Chicago: Behavioral Health Carve-Outs, Referral Requirements, and Payer Routing Checklist (2026)
+- **URL**: /blog/pmhnp-billing-chicago-behavioral-health-carve-outs-referral-requirements-payer-routing-checklist-2026.html
+- **Target Keywords**: pmhnp behavioral health carve out, psychiatric payer routing, referral requirements pmhnp billing, wrong payer denial prevention, chicago pmhnp billing
+- **Status**: 🟡 Newly published
+- **Week 1**: Pending...
+- **Notes**: Chosen as a high-intent front-end denial-prevention gap adjacent to the existing eligibility/COB and prior authorization content. Focuses specifically on carve-out identification, referral controls, and correct psychiatric claim destination rather than generic eligibility verification.
+
 ### 2026-03-16 - PMHNP Billing in Chicago: Prior Authorization Expiration, Units, and Visit-Limit Tracking Checklist (2026)
 - **URL**: /blog/pmhnp-billing-chicago-prior-authorization-expiration-units-visit-limit-tracking-checklist-2026.html
 - **Target Keywords**: pmhnp prior authorization tracking, prior authorization expiration, authorization units psychiatric billing, visit limit denial prevention, chicago pmhnp billing
@@ -83,5 +90,5 @@ Based on performance data:
 3. 
 
 ---
-*Last Updated*: 2026-03-16
-*Next Review*: 2026-03-23 (after SEO index check)
+*Last Updated*: 2026-03-18
+*Next Review*: 2026-03-25 (after SEO index check)
