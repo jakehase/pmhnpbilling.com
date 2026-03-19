@@ -452,12 +452,6 @@
             display: flex; align-items: center; justify-content: center;
             margin-bottom: 1.25rem;
             transition: all 0.3s ease;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        .service-icon:focus-visible {
-            outline: 3px solid rgba(37, 99, 235, 0.28);
-            outline-offset: 4px;
         }
         .service-icon svg { width: 24px; height: 24px; color: #2563eb; transition: all 0.3s ease; }
         .service-card:hover .service-icon { 
@@ -480,9 +474,9 @@
         }
         
 
-        /* AI Agent Preview */
-        .agent-preview { background: #f8fafc; border-top: 1px solid #e5e7eb; border-bottom: 1px solid #e5e7eb; padding: 3rem 2rem; }
-        .agent-preview-card {
+        /* Denial Ops Pilot Preview */
+        .pilot-preview { background: #f8fafc; border-top: 1px solid #e5e7eb; border-bottom: 1px solid #e5e7eb; padding: 3rem 2rem; }
+        .pilot-preview-card {
             max-width: 900px;
             margin: 0 auto;
             background: #fff;
@@ -493,9 +487,9 @@
             gap: 1rem;
             box-shadow: 0 12px 30px rgba(37, 99, 235, 0.08);
         }
-        .agent-preview h3 { font-size: 1.25rem; color: #111827; }
-        .agent-preview p { color: #4b5563; font-size: 1rem; }
-        .agent-note {
+        .pilot-preview h3 { font-size: 1.25rem; color: #111827; }
+        .pilot-preview p { color: #4b5563; font-size: 1rem; }
+        .pilot-note {
             font-size: 0.95rem;
             color: #374151;
             background: #eff6ff;
@@ -688,8 +682,8 @@
             .form-row { grid-template-columns: 1fr; }
             .section-title { font-size: 1.75rem; }
             .testimonial-quote { font-size: 1.1rem; }
-            .agent-preview { padding: 2rem 1.5rem; }
-            .agent-preview-card { padding: 1.25rem; }
+            .pilot-preview { padding: 2rem 1.5rem; }
+            .pilot-preview-card { padding: 1.25rem; }
             /* Show fewer floating shapes on mobile - keep inside bounds */
             .floating-shape-1 { width: 120px; height: 120px; top: 10px; right: -40px; }
             .floating-shape-2 { width: 80px; height: 80px; bottom: 20px; left: -20px; }
@@ -703,7 +697,6 @@
             .hero-shape-5 { bottom: 20%; right: 5%; }
         }
     </style>
-    <link rel="stylesheet" href="assets/live-fixes.css?v=footerfix2">
 </head>
 <body id="top">
     <nav>
@@ -725,7 +718,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="blog/">Blog</a></li>
-            <li><a href="ai-agent.html">AI Agent</a></li>
+            <li><a href="denial-ops-pilot.html">Denial Ops Pilot</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
         <a href="/app/" class="nav-intake-btn">Client App</a>
@@ -739,13 +732,13 @@
         <a href="#about" onclick="toggleMenu()">About</a>
         <a href="#faq" onclick="toggleMenu()">FAQ</a>
         <a href="blog/" onclick="toggleMenu()">Blog</a>
-        <a href="ai-agent.html" onclick="toggleMenu()">AI Agent</a>
+        <a href="denial-ops-pilot.html" onclick="toggleMenu()">Denial Ops Pilot</a>
         <a href="#contact" onclick="toggleMenu()">Contact</a>
         <div class="mobile-menu-divider"></div>
         <a href="/app/" onclick="toggleMenu()" class="mobile-intake-link">Client App</a>
     </div>
 
-    <div class="hero-wrapper motion-hero-section" data-has-orbs="true">
+    <div class="hero-wrapper">
         <div class="hero-bg"></div>
         <div class="hero-shape hero-shape-1"></div>
         <div class="hero-shape hero-shape-2"></div>
@@ -753,7 +746,7 @@
         <div class="hero-shape hero-shape-4"></div>
         <div class="hero-shape hero-shape-5"></div>
         <div class="hero-shape hero-shape-6"></div>
-        <section class="hero" data-scroll-reveal>
+        <section class="hero">
             <div class="hero-logo">
                 <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <defs><linearGradient id="hero-logo-grad" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#2563eb"/><stop offset="1" stop-color="#0ea5e9"/></linearGradient></defs>
@@ -774,44 +767,44 @@
         </section>
     </div>
 
-    <section id="services" class="services offer-section" data-has-orbs="true">
+    <section id="services" class="services">
         <div class="section-header fade-in">
             <div class="section-label">Services</div>
             <h2 class="section-title">What I offer</h2>
         </div>
         <div class="services-grid">
-            <div class="service-card fade-in motion-surface">
-                <a class="service-icon" href="/services/pmhnp-billing-services.html" aria-label="Explore PMHNP Billing Services"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z"/></svg></a>
+            <div class="service-card fade-in">
+                <div class="service-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z"/></svg></div>
                 <h3>Claims Management</h3>
                 <p>Accurate claim submission with payer follow-up and clean-claim controls to protect reimbursement speed.</p>
                 <a class="service-link" href="/services/pmhnp-billing-services.html">Explore PMHNP Billing Services →</a>
             </div>
-            <div class="service-card fade-in motion-surface">
-                <a class="service-icon" href="/services/prior-authorization-support.html" aria-label="Explore Prior Authorization Support"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></a>
+            <div class="service-card fade-in">
+                <div class="service-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
                 <h3>Prior Authorization Support</h3>
                 <p>Structured medication authorization workflows, status tracking, and escalation steps to prevent treatment delays.</p>
                 <a class="service-link" href="/services/prior-authorization-support.html">Explore Prior Authorization Support →</a>
             </div>
-            <div class="service-card fade-in motion-surface">
-                <a class="service-icon" href="/services/pmhnp-credentialing-services.html" aria-label="Explore Credentialing Services"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"/></svg></a>
+            <div class="service-card fade-in">
+                <div class="service-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"/></svg></div>
                 <h3>PMHNP Credentialing Services</h3>
                 <p>Enrollment planning, CAQH upkeep, and payer follow-through to accelerate first paid claims and reduce setup risk.</p>
                 <a class="service-link" href="/services/pmhnp-credentialing-services.html">Explore Credentialing Services →</a>
             </div>
-            <div class="service-card fade-in motion-surface">
-                <a class="service-icon" href="/services/denial-management-appeals-pmhnp.html" aria-label="Explore Denial Management and Appeals"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"/></svg></a>
+            <div class="service-card fade-in">
+                <div class="service-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"/></svg></div>
                 <h3>Denial Management &amp; Appeals</h3>
                 <p>Denial triage, root-cause tracking, and structured appeals built for PMHNP claim patterns.</p>
                 <a class="service-link" href="/services/denial-management-appeals-pmhnp.html">Explore Denial Management &amp; Appeals →</a>
             </div>
-            <div class="service-card fade-in motion-surface">
-                <a class="service-icon" href="/services/telehealth-billing-compliance-support.html" aria-label="Explore Telehealth Billing Compliance Support"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"/></svg></a>
+            <div class="service-card fade-in">
+                <div class="service-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"/></svg></div>
                 <h3>Telehealth Billing Compliance Support</h3>
                 <p>POS 02/10, modifier usage, and documentation controls that keep PMHNP telehealth claims clean.</p>
                 <a class="service-link" href="/services/telehealth-billing-compliance-support.html">Explore Telehealth Billing Compliance →</a>
             </div>
-            <div class="service-card fade-in motion-surface">
-                <a class="service-icon" href="/services/pmhnp-billing-services.html" aria-label="See Full PMHNP Billing Services"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/></svg></a>
+            <div class="service-card fade-in">
+                <div class="service-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/></svg></div>
                 <h3>Revenue Review</h3>
                 <p>Periodic review of billing operations to find leakage points and improve PMHNP reimbursement performance.</p>
                 <a class="service-link" href="/services/pmhnp-billing-services.html">See Full PMHNP Billing Services →</a>
@@ -831,13 +824,13 @@
         </div>
     </section>
 
-    <section class="agent-preview offer-section" data-has-orbs="true">
-        <div class="agent-preview-card fade-in motion-surface">
-            <h3>Optional: PMHNP Billing AI Agent (Pilot)</h3>
-            <p>If you want to explore workflow support, you can review details on a separate page. The main homepage stays focused on core billing services.</p>
-            <p class="agent-note"><strong>Important:</strong> Pilot only. Human review is required before any action.</p>
+    <section class="pilot-preview">
+        <div class="pilot-preview-card fade-in">
+            <h3>Optional: PMHNP Denial Ops Pilot</h3>
+            <p>For PMHNP practices that want tighter denial follow-up, we also run a Tebra-first denial ops pilot focused on appeal worklists, reviewer queues, and measurable ROI.</p>
+            <p class="pilot-note"><strong>Important:</strong> Pilot only. Human review is required before any claim-facing action, and ROI proof depends on real pilot tracking.</p>
             <div style="display:flex;gap:0.7rem;flex-wrap:wrap;">
-                <a href="ai-agent.html" class="btn-secondary">Learn about the AI Agent pilot</a>
+                <a href="denial-ops-pilot.html" class="btn-secondary">Learn about the denial ops pilot</a>
                 <a href="/app/" class="btn-secondary">Open Client App</a>
             </div>
         </div>
@@ -849,26 +842,26 @@
             <h2 class="section-title">Common questions</h2>
         </div>
         <div class="faq-content fade-in">
-            <div class="faq-item motion-surface">
+            <div class="faq-item">
                 <h3>What do you charge?</h3>
                 <p>I charge 6% of collections—no setup fees, no monthly minimums. You only pay when you get paid. Prior authorizations are billed separately at $25 each.</p>
             </div>
-            <div class="faq-item motion-surface">
+            <div class="faq-item">
                 <h3>What's included?</h3>
                 <p>Full claims management, payment posting, denial management, insurance follow-up, and periodic revenue reviews. Everything you need to keep your billing running smoothly.</p>
             </div>
-            <div class="faq-item motion-surface">
+            <div class="faq-item">
                 <h3>How does onboarding work?</h3>
                 <p>After we confirm fit and sign the service agreement and Business Associate Agreement, access is set up through the practice's approved source system. Do not upload or email patient rosters, claims, appointment exports, or other patient information through this public website.</p>
             </div>
-            <div class="faq-item motion-surface">
+            <div class="faq-item">
                 <h3>Do you work with my EHR?</h3>
                 <p>I work with most major EHR and practice management systems used by psychiatric providers. If you're unsure, just ask—I'm happy to check compatibility.</p>
             </div>
         </div>
     </section>
 
-    <section class="trust why-work-section" data-has-orbs="true">
+    <section class="trust">
         <div class="floating-shape floating-shape-1"></div>
         <div class="floating-shape floating-shape-2"></div>
         <div class="floating-shape floating-shape-3"></div>
@@ -878,22 +871,22 @@
             <h2 class="section-title">Built for psychiatric practices</h2>
         </div>
         <div class="trust-grid">
-            <div class="trust-item fade-in motion-surface">
+            <div class="trust-item fade-in">
                 <div class="trust-item-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"/></svg></div>
                 <h3>PMHNP Focused</h3>
                 <p>Specialized knowledge of psychiatric billing codes and requirements</p>
             </div>
-            <div class="trust-item fade-in motion-surface">
+            <div class="trust-item fade-in">
                 <div class="trust-item-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"/></svg></div>
                 <h3>Direct Communication</h3>
                 <p>You work with me directly—no call centers or ticket systems</p>
             </div>
-            <div class="trust-item fade-in motion-surface">
+            <div class="trust-item fade-in">
                 <div class="trust-item-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg></div>
                 <h3>Quick Turnaround</h3>
                 <p>Claims submitted within 24–48 hours of service</p>
             </div>
-            <div class="trust-item fade-in motion-surface">
+            <div class="trust-item fade-in">
                 <div class="trust-item-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg></div>
                 <h3>Privacy-Focused Workflow</h3>
                 <p>Your patient data is handled securely</p>
@@ -906,7 +899,7 @@
             <div class="section-label">Testimonial</div>
             <h2 class="section-title">What clients say</h2>
         </div>
-        <div class="testimonial-content fade-in motion-surface">
+        <div class="testimonial-content fade-in">
             <p class="testimonial-quote">Working with Jake has been a game-changer. I used to dread the billing side of things—hours lost to claims and phone calls with insurance. Now I just focus on my patients and trust that Jake's got the rest. He's responsive, thorough, and actually cares about getting it right.</p>
             <div class="testimonial-author">
                 <span class="testimonial-author-name">Kate</span>
@@ -917,11 +910,11 @@
 
     <section id="contact" class="contact">
         <div class="contact-wrapper">
-            <div class="contact-info fade-in motion-surface">
+            <div class="contact-info fade-in">
                 <h2>Let's talk</h2>
                 <p>Interested in working together? Fill out the form and I'll respond within one business day to discuss your practice's needs.</p>
             </div>
-            <form class="contact-form fade-in motion-surface" action="https://formspree.io/f/xkorlzor" method="POST">
+            <form class="contact-form fade-in" action="https://formspree.io/f/xkorlzor" method="POST">
                 <div class="form-row">
                     <div class="form-group"><label for="name">Name</label><input type="text" id="name" name="name" required></div>
                     <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" required></div>
@@ -945,50 +938,28 @@
             </form>
         </div>
     </section>
-    <footer class="site-footer">
-        <div class="site-footer__inner">
-            <div class="site-footer__panel motion-surface" data-scroll-reveal data-reveal-delay="70">
-                <h4>Services</h4>
-                <ul>
-                    <li><a href="/services/pmhnp-billing-services.html">PMHNP Billing Services</a></li>
-                    <li><a href="/services/pmhnp-credentialing-services.html">Credentialing</a></li>
-                    <li><a href="/services/prior-authorization-support.html">Prior Authorization</a></li>
-                    <li><a href="/services/denial-management-appeals-pmhnp.html">Denial Appeals</a></li>
-                    <li><a href="/services/telehealth-billing-compliance-support.html">Telehealth Compliance</a></li>
-                </ul>
-            </div>
-            <div class="site-footer__panel motion-surface" data-scroll-reveal data-reveal-delay="130">
-                <h4>Explore</h4>
-                <ul>
-                    <li><a href="/blog/">Blog</a></li>
-                    <li><a href="/ai-agent.html">AI Agent Pilot</a></li>
-                    <li><a href="/app/">Client App</a></li>
-                    <li><a href="/#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="site-footer__bottom">
-            <span>&copy; 2026 PMHNP Billing</span>
-            <span>Human review comes first.</span>
-        </div>
-    </footer>
 
-<script src="script.js" defer></script>
+    <footer><p>&copy; 2026 PMHNP Billing. All rights reserved.</p></footer>
+
     <script>
         function toggleMenu() {
-            var toggle = document.querySelector('.menu-toggle');
-            var mobileMenu = document.getElementById('mobileMenu');
-            if (toggle) toggle.classList.toggle('active');
-            if (mobileMenu) mobileMenu.classList.toggle('active');
+            document.querySelector('.menu-toggle').classList.toggle('active');
+            document.getElementById('mobileMenu').classList.toggle('active');
         }
-
-        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                var target = document.querySelector(this.getAttribute('href'));
+                const target = document.querySelector(this.getAttribute('href'));
                 if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
     </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"d35f945cec834f5b91de3b20c79f3c6b","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>

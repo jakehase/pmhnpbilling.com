@@ -61,7 +61,7 @@
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "PMHNP Billing AI Agent (Pilot)",
+          "name": "PMHNP Denial Ops Pilot",
           "description": "Optional workflow support pilot with human review before any action"
         }
       }

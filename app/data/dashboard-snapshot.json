@@ -154,7 +154,7 @@
       }
     ]
   },
-  "ask_agent": {
+  "ask_worklist": {
     "suggested_prompts": [
       "What should my biller do first this morning?",
       "What is the highest-risk claim in this dashboard?",
@@ -164,7 +164,7 @@
       "Which client-approved source system should this practice use?"
     ],
     "top_finding_preview": {
-      "what_happened": "The agent detected a critical risk for timely filing based on rule PMHNP-R005.",
+      "what_happened": "The worklist engine detected a critical risk for timely filing based on rule PMHNP-R005.",
       "why_it_matters": "Timely filing denials are often hard denials with limited recovery options; PMHNP outpatient claims need explicit deadline watchlist handling. This matters for billing throughput and reimbursement.",
       "recommended_next_steps": [
         "Validate claim-line coding and payer edits before resubmission.",
