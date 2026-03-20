@@ -10,6 +10,13 @@ Tracks performance of blog posts to inform future content strategy.
 
 ## Post Performance Log
 
+### 2026-03-20 - PMHNP Billing in Chicago: Medicare PECOS Enrollment, Reassignment, PTAN, and First-Claim Checklist (2026)
+- **URL**: /blog/pmhnp-billing-chicago-medicare-pecos-reassignment-ptan-first-claim-checklist-2026.html
+- **Target Keywords**: pmhnp medicare enrollment illinois, pecos reassignment pmhnp, ptan medicare pmhnp, 855I 855R PMHNP, chicago pmhnp medicare credentialing
+- **Status**: 🟡 Newly published
+- **Week 1**: Pending...
+- **Notes**: Chosen as a high-intent credentialing gap adjacent to the existing NPI/CAQH and EFT/ERA content, but specifically focused on Medicare enrollment operations. Targets PMHNP owners and billers who need PECOS, reassignment, PTAN, and first-claim readiness guidance rather than another general credentialing overview.
+
 ### 2026-03-18 - PMHNP Billing in Chicago: Behavioral Health Carve-Outs, Referral Requirements, and Payer Routing Checklist (2026)
 - **URL**: /blog/pmhnp-billing-chicago-behavioral-health-carve-outs-referral-requirements-payer-routing-checklist-2026.html
 - **Target Keywords**: pmhnp behavioral health carve out, psychiatric payer routing, referral requirements pmhnp billing, wrong payer denial prevention, chicago pmhnp billing
@@ -90,5 +97,5 @@ Based on performance data:
 3. 
 
 ---
-*Last Updated*: 2026-03-18
-*Next Review*: 2026-03-25 (after SEO index check)
+*Last Updated*: 2026-03-20
+*Next Review*: 2026-03-27 (after SEO index check)
