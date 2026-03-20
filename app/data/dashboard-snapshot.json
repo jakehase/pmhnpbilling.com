@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-03-08T05:23:27.944Z",
+  "generated_at": "2026-03-20T00:00:00.000Z",
   "source": {
-    "type": "pmhnp-denial-copilot-state",
-    "run_id": "run_1772925226325",
-    "finding_count": 10
+    "type": "app-shell",
+    "run_id": "secure_access_required",
+    "finding_count": 0
   },
   "truths": {
     "live_tebra_oauth": false,
@@ -15,163 +15,46 @@
     "tebra_admin_assisted_sync": true
   },
   "dashboard": {
-    "today_priorities": [
-      {
-        "title": "Timely Filing",
-        "severity": "critical",
-        "route_to": "escalation_queue",
-        "claim_ref": "claim_743d0e8c7e",
-        "recommendation": "Escalate immediately; prioritize submission or appeal packet creation based on status."
-      },
-      {
-        "title": "Coding Billing Mismatch",
-        "severity": "high",
-        "route_to": "coding_review",
-        "claim_ref": "claim_743d0e8c7e",
-        "recommendation": "Confirm payer telehealth policy and correct POS/modifier combination before submit."
-      },
-      {
-        "title": "Coding Bundling",
-        "severity": "high",
-        "route_to": "coding_review",
-        "claim_ref": "claim_743d0e8c7e",
-        "recommendation": "Add/validate same-day E/M code linkage or remove unsupported add-on line."
-      },
-      {
-        "title": "Authorization",
-        "severity": "high",
-        "route_to": "authorization_team",
-        "claim_ref": "claim_743d0e8c7e",
-        "recommendation": "Obtain/validate authorization before submission."
-      },
-      {
-        "title": "Eligibility",
-        "severity": "high",
-        "route_to": "front_office",
-        "claim_ref": "claim_743d0e8c7e",
-        "recommendation": "Re-run eligibility check and update coverage details in Tebra prior to submit."
-      },
-      {
-        "title": "Documentation Support",
-        "severity": "high",
-        "route_to": "clinician_queue",
-        "claim_ref": "claim_743d0e8c7e",
-        "recommendation": "Complete/sign note and resolve missing required documentation elements."
-      }
-    ],
-    "claims_at_risk": [
-      {
-        "claim_ref": "claim_743d0e8c7e",
-        "highest_severity": "critical",
-        "finding_count": 10,
-        "categories": [
-          "coding_billing_mismatch",
-          "coding_bundling",
-          "duplicate_claim",
-          "timely_filing",
-          "authorization",
-          "eligibility",
-          "documentation_support",
-          "utilization_limits",
-          "preventable_pattern",
-          "provider_policy_compliance"
-        ],
-        "recommended_next_step": "Escalate immediately; prioritize submission or appeal packet creation based on status."
-      }
-    ],
-    "needs_review": [
-      {
-        "queue_item_id": "q_9e556d7d-17fd-4169-9f6c-6bec00c0520b",
-        "claim_ref": "claim_743d0e8c7e",
-        "status": "queued",
-        "severity": "critical",
-        "route_to": "escalation_queue",
-        "sla_due_at": "2026-03-08T01:13:46.326Z",
-        "requires_human_approval": true
-      },
-      {
-        "queue_item_id": "q_e6963c56-0d73-4b13-b7aa-8394e0f54f65",
-        "claim_ref": "claim_743d0e8c7e",
-        "status": "queued",
-        "severity": "high",
-        "route_to": "coding_review",
-        "sla_due_at": "2026-03-08T07:13:46.326Z",
-        "requires_human_approval": true
-      },
-      {
-        "queue_item_id": "q_cf40c7c8-08b8-4db7-b69a-cca8d862bda4",
-        "claim_ref": "claim_743d0e8c7e",
-        "status": "queued",
-        "severity": "high",
-        "route_to": "authorization_team",
-        "sla_due_at": "2026-03-08T07:13:46.326Z",
-        "requires_human_approval": true
-      },
-      {
-        "queue_item_id": "q_760ff86d-1265-4e1b-9404-36444522af18",
-        "claim_ref": "claim_743d0e8c7e",
-        "status": "queued",
-        "severity": "high",
-        "route_to": "coding_review",
-        "sla_due_at": "2026-03-08T07:13:46.326Z",
-        "requires_human_approval": true
-      },
-      {
-        "queue_item_id": "q_89642ec0-c6ee-43cb-b5dd-a07ff51f7017",
-        "claim_ref": "claim_743d0e8c7e",
-        "status": "queued",
-        "severity": "high",
-        "route_to": "compliance_billing",
-        "sla_due_at": "2026-03-08T07:13:46.326Z",
-        "requires_human_approval": true
-      },
-      {
-        "queue_item_id": "q_2addc812-d63a-48c1-96f3-c57e888f29a0",
-        "claim_ref": "claim_743d0e8c7e",
-        "status": "queued",
-        "severity": "medium",
-        "route_to": "revenue_integrity",
-        "sla_due_at": "2026-03-08T22:13:46.326Z",
-        "requires_human_approval": true
-      },
-      {
-        "queue_item_id": "q_b24a5db1-69a3-4ae8-bea0-c33337142424",
-        "claim_ref": "claim_743d0e8c7e",
-        "status": "queued",
-        "severity": "medium",
-        "route_to": "coding_review",
-        "sla_due_at": "2026-03-08T22:13:46.326Z",
-        "requires_human_approval": true
-      },
-      {
-        "queue_item_id": "q_1da5a5b7-5284-451d-a2d1-97a46cdd9bc4",
-        "claim_ref": "claim_743d0e8c7e",
-        "status": "queued",
-        "severity": "medium",
-        "route_to": "billing_follow_up",
-        "sla_due_at": "2026-03-08T22:13:46.326Z",
-        "requires_human_approval": true
-      }
-    ]
+    "today_priorities": [],
+    "claims_at_risk": [],
+    "needs_review": []
+  },
+  "automation": {
+    "approvals": {
+      "pending_count": 0,
+      "approved_count": 0,
+      "rejected_count": 0,
+      "pending_items": []
+    },
+    "pilot_roi": {
+      "baseline_count": 0,
+      "tracked_practices": []
+    },
+    "denial_intelligence": {
+      "taxonomy_count": 0,
+      "taxonomy_preview": []
+    }
+  },
+  "onboarding": {
+    "sessions": []
   },
   "ask_worklist": {
     "suggested_prompts": [
-      "What should my biller do first this morning?",
-      "What is the highest-risk claim in this dashboard?",
-      "Summarize what is in Needs Review and why.",
-      "What is ready now vs pilot-only in Connect Tebra?",
-      "What access and BAA controls still need verification?",
-      "Which client-approved source system should this practice use?"
+      "What will appear here after secure access is connected?",
+      "How do we prove ROI from this Claim Guard pilot?",
+      "Which client-approved source system should this practice use?",
+      "What access and BAA controls still need verification?"
     ],
     "top_finding_preview": {
-      "what_happened": "The worklist engine detected a critical risk for timely filing based on rule PMHNP-R005.",
-      "why_it_matters": "Timely filing denials are often hard denials with limited recovery options; PMHNP outpatient claims need explicit deadline watchlist handling. This matters for billing throughput and reimbursement.",
+      "what_happened": "No live claim-risk or recovery worklist is loaded in this public shell.",
+      "why_it_matters": "This page is intentionally empty until secure access is connected so it does not show preview claim data.",
       "recommended_next_steps": [
-        "Validate claim-line coding and payer edits before resubmission.",
-        "Prepare corrected-claim checklist and queue for lead review."
+        "Complete the service agreement and BAA before PHI access",
+        "Use a client-provisioned account in an approved source system",
+        "Keep claim-facing actions human-reviewed"
       ],
       "confidence": "high",
-      "main_uncertainty": "Exact filing grace rules can differ by contract and claim type, so deadline exceptions must be validated."
+      "main_uncertainty": "Live worklist content depends on authenticated practice data, not public preview data."
     }
   }
 }
