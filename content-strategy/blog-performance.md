@@ -10,6 +10,13 @@ Tracks performance of blog posts to inform future content strategy.
 
 ## Post Performance Log
 
+### 2026-03-22 - PMHNP Billing in Chicago: Illinois Medicaid IMPACT Enrollment, MCO Linking, and First-Claim Checklist (2026)
+- **URL**: /blog/pmhnp-billing-chicago-illinois-medicaid-impact-enrollment-mco-linking-first-claim-checklist-2026.html
+- **Target Keywords**: illinois medicaid pmhnp enrollment, impact enrollment pmhnp, illinois medicaid mco billing pmhnp, chicago medicaid credentialing pmhnp, pmhnp first medicaid claim checklist
+- **Status**: 🟡 Newly published
+- **Week 1**: Pending...
+- **Notes**: Chosen as a high-intent Medicaid enrollment and first-claim readiness gap after recent posts covered Medicare PECOS, commercial credentialing, carve-outs, prior auth tracking, and telehealth. Targets PMHNP owners and billers who need Illinois-specific IMPACT, revalidation, managed-care routing, and launch-readiness guidance rather than another general credentialing article.
+
 ### 2026-03-20 - PMHNP Billing in Chicago: Medicare PECOS Enrollment, Reassignment, PTAN, and First-Claim Checklist (2026)
 - **URL**: /blog/pmhnp-billing-chicago-medicare-pecos-reassignment-ptan-first-claim-checklist-2026.html
 - **Target Keywords**: pmhnp medicare enrollment illinois, pecos reassignment pmhnp, ptan medicare pmhnp, 855I 855R PMHNP, chicago pmhnp medicare credentialing
@@ -97,5 +104,5 @@ Based on performance data:
 3. 
 
 ---
-*Last Updated*: 2026-03-20
-*Next Review*: 2026-03-27 (after SEO index check)
+*Last Updated*: 2026-03-22
+*Next Review*: 2026-03-29 (after SEO index check)
