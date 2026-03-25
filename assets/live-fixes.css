@@ -154,44 +154,44 @@ main.offer-section section {
 .faq .section-header,
 .trust .section-header,
 .testimonial .section-header {
-  transform: translate3d(0, calc((var(--section-scroll-progress, 0) * -22px) + var(--reveal-y, 0px)), 0) scale(var(--reveal-scale, 1));
-  opacity: calc(var(--reveal-opacity, 1) * (0.9 + (var(--scroll-intensity, 0) * 0.1)));
-  transition: transform .14s linear, opacity .14s linear;
-  will-change: transform, opacity;
+  transform: translate3d(0, calc(var(--section-scroll-progress, 0) * -30px), 0);
+  opacity: 1;
+  transition: transform .08s linear;
+  will-change: transform;
 }
 
 .services .service-card:nth-child(odd),
 .faq .faq-item:nth-child(odd),
 .trust .trust-item:nth-child(odd),
 .site-footer__panel:nth-child(odd) {
-  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * 20px);
+  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * 28px);
 }
 
 .services .service-card:nth-child(even),
 .faq .faq-item:nth-child(even),
 .trust .trust-item:nth-child(even),
 .site-footer__panel:nth-child(even) {
-  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * -20px);
+  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * -28px);
 }
 
 .about .about-content {
-  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * 18px);
+  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * 24px);
 }
 
 .pilot-preview .pilot-preview-card {
-  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * -22px);
+  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * -30px);
 }
 
 .testimonial .testimonial-content {
-  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * 20px);
+  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * 26px);
 }
 
 .contact .contact-info {
-  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * -22px);
+  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * -30px);
 }
 
 .contact .contact-form {
-  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * 22px);
+  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * 30px);
 }
 
 .blog-search-panel:hover,
@@ -266,14 +266,21 @@ main.offer-section section:hover {
 
 .services .service-card p,
 .services .service-card .service-link {
-  opacity: 0;
-  transform: translateY(18px);
-  filter: blur(6px);
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
   transition:
     opacity .58s ease,
     transform .72s var(--live-fix-ease),
     filter .58s ease;
   will-change: opacity, transform, filter;
+}
+
+.js-motion-ready .services .service-card p,
+.js-motion-ready .services .service-card .service-link {
+  opacity: 0;
+  transform: translateY(18px);
+  filter: blur(6px);
 }
 
 .services .service-card p {
