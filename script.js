@@ -180,8 +180,6 @@
       var rafId = 0;
       var lastHeroBurstAt = 0;
       var touchTapActive = false;
-      var touchTapStartX = 0;
-      var touchTapStartY = 0;
 
       var clamp = function (value, min, max) {
         return Math.max(min, Math.min(max, value));
@@ -321,9 +319,9 @@
         var totalDx = clientX - startPointerX;
         var totalDy = clientY - startPointerY;
         if (!dragStarted) {
-          var threshold = mode === 'touch' ? 3 : 5;
+          var threshold = mode === 'touch' ? 18 : 5;
           if (Math.abs(totalDx) < threshold && Math.abs(totalDy) < threshold) return false;
-          if (mode === 'touch' && Math.abs(totalDy) > Math.abs(totalDx) * 0.92 && Math.abs(totalDy) > 8) {
+          if (mode === 'touch' && Math.abs(totalDy) > Math.abs(totalDx) * 1.25 && Math.abs(totalDy) > 14) {
             clearHeroInteraction();
             return false;
           }
@@ -426,28 +424,41 @@
         if (event.target && event.target.closest('a, button, input, textarea, select')) return;
         var touch = event.changedTouches[0];
         touchTapActive = true;
-        touchTapStartX = touch.clientX;
-        touchTapStartY = touch.clientY;
+        activePointerId = 'touch';
+        pointerType = 'touch';
+        beginHeroInteraction(touch.clientX, touch.clientY, 'touch');
       }, { passive: true });
 
       wrapper.addEventListener('touchmove', function (event) {
-        if (!touchTapActive) return;
+        if (interactionMode !== 'touch') return;
         var touch = (event.changedTouches && event.changedTouches[0]) || (event.touches && event.touches[0]);
         if (!touch) return;
-        if (Math.abs(touch.clientX - touchTapStartX) > 16 || Math.abs(touch.clientY - touchTapStartY) > 16) {
+        if (moveHeroInteraction(touch.clientX, touch.clientY, 'touch', event)) {
           touchTapActive = false;
         }
-      }, { passive: true });
+      }, { passive: false });
 
       wrapper.addEventListener('touchend', function (event) {
-        if (!touchTapActive) return;
+        if (interactionMode !== 'touch') return;
         var touch = event.changedTouches && event.changedTouches[0];
+        if (!touch) {
+          touchTapActive = false;
+          clearHeroInteraction();
+          return;
+        }
+        finishHeroInteraction(touch.clientX, touch.clientY, 'touch', touchTapActive, 1.2);
         touchTapActive = false;
-        if (!touch) return;
-        nudgeHeroFromPoint(touch.clientX, touch.clientY, 1.65);
       }, { passive: true });
 
-      wrapper.addEventListener('touchcancel', function () {
+      wrapper.addEventListener('touchcancel', function (event) {
+        if (interactionMode === 'touch') {
+          var touch = event.changedTouches && event.changedTouches[0];
+          if (touch) {
+            finishHeroInteraction(touch.clientX, touch.clientY, 'touch', false, 1);
+          } else {
+            clearHeroInteraction();
+          }
+        }
         touchTapActive = false;
       }, { passive: true });
 
