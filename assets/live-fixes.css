@@ -9,9 +9,13 @@
 
 [data-scroll-reveal],
 .fade-in {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  filter: blur(0);
+  --reveal-opacity: 1;
+  --reveal-y: 0px;
+  --reveal-scale: 1;
+  --reveal-blur: 0px;
+  opacity: var(--reveal-opacity);
+  transform: translate3d(0, var(--reveal-y), 0) scale(var(--reveal-scale));
+  filter: blur(var(--reveal-blur));
   transition:
     opacity .72s ease,
     transform .72s var(--live-fix-ease),
@@ -21,17 +25,19 @@
 
 .js-motion-ready [data-scroll-reveal],
 .js-motion-ready .fade-in {
-  opacity: 0;
-  transform: translateY(26px) scale(0.985);
-  filter: blur(6px);
+  --reveal-opacity: 0;
+  --reveal-y: 26px;
+  --reveal-scale: 0.985;
+  --reveal-blur: 6px;
 }
 
 [data-scroll-reveal].is-in-view,
 .fade-in.is-in-view,
 .fade-in.visible {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  filter: blur(0);
+  --reveal-opacity: 1;
+  --reveal-y: 0px;
+  --reveal-scale: 1;
+  --reveal-blur: 0px;
 }
 
 .motion-hero-section,
@@ -113,7 +119,8 @@
 .card,
 main.offer-section section {
   transform:
-    translate3d(var(--scroll-pan-x, 0px), var(--scroll-pan-y, 0px), 0)
+    translate3d(var(--scroll-pan-x, 0px), calc(var(--scroll-pan-y, 0px) + var(--reveal-y, 0px)), 0)
+    scale(var(--reveal-scale, 1))
     perspective(1000px)
     rotateX(var(--tilt-y, 0deg))
     rotateY(var(--tilt-x, 0deg));
@@ -147,8 +154,8 @@ main.offer-section section {
 .faq .section-header,
 .trust .section-header,
 .testimonial .section-header {
-  transform: translate3d(0, calc(var(--section-scroll-progress, 0) * -22px), 0);
-  opacity: calc(0.9 + (var(--scroll-intensity, 0) * 0.1));
+  transform: translate3d(0, calc((var(--section-scroll-progress, 0) * -22px) + var(--reveal-y, 0px)), 0) scale(var(--reveal-scale, 1));
+  opacity: calc(var(--reveal-opacity, 1) * (0.9 + (var(--scroll-intensity, 0) * 0.1)));
   transition: transform .14s linear, opacity .14s linear;
   will-change: transform, opacity;
 }
