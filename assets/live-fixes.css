@@ -9,9 +9,9 @@
 
 [data-scroll-reveal],
 .fade-in {
-  opacity: 0;
-  transform: translateY(26px) scale(0.985);
-  filter: blur(6px);
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
   transition:
     opacity .72s ease,
     transform .72s var(--live-fix-ease),
