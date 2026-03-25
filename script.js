@@ -1,6 +1,23 @@
-// PMHNP live-template blog search + bidirectional motion layer
+// PMHNP homepage interactions
 (function () {
-  var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var prefersReducedMotion = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+
+  window.toggleMenu = function toggleMenu() {
+    var toggle = document.querySelector('.menu-toggle');
+    var mobileMenu = document.getElementById('mobileMenu');
+    if (toggle) toggle.classList.toggle('active');
+    if (mobileMenu) mobileMenu.classList.toggle('active');
+  };
+
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    anchor.addEventListener('click', function (event) {
+      var targetSelector = this.getAttribute('href');
+      var target = targetSelector ? document.querySelector(targetSelector) : null;
+      if (!target) return;
+      event.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
 
   var searchInput = document.getElementById('blogSearch');
   var searchMeta = document.getElementById('blogSearchMeta');
@@ -54,7 +71,20 @@
   }
 
   if (!prefersReducedMotion) {
-    var motionSections = Array.prototype.slice.call(document.querySelectorAll('[data-has-orbs="true"], .motion-hero-section, .why-work-section, .offer-section'));
+    var motionSections = Array.prototype.slice.call(document.querySelectorAll([
+      '[data-has-orbs="true"]',
+      '.motion-hero-section',
+      '.why-work-section',
+      '.offer-section',
+      '.hero-wrapper--spheres-luxe',
+      '.services',
+      '.pilot-preview',
+      '.trust',
+      '.testimonial',
+      '.contact',
+      '.site-footer'
+    ].join(', ')));
+
     var updateMotion = function () {
       var viewportHeight = window.innerHeight || 1;
       motionSections.forEach(function (section) {
@@ -66,9 +96,28 @@
     updateMotion();
     window.addEventListener('scroll', updateMotion, { passive: true });
 
-    Array.prototype.slice.call(document.querySelectorAll('.motion-surface, .motion-hero-section, .why-work-section, .offer-section, .blog-search-panel, .service-card, .card, article, .faq-item, .trust-item, .testimonial-content, .contact-info, .contact-form, .panel')).forEach(function (panel) {
+    Array.prototype.slice.call(document.querySelectorAll([
+      '.motion-surface',
+      '.motion-hero-section',
+      '.why-work-section',
+      '.offer-section',
+      '.blog-search-panel',
+      '.pilot-preview-card',
+      '.about-content',
+      '.service-card',
+      '.faq-item',
+      '.trust-item',
+      '.testimonial-content',
+      '.contact-info',
+      '.contact-form',
+      '.site-footer__panel',
+      '.panel',
+      '.card',
+      'article'
+    ].join(', '))).forEach(function (panel) {
       panel.addEventListener('mousemove', function (event) {
         var rect = panel.getBoundingClientRect();
+        if (!rect.width || !rect.height) return;
         var x = (event.clientX - rect.left) / rect.width - 0.5;
         var y = (event.clientY - rect.top) / rect.height - 0.5;
         panel.style.setProperty('--tilt-x', (x * 4).toFixed(2) + 'deg');
@@ -79,5 +128,26 @@
         panel.style.removeProperty('--tilt-y');
       });
     });
+
+    var heroLuxeField = document.getElementById('heroLuxeField');
+    var wrapper = document.querySelector('.hero-wrapper--spheres-luxe');
+    if (heroLuxeField && wrapper) {
+      var resetLuxeField = function () {
+        heroLuxeField.style.transform = 'rotateX(0deg) rotateY(0deg) translate3d(0,0,0)';
+      };
+      wrapper.addEventListener('mousemove', function (event) {
+        var rect = wrapper.getBoundingClientRect();
+        if (!rect.width || !rect.height) return;
+        var x = (event.clientX - rect.left) / rect.width;
+        var y = (event.clientY - rect.top) / rect.height;
+        var rotateY = -2 + (x * 4);
+        var rotateX = 1.5 - (y * 3);
+        var moveX = (x - 0.5) * 8;
+        var moveY = (y - 0.5) * 5;
+        heroLuxeField.style.transform = 'rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translate3d(' + moveX + 'px, ' + moveY + 'px, 0)';
+      });
+      wrapper.addEventListener('mouseleave', resetLuxeField);
+      resetLuxeField();
+    }
   }
 })();
