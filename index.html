@@ -422,6 +422,13 @@
             user-select: none;
             -webkit-user-select: none;
             cursor: grab;
+            --hero-orb-tilt-x: 0deg;
+            --hero-orb-tilt-y: 0deg;
+            --hero-orb-drift-x: 0px;
+            --hero-orb-drift-y: 0px;
+            --hero-ring-spin: 0deg;
+            --hero-shadow-pulse: 0;
+            --hero-orb-energy: 0;
         }
         .hero-wrapper--spheres-luxe.is-dragging {
             cursor: grabbing;
@@ -463,6 +470,11 @@
         .hero-wrapper--spheres-luxe.is-dragging .hero-luxe-field {
             transition: none;
         }
+        .hero-wrapper--spheres-luxe.is-dragging .hero-luxe-ring,
+        .hero-wrapper--spheres-luxe.is-dragging .hero-luxe-shadow,
+        .hero-wrapper--spheres-luxe.is-dragging .hero-luxe-orb {
+            transition: none;
+        }
         .hero-luxe-ring {
             position: absolute;
             border-radius: 50%;
@@ -470,18 +482,19 @@
             background: radial-gradient(circle, rgba(255,255,255,0.16), transparent 68%);
             transform-style: preserve-3d;
             backdrop-filter: blur(4px);
+            transition: transform 0.24s ease, opacity 0.24s ease;
         }
         .hero-luxe-ring--1 {
             width: 320px; height: 320px;
             top: 8%; left: 2%;
-            transform: translateZ(8px);
-            opacity: 0.28;
+            transform: translate3d(calc(var(--hero-orb-drift-x) * 0.35), calc(var(--hero-orb-drift-y) * 0.25), 8px) rotateX(calc(var(--hero-orb-tilt-x) * 0.35)) rotateY(calc(var(--hero-orb-tilt-y) * 0.45)) rotateZ(var(--hero-ring-spin));
+            opacity: calc(0.28 + var(--hero-orb-energy) * 0.18);
         }
         .hero-luxe-ring--2 {
             width: 240px; height: 240px;
             top: 18%; right: 12%;
-            transform: translateZ(12px);
-            opacity: 0.18;
+            transform: translate3d(calc(var(--hero-orb-drift-x) * -0.28), calc(var(--hero-orb-drift-y) * 0.18), 12px) rotateX(calc(var(--hero-orb-tilt-x) * -0.28)) rotateY(calc(var(--hero-orb-tilt-y) * 0.42)) rotateZ(calc(var(--hero-ring-spin) * -0.8));
+            opacity: calc(0.18 + var(--hero-orb-energy) * 0.15);
         }
         .hero-luxe-orb {
             position: absolute;
@@ -492,7 +505,7 @@
                 inset 16px 16px 24px rgba(255,255,255,0.16),
                 inset -26px -36px 54px rgba(15,23,42,0.10),
                 0 28px 70px rgba(15,23,42,0.09);
-            filter: saturate(96%);
+            filter: saturate(calc(96% + var(--hero-orb-energy) * 26%));
         }
         .hero-luxe-orb::before,
         .hero-luxe-orb::after {
@@ -523,7 +536,8 @@
             border-radius: 50%;
             background: radial-gradient(circle, rgba(37,99,235,0.16), transparent 72%);
             filter: blur(22px);
-            transform: translateZ(-40px);
+            transform: translate3d(calc(var(--hero-orb-drift-x) * 0.55), calc(var(--hero-orb-drift-y) * 0.38), -40px) scale(calc(1 + var(--hero-shadow-pulse)));
+            transition: transform 0.24s ease, opacity 0.24s ease;
         }
         .hero-luxe-orb--1 {
             width: 220px; height: 220px;
@@ -562,20 +576,20 @@
         }
         .hero-luxe-shadow--4 { width: 72px; height: 28px; bottom: 15%; right: 9%; opacity: 0.06; }
         @keyframes luxeFloat1 {
-            0%,100% { transform: translate3d(0, 0, 110px); }
-            50% { transform: translate3d(5px, -9px, 120px); }
+            0%,100% { transform: translate3d(calc(var(--hero-orb-drift-x) * 0.92), calc(var(--hero-orb-drift-y) * 0.54), 110px) rotateX(calc(var(--hero-orb-tilt-x) * 0.95)) rotateY(calc(var(--hero-orb-tilt-y) * 1.05)) scale(calc(1 + var(--hero-orb-energy) * 0.05)); }
+            50% { transform: translate3d(calc(5px + var(--hero-orb-drift-x) * 1.08), calc(-9px + var(--hero-orb-drift-y) * 0.66), 120px) rotateX(calc(var(--hero-orb-tilt-x) * 1.12)) rotateY(calc(var(--hero-orb-tilt-y) * 1.18)) scale(calc(1.02 + var(--hero-orb-energy) * 0.06)); }
         }
         @keyframes luxeFloat2 {
-            0%,100% { transform: translate3d(0, 0, 66px); }
-            50% { transform: translate3d(-4px, -7px, 74px); }
+            0%,100% { transform: translate3d(calc(var(--hero-orb-drift-x) * -0.72), calc(var(--hero-orb-drift-y) * 0.38), 66px) rotateX(calc(var(--hero-orb-tilt-x) * 0.68)) rotateY(calc(var(--hero-orb-tilt-y) * 0.88)) scale(calc(1 + var(--hero-orb-energy) * 0.04)); }
+            50% { transform: translate3d(calc(-4px + var(--hero-orb-drift-x) * -0.9), calc(-7px + var(--hero-orb-drift-y) * 0.52), 74px) rotateX(calc(var(--hero-orb-tilt-x) * 0.84)) rotateY(calc(var(--hero-orb-tilt-y) * 1.04)) scale(calc(1.018 + var(--hero-orb-energy) * 0.05)); }
         }
         @keyframes luxeFloat3 {
-            0%,100% { transform: translate3d(0, 0, 38px); }
-            50% { transform: translate3d(3px, -5px, 44px); }
+            0%,100% { transform: translate3d(calc(var(--hero-orb-drift-x) * 0.52), calc(var(--hero-orb-drift-y) * -0.42), 38px) rotateX(calc(var(--hero-orb-tilt-x) * 0.48)) rotateY(calc(var(--hero-orb-tilt-y) * 0.74)) scale(calc(1 + var(--hero-orb-energy) * 0.03)); }
+            50% { transform: translate3d(calc(3px + var(--hero-orb-drift-x) * 0.68), calc(-5px + var(--hero-orb-drift-y) * -0.56), 44px) rotateX(calc(var(--hero-orb-tilt-x) * 0.62)) rotateY(calc(var(--hero-orb-tilt-y) * 0.92)) scale(calc(1.015 + var(--hero-orb-energy) * 0.04)); }
         }
         @keyframes luxeFloat4 {
-            0%,100% { transform: translate3d(0, 0, 26px); }
-            50% { transform: translate3d(-2px, -4px, 32px); }
+            0%,100% { transform: translate3d(calc(var(--hero-orb-drift-x) * -0.36), calc(var(--hero-orb-drift-y) * -0.3), 26px) rotateX(calc(var(--hero-orb-tilt-x) * 0.36)) rotateY(calc(var(--hero-orb-tilt-y) * 0.6)) scale(calc(1 + var(--hero-orb-energy) * 0.025)); }
+            50% { transform: translate3d(calc(-2px + var(--hero-orb-drift-x) * -0.5), calc(-4px + var(--hero-orb-drift-y) * -0.44), 32px) rotateX(calc(var(--hero-orb-tilt-x) * 0.48)) rotateY(calc(var(--hero-orb-tilt-y) * 0.78)) scale(calc(1.012 + var(--hero-orb-energy) * 0.035)); }
         }
         @media (max-width: 900px) {
             .hero-luxe-orb--1 { width: 190px; height: 190px; }

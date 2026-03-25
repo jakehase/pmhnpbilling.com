@@ -162,7 +162,20 @@
         var rotateY = hoverRotateY + interactiveRotateY;
         var moveX = hoverMoveX + interactiveMoveX;
         var moveY = hoverMoveY + interactiveMoveY;
+        var energy = clamp(
+          (Math.abs(velocityRotateX) + Math.abs(velocityRotateY) + Math.abs(velocityMoveX * 0.35) + Math.abs(velocityMoveY * 0.35) + Math.abs(interactiveRotateX * 0.04) + Math.abs(interactiveRotateY * 0.04)) / 6,
+          0,
+          0.85
+        );
+
         heroLuxeField.style.transform = 'rotateX(' + rotateX.toFixed(2) + 'deg) rotateY(' + rotateY.toFixed(2) + 'deg) translate3d(' + moveX.toFixed(2) + 'px, ' + moveY.toFixed(2) + 'px, 0)';
+        wrapper.style.setProperty('--hero-orb-tilt-x', (rotateX * 1.45).toFixed(2) + 'deg');
+        wrapper.style.setProperty('--hero-orb-tilt-y', (rotateY * 1.5).toFixed(2) + 'deg');
+        wrapper.style.setProperty('--hero-orb-drift-x', (moveX * 1.65).toFixed(2) + 'px');
+        wrapper.style.setProperty('--hero-orb-drift-y', (moveY * 1.4).toFixed(2) + 'px');
+        wrapper.style.setProperty('--hero-ring-spin', (rotateY * 0.8).toFixed(2) + 'deg');
+        wrapper.style.setProperty('--hero-shadow-pulse', (energy * 0.18).toFixed(3));
+        wrapper.style.setProperty('--hero-orb-energy', energy.toFixed(3));
       };
 
       var tickHeroMotion = function () {
@@ -173,21 +186,21 @@
           interactiveMoveX += velocityMoveX;
           interactiveMoveY += velocityMoveY;
 
-          velocityRotateX *= 0.92;
-          velocityRotateY *= 0.92;
-          velocityMoveX *= 0.90;
-          velocityMoveY *= 0.90;
+          velocityRotateX *= 0.95;
+          velocityRotateY *= 0.95;
+          velocityMoveX *= 0.94;
+          velocityMoveY *= 0.94;
 
-          interactiveRotateX *= 0.965;
-          interactiveRotateY *= 0.965;
-          interactiveMoveX *= 0.93;
-          interactiveMoveY *= 0.93;
+          interactiveRotateX *= 0.978;
+          interactiveRotateY *= 0.978;
+          interactiveMoveX *= 0.958;
+          interactiveMoveY *= 0.958;
         }
 
-        interactiveRotateX = clamp(interactiveRotateX, -14, 14);
-        interactiveRotateY = clamp(interactiveRotateY, -18, 18);
-        interactiveMoveX = clamp(interactiveMoveX, -24, 24);
-        interactiveMoveY = clamp(interactiveMoveY, -18, 18);
+        interactiveRotateX = clamp(interactiveRotateX, -26, 26);
+        interactiveRotateY = clamp(interactiveRotateY, -34, 34);
+        interactiveMoveX = clamp(interactiveMoveX, -42, 42);
+        interactiveMoveY = clamp(interactiveMoveY, -28, 28);
 
         applyHeroTransform();
 
@@ -217,10 +230,10 @@
         if (!rect.width || !rect.height) return;
         var x = (clientX - rect.left) / rect.width;
         var y = (clientY - rect.top) / rect.height;
-        hoverRotateY = -2 + (x * 4);
-        hoverRotateX = 1.5 - (y * 3);
-        hoverMoveX = (x - 0.5) * 8;
-        hoverMoveY = (y - 0.5) * 5;
+        hoverRotateY = -3.5 + (x * 7);
+        hoverRotateX = 2.4 - (y * 4.8);
+        hoverMoveX = (x - 0.5) * 14;
+        hoverMoveY = (y - 0.5) * 9;
         applyHeroTransform();
       };
 
@@ -272,7 +285,7 @@
         var totalDx = event.clientX - startPointerX;
         var totalDy = event.clientY - startPointerY;
         if (!dragStarted) {
-          if (Math.abs(totalDx) < 8 && Math.abs(totalDy) < 8) return;
+          if (Math.abs(totalDx) < 5 && Math.abs(totalDy) < 5) return;
           if (pointerType === 'touch' && Math.abs(totalDy) > Math.abs(totalDx) * 1.15) {
             if (wrapper.releasePointerCapture) {
               try { wrapper.releasePointerCapture(event.pointerId); } catch (error) {}
@@ -289,15 +302,15 @@
         lastPointerX = event.clientX;
         lastPointerY = event.clientY;
 
-        interactiveRotateY = clamp(interactiveRotateY + dx * 0.12, -18, 18);
-        interactiveRotateX = clamp(interactiveRotateX - dy * 0.10, -14, 14);
-        interactiveMoveX = clamp(interactiveMoveX + dx * 0.18, -24, 24);
-        interactiveMoveY = clamp(interactiveMoveY + dy * 0.10, -18, 18);
+        interactiveRotateY = clamp(interactiveRotateY + dx * 0.26, -34, 34);
+        interactiveRotateX = clamp(interactiveRotateX - dy * 0.20, -26, 26);
+        interactiveMoveX = clamp(interactiveMoveX + dx * 0.34, -42, 42);
+        interactiveMoveY = clamp(interactiveMoveY + dy * 0.18, -28, 28);
 
-        velocityRotateY = dx * 0.035;
-        velocityRotateX = -dy * 0.03;
-        velocityMoveX = dx * 0.06;
-        velocityMoveY = dy * 0.035;
+        velocityRotateY = dx * 0.085;
+        velocityRotateX = -dy * 0.062;
+        velocityMoveX = dx * 0.14;
+        velocityMoveY = dy * 0.075;
 
         applyHeroTransform();
       });
@@ -310,10 +323,10 @@
           if (rect.width && rect.height) {
             var tapX = (event.clientX - rect.left) / rect.width - 0.5;
             var tapY = (event.clientY - rect.top) / rect.height - 0.5;
-            velocityRotateY += clamp(tapX * 1.8, -0.9, 0.9);
-            velocityRotateX += clamp(-tapY * 1.4, -0.7, 0.7);
-            velocityMoveX += clamp(tapX * 3.2, -1.2, 1.2);
-            velocityMoveY += clamp(tapY * 2.2, -0.9, 0.9);
+            velocityRotateY += clamp(tapX * 4.2, -2.2, 2.2);
+            velocityRotateX += clamp(-tapY * 3.1, -1.6, 1.6);
+            velocityMoveX += clamp(tapX * 7.5, -3.2, 3.2);
+            velocityMoveY += clamp(tapY * 5.2, -2.2, 2.2);
           }
         }
 
