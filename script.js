@@ -319,9 +319,9 @@
         var totalDx = clientX - startPointerX;
         var totalDy = clientY - startPointerY;
         if (!dragStarted) {
-          var threshold = mode === 'touch' ? 18 : 5;
+          var threshold = mode === 'touch' ? 10 : 5;
           if (Math.abs(totalDx) < threshold && Math.abs(totalDy) < threshold) return false;
-          if (mode === 'touch' && Math.abs(totalDy) > Math.abs(totalDx) * 1.25 && Math.abs(totalDy) > 14) {
+          if (mode === 'touch' && Math.abs(totalDy) > Math.abs(totalDx) * 1.4 && Math.abs(totalDy) > 16) {
             clearHeroInteraction();
             return false;
           }
