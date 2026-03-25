@@ -19,6 +19,13 @@
   will-change: opacity, transform, filter;
 }
 
+.js-motion-ready [data-scroll-reveal],
+.js-motion-ready .fade-in {
+  opacity: 0;
+  transform: translateY(26px) scale(0.985);
+  filter: blur(6px);
+}
+
 [data-scroll-reveal].is-in-view,
 .fade-in.is-in-view,
 .fade-in.visible {

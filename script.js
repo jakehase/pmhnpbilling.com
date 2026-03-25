@@ -46,8 +46,10 @@
   }
 
   var revealItems = Array.prototype.slice.call(document.querySelectorAll('[data-scroll-reveal], .fade-in'));
+  var canEnhanceReveals = !prefersReducedMotion && 'IntersectionObserver' in window;
   if (revealItems.length) {
-    if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+    if (canEnhanceReveals) {
+      document.documentElement.classList.add('js-motion-ready');
       var revealObserver = new IntersectionObserver(function (entries, observer) {
         entries.forEach(function (entry) {
           var target = entry.target;
