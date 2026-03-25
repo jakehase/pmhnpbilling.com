@@ -157,8 +157,8 @@ main.offer-section section {
 .trust .section-header,
 .testimonial .section-header {
   transform: translate3d(0, calc(var(--section-scroll-progress, 0) * -42px), 0) scale(calc(0.982 + (var(--scroll-intensity, 1) * 0.018)));
-  filter: blur(calc((1 - var(--scroll-intensity, 1)) * 3.8px));
-  opacity: calc(0.9 + (var(--scroll-intensity, 1) * 0.1));
+  filter: blur(calc((1 - var(--scroll-intensity, 1)) * 2px));
+  opacity: calc(0.94 + (var(--scroll-intensity, 1) * 0.06));
   transition: transform .06s linear, filter .06s linear, opacity .06s linear;
   will-change: transform, filter, opacity;
 }
@@ -206,8 +206,8 @@ main.offer-section section {
 .homepage-scroll-motion .contact-info,
 .homepage-scroll-motion .contact-form,
 .homepage-scroll-motion .site-footer__panel {
-  filter: blur(calc((1 - var(--scroll-intensity, 1)) * 2.8px));
-  opacity: calc(0.92 + (var(--scroll-intensity, 1) * 0.08));
+  filter: blur(calc((1 - var(--scroll-intensity, 1)) * 1.4px));
+  opacity: calc(0.96 + (var(--scroll-intensity, 1) * 0.04));
 }
 
 .homepage-scroll-motion .service-card p,
