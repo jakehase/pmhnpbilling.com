@@ -414,6 +414,182 @@
         .btn svg { width: 18px; height: 18px; transition: transform 0.2s; }
         .btn:hover svg { transform: translateX(3px); }
         
+
+        /* Live: subtle luxe sphere treatment on homepage hero */
+        .hero-wrapper.hero-wrapper--spheres-luxe {
+            isolation: isolate;
+        }
+        .hero-wrapper--spheres-luxe .hero-bg {
+            background:
+                radial-gradient(circle at 18% 0%, rgba(96, 165, 250, 0.10), transparent 34%),
+                radial-gradient(circle at 100% 16%, rgba(20, 184, 166, 0.08), transparent 24%),
+                linear-gradient(135deg, #fbfcfe 0%, #edf5ff 48%, #f8fbff 100%);
+        }
+        .hero-wrapper--spheres-luxe .hero {
+            position: relative;
+            z-index: 2;
+        }
+        .hero-wrapper--spheres-luxe .hero-logo,
+        .hero-wrapper--spheres-luxe h1,
+        .hero-wrapper--spheres-luxe p,
+        .hero-wrapper--spheres-luxe .btn {
+            position: relative;
+            z-index: 4;
+        }
+        .hero-wrapper--spheres-luxe .hero-logo { margin-bottom: 2.25rem; }
+        .hero-luxe-stage {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            transform-style: preserve-3d;
+            perspective: 1800px;
+            z-index: 1;
+            overflow: hidden;
+        }
+        .hero-luxe-field {
+            position: absolute;
+            inset: 0;
+            transform-style: preserve-3d;
+            transition: transform 0.24s ease;
+        }
+        .hero-luxe-ring {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(37,99,235,0.08);
+            background: radial-gradient(circle, rgba(255,255,255,0.16), transparent 68%);
+            transform-style: preserve-3d;
+            backdrop-filter: blur(4px);
+        }
+        .hero-luxe-ring--1 {
+            width: 320px; height: 320px;
+            top: 8%; left: 2%;
+            transform: translateZ(8px);
+            opacity: 0.28;
+        }
+        .hero-luxe-ring--2 {
+            width: 240px; height: 240px;
+            top: 18%; right: 12%;
+            transform: translateZ(12px);
+            opacity: 0.18;
+        }
+        .hero-luxe-orb {
+            position: absolute;
+            border-radius: 50%;
+            transform-style: preserve-3d;
+            box-shadow:
+                inset -20px -28px 48px rgba(255,255,255,0.10),
+                inset 16px 16px 24px rgba(255,255,255,0.16),
+                inset -26px -36px 54px rgba(15,23,42,0.10),
+                0 28px 70px rgba(15,23,42,0.09);
+            filter: saturate(96%);
+        }
+        .hero-luxe-orb::before,
+        .hero-luxe-orb::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .hero-luxe-orb::before {
+            width: 34%;
+            height: 34%;
+            top: 13%;
+            left: 16%;
+            background: radial-gradient(circle, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.24) 58%, transparent 78%);
+            filter: blur(3px);
+        }
+        .hero-luxe-orb::after {
+            width: 44%;
+            height: 44%;
+            right: 12%;
+            bottom: 11%;
+            background: radial-gradient(circle, rgba(15,23,42,0.22) 0%, transparent 72%);
+            filter: blur(10px);
+            opacity: 0.52;
+        }
+        .hero-luxe-shadow {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(37,99,235,0.16), transparent 72%);
+            filter: blur(22px);
+            transform: translateZ(-40px);
+        }
+        .hero-luxe-orb--1 {
+            width: 220px; height: 220px;
+            top: 14%; left: 8%;
+            background: radial-gradient(circle at 30% 28%, #edf6ff 0%, #c9e2ff 24%, #7cadef 48%, #3766d2 75%, #1d3f8d 100%);
+            transform: translateZ(110px);
+            animation: luxeFloat1 13s ease-in-out infinite;
+            opacity: 0.90;
+        }
+        .hero-luxe-shadow--1 { width: 236px; height: 78px; top: 39%; left: 10%; opacity: 0.22; }
+        .hero-luxe-orb--2 {
+            width: 140px; height: 140px;
+            top: 23%; right: 15%;
+            background: radial-gradient(circle at 30% 28%, #f5ffff 0%, #d7f1ef 26%, #8fd9d3 52%, #30a99e 76%, #136f68 100%);
+            transform: translateZ(66px);
+            animation: luxeFloat2 15s ease-in-out infinite 0.8s;
+            opacity: 0.78;
+        }
+        .hero-luxe-shadow--2 { width: 146px; height: 54px; top: 40%; right: 14%; opacity: 0.14; }
+        .hero-luxe-orb--3 {
+            width: 92px; height: 92px;
+            bottom: 15%; left: 18%;
+            background: radial-gradient(circle at 30% 28%, #f8fbff 0%, #ddeaff 24%, #a7c3f7 52%, #648ce9 76%, #3151b5 100%);
+            transform: translateZ(38px);
+            animation: luxeFloat3 16s ease-in-out infinite 1.3s;
+            opacity: 0.62;
+        }
+        .hero-luxe-shadow--3 { width: 96px; height: 36px; bottom: 11%; left: 19%; opacity: 0.10; }
+        .hero-luxe-orb--4 {
+            width: 68px; height: 68px;
+            bottom: 19%; right: 9%;
+            background: radial-gradient(circle at 30% 28%, #fbffff 0%, #e2faf6 28%, #a7e6dd 58%, #58c2b6 82%, #22817a 100%);
+            transform: translateZ(26px);
+            animation: luxeFloat4 14s ease-in-out infinite 0.5s;
+            opacity: 0.48;
+        }
+        .hero-luxe-shadow--4 { width: 72px; height: 28px; bottom: 15%; right: 9%; opacity: 0.06; }
+        @keyframes luxeFloat1 {
+            0%,100% { transform: translate3d(0, 0, 110px); }
+            50% { transform: translate3d(5px, -9px, 120px); }
+        }
+        @keyframes luxeFloat2 {
+            0%,100% { transform: translate3d(0, 0, 66px); }
+            50% { transform: translate3d(-4px, -7px, 74px); }
+        }
+        @keyframes luxeFloat3 {
+            0%,100% { transform: translate3d(0, 0, 38px); }
+            50% { transform: translate3d(3px, -5px, 44px); }
+        }
+        @keyframes luxeFloat4 {
+            0%,100% { transform: translate3d(0, 0, 26px); }
+            50% { transform: translate3d(-2px, -4px, 32px); }
+        }
+        @media (max-width: 900px) {
+            .hero-luxe-orb--1 { width: 190px; height: 190px; }
+            .hero-luxe-orb--2 { width: 124px; height: 124px; }
+            .hero-luxe-ring--1 { width: 260px; height: 260px; }
+        }
+        @media (max-width: 768px) {
+            .hero-luxe-stage { opacity: 0.78; }
+            .hero-luxe-orb--1 { top: 14%; left: 2%; width: 146px; height: 146px; }
+            .hero-luxe-shadow--1 { top: 31%; left: 3%; width: 154px; }
+            .hero-luxe-orb--2 { top: 23%; right: 4%; width: 92px; height: 92px; }
+            .hero-luxe-shadow--2 { top: 33%; right: 4%; width: 100px; }
+            .hero-luxe-orb--3 { bottom: 13%; left: 10%; width: 76px; height: 76px; }
+            .hero-luxe-shadow--3 { bottom: 10%; left: 10%; width: 82px; }
+            .hero-luxe-orb--4 { bottom: 19%; right: 4%; width: 56px; height: 56px; }
+            .hero-luxe-shadow--4 { bottom: 16%; right: 4%; width: 62px; }
+            .hero-luxe-ring--1 { width: 190px; height: 190px; top: 11%; left: -2%; }
+            .hero-luxe-ring--2 { width: 145px; height: 145px; top: 20%; right: 2%; }
+        }
+        @media (max-width: 640px) {
+            .hero-luxe-orb--4,
+            .hero-luxe-shadow--4,
+            .hero-luxe-ring--2 { display: none; }
+        }
+
         /* Sections */
         section { padding: 6rem 2rem; }
         .section-header { max-width: 1100px; margin: 0 auto 3.5rem; }
@@ -738,8 +914,22 @@
         <a href="/app/" onclick="toggleMenu()" class="mobile-intake-link">Client App</a>
     </div>
 
-    <div class="hero-wrapper">
+    <div class="hero-wrapper hero-wrapper--spheres-luxe">
         <div class="hero-bg"></div>
+        <div class="hero-luxe-stage" aria-hidden="true">
+            <div class="hero-luxe-field" id="heroLuxeField">
+                <div class="hero-luxe-ring hero-luxe-ring--1"></div>
+                <div class="hero-luxe-ring hero-luxe-ring--2"></div>
+                <div class="hero-luxe-orb hero-luxe-orb--1"></div>
+                <div class="hero-luxe-shadow hero-luxe-shadow--1"></div>
+                <div class="hero-luxe-orb hero-luxe-orb--2"></div>
+                <div class="hero-luxe-shadow hero-luxe-shadow--2"></div>
+                <div class="hero-luxe-orb hero-luxe-orb--3"></div>
+                <div class="hero-luxe-shadow hero-luxe-shadow--3"></div>
+                <div class="hero-luxe-orb hero-luxe-orb--4"></div>
+                <div class="hero-luxe-shadow hero-luxe-shadow--4"></div>
+            </div>
+        </div>
         <div class="hero-shape hero-shape-1"></div>
         <div class="hero-shape hero-shape-2"></div>
         <div class="hero-shape hero-shape-3"></div>
@@ -959,6 +1149,27 @@
                 if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
+
+        const heroLuxeField = document.getElementById('heroLuxeField');
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (heroLuxeField && !reduceMotion) {
+            const wrapper = document.querySelector('.hero-wrapper--spheres-luxe');
+            const resetLuxeField = () => {
+                heroLuxeField.style.transform = 'rotateX(0deg) rotateY(0deg) translate3d(0,0,0)';
+            };
+            wrapper.addEventListener('mousemove', (event) => {
+                const rect = wrapper.getBoundingClientRect();
+                const x = (event.clientX - rect.left) / rect.width;
+                const y = (event.clientY - rect.top) / rect.height;
+                const rotateY = -2 + (x * 4);
+                const rotateX = 1.5 - (y * 3);
+                const moveX = (x - 0.5) * 8;
+                const moveY = (y - 0.5) * 5;
+                heroLuxeField.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translate3d(${moveX}px, ${moveY}px, 0)`;
+            });
+            wrapper.addEventListener('mouseleave', resetLuxeField);
+            resetLuxeField();
+        }
     </script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"d35f945cec834f5b91de3b20c79f3c6b","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
