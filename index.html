@@ -418,6 +418,13 @@
         /* Live: subtle luxe sphere treatment on homepage hero */
         .hero-wrapper.hero-wrapper--spheres-luxe {
             isolation: isolate;
+            touch-action: pan-y;
+            user-select: none;
+            -webkit-user-select: none;
+            cursor: grab;
+        }
+        .hero-wrapper--spheres-luxe.is-dragging {
+            cursor: grabbing;
         }
         .hero-wrapper--spheres-luxe .hero-bg {
             background:
@@ -451,6 +458,10 @@
             inset: 0;
             transform-style: preserve-3d;
             transition: transform 0.24s ease;
+            will-change: transform;
+        }
+        .hero-wrapper--spheres-luxe.is-dragging .hero-luxe-field {
+            transition: none;
         }
         .hero-luxe-ring {
             position: absolute;
