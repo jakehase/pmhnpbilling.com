@@ -70,8 +70,9 @@
     }
   }
 
-  if (!prefersReducedMotion) {
-    var motionSections = Array.prototype.slice.call(document.querySelectorAll([
+  {
+    if (!prefersReducedMotion) {
+      var motionSections = Array.prototype.slice.call(document.querySelectorAll([
       '[data-has-orbs="true"]',
       '.motion-hero-section',
       '.why-work-section',
@@ -96,38 +97,39 @@
     updateMotion();
     window.addEventListener('scroll', updateMotion, { passive: true });
 
-    Array.prototype.slice.call(document.querySelectorAll([
-      '.motion-surface',
-      '.motion-hero-section',
-      '.why-work-section',
-      '.offer-section',
-      '.blog-search-panel',
-      '.pilot-preview-card',
-      '.about-content',
-      '.service-card',
-      '.faq-item',
-      '.trust-item',
-      '.testimonial-content',
-      '.contact-info',
-      '.contact-form',
-      '.site-footer__panel',
-      '.panel',
-      '.card',
-      'article'
-    ].join(', '))).forEach(function (panel) {
-      panel.addEventListener('mousemove', function (event) {
-        var rect = panel.getBoundingClientRect();
-        if (!rect.width || !rect.height) return;
-        var x = (event.clientX - rect.left) / rect.width - 0.5;
-        var y = (event.clientY - rect.top) / rect.height - 0.5;
-        panel.style.setProperty('--tilt-x', (x * 4).toFixed(2) + 'deg');
-        panel.style.setProperty('--tilt-y', (-y * 4).toFixed(2) + 'deg');
+      Array.prototype.slice.call(document.querySelectorAll([
+        '.motion-surface',
+        '.motion-hero-section',
+        '.why-work-section',
+        '.offer-section',
+        '.blog-search-panel',
+        '.pilot-preview-card',
+        '.about-content',
+        '.service-card',
+        '.faq-item',
+        '.trust-item',
+        '.testimonial-content',
+        '.contact-info',
+        '.contact-form',
+        '.site-footer__panel',
+        '.panel',
+        '.card',
+        'article'
+      ].join(', '))).forEach(function (panel) {
+        panel.addEventListener('mousemove', function (event) {
+          var rect = panel.getBoundingClientRect();
+          if (!rect.width || !rect.height) return;
+          var x = (event.clientX - rect.left) / rect.width - 0.5;
+          var y = (event.clientY - rect.top) / rect.height - 0.5;
+          panel.style.setProperty('--tilt-x', (x * 4).toFixed(2) + 'deg');
+          panel.style.setProperty('--tilt-y', (-y * 4).toFixed(2) + 'deg');
+        });
+        panel.addEventListener('mouseleave', function () {
+          panel.style.removeProperty('--tilt-x');
+          panel.style.removeProperty('--tilt-y');
+        });
       });
-      panel.addEventListener('mouseleave', function () {
-        panel.style.removeProperty('--tilt-x');
-        panel.style.removeProperty('--tilt-y');
-      });
-    });
+    }
 
     var heroLuxeField = document.getElementById('heroLuxeField');
     var wrapper = document.querySelector('.hero-wrapper--spheres-luxe');
