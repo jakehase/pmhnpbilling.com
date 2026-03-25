@@ -47,26 +47,23 @@
 
   var revealItems = Array.prototype.slice.call(document.querySelectorAll('[data-scroll-reveal], .fade-in'));
   var isHomepageMotion = !!(document.body && document.body.id === 'top' && document.querySelector('.hero-wrapper--spheres-luxe'));
-  var canEnhanceReveals = !prefersReducedMotion && 'IntersectionObserver' in window;
   var allowContinuousHomepageMotion = isHomepageMotion || !prefersReducedMotion;
   if (isHomepageMotion) {
     document.documentElement.classList.add('homepage-scroll-motion');
   }
 
   if (revealItems.length) {
-    if (isHomepageMotion) {
-      revealItems.forEach(function (item) { item.classList.add('is-in-view'); });
-    } else if (canEnhanceReveals) {
-      document.documentElement.classList.add('js-motion-ready');
-      var revealObserver = new IntersectionObserver(function (entries, observer) {
+    if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+      var revealObserver = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           var target = entry.target;
           var delay = Number(target.getAttribute('data-reveal-delay') || 0);
           if (entry.isIntersecting) {
             window.setTimeout(function () {
               target.classList.add('is-in-view');
-              observer.unobserve(target);
             }, delay);
+          } else {
+            target.classList.remove('is-in-view');
           }
         });
       }, {
