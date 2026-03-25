@@ -85,6 +85,19 @@
   transform: translate3d(0, calc(var(--scroll-progress, 0) * -18px), 0);
 }
 
+.hero-wrapper--spheres-luxe,
+.services,
+.about,
+.faq,
+.pilot-preview,
+.trust,
+.testimonial,
+.contact,
+.site-footer {
+  position: relative;
+  --section-scroll-progress: var(--scroll-progress, 0);
+}
+
 .motion-surface,
 .blog-search-panel,
 .blog-post,
@@ -100,6 +113,7 @@
 .card,
 main.offer-section section {
   transform:
+    translate3d(var(--scroll-pan-x, 0px), var(--scroll-pan-y, 0px), 0)
     perspective(1000px)
     rotateX(var(--tilt-y, 0deg))
     rotateY(var(--tilt-x, 0deg));
@@ -126,6 +140,50 @@ main.offer-section section {
 main.offer-section section {
   position: relative;
   z-index: 1;
+}
+
+.services .section-header,
+.about .section-header,
+.faq .section-header,
+.trust .section-header,
+.testimonial .section-header {
+  transform: translate3d(0, calc(var(--section-scroll-progress, 0) * -16px), 0);
+  transition: transform .22s linear;
+  will-change: transform;
+}
+
+.services .service-card:nth-child(odd),
+.faq .faq-item:nth-child(odd),
+.trust .trust-item:nth-child(odd),
+.site-footer__panel:nth-child(odd) {
+  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * 12px);
+}
+
+.services .service-card:nth-child(even),
+.faq .faq-item:nth-child(even),
+.trust .trust-item:nth-child(even),
+.site-footer__panel:nth-child(even) {
+  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * -12px);
+}
+
+.about .about-content {
+  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * 10px);
+}
+
+.pilot-preview .pilot-preview-card {
+  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * -14px);
+}
+
+.testimonial .testimonial-content {
+  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * 12px);
+}
+
+.contact .contact-info {
+  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * -14px);
+}
+
+.contact .contact-form {
+  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * 14px);
 }
 
 .blog-search-panel:hover,

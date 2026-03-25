@@ -80,6 +80,8 @@
       '.offer-section',
       '.hero-wrapper--spheres-luxe',
       '.services',
+      '.about',
+      '.faq',
       '.pilot-preview',
       '.trust',
       '.testimonial',
