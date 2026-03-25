@@ -154,9 +154,9 @@ main.offer-section section {
 .faq .section-header,
 .trust .section-header,
 .testimonial .section-header {
-  transform: translate3d(0, calc(var(--section-scroll-progress, 0) * -30px), 0);
+  transform: translate3d(0, calc(var(--section-scroll-progress, 0) * -42px), 0);
   opacity: 1;
-  transition: transform .08s linear;
+  transition: transform .05s linear;
   will-change: transform;
 }
 
@@ -164,34 +164,34 @@ main.offer-section section {
 .faq .faq-item:nth-child(odd),
 .trust .trust-item:nth-child(odd),
 .site-footer__panel:nth-child(odd) {
-  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * 28px);
+  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * 40px);
 }
 
 .services .service-card:nth-child(even),
 .faq .faq-item:nth-child(even),
 .trust .trust-item:nth-child(even),
 .site-footer__panel:nth-child(even) {
-  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * -28px);
+  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * -40px);
 }
 
 .about .about-content {
-  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * 24px);
+  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * 34px);
 }
 
 .pilot-preview .pilot-preview-card {
-  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * -30px);
+  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * -42px);
 }
 
 .testimonial .testimonial-content {
-  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * 26px);
+  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * 36px);
 }
 
 .contact .contact-info {
-  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * -30px);
+  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * -42px);
 }
 
 .contact .contact-form {
-  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * 30px);
+  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * 42px);
 }
 
 .blog-search-panel:hover,
@@ -435,23 +435,26 @@ main.offer-section section:hover {
 @media (prefers-reduced-motion: reduce) {
   [data-scroll-reveal],
   .fade-in,
-  .motion-surface,
-  .blog-search-panel,
-  .blog-post,
-  .service-card,
   .services .service-card p,
-  .services .service-card .service-link,
-  .faq-item,
-  .trust-item,
-  .testimonial-content,
-  .contact-info,
-  .contact-form,
-  .panel,
-  .card,
-  .site-footer__panel,
-  main.offer-section section {
+  .services .service-card .service-link {
     opacity: 1 !important;
     filter: none !important;
+    transition: none !important;
+  }
+
+  :root:not(.homepage-scroll-motion) .motion-surface,
+  :root:not(.homepage-scroll-motion) .blog-search-panel,
+  :root:not(.homepage-scroll-motion) .blog-post,
+  :root:not(.homepage-scroll-motion) .service-card,
+  :root:not(.homepage-scroll-motion) .faq-item,
+  :root:not(.homepage-scroll-motion) .trust-item,
+  :root:not(.homepage-scroll-motion) .testimonial-content,
+  :root:not(.homepage-scroll-motion) .contact-info,
+  :root:not(.homepage-scroll-motion) .contact-form,
+  :root:not(.homepage-scroll-motion) .panel,
+  :root:not(.homepage-scroll-motion) .card,
+  :root:not(.homepage-scroll-motion) .site-footer__panel,
+  :root:not(.homepage-scroll-motion) main.offer-section section {
     transform: none !important;
     transition: none !important;
   }
