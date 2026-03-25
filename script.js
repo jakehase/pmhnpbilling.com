@@ -48,16 +48,15 @@
   var revealItems = Array.prototype.slice.call(document.querySelectorAll('[data-scroll-reveal], .fade-in'));
   if (revealItems.length) {
     if (!prefersReducedMotion && 'IntersectionObserver' in window) {
-      var revealObserver = new IntersectionObserver(function (entries) {
+      var revealObserver = new IntersectionObserver(function (entries, observer) {
         entries.forEach(function (entry) {
           var target = entry.target;
           var delay = Number(target.getAttribute('data-reveal-delay') || 0);
           if (entry.isIntersecting) {
             window.setTimeout(function () {
               target.classList.add('is-in-view');
+              observer.unobserve(target);
             }, delay);
-          } else {
-            target.classList.remove('is-in-view');
           }
         });
       }, {
@@ -154,6 +153,7 @@
       var pointerType = '';
       var dragStarted = false;
       var rafId = 0;
+      var lastHeroBurstAt = 0;
 
       var clamp = function (value, min, max) {
         return Math.max(min, Math.min(max, value));
@@ -271,10 +271,20 @@
         var tapX = (clientX - rect.left) / rect.width - 0.5;
         var tapY = (clientY - rect.top) / rect.height - 0.5;
         var factor = strength || 1;
+
+        interactiveRotateY = clamp(interactiveRotateY + tapX * 9.5 * factor, -34, 34);
+        interactiveRotateX = clamp(interactiveRotateX - tapY * 7.2 * factor, -26, 26);
+        interactiveMoveX = clamp(interactiveMoveX + tapX * 15 * factor, -42, 42);
+        interactiveMoveY = clamp(interactiveMoveY + tapY * 10 * factor, -28, 28);
+
         velocityRotateY += clamp(tapX * 4.2 * factor, -2.8 * factor, 2.8 * factor);
         velocityRotateX += clamp(-tapY * 3.1 * factor, -2.1 * factor, 2.1 * factor);
         velocityMoveX += clamp(tapX * 7.5 * factor, -4.2 * factor, 4.2 * factor);
         velocityMoveY += clamp(tapY * 5.2 * factor, -3.2 * factor, 3.2 * factor);
+
+        lastHeroBurstAt = Date.now();
+        applyHeroTransform();
+        ensureHeroAnimation();
       };
 
       var moveHeroInteraction = function (clientX, clientY, mode, event) {
@@ -415,6 +425,12 @@
           clearHeroInteraction();
         }
       }, { passive: true });
+
+      wrapper.addEventListener('click', function (event) {
+        if (event.target && event.target.closest('a, button, input, textarea, select')) return;
+        if (Date.now() - lastHeroBurstAt < 700) return;
+        nudgeHeroFromPoint(event.clientX, event.clientY, 2.1);
+      });
 
       applyHeroTransform();
     }
