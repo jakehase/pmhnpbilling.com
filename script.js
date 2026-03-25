@@ -89,16 +89,29 @@
       '.site-footer'
     ].join(', ')));
 
+    var motionFrame = 0;
     var updateMotion = function () {
+      motionFrame = 0;
       var viewportHeight = window.innerHeight || 1;
+      var viewportCenter = viewportHeight / 2;
       motionSections.forEach(function (section) {
         var rect = section.getBoundingClientRect();
-        var progress = Math.max(-1, Math.min(1, (viewportHeight - rect.top) / (viewportHeight + rect.height)));
-        section.style.setProperty('--scroll-progress', progress.toFixed(3));
+        var sectionCenter = rect.top + (rect.height / 2);
+        var travelRange = Math.max(1, (viewportHeight / 2) + (rect.height / 2));
+        var signedProgress = (sectionCenter - viewportCenter) / travelRange;
+        signedProgress = Math.max(-1, Math.min(1, signedProgress));
+        var intensity = 1 - Math.min(1, Math.abs(signedProgress));
+        section.style.setProperty('--scroll-progress', signedProgress.toFixed(3));
+        section.style.setProperty('--scroll-intensity', intensity.toFixed(3));
       });
     };
+    var scheduleMotionUpdate = function () {
+      if (motionFrame) return;
+      motionFrame = window.requestAnimationFrame(updateMotion);
+    };
     updateMotion();
-    window.addEventListener('scroll', updateMotion, { passive: true });
+    window.addEventListener('scroll', scheduleMotionUpdate, { passive: true });
+    window.addEventListener('resize', scheduleMotionUpdate);
 
       Array.prototype.slice.call(document.querySelectorAll([
         '.motion-surface',

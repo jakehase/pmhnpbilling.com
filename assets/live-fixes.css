@@ -147,43 +147,44 @@ main.offer-section section {
 .faq .section-header,
 .trust .section-header,
 .testimonial .section-header {
-  transform: translate3d(0, calc(var(--section-scroll-progress, 0) * -16px), 0);
-  transition: transform .22s linear;
-  will-change: transform;
+  transform: translate3d(0, calc(var(--section-scroll-progress, 0) * -22px), 0);
+  opacity: calc(0.9 + (var(--scroll-intensity, 0) * 0.1));
+  transition: transform .14s linear, opacity .14s linear;
+  will-change: transform, opacity;
 }
 
 .services .service-card:nth-child(odd),
 .faq .faq-item:nth-child(odd),
 .trust .trust-item:nth-child(odd),
 .site-footer__panel:nth-child(odd) {
-  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * 12px);
+  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * 20px);
 }
 
 .services .service-card:nth-child(even),
 .faq .faq-item:nth-child(even),
 .trust .trust-item:nth-child(even),
 .site-footer__panel:nth-child(even) {
-  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * -12px);
+  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * -20px);
 }
 
 .about .about-content {
-  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * 10px);
+  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * 18px);
 }
 
 .pilot-preview .pilot-preview-card {
-  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * -14px);
+  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * -22px);
 }
 
 .testimonial .testimonial-content {
-  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * 12px);
+  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * 20px);
 }
 
 .contact .contact-info {
-  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * -14px);
+  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * -22px);
 }
 
 .contact .contact-form {
-  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * 14px);
+  --scroll-pan-y: calc(var(--section-scroll-progress, 0) * 22px);
 }
 
 .blog-search-panel:hover,
