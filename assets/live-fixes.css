@@ -126,10 +126,12 @@ main.offer-section section {
     rotateY(var(--tilt-x, 0deg));
   transform-style: preserve-3d;
   transition:
-    transform .22s ease,
+    transform .12s linear,
+    filter .12s linear,
+    opacity .12s linear,
     box-shadow .22s ease,
     border-color .22s ease;
-  will-change: transform;
+  will-change: transform, filter, opacity;
 }
 
 .blog-search-panel,
@@ -154,10 +156,11 @@ main.offer-section section {
 .faq .section-header,
 .trust .section-header,
 .testimonial .section-header {
-  transform: translate3d(0, calc(var(--section-scroll-progress, 0) * -42px), 0);
-  opacity: 1;
-  transition: transform .05s linear;
-  will-change: transform;
+  transform: translate3d(0, calc(var(--section-scroll-progress, 0) * -42px), 0) scale(calc(0.985 + (var(--scroll-intensity, 1) * 0.015)));
+  filter: blur(calc((1 - var(--scroll-intensity, 1)) * 3.2px));
+  opacity: calc(0.88 + (var(--scroll-intensity, 1) * 0.12));
+  transition: transform .08s linear, filter .08s linear, opacity .08s linear;
+  will-change: transform, filter, opacity;
 }
 
 .services .service-card:nth-child(odd),
@@ -192,6 +195,30 @@ main.offer-section section {
 
 .contact .contact-form {
   --scroll-pan-y: calc(var(--section-scroll-progress, 0) * 42px);
+}
+
+.homepage-scroll-motion .pilot-preview-card,
+.homepage-scroll-motion .about-content,
+.homepage-scroll-motion .service-card,
+.homepage-scroll-motion .faq-item,
+.homepage-scroll-motion .trust-item,
+.homepage-scroll-motion .testimonial-content,
+.homepage-scroll-motion .contact-info,
+.homepage-scroll-motion .contact-form,
+.homepage-scroll-motion .site-footer__panel {
+  filter: blur(calc((1 - var(--scroll-intensity, 1)) * 2.6px));
+  opacity: calc(0.9 + (var(--scroll-intensity, 1) * 0.1));
+}
+
+.homepage-scroll-motion .service-card p,
+.homepage-scroll-motion .service-card .service-link,
+.homepage-scroll-motion .faq-item p,
+.homepage-scroll-motion .trust-item p,
+.homepage-scroll-motion .testimonial-content p,
+.homepage-scroll-motion .contact-info p,
+.homepage-scroll-motion .contact-form,
+.homepage-scroll-motion .site-footer__panel {
+  transition: filter .12s linear, opacity .12s linear;
 }
 
 .blog-search-panel:hover,
