@@ -10,6 +10,13 @@ Tracks performance of blog posts to inform future content strategy.
 
 ## Post Performance Log
 
+### 2026-03-26 - PMHNP Billing in Chicago: Medicare Advantage Credentialing, Authorization Rules, and Claim-Routing Checklist (2026)
+- **URL**: /blog/pmhnp-billing-chicago-medicare-advantage-credentialing-authorizations-claim-routing-checklist-2026.html
+- **Target Keywords**: medicare advantage credentialing pmhnp, medicare advantage billing pmhnp, medicare advantage authorization psychiatry, original medicare vs medicare advantage billing pmhnp, chicago medicare advantage pmhnp billing
+- **Status**: 🟡 Newly published
+- **Week 1**: Pending...
+- **Notes**: Chosen as a high-intent managed-care gap after the recent Original Medicare PECOS article. Targets PMHNP owners and billers who are Medicare-ready on paper but still need plan-level participation, authorization, and claim-routing workflows for Medicare Advantage before first claims move cleanly.
+
 ### 2026-03-22 - PMHNP Billing in Chicago: Illinois Medicaid IMPACT Enrollment, MCO Linking, and First-Claim Checklist (2026)
 - **URL**: /blog/pmhnp-billing-chicago-illinois-medicaid-impact-enrollment-mco-linking-first-claim-checklist-2026.html
 - **Target Keywords**: illinois medicaid pmhnp enrollment, impact enrollment pmhnp, illinois medicaid mco billing pmhnp, chicago medicaid credentialing pmhnp, pmhnp first medicaid claim checklist
@@ -104,5 +111,5 @@ Based on performance data:
 3. 
 
 ---
-*Last Updated*: 2026-03-22
+*Last Updated*: 2026-03-26
 *Next Review*: 2026-03-29 (after SEO index check)
