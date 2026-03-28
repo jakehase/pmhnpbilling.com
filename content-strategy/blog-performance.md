@@ -10,6 +10,13 @@ Tracks performance of blog posts to inform future content strategy.
 
 ## Post Performance Log
 
+### 2026-03-28 - PMHNP Billing in Chicago: Secondary Claims, Medicare Crossover Gaps, and COB Recovery Checklist (2026)
+- **URL**: /blog/pmhnp-billing-chicago-secondary-claims-medicare-crossover-cob-recovery-checklist-2026.html
+- **Target Keywords**: secondary claims pmhnp, medicare crossover psychiatric billing, COB recovery checklist PMHNP, secondary insurance claim denial psychiatry, chicago PMHNP secondary billing
+- **Status**: 🟡 Newly published
+- **Week 1**: Pending...
+- **Notes**: Chosen as a high-intent back-end revenue-cycle gap after the earlier front-end COB article and the recent Medicare / Medicare Advantage / Medicaid posts. Targets PMHNP owners and billers who need a practical workflow for post-primary adjudication, crossover confirmation, and secondary-balance recovery rather than another generic eligibility guide.
+
 ### 2026-03-26 - PMHNP Billing in Chicago: Medicare Advantage Credentialing, Authorization Rules, and Claim-Routing Checklist (2026)
 - **URL**: /blog/pmhnp-billing-chicago-medicare-advantage-credentialing-authorizations-claim-routing-checklist-2026.html
 - **Target Keywords**: medicare advantage credentialing pmhnp, medicare advantage billing pmhnp, medicare advantage authorization psychiatry, original medicare vs medicare advantage billing pmhnp, chicago medicare advantage pmhnp billing
@@ -111,5 +118,5 @@ Based on performance data:
 3. 
 
 ---
-*Last Updated*: 2026-03-26
-*Next Review*: 2026-03-29 (after SEO index check)
+*Last Updated*: 2026-03-28
+*Next Review*: 2026-03-31 (after SEO index check)
