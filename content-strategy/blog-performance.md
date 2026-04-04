@@ -10,6 +10,13 @@ Tracks performance of blog posts to inform future content strategy.
 
 ## Post Performance Log
 
+### 2026-04-04 - PMHNP Billing in Chicago: ERA/EOB Posting, PLB Takebacks, and Reconciliation Checklist (2026)
+- **URL**: /blog/pmhnp-billing-chicago-era-eob-posting-plb-takebacks-reconciliation-checklist-2026.html
+- **Target Keywords**: ERA posting PMHNP, EOB reconciliation psychiatry, PLB adjustment PMHNP, payer takeback behavioral health billing, chicago PMHNP payment posting checklist
+- **Status**: 🟡 Newly published
+- **Week 1**: Pending...
+- **Notes**: Chosen as a high-intent back-end revenue-cycle gap after the recent secondary claims, Medicare Advantage, and Medicaid readiness posts. Targets PMHNP owners and billers who need a practical workflow for remittance posting, provider-level adjustments, takeback review, and deposit reconciliation instead of another front-end claims article.
+
 ### 2026-03-28 - PMHNP Billing in Chicago: Secondary Claims, Medicare Crossover Gaps, and COB Recovery Checklist (2026)
 - **URL**: /blog/pmhnp-billing-chicago-secondary-claims-medicare-crossover-cob-recovery-checklist-2026.html
 - **Target Keywords**: secondary claims pmhnp, medicare crossover psychiatric billing, COB recovery checklist PMHNP, secondary insurance claim denial psychiatry, chicago PMHNP secondary billing
@@ -118,5 +125,5 @@ Based on performance data:
 3. 
 
 ---
-*Last Updated*: 2026-03-28
-*Next Review*: 2026-03-31 (after SEO index check)
+*Last Updated*: 2026-04-04
+*Next Review*: 2026-04-11 (after SEO index check)
