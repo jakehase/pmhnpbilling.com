@@ -10,6 +10,13 @@ Tracks performance of blog posts to inform future content strategy.
 
 ## Post Performance Log
 
+### 2026-04-11 - PMHNP Billing in Chicago: Medical Records Requests, ADR Response, and Documentation Submission Checklist (2026)
+- **URL**: /blog/pmhnp-billing-chicago-medical-records-requests-adr-response-documentation-checklist-2026.html
+- **Target Keywords**: PMHNP ADR response, medical records request PMHNP billing, psychiatric claim documentation request, behavioral health records request denial, chicago PMHNP documentation submission checklist
+- **Status**: 🟡 Newly published
+- **Week 1**: Pending...
+- **Notes**: Chosen as a high-intent denial-prevention and recovery gap after the recent reconciliation, secondary-claims, Medicare Advantage, and Medicaid readiness posts. Targets PMHNP owners and billers who need a practical workflow for payer record requests, deadline control, packet assembly, and proof-of-submission handling instead of another generic appeals article.
+
 ### 2026-04-04 - PMHNP Billing in Chicago: ERA/EOB Posting, PLB Takebacks, and Reconciliation Checklist (2026)
 - **URL**: /blog/pmhnp-billing-chicago-era-eob-posting-plb-takebacks-reconciliation-checklist-2026.html
 - **Target Keywords**: ERA posting PMHNP, EOB reconciliation psychiatry, PLB adjustment PMHNP, payer takeback behavioral health billing, chicago PMHNP payment posting checklist
@@ -125,5 +132,5 @@ Based on performance data:
 3. 
 
 ---
-*Last Updated*: 2026-04-04
-*Next Review*: 2026-04-11 (after SEO index check)
+*Last Updated*: 2026-04-11
+*Next Review*: 2026-04-18 (after SEO index check)
