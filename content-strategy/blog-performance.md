@@ -10,6 +10,13 @@ Tracks performance of blog posts to inform future content strategy.
 
 ## Post Performance Log
 
+### 2026-04-18 - PMHNP Billing in Chicago: Retroactive Eligibility, Medicaid Backdating, and Rebilling Recovery Checklist (2026)
+- **URL**: /blog/pmhnp-billing-chicago-retroactive-eligibility-medicaid-backdating-rebilling-recovery-checklist-2026.html
+- **Target Keywords**: retroactive eligibility PMHNP billing, Illinois Medicaid backdating PMHNP, PMHNP rebilling after insurance change, Medicaid MCO reassignment claim recovery, Chicago PMHNP retro eligibility checklist
+- **Status**: 🟡 Newly published
+- **Week 1**: Pending...
+- **Notes**: Chosen as a high-intent recovery gap after the recent documentation-requests, reconciliation, secondary-claims, Medicaid enrollment, and timely-filing posts. Targets PMHNP owners and billers who need a practical workflow for backdated coverage, changed payer assignments, and timely-filing-exception-supported rebills instead of another general eligibility article.
+
 ### 2026-04-11 - PMHNP Billing in Chicago: Medical Records Requests, ADR Response, and Documentation Submission Checklist (2026)
 - **URL**: /blog/pmhnp-billing-chicago-medical-records-requests-adr-response-documentation-checklist-2026.html
 - **Target Keywords**: PMHNP ADR response, medical records request PMHNP billing, psychiatric claim documentation request, behavioral health records request denial, chicago PMHNP documentation submission checklist
@@ -132,5 +139,5 @@ Based on performance data:
 3. 
 
 ---
-*Last Updated*: 2026-04-11
-*Next Review*: 2026-04-18 (after SEO index check)
+*Last Updated*: 2026-04-18
+*Next Review*: 2026-04-25 (after SEO index check)
