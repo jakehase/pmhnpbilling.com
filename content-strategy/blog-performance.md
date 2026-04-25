@@ -10,6 +10,13 @@ Tracks performance of blog posts to inform future content strategy.
 
 ## Post Performance Log
 
+### 2026-04-25 - PMHNP Billing in Chicago: CO-16 Denials, Missing Information, and Claim Scrubber Checklist (2026)
+- **URL**: /blog/pmhnp-billing-chicago-co-16-denials-missing-information-claim-scrubber-checklist-2026.html
+- **Target Keywords**: CO-16 denial PMHNP, missing invalid information PMHNP billing, N290 PMHNP claim fix, psychiatric claim scrubber checklist, Chicago PMHNP denial edit checklist
+- **Status**: 🟡 Newly published
+- **Week 1**: Pending...
+- **Notes**: Chosen as a high-intent denial-prevention gap after the recent retroactive eligibility, documentation requests, reconciliation, and secondary-claims posts. Targets PMHNP owners and billers who need a practical workflow for recurring missing-information denials, provider identifier mismatches, authorization data defects, and telehealth claim edits instead of another general appeals article.
+
 ### 2026-04-18 - PMHNP Billing in Chicago: Retroactive Eligibility, Medicaid Backdating, and Rebilling Recovery Checklist (2026)
 - **URL**: /blog/pmhnp-billing-chicago-retroactive-eligibility-medicaid-backdating-rebilling-recovery-checklist-2026.html
 - **Target Keywords**: retroactive eligibility PMHNP billing, Illinois Medicaid backdating PMHNP, PMHNP rebilling after insurance change, Medicaid MCO reassignment claim recovery, Chicago PMHNP retro eligibility checklist
@@ -139,5 +146,5 @@ Based on performance data:
 3. 
 
 ---
-*Last Updated*: 2026-04-18
-*Next Review*: 2026-04-25 (after SEO index check)
+*Last Updated*: 2026-04-25
+*Next Review*: 2026-05-02 (after SEO index check)
