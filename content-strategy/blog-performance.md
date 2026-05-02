@@ -10,6 +10,13 @@ Tracks performance of blog posts to inform future content strategy.
 
 ## Post Performance Log
 
+### 2026-05-02 - PMHNP Billing in Chicago: 277CA Rejections, Clearinghouse Edits, and First-Pass Acceptance Checklist (2026)
+- **URL**: /blog/pmhnp-billing-chicago-277ca-rejections-clearinghouse-edits-first-pass-acceptance-checklist-2026.html
+- **Target Keywords**: 277CA rejection PMHNP, clearinghouse rejection PMHNP billing, psychiatric claim acceptance checklist, Chicago PMHNP clearinghouse edits, first-pass acceptance PMHNP billing
+- **Status**: 🟡 Newly published
+- **Week 1**: Pending...
+- **Notes**: Chosen as a high-intent front-end revenue-cycle gap after the recent CO-16, retroactive eligibility, documentation-request, and reconciliation posts. Targets PMHNP owners and billers who need a practical workflow for pre-adjudication claim failures, payer routing errors, clearinghouse edits, and first-pass acceptance recovery instead of another general denial article.
+
 ### 2026-04-25 - PMHNP Billing in Chicago: CO-16 Denials, Missing Information, and Claim Scrubber Checklist (2026)
 - **URL**: /blog/pmhnp-billing-chicago-co-16-denials-missing-information-claim-scrubber-checklist-2026.html
 - **Target Keywords**: CO-16 denial PMHNP, missing invalid information PMHNP billing, N290 PMHNP claim fix, psychiatric claim scrubber checklist, Chicago PMHNP denial edit checklist
@@ -146,5 +153,5 @@ Based on performance data:
 3. 
 
 ---
-*Last Updated*: 2026-04-25
-*Next Review*: 2026-05-02 (after SEO index check)
+*Last Updated*: 2026-05-02
+*Next Review*: 2026-05-09 (after SEO index check)
