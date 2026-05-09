@@ -10,6 +10,13 @@ Tracks performance of blog posts to inform future content strategy.
 
 ## Post Performance Log
 
+### 2026-05-09 - PMHNP Billing in Chicago: 276/277 Claim Status, No-Response Claims, and Aging A/R Follow-Up Checklist (2026)
+- **URL**: /blog/pmhnp-billing-chicago-276-277-claim-status-no-response-aging-ar-follow-up-checklist-2026.html
+- **Target Keywords**: 276 277 claim status PMHNP, pending claim follow-up PMHNP, no response claim status psychiatry, aging AR PMHNP billing, Chicago PMHNP claim status workflow
+- **Status**: 🟡 Newly published
+- **Week 1**: Pending...
+- **Notes**: Chosen as a high-intent post-submission revenue-cycle gap after the recent 277CA, CO-16, retroactive eligibility, and documentation-request posts. Targets PMHNP owners and billers who need a practical workflow for unresolved pending claims, payer status ambiguity, follow-up ownership, and aging A/R control instead of another pre-adjudication or denial article.
+
 ### 2026-05-02 - PMHNP Billing in Chicago: 277CA Rejections, Clearinghouse Edits, and First-Pass Acceptance Checklist (2026)
 - **URL**: /blog/pmhnp-billing-chicago-277ca-rejections-clearinghouse-edits-first-pass-acceptance-checklist-2026.html
 - **Target Keywords**: 277CA rejection PMHNP, clearinghouse rejection PMHNP billing, psychiatric claim acceptance checklist, Chicago PMHNP clearinghouse edits, first-pass acceptance PMHNP billing
@@ -153,5 +160,5 @@ Based on performance data:
 3. 
 
 ---
-*Last Updated*: 2026-05-02
-*Next Review*: 2026-05-09 (after SEO index check)
+*Last Updated*: 2026-05-09
+*Next Review*: 2026-05-16 (after SEO index check)
