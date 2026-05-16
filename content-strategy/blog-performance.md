@@ -10,6 +10,13 @@ Tracks performance of blog posts to inform future content strategy.
 
 ## Post Performance Log
 
+### 2026-05-16 - PMHNP Billing in Chicago: Payer Roster Delays, Effective-Date Mismatches, and Provider-Not-on-File Denial Recovery Checklist (2026)
+- **URL**: /blog/pmhnp-billing-chicago-payer-roster-delays-effective-date-mismatches-provider-not-on-file-denial-recovery-checklist-2026.html
+- **Target Keywords**: provider not on file PMHNP, payer roster delay PMHNP, credentialing effective date mismatch psychiatric billing, out of network denial after credentialing, Chicago PMHNP payer roster checklist
+- **Status**: 🟡 Newly published
+- **Week 1**: Pending...
+- **Notes**: Chosen as a high-intent credentialing-to-cash gap after the recent claim-status, 277CA, CO-16, retroactive-eligibility, and documentation-request posts. Targets PMHNP owners and billers who think a payer path is live because approval exists, but still need a practical workflow for roster readiness, effective-date proof, delegated route validation, and provider-not-on-file denial recovery.
+
 ### 2026-05-09 - PMHNP Billing in Chicago: 276/277 Claim Status, No-Response Claims, and Aging A/R Follow-Up Checklist (2026)
 - **URL**: /blog/pmhnp-billing-chicago-276-277-claim-status-no-response-aging-ar-follow-up-checklist-2026.html
 - **Target Keywords**: 276 277 claim status PMHNP, pending claim follow-up PMHNP, no response claim status psychiatry, aging AR PMHNP billing, Chicago PMHNP claim status workflow
@@ -160,5 +167,5 @@ Based on performance data:
 3. 
 
 ---
-*Last Updated*: 2026-05-09
-*Next Review*: 2026-05-16 (after SEO index check)
+*Last Updated*: 2026-05-16
+*Next Review*: 2026-05-23 (after SEO index check)
