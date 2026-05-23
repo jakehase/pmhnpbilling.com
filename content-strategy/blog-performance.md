@@ -10,6 +10,13 @@ Tracks performance of blog posts to inform future content strategy.
 
 ## Post Performance Log
 
+### 2026-05-23 - PMHNP Billing in Chicago: CO-197 Denials, No-Authorization-on-File Claims, and Retro-Auth Recovery Checklist (2026)
+- **URL**: /blog/pmhnp-billing-chicago-co-197-denials-no-authorization-on-file-retro-auth-recovery-checklist-2026.html
+- **Target Keywords**: CO-197 denial PMHNP, no authorization on file PMHNP, psychiatric prior authorization denial recovery, retro auth PMHNP billing, Chicago PMHNP authorization mismatch checklist
+- **Status**: 🟡 Newly published
+- **Week 1**: Pending...
+- **Notes**: Chosen as a high-intent denial-and-recovery gap after the recent payer-roster, claim-status, 277CA, CO-16, and authorization-tracking posts. Targets PMHNP owners and billers who need a practical workflow for classifying CO-197 denials, separating true missing auth from route/provider/unit mismatches, and choosing between corrected claims, retro-auth requests, and appeals instead of forcing another generic prior authorization article.
+
 ### 2026-05-16 - PMHNP Billing in Chicago: Payer Roster Delays, Effective-Date Mismatches, and Provider-Not-on-File Denial Recovery Checklist (2026)
 - **URL**: /blog/pmhnp-billing-chicago-payer-roster-delays-effective-date-mismatches-provider-not-on-file-denial-recovery-checklist-2026.html
 - **Target Keywords**: provider not on file PMHNP, payer roster delay PMHNP, credentialing effective date mismatch psychiatric billing, out of network denial after credentialing, Chicago PMHNP payer roster checklist
@@ -167,5 +174,5 @@ Based on performance data:
 3. 
 
 ---
-*Last Updated*: 2026-05-16
-*Next Review*: 2026-05-23 (after SEO index check)
+*Last Updated*: 2026-05-23
+*Next Review*: 2026-05-30 (after SEO index check)
