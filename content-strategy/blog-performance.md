@@ -10,6 +10,13 @@ Tracks performance of blog posts to inform future content strategy.
 
 ## Post Performance Log
 
+### 2026-05-30 - PMHNP Billing in Chicago: CO-18 Duplicate Claims, Corrected-Claim Frequency Codes, and Replacement-Claim Checklist (2026)
+- **URL**: /blog/pmhnp-billing-chicago-co-18-duplicate-claims-corrected-claim-frequency-code-replacement-claim-checklist-2026.html
+- **Target Keywords**: CO-18 denial PMHNP, duplicate claim denial PMHNP, corrected claim frequency code professional claim, replacement claim checklist psychiatry, Chicago PMHNP duplicate claim recovery
+- **Status**: 🟡 Newly published
+- **Week 1**: Pending...
+- **Notes**: Chosen as a high-intent resubmission-control gap after the recent claim-status, 277CA, timely-filing, CO-16, and denial-recovery posts. Targets PMHNP owners and billers who need a practical workflow for deciding when to wait, inquire, replace, or void a claim instead of creating duplicate denials by rebilling too fast.
+
 ### 2026-05-23 - PMHNP Billing in Chicago: CO-197 Denials, No-Authorization-on-File Claims, and Retro-Auth Recovery Checklist (2026)
 - **URL**: /blog/pmhnp-billing-chicago-co-197-denials-no-authorization-on-file-retro-auth-recovery-checklist-2026.html
 - **Target Keywords**: CO-197 denial PMHNP, no authorization on file PMHNP, psychiatric prior authorization denial recovery, retro auth PMHNP billing, Chicago PMHNP authorization mismatch checklist
@@ -174,5 +181,5 @@ Based on performance data:
 3. 
 
 ---
-*Last Updated*: 2026-05-23
-*Next Review*: 2026-05-30 (after SEO index check)
+*Last Updated*: 2026-05-30
+*Next Review*: 2026-06-06 (after SEO index check)
