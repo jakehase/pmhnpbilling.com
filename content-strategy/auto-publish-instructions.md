@@ -23,7 +23,7 @@ Publish a new SEO-focused PMHNP billing post to `pmhnpbilling.com` on a recurrin
   - front-end eligibility and authorization workflows
 - Prefer practical, operational angles over generic thought pieces.
 - Avoid publishing a topic that is materially the same as one of the most recent posts unless you have a clearly different angle.
-- Favor Chicago / Illinois / PMHNP-specific search intent when it fits naturally.
+- Favor national PMHNP-specific search intent first; use Illinois or Chicago only when the rule set or audience is genuinely local.
 - If performance data is thin, prioritize keyword gaps and revenue-cycle execution topics.
 
 ## Required output

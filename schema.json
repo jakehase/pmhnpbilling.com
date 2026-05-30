@@ -1,19 +1,27 @@
 {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "ProfessionalService",
   "name": "PMHNP Billing",
-  "description": "Professional billing services for Psychiatric Mental Health Nurse Practitioners in the Chicago area",
+  "description": "Professional billing services for Psychiatric Mental Health Nurse Practitioners nationwide",
   "url": "https://pmhnpbilling.com",
   "telephone": "+1-XXX-XXX-XXXX",
   "email": "contact@pmhnpbilling.com",
-  "areaServed": {
-    "@type": "City",
-    "name": "Chicago",
-    "containedInPlace": {
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Chicago",
+    "addressRegion": "IL",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "United States"
+    },
+    {
       "@type": "State",
       "name": "Illinois"
     }
-  },
+  ],
   "serviceType": [
     "Medical Billing Services",
     "Claims Management",

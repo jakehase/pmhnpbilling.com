@@ -1,0 +1,51 @@
+# National SEO Repositioning — 2026-05-30
+
+## Why this changed
+A lead from Michigan showed that PMHNP billing interest is not limited to Chicago/Illinois. The blog had become too city-heavy for a national PMHNP audience.
+
+## SEO-safe approach
+- Reposition the site as a **national PMHNP billing specialist**.
+- Keep Illinois/local content only where state rules, Medicaid enrollment, parity, credentialing, or telehealth policy make the geography useful.
+- Preserve old URL equity with redirects instead of deleting pages.
+- Keep canonical URLs on the broader/state-specific destination pages.
+- Keep sitemap entries pointed at destination pages only.
+
+## URL work completed
+- Chicago-slugged posts inventoried: 27
+- Broad national destination posts: 24
+- Illinois/state-specific destination posts: 3
+- Redirect mechanisms added: `_redirects` plus static fallback redirect pages at old URLs.
+
+## New content mix
+- National/broad PMHNP billing guidance: ~80% of public blog inventory.
+- State/regional guidance: ~20%, focused on Illinois Medicaid, telehealth, parity, credentialing, and practice-launch issues.
+- Chicago remains as business-origin/local schema context, not the main audience boundary.
+
+## Redirect map
+- `/blog/illinois-telehealth-billing-pmhnps-chicago-pos-02-10-modifier-95-denial-fixes-2026.html` → `/blog/illinois-telehealth-billing-pmhnps-pos-02-10-modifier-95-denial-fixes-2026.html`
+- `/blog/pmhnp-billing-chicago-276-277-claim-status-no-response-aging-ar-follow-up-checklist-2026.html` → `/blog/pmhnp-billing-276-277-claim-status-no-response-aging-ar-follow-up-checklist-2026.html`
+- `/blog/pmhnp-billing-chicago-277ca-rejections-clearinghouse-edits-first-pass-acceptance-checklist-2026.html` → `/blog/pmhnp-billing-277ca-rejections-clearinghouse-edits-first-pass-acceptance-checklist-2026.html`
+- `/blog/pmhnp-billing-chicago-90791-90792-em-psychotherapy-add-on-coding-guide-2026.html` → `/blog/pmhnp-billing-90791-90792-em-psychotherapy-add-on-coding-guide-2026.html`
+- `/blog/pmhnp-billing-chicago-behavioral-health-carve-outs-referral-requirements-payer-routing-checklist-2026.html` → `/blog/pmhnp-billing-behavioral-health-carve-outs-referral-requirements-payer-routing-checklist-2026.html`
+- `/blog/pmhnp-billing-chicago-caqh-reattestation-recredentialing-checklist-2026.html` → `/blog/pmhnp-billing-caqh-reattestation-recredentialing-checklist-2026.html`
+- `/blog/pmhnp-billing-chicago-claim-denial-appeals-playbook-2026.html` → `/blog/pmhnp-billing-claim-denial-appeals-playbook-2026.html`
+- `/blog/pmhnp-billing-chicago-co-16-denials-missing-information-claim-scrubber-checklist-2026.html` → `/blog/pmhnp-billing-co-16-denials-missing-information-claim-scrubber-checklist-2026.html`
+- `/blog/pmhnp-billing-chicago-co-18-duplicate-claims-corrected-claim-frequency-code-replacement-claim-checklist-2026.html` → `/blog/pmhnp-billing-co-18-duplicate-claims-corrected-claim-frequency-code-replacement-claim-checklist-2026.html`
+- `/blog/pmhnp-billing-chicago-co-197-denials-no-authorization-on-file-retro-auth-recovery-checklist-2026.html` → `/blog/pmhnp-billing-co-197-denials-no-authorization-on-file-retro-auth-recovery-checklist-2026.html`
+- `/blog/pmhnp-billing-chicago-credentialing-first-claim-checklist.html` → `/blog/pmhnp-billing-credentialing-first-claim-checklist.html`
+- `/blog/pmhnp-billing-chicago-eligibility-verification-cob-front-end-denial-prevention-checklist-2026.html` → `/blog/pmhnp-billing-eligibility-verification-cob-front-end-denial-prevention-checklist-2026.html`
+- `/blog/pmhnp-billing-chicago-era-eob-posting-plb-takebacks-reconciliation-checklist-2026.html` → `/blog/pmhnp-billing-era-eob-posting-plb-takebacks-reconciliation-checklist-2026.html`
+- `/blog/pmhnp-billing-chicago-illinois-medicaid-impact-enrollment-mco-linking-first-claim-checklist-2026.html` → `/blog/illinois-medicaid-impact-enrollment-mco-linking-pmhnp-first-claim-checklist-2026.html`
+- `/blog/pmhnp-billing-chicago-insurance-credentialing-group-vs-individual-npi-eft-era-first-paid-claim-checklist-2026.html` → `/blog/pmhnp-billing-insurance-credentialing-group-vs-individual-npi-eft-era-first-paid-claim-checklist-2026.html`
+- `/blog/pmhnp-billing-chicago-medical-records-requests-adr-response-documentation-checklist-2026.html` → `/blog/pmhnp-billing-medical-records-requests-adr-response-documentation-checklist-2026.html`
+- `/blog/pmhnp-billing-chicago-medicare-advantage-credentialing-authorizations-claim-routing-checklist-2026.html` → `/blog/pmhnp-billing-medicare-advantage-credentialing-authorizations-claim-routing-checklist-2026.html`
+- `/blog/pmhnp-billing-chicago-medicare-pecos-reassignment-ptan-first-claim-checklist-2026.html` → `/blog/pmhnp-billing-medicare-pecos-reassignment-ptan-first-claim-checklist-2026.html`
+- `/blog/pmhnp-billing-chicago-npi-taxonomy-caqh-alignment-checklist-eligibility-denials-2026.html` → `/blog/pmhnp-billing-npi-taxonomy-caqh-alignment-checklist-eligibility-denials-2026.html`
+- `/blog/pmhnp-billing-chicago-payer-roster-delays-effective-date-mismatches-provider-not-on-file-denial-recovery-checklist-2026.html` → `/blog/pmhnp-billing-payer-roster-delays-effective-date-mismatches-provider-not-on-file-denial-recovery-checklist-2026.html`
+- `/blog/pmhnp-billing-chicago-prior-authorization-expiration-units-visit-limit-tracking-checklist-2026.html` → `/blog/pmhnp-billing-prior-authorization-expiration-units-visit-limit-tracking-checklist-2026.html`
+- `/blog/pmhnp-billing-chicago-prior-authorization-workflow-appeal-packet-templates-2026.html` → `/blog/pmhnp-billing-prior-authorization-workflow-appeal-packet-templates-2026.html`
+- `/blog/pmhnp-billing-chicago-psychiatric-cpt-coding-matrix-documentation-audit-checklist-2026.html` → `/blog/pmhnp-billing-psychiatric-cpt-coding-matrix-documentation-audit-checklist-2026.html`
+- `/blog/pmhnp-billing-chicago-retroactive-eligibility-medicaid-backdating-rebilling-recovery-checklist-2026.html` → `/blog/illinois-medicaid-retroactive-eligibility-backdating-rebilling-recovery-pmhnp-checklist-2026.html`
+- `/blog/pmhnp-billing-chicago-secondary-claims-medicare-crossover-cob-recovery-checklist-2026.html` → `/blog/pmhnp-billing-secondary-claims-medicare-crossover-cob-recovery-checklist-2026.html`
+- `/blog/pmhnp-billing-chicago-telehealth-pos-02-10-modifier-95-checklist-2026.html` → `/blog/pmhnp-billing-telehealth-pos-02-10-modifier-95-checklist-2026.html`
+- `/blog/pmhnp-billing-chicago-timely-filing-limits-corrected-claims-reconsideration-timeline-checklist-2026.html` → `/blog/pmhnp-billing-timely-filing-limits-corrected-claims-reconsideration-timeline-checklist-2026.html`

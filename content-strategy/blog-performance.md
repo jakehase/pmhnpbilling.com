@@ -10,107 +10,113 @@ Tracks performance of blog posts to inform future content strategy.
 
 ## Post Performance Log
 
-### 2026-05-30 - PMHNP Billing in Chicago: CO-18 Duplicate Claims, Corrected-Claim Frequency Codes, and Replacement-Claim Checklist (2026)
-- **URL**: /blog/pmhnp-billing-chicago-co-18-duplicate-claims-corrected-claim-frequency-code-replacement-claim-checklist-2026.html
-- **Target Keywords**: CO-18 denial PMHNP, duplicate claim denial PMHNP, corrected claim frequency code professional claim, replacement claim checklist psychiatry, Chicago PMHNP duplicate claim recovery
+### 2026-05-30 Strategy reset — national PMHNP audience
+- Morgan/Michigan lead signal suggests PMHNP interest is national, not only local.
+- Going forward, default blog strategy is national PMHNP billing intent first, with Illinois/local content reserved for genuinely state-specific rules.
+- Redirects/canonicals were added for former city-heavy slugs so old URLs can pass users and search engines to broader destination pages.
+
+
+### 2026-05-30 - PMHNP Billing: CO-18 Duplicate Claims, Corrected-Claim Frequency Codes, and Replacement-Claim Checklist (2026)
+- **URL**: /blog/pmhnp-billing-co-18-duplicate-claims-corrected-claim-frequency-code-replacement-claim-checklist-2026.html
+- **Target Keywords**: CO-18 denial PMHNP, duplicate claim denial PMHNP, corrected claim frequency code professional claim, replacement claim checklist psychiatry, PMHNP duplicate claim recovery
 - **Status**: 🟡 Newly published
 - **Week 1**: Pending...
 - **Notes**: Chosen as a high-intent resubmission-control gap after the recent claim-status, 277CA, timely-filing, CO-16, and denial-recovery posts. Targets PMHNP owners and billers who need a practical workflow for deciding when to wait, inquire, replace, or void a claim instead of creating duplicate denials by rebilling too fast.
 
-### 2026-05-23 - PMHNP Billing in Chicago: CO-197 Denials, No-Authorization-on-File Claims, and Retro-Auth Recovery Checklist (2026)
-- **URL**: /blog/pmhnp-billing-chicago-co-197-denials-no-authorization-on-file-retro-auth-recovery-checklist-2026.html
-- **Target Keywords**: CO-197 denial PMHNP, no authorization on file PMHNP, psychiatric prior authorization denial recovery, retro auth PMHNP billing, Chicago PMHNP authorization mismatch checklist
+### 2026-05-23 - PMHNP Billing: CO-197 Denials, No-Authorization-on-File Claims, and Retro-Auth Recovery Checklist (2026)
+- **URL**: /blog/pmhnp-billing-co-197-denials-no-authorization-on-file-retro-auth-recovery-checklist-2026.html
+- **Target Keywords**: CO-197 denial PMHNP, no authorization on file PMHNP, psychiatric prior authorization denial recovery, retro auth PMHNP billing, PMHNP authorization mismatch checklist
 - **Status**: 🟡 Newly published
 - **Week 1**: Pending...
 - **Notes**: Chosen as a high-intent denial-and-recovery gap after the recent payer-roster, claim-status, 277CA, CO-16, and authorization-tracking posts. Targets PMHNP owners and billers who need a practical workflow for classifying CO-197 denials, separating true missing auth from route/provider/unit mismatches, and choosing between corrected claims, retro-auth requests, and appeals instead of forcing another generic prior authorization article.
 
-### 2026-05-16 - PMHNP Billing in Chicago: Payer Roster Delays, Effective-Date Mismatches, and Provider-Not-on-File Denial Recovery Checklist (2026)
-- **URL**: /blog/pmhnp-billing-chicago-payer-roster-delays-effective-date-mismatches-provider-not-on-file-denial-recovery-checklist-2026.html
-- **Target Keywords**: provider not on file PMHNP, payer roster delay PMHNP, credentialing effective date mismatch psychiatric billing, out of network denial after credentialing, Chicago PMHNP payer roster checklist
+### 2026-05-16 - PMHNP Billing: Payer Roster Delays, Effective-Date Mismatches, and Provider-Not-on-File Denial Recovery Checklist (2026)
+- **URL**: /blog/pmhnp-billing-payer-roster-delays-effective-date-mismatches-provider-not-on-file-denial-recovery-checklist-2026.html
+- **Target Keywords**: provider not on file PMHNP, payer roster delay PMHNP, credentialing effective date mismatch psychiatric billing, out of network denial after credentialing, PMHNP payer roster checklist
 - **Status**: 🟡 Newly published
 - **Week 1**: Pending...
 - **Notes**: Chosen as a high-intent credentialing-to-cash gap after the recent claim-status, 277CA, CO-16, retroactive-eligibility, and documentation-request posts. Targets PMHNP owners and billers who think a payer path is live because approval exists, but still need a practical workflow for roster readiness, effective-date proof, delegated route validation, and provider-not-on-file denial recovery.
 
-### 2026-05-09 - PMHNP Billing in Chicago: 276/277 Claim Status, No-Response Claims, and Aging A/R Follow-Up Checklist (2026)
-- **URL**: /blog/pmhnp-billing-chicago-276-277-claim-status-no-response-aging-ar-follow-up-checklist-2026.html
-- **Target Keywords**: 276 277 claim status PMHNP, pending claim follow-up PMHNP, no response claim status psychiatry, aging AR PMHNP billing, Chicago PMHNP claim status workflow
+### 2026-05-09 - PMHNP Billing: 276/277 Claim Status, No-Response Claims, and Aging A/R Follow-Up Checklist (2026)
+- **URL**: /blog/pmhnp-billing-276-277-claim-status-no-response-aging-ar-follow-up-checklist-2026.html
+- **Target Keywords**: 276 277 claim status PMHNP, pending claim follow-up PMHNP, no response claim status psychiatry, aging AR PMHNP billing, PMHNP claim status workflow
 - **Status**: 🟡 Newly published
 - **Week 1**: Pending...
 - **Notes**: Chosen as a high-intent post-submission revenue-cycle gap after the recent 277CA, CO-16, retroactive eligibility, and documentation-request posts. Targets PMHNP owners and billers who need a practical workflow for unresolved pending claims, payer status ambiguity, follow-up ownership, and aging A/R control instead of another pre-adjudication or denial article.
 
-### 2026-05-02 - PMHNP Billing in Chicago: 277CA Rejections, Clearinghouse Edits, and First-Pass Acceptance Checklist (2026)
-- **URL**: /blog/pmhnp-billing-chicago-277ca-rejections-clearinghouse-edits-first-pass-acceptance-checklist-2026.html
-- **Target Keywords**: 277CA rejection PMHNP, clearinghouse rejection PMHNP billing, psychiatric claim acceptance checklist, Chicago PMHNP clearinghouse edits, first-pass acceptance PMHNP billing
+### 2026-05-02 - PMHNP Billing: 277CA Rejections, Clearinghouse Edits, and First-Pass Acceptance Checklist (2026)
+- **URL**: /blog/pmhnp-billing-277ca-rejections-clearinghouse-edits-first-pass-acceptance-checklist-2026.html
+- **Target Keywords**: 277CA rejection PMHNP, clearinghouse rejection PMHNP billing, psychiatric claim acceptance checklist, PMHNP clearinghouse edits, first-pass acceptance PMHNP billing
 - **Status**: 🟡 Newly published
 - **Week 1**: Pending...
 - **Notes**: Chosen as a high-intent front-end revenue-cycle gap after the recent CO-16, retroactive eligibility, documentation-request, and reconciliation posts. Targets PMHNP owners and billers who need a practical workflow for pre-adjudication claim failures, payer routing errors, clearinghouse edits, and first-pass acceptance recovery instead of another general denial article.
 
-### 2026-04-25 - PMHNP Billing in Chicago: CO-16 Denials, Missing Information, and Claim Scrubber Checklist (2026)
-- **URL**: /blog/pmhnp-billing-chicago-co-16-denials-missing-information-claim-scrubber-checklist-2026.html
-- **Target Keywords**: CO-16 denial PMHNP, missing invalid information PMHNP billing, N290 PMHNP claim fix, psychiatric claim scrubber checklist, Chicago PMHNP denial edit checklist
+### 2026-04-25 - PMHNP Billing: CO-16 Denials, Missing Information, and Claim Scrubber Checklist (2026)
+- **URL**: /blog/pmhnp-billing-co-16-denials-missing-information-claim-scrubber-checklist-2026.html
+- **Target Keywords**: CO-16 denial PMHNP, missing invalid information PMHNP billing, N290 PMHNP claim fix, psychiatric claim scrubber checklist, PMHNP denial edit checklist
 - **Status**: 🟡 Newly published
 - **Week 1**: Pending...
 - **Notes**: Chosen as a high-intent denial-prevention gap after the recent retroactive eligibility, documentation requests, reconciliation, and secondary-claims posts. Targets PMHNP owners and billers who need a practical workflow for recurring missing-information denials, provider identifier mismatches, authorization data defects, and telehealth claim edits instead of another general appeals article.
 
-### 2026-04-18 - PMHNP Billing in Chicago: Retroactive Eligibility, Medicaid Backdating, and Rebilling Recovery Checklist (2026)
-- **URL**: /blog/pmhnp-billing-chicago-retroactive-eligibility-medicaid-backdating-rebilling-recovery-checklist-2026.html
-- **Target Keywords**: retroactive eligibility PMHNP billing, Illinois Medicaid backdating PMHNP, PMHNP rebilling after insurance change, Medicaid MCO reassignment claim recovery, Chicago PMHNP retro eligibility checklist
+### 2026-04-18 - PMHNP Billing: Retroactive Eligibility, Medicaid Backdating, and Rebilling Recovery Checklist (2026)
+- **URL**: /blog/illinois-medicaid-retroactive-eligibility-backdating-rebilling-recovery-pmhnp-checklist-2026.html
+- **Target Keywords**: retroactive eligibility PMHNP billing, Illinois Medicaid backdating PMHNP, PMHNP rebilling after insurance change, Medicaid MCO reassignment claim recovery, PMHNP retro eligibility checklist
 - **Status**: 🟡 Newly published
 - **Week 1**: Pending...
 - **Notes**: Chosen as a high-intent recovery gap after the recent documentation-requests, reconciliation, secondary-claims, Medicaid enrollment, and timely-filing posts. Targets PMHNP owners and billers who need a practical workflow for backdated coverage, changed payer assignments, and timely-filing-exception-supported rebills instead of another general eligibility article.
 
-### 2026-04-11 - PMHNP Billing in Chicago: Medical Records Requests, ADR Response, and Documentation Submission Checklist (2026)
-- **URL**: /blog/pmhnp-billing-chicago-medical-records-requests-adr-response-documentation-checklist-2026.html
-- **Target Keywords**: PMHNP ADR response, medical records request PMHNP billing, psychiatric claim documentation request, behavioral health records request denial, chicago PMHNP documentation submission checklist
+### 2026-04-11 - PMHNP Billing: Medical Records Requests, ADR Response, and Documentation Submission Checklist (2026)
+- **URL**: /blog/pmhnp-billing-medical-records-requests-adr-response-documentation-checklist-2026.html
+- **Target Keywords**: PMHNP ADR response, medical records request PMHNP billing, psychiatric claim documentation request, behavioral health records request denial, PMHNP documentation submission checklist
 - **Status**: 🟡 Newly published
 - **Week 1**: Pending...
 - **Notes**: Chosen as a high-intent denial-prevention and recovery gap after the recent reconciliation, secondary-claims, Medicare Advantage, and Medicaid readiness posts. Targets PMHNP owners and billers who need a practical workflow for payer record requests, deadline control, packet assembly, and proof-of-submission handling instead of another generic appeals article.
 
-### 2026-04-04 - PMHNP Billing in Chicago: ERA/EOB Posting, PLB Takebacks, and Reconciliation Checklist (2026)
-- **URL**: /blog/pmhnp-billing-chicago-era-eob-posting-plb-takebacks-reconciliation-checklist-2026.html
-- **Target Keywords**: ERA posting PMHNP, EOB reconciliation psychiatry, PLB adjustment PMHNP, payer takeback behavioral health billing, chicago PMHNP payment posting checklist
+### 2026-04-04 - PMHNP Billing: ERA/EOB Posting, PLB Takebacks, and Reconciliation Checklist (2026)
+- **URL**: /blog/pmhnp-billing-era-eob-posting-plb-takebacks-reconciliation-checklist-2026.html
+- **Target Keywords**: ERA posting PMHNP, EOB reconciliation psychiatry, PLB adjustment PMHNP, payer takeback behavioral health billing, PMHNP payment posting checklist
 - **Status**: 🟡 Newly published
 - **Week 1**: Pending...
 - **Notes**: Chosen as a high-intent back-end revenue-cycle gap after the recent secondary claims, Medicare Advantage, and Medicaid readiness posts. Targets PMHNP owners and billers who need a practical workflow for remittance posting, provider-level adjustments, takeback review, and deposit reconciliation instead of another front-end claims article.
 
-### 2026-03-28 - PMHNP Billing in Chicago: Secondary Claims, Medicare Crossover Gaps, and COB Recovery Checklist (2026)
-- **URL**: /blog/pmhnp-billing-chicago-secondary-claims-medicare-crossover-cob-recovery-checklist-2026.html
-- **Target Keywords**: secondary claims pmhnp, medicare crossover psychiatric billing, COB recovery checklist PMHNP, secondary insurance claim denial psychiatry, chicago PMHNP secondary billing
+### 2026-03-28 - PMHNP Billing: Secondary Claims, Medicare Crossover Gaps, and COB Recovery Checklist (2026)
+- **URL**: /blog/pmhnp-billing-secondary-claims-medicare-crossover-cob-recovery-checklist-2026.html
+- **Target Keywords**: secondary claims pmhnp, medicare crossover psychiatric billing, COB recovery checklist PMHNP, secondary insurance claim denial psychiatry, PMHNP secondary billing
 - **Status**: 🟡 Newly published
 - **Week 1**: Pending...
 - **Notes**: Chosen as a high-intent back-end revenue-cycle gap after the earlier front-end COB article and the recent Medicare / Medicare Advantage / Medicaid posts. Targets PMHNP owners and billers who need a practical workflow for post-primary adjudication, crossover confirmation, and secondary-balance recovery rather than another generic eligibility guide.
 
-### 2026-03-26 - PMHNP Billing in Chicago: Medicare Advantage Credentialing, Authorization Rules, and Claim-Routing Checklist (2026)
-- **URL**: /blog/pmhnp-billing-chicago-medicare-advantage-credentialing-authorizations-claim-routing-checklist-2026.html
-- **Target Keywords**: medicare advantage credentialing pmhnp, medicare advantage billing pmhnp, medicare advantage authorization psychiatry, original medicare vs medicare advantage billing pmhnp, chicago medicare advantage pmhnp billing
+### 2026-03-26 - PMHNP Billing: Medicare Advantage Credentialing, Authorization Rules, and Claim-Routing Checklist (2026)
+- **URL**: /blog/pmhnp-billing-medicare-advantage-credentialing-authorizations-claim-routing-checklist-2026.html
+- **Target Keywords**: medicare advantage credentialing pmhnp, medicare advantage billing pmhnp, medicare advantage authorization psychiatry, original medicare vs medicare advantage billing pmhnp, medicare advantage PMHNP billing
 - **Status**: 🟡 Newly published
 - **Week 1**: Pending...
 - **Notes**: Chosen as a high-intent managed-care gap after the recent Original Medicare PECOS article. Targets PMHNP owners and billers who are Medicare-ready on paper but still need plan-level participation, authorization, and claim-routing workflows for Medicare Advantage before first claims move cleanly.
 
-### 2026-03-22 - PMHNP Billing in Chicago: Illinois Medicaid IMPACT Enrollment, MCO Linking, and First-Claim Checklist (2026)
-- **URL**: /blog/pmhnp-billing-chicago-illinois-medicaid-impact-enrollment-mco-linking-first-claim-checklist-2026.html
-- **Target Keywords**: illinois medicaid pmhnp enrollment, impact enrollment pmhnp, illinois medicaid mco billing pmhnp, chicago medicaid credentialing pmhnp, pmhnp first medicaid claim checklist
+### 2026-03-22 - PMHNP Billing: Illinois Medicaid IMPACT Enrollment, MCO Linking, and First-Claim Checklist (2026)
+- **URL**: /blog/illinois-medicaid-impact-enrollment-mco-linking-pmhnp-first-claim-checklist-2026.html
+- **Target Keywords**: illinois medicaid pmhnp enrollment, impact enrollment pmhnp, illinois medicaid mco billing pmhnp, Illinois Medicaid credentialing PMHNP, pmhnp first medicaid claim checklist
 - **Status**: 🟡 Newly published
 - **Week 1**: Pending...
 - **Notes**: Chosen as a high-intent Medicaid enrollment and first-claim readiness gap after recent posts covered Medicare PECOS, commercial credentialing, carve-outs, prior auth tracking, and telehealth. Targets PMHNP owners and billers who need Illinois-specific IMPACT, revalidation, managed-care routing, and launch-readiness guidance rather than another general credentialing article.
 
-### 2026-03-20 - PMHNP Billing in Chicago: Medicare PECOS Enrollment, Reassignment, PTAN, and First-Claim Checklist (2026)
-- **URL**: /blog/pmhnp-billing-chicago-medicare-pecos-reassignment-ptan-first-claim-checklist-2026.html
-- **Target Keywords**: pmhnp medicare enrollment illinois, pecos reassignment pmhnp, ptan medicare pmhnp, 855I 855R PMHNP, chicago pmhnp medicare credentialing
+### 2026-03-20 - PMHNP Billing: Medicare PECOS Enrollment, Reassignment, PTAN, and First-Claim Checklist (2026)
+- **URL**: /blog/pmhnp-billing-medicare-pecos-reassignment-ptan-first-claim-checklist-2026.html
+- **Target Keywords**: pmhnp medicare enrollment illinois, pecos reassignment pmhnp, ptan medicare pmhnp, 855I 855R PMHNP, pmhnp medicare credentialing
 - **Status**: 🟡 Newly published
 - **Week 1**: Pending...
 - **Notes**: Chosen as a high-intent credentialing gap adjacent to the existing NPI/CAQH and EFT/ERA content, but specifically focused on Medicare enrollment operations. Targets PMHNP owners and billers who need PECOS, reassignment, PTAN, and first-claim readiness guidance rather than another general credentialing overview.
 
-### 2026-03-18 - PMHNP Billing in Chicago: Behavioral Health Carve-Outs, Referral Requirements, and Payer Routing Checklist (2026)
-- **URL**: /blog/pmhnp-billing-chicago-behavioral-health-carve-outs-referral-requirements-payer-routing-checklist-2026.html
-- **Target Keywords**: pmhnp behavioral health carve out, psychiatric payer routing, referral requirements pmhnp billing, wrong payer denial prevention, chicago pmhnp billing
+### 2026-03-18 - PMHNP Billing: Behavioral Health Carve-Outs, Referral Requirements, and Payer Routing Checklist (2026)
+- **URL**: /blog/pmhnp-billing-behavioral-health-carve-outs-referral-requirements-payer-routing-checklist-2026.html
+- **Target Keywords**: pmhnp behavioral health carve out, psychiatric payer routing, referral requirements pmhnp billing, wrong payer denial prevention, pmhnp billing
 - **Status**: 🟡 Newly published
 - **Week 1**: Pending...
 - **Notes**: Chosen as a high-intent front-end denial-prevention gap adjacent to the existing eligibility/COB and prior authorization content. Focuses specifically on carve-out identification, referral controls, and correct psychiatric claim destination rather than generic eligibility verification.
 
-### 2026-03-16 - PMHNP Billing in Chicago: Prior Authorization Expiration, Units, and Visit-Limit Tracking Checklist (2026)
-- **URL**: /blog/pmhnp-billing-chicago-prior-authorization-expiration-units-visit-limit-tracking-checklist-2026.html
-- **Target Keywords**: pmhnp prior authorization tracking, prior authorization expiration, authorization units psychiatric billing, visit limit denial prevention, chicago pmhnp billing
+### 2026-03-16 - PMHNP Billing: Prior Authorization Expiration, Units, and Visit-Limit Tracking Checklist (2026)
+- **URL**: /blog/pmhnp-billing-prior-authorization-expiration-units-visit-limit-tracking-checklist-2026.html
+- **Target Keywords**: pmhnp prior authorization tracking, prior authorization expiration, authorization units psychiatric billing, visit limit denial prevention, pmhnp billing
 - **Status**: 🟡 Newly published
 - **Week 1**: Pending...
 - **Notes**: Chosen as a high-intent denial-prevention gap between existing prior authorization workflow content and denial appeals content. Focuses on post-approval operational controls rather than initial auth submission.
@@ -132,7 +138,7 @@ Tracks performance of blog posts to inform future content strategy.
 
 ### 2026-01-30 - Navigating the Prior Authorization Maze
 - **URL**: /blog/prior-authorization-guide.html
-- **Target Keywords**: prior authorization pmhnp, chicago prior auth, psychiatric medication authorization
+- **Target Keywords**: prior authorization pmhnp, PMHNP prior authorization, psychiatric medication authorization
 - **Status**: 🟡 Not yet indexed
 - **Week 1**: Pending...
 - **Notes**:
