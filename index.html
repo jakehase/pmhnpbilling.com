@@ -671,6 +671,11 @@
         .service-link { display: inline-block; margin-top: 0.8rem; color: #1d4ed8; font-weight: 600; text-decoration: none; font-size: 0.9rem; }
         .service-link:hover { text-decoration: underline; }
 
+
+        .service-pathways { background: #fff; border-top: 1px solid #e5e7eb; }
+        .service-pathways .section-header { margin-bottom: 2rem; }
+        .service-pathways .service-card { background: linear-gradient(180deg, #ffffff, #eff6ff); }
+
         /* About */
         .about { background: #fff; }
         .about-content { max-width: 680px; margin: 0 auto; }
@@ -1034,6 +1039,33 @@
         </div>
     </section>
 
+    <section class="service-pathways">
+        <div class="section-header fade-in">
+            <div class="section-label">Medical billing support</div>
+            <h2 class="section-title">Explore billing help by practice need</h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card fade-in">
+                <h3>Small Practice Medical Billing</h3>
+                <p>Claims, payment posting, denials, payer follow-up, and practical billing reporting for solo and small-group practices.</p>
+                <a class="service-link" href="/services/medical-billing-services.html">View medical billing support →</a>
+                <a class="service-link" href="/services/medical-billing-company-small-practices.html">Small-practice billing company →</a>
+            </div>
+            <div class="service-card fade-in">
+                <h3>Psychiatric &amp; Mental Health Billing</h3>
+                <p>Behavioral-health billing workflows for PMHNPs, psychiatrists, telehealth visits, authorizations, denials, and payer routing.</p>
+                <a class="service-link" href="/services/psychiatric-medical-billing-services.html">Psychiatric billing support →</a>
+                <a class="service-link" href="/services/mental-health-medical-billing-services.html">Mental health billing support →</a>
+            </div>
+            <div class="service-card fade-in">
+                <h3>Revenue Cycle Management</h3>
+                <p>Claim readiness, clean-claim controls, ERA/EOB posting, denial root-cause tracking, and A/R follow-up.</p>
+                <a class="service-link" href="/services/revenue-cycle-management-services.html">View RCM support →</a>
+                <a class="service-link" href="/services/pmhnp-billing-services.html">PMHNP billing services →</a>
+            </div>
+        </div>
+    </section>
+
     <section id="about" class="about">
         <div class="section-header fade-in">
             <div class="section-label">About</div>
@@ -1049,7 +1081,7 @@
     <section class="pilot-preview">
         <div class="pilot-preview-card fade-in">
             <h3>Optional: PMHNP Claim Guard Pilot</h3>
-            <p>For PMHNP practices that want help both catching likely denials before submission and tightening recovery after they land, we also run PMHNP Claim Guard — a Tebra-first pilot for claim-risk checks, recovery worklists, reviewer queues, and measurable ROI.</p>
+            <p>For PMHNP practices that want help both catching likely denials before submission and tightening recovery after they land, we also run PMHNP Claim Guard — an EHR-agnostic pilot for claim-risk checks, recovery worklists, reviewer queues, and measurable ROI.</p>
             <p class="pilot-note"><strong>Important:</strong> Pilot only. Human review is required before any claim-facing action, and ROI proof depends on real pilot tracking.</p>
             <div style="display:flex;gap:0.7rem;flex-wrap:wrap;">
                 <a href="claim-guard-pilot.html" class="btn-secondary">Learn about Claim Guard</a>
@@ -1074,7 +1106,7 @@
             </div>
             <div class="faq-item">
                 <h3>How does onboarding work?</h3>
-                <p>After we confirm fit and sign the service agreement and Business Associate Agreement, access is set up through the practice's approved source system. Do not upload or email patient rosters, claims, appointment exports, or other patient information through this public website.</p>
+                <p>After we confirm fit and sign the service agreement and Business Associate Agreement, access is set up through the practice's approved EHR, practice-management system, clearinghouse, or payer portal. Do not upload or email patient rosters, claims, appointment exports, or other patient information through this public website.</p>
             </div>
             <div class="faq-item">
                 <h3>Do you work with my EHR?</h3>
@@ -1166,11 +1198,13 @@
             <div class="site-footer__panel motion-surface" data-scroll-reveal data-reveal-delay="70">
                 <h4>Services</h4>
                 <ul>
+                    <li><a href="/services/medical-billing-services.html">Medical Billing Services</a></li>
+                    <li><a href="/services/medical-billing-company-small-practices.html">Small Practice Billing Company</a></li>
+                    <li><a href="/services/psychiatric-medical-billing-services.html">Psychiatric Billing</a></li>
+                    <li><a href="/services/mental-health-medical-billing-services.html">Mental Health Billing</a></li>
+                    <li><a href="/services/revenue-cycle-management-services.html">Revenue Cycle Management</a></li>
                     <li><a href="/services/pmhnp-billing-services.html">PMHNP Billing Services</a></li>
                     <li><a href="/services/pmhnp-credentialing-services.html">Credentialing</a></li>
-                    <li><a href="/services/prior-authorization-support.html">Prior Authorization</a></li>
-                    <li><a href="/services/denial-management-appeals-pmhnp.html">Denial Appeals</a></li>
-                    <li><a href="/services/telehealth-billing-compliance-support.html">Telehealth Compliance</a></li>
                 </ul>
             </div>
             <div class="site-footer__panel motion-surface" data-scroll-reveal data-reveal-delay="130">

@@ -338,3 +338,17 @@ input:focus, select:focus, textarea:focus {
   .wizard-progress, .guide-grid, .advanced-grid, .wizard-panel { grid-template-columns: 1fr; }
   .wizard-actions { flex-direction: column; }
 }
+
+@media (max-width: 640px) {
+  .topbar-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: .45rem;
+  }
+  .topnav {
+    gap: .7rem;
+  }
+  .topnav a {
+    font-size: .86rem;
+  }
+}

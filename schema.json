@@ -27,7 +27,11 @@
     "Claims Management",
     "Prior Authorization Services",
     "Revenue Cycle Management",
-    "Billing Workflow Support (Pilot)"
+    "Billing Workflow Support (Pilot)",
+    "Psychiatric Medical Billing Services",
+    "Mental Health Medical Billing Services",
+    "Small Practice Medical Billing Company",
+    "Revenue Cycle Management Services"
   ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
@@ -71,6 +75,30 @@
           "@type": "Service",
           "name": "PMHNP Claim Guard Pilot",
           "description": "Optional workflow support pilot with human review before any action"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Medical Billing Services",
+          "description": "Claims, payment posting, payer follow-up, denial tracking, and small-practice billing support"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Psychiatric Medical Billing Services",
+          "description": "Revenue-cycle support for PMHNP, psychiatric, and behavioral-health practices"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Revenue Cycle Management Services",
+          "description": "Claim readiness, A/R follow-up, denial prevention, payment posting, and revenue-cycle reporting"
         }
       }
     ]

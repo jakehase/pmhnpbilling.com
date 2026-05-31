@@ -14,7 +14,7 @@ const FALLBACK_SNAPSHOT = {
     claim_auto_submission: false,
     pilot_manual_connection_request: true,
     local_onboarding_packet_builder: true,
-    tebra_export_upload: false,
+    tebra_export_upload: true,
     tebra_admin_assisted_sync: true
   },
   dashboard: {
