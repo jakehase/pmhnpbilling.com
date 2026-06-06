@@ -10,6 +10,13 @@ Tracks performance of blog posts to inform future content strategy.
 
 ## Post Performance Log
 
+### 2026-06-06 - PMHNP Billing: CO-50 Medical Necessity Denials, Documentation Risk Signals, and Appeal Packet Checklist (2026)
+- **URL**: /blog/pmhnp-billing-co-50-medical-necessity-denials-documentation-risk-signals-appeal-packet-checklist-2026.html
+- **Target Keywords**: CO-50 denial PMHNP, medical necessity denial PMHNP, psychotherapy documentation denial psychiatry, psychiatric appeal packet checklist, PMHNP documentation risk signals
+- **Status**: 🟡 Newly published
+- **Week 1**: Pending...
+- **Notes**: Chosen as a high-intent denial-and-documentation gap after the recent duplicate-claim, authorization, payer-roster, claim-status, and ADR posts. Targets PMHNP owners and billers who need a practical workflow for classifying medical-necessity denials, distinguishing coding-vs-documentation-vs-telehealth support issues, and building tighter appeal packets instead of sending broad unsupported records dumps.
+
 ### 2026-05-30 Strategy reset — national PMHNP audience
 - Morgan/Michigan lead signal suggests PMHNP interest is national, not only local.
 - Going forward, default blog strategy is national PMHNP billing intent first, with Illinois/local content reserved for genuinely state-specific rules.
@@ -187,5 +194,5 @@ Based on performance data:
 3. 
 
 ---
-*Last Updated*: 2026-05-30
-*Next Review*: 2026-06-06 (after SEO index check)
+*Last Updated*: 2026-06-06
+*Next Review*: 2026-06-13
