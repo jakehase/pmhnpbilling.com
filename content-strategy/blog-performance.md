@@ -10,6 +10,13 @@ Tracks performance of blog posts to inform future content strategy.
 
 ## Post Performance Log
 
+### 2026-06-13 - PMHNP Billing: CO-29 Timely Filing Denials, Filing-Limit Exceptions, and Proof-of-Timely-Submission Checklist (2026)
+- **URL**: /blog/pmhnp-billing-co-29-timely-filing-denials-filing-limit-exceptions-proof-of-timely-submission-checklist-2026.html
+- **Target Keywords**: CO-29 denial PMHNP, timely filing denial psychiatry, proof of timely filing PMHNP, filing limit exception claim appeal, PMHNP late claim denial recovery
+- **Status**: 🟡 Newly published
+- **Week 1**: Pending...
+- **Notes**: Chosen as a high-intent denial-recovery gap after the recent medical-necessity, duplicate-claim, authorization, payer-roster, and claim-status posts. Targets PMHNP owners and billers who need a practical workflow for proving on-time submission, separating true late claims from receipt-proof failures, and building filing-limit exception packets instead of forcing weak rebills or premature write-offs.
+
 ### 2026-06-06 - PMHNP Billing: CO-50 Medical Necessity Denials, Documentation Risk Signals, and Appeal Packet Checklist (2026)
 - **URL**: /blog/pmhnp-billing-co-50-medical-necessity-denials-documentation-risk-signals-appeal-packet-checklist-2026.html
 - **Target Keywords**: CO-50 denial PMHNP, medical necessity denial PMHNP, psychotherapy documentation denial psychiatry, psychiatric appeal packet checklist, PMHNP documentation risk signals
@@ -194,5 +201,5 @@ Based on performance data:
 3. 
 
 ---
-*Last Updated*: 2026-06-06
-*Next Review*: 2026-06-13
+*Last Updated*: 2026-06-13
+*Next Review*: 2026-06-20
