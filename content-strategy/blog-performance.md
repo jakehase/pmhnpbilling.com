@@ -10,6 +10,13 @@ Tracks performance of blog posts to inform future content strategy.
 
 ## Post Performance Log
 
+### 2026-06-20 - PMHNP Billing: CO-11 Diagnosis Code Inconsistent with Procedure, ICD-10 Specificity, and Claim-Fix Checklist (2026)
+- **URL**: /blog/pmhnp-billing-co-11-diagnosis-code-inconsistent-with-procedure-icd-10-specificity-claim-fix-checklist-2026.html
+- **Target Keywords**: CO-11 denial PMHNP, diagnosis code inconsistent with procedure psychiatry, ICD-10 specificity PMHNP billing, psychiatric diagnosis mismatch claim fix, PMHNP diagnosis sequencing denial
+- **Status**: 🟡 Newly published
+- **Week 1**: Pending...
+- **Notes**: Chosen as a high-intent diagnosis-edit gap after the recent CO-29, CO-50, CO-18, and CO-197 denial posts plus the broader psychiatric coding guides. Targets PMHNP owners and billers who need a practical workflow for diagnosis sequencing, ICD-10 specificity, payer edit classification, and corrected-claim decisions instead of another generic coding overview.
+
 ### 2026-06-13 - PMHNP Billing: CO-29 Timely Filing Denials, Filing-Limit Exceptions, and Proof-of-Timely-Submission Checklist (2026)
 - **URL**: /blog/pmhnp-billing-co-29-timely-filing-denials-filing-limit-exceptions-proof-of-timely-submission-checklist-2026.html
 - **Target Keywords**: CO-29 denial PMHNP, timely filing denial psychiatry, proof of timely filing PMHNP, filing limit exception claim appeal, PMHNP late claim denial recovery
@@ -201,5 +208,5 @@ Based on performance data:
 3. 
 
 ---
-*Last Updated*: 2026-06-13
-*Next Review*: 2026-06-20
+*Last Updated*: 2026-06-20
+*Next Review*: 2026-06-27
