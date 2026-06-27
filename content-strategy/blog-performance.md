@@ -10,6 +10,13 @@ Tracks performance of blog posts to inform future content strategy.
 
 ## Post Performance Log
 
+### 2026-06-27 - PMHNP Billing: CO-45 Charge Exceeds Fee Schedule, Allowed-Amount Variance Review, and Underpayment Recovery Checklist (2026)
+- **URL**: /blog/pmhnp-billing-co-45-charge-exceeds-fee-schedule-allowed-amount-variance-review-underpayment-recovery-checklist-2026.html
+- **Target Keywords**: CO-45 denial PMHNP, charge exceeds fee schedule psychiatry, allowed amount variance PMHNP billing, psychiatric underpayment recovery, PMHNP fee schedule review
+- **Status**: 🟡 Newly published
+- **Week 1**: Pending...
+- **Notes**: Chosen as a high-intent post-adjudication revenue-leak gap after the recent CO-11, CO-29, CO-50, and CO-18 denial guides plus the broader ERA/reconciliation content. Targets PMHNP owners and billers who need a practical workflow for separating normal allowables from true underpayments, connecting low payments back to credentialing or telehealth setup issues, and building rate-variance recovery discipline instead of letting paid claims escape review.
+
 ### 2026-06-20 - PMHNP Billing: CO-11 Diagnosis Code Inconsistent with Procedure, ICD-10 Specificity, and Claim-Fix Checklist (2026)
 - **URL**: /blog/pmhnp-billing-co-11-diagnosis-code-inconsistent-with-procedure-icd-10-specificity-claim-fix-checklist-2026.html
 - **Target Keywords**: CO-11 denial PMHNP, diagnosis code inconsistent with procedure psychiatry, ICD-10 specificity PMHNP billing, psychiatric diagnosis mismatch claim fix, PMHNP diagnosis sequencing denial
@@ -208,5 +215,5 @@ Based on performance data:
 3. 
 
 ---
-*Last Updated*: 2026-06-20
-*Next Review*: 2026-06-27
+*Last Updated*: 2026-06-27
+*Next Review*: 2026-07-04
