@@ -10,6 +10,13 @@ Tracks performance of blog posts to inform future content strategy.
 
 ## Post Performance Log
 
+### 2026-07-04 - PMHNP Billing: G2211 Add-On Code, Visit Complexity Rules, and Payer Readiness Checklist (2026)
+- **URL**: /blog/pmhnp-billing-g2211-add-on-code-visit-complexity-payer-readiness-checklist-2026.html
+- **Target Keywords**: G2211 PMHNP billing, psychiatric longitudinal care add-on code, G2211 medication management billing, PMHNP visit complexity code, G2211 payer checklist
+- **Status**: 🟡 Newly published
+- **Week 1**: Pending...
+- **Notes**: Chosen as a high-intent psychiatric coding and reimbursement workflow gap after the recent run of denial-code articles. Targets PMHNP owners and billers who need a practical way to decide when G2211 may fit, how to document longitudinal visit complexity, and how to build a payer-by-payer rollout instead of adding the code blindly.
+
 ### 2026-06-27 - PMHNP Billing: CO-45 Charge Exceeds Fee Schedule, Allowed-Amount Variance Review, and Underpayment Recovery Checklist (2026)
 - **URL**: /blog/pmhnp-billing-co-45-charge-exceeds-fee-schedule-allowed-amount-variance-review-underpayment-recovery-checklist-2026.html
 - **Target Keywords**: CO-45 denial PMHNP, charge exceeds fee schedule psychiatry, allowed amount variance PMHNP billing, psychiatric underpayment recovery, PMHNP fee schedule review
@@ -215,5 +222,5 @@ Based on performance data:
 3. 
 
 ---
-*Last Updated*: 2026-06-27
-*Next Review*: 2026-07-04
+*Last Updated*: 2026-07-04
+*Next Review*: 2026-07-11
