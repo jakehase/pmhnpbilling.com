@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PMHNP Billing — Light 3D Premium Mockup</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <style>
+    :root {
+      --bg: #f5f7f9;
+      --paper: rgba(255,255,255,.74);
+      --paper-strong: rgba(255,255,255,.92);
+      --ink: #102235;
+      --muted: #526174;
+      --line: rgba(16, 34, 53, 0.10);
+      --navy: #143a5b;
+      --teal: #31b6b0;
+      --blue: #5f8dff;
+      --mint: #dff7f2;
+      --shadow: 0 24px 80px rgba(17, 37, 61, 0.10);
+      --radius: 24px;
+      --radius-sm: 16px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(95,141,255,.12), transparent 34%),
+        radial-gradient(circle at 100% 10%, rgba(49,182,176,.12), transparent 28%),
+        linear-gradient(180deg, #fbfcfd 0%, var(--bg) 44%, #f0f4f7 100%);
+      color: var(--ink);
+      line-height: 1.55;
+    }
+
+    .shell { width: min(var(--max), calc(100vw - 28px)); margin: 0 auto; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      backdrop-filter: blur(16px);
+      background: rgba(245, 247, 249, .76);
+      border-bottom: 1px solid rgba(16, 34, 53, .08);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      text-decoration: none;
+      color: var(--ink);
+      font-weight: 700;
+      letter-spacing: -.02em;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--navy), #1f5d8b 70%, var(--teal));
+      box-shadow: inset 0 1px 1px rgba(255,255,255,.22), 0 10px 24px rgba(20,58,91,.22);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-mark::before,
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      inset: 8px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.25);
+      transform: translateZ(0);
+    }
+
+    .brand-mark::after {
+      inset: 14px;
+      border-color: rgba(255,255,255,.16);
+    }
+
+    .topnav {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .topnav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: .94rem;
+      font-weight: 500;
+    }
+
+    .topnav a:hover { color: var(--ink); }
+
+    .ghost-link {
+      padding: .65rem .95rem;
+      border-radius: 999px;
+      border: 1px solid rgba(16,34,53,.10);
+      background: rgba(255,255,255,.6);
+    }
+
+    .hero {
+      padding: 4rem 0 2rem;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      padding: .52rem .78rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(16,34,53,.08);
+      color: #1c5d70;
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.35rem, 5.2vw, 4.7rem);
+      line-height: .98;
+      letter-spacing: -.05em;
+      max-width: 11ch;
+    }
+
+    .hero-copy {
+      margin: 1.25rem 0 0;
+      font-size: 1.08rem;
+      color: var(--muted);
+      max-width: 64ch;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: .85rem;
+      flex-wrap: wrap;
+      margin: 1.65rem 0 1.2rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .45rem;
+      min-height: 48px;
+      padding: .85rem 1.15rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+      box-shadow: 0 8px 24px rgba(20, 58, 91, .08);
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--navy), #214f7b 72%, var(--blue));
+      color: white;
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,.82);
+      color: var(--navy);
+      border-color: rgba(20,58,91,.12);
+    }
+
+    .micro-proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .65rem;
+      margin-top: 1.15rem;
+    }
+
+    .proof-pill {
+      padding: .55rem .78rem;
+      border-radius: 999px;
+      font-size: .89rem;
+      color: #355066;
+      background: rgba(255,255,255,.74);
+      border: 1px solid rgba(16,34,53,.08);
+    }
+
+    .scene-wrap {
+      perspective: 1400px;
+      min-height: 540px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .scene {
+      width: min(100%, 560px);
+      aspect-ratio: 1 / 1;
+      position: relative;
+      transform-style: preserve-3d;
+      transform: rotateX(14deg) rotateY(-16deg);
+      transition: transform .25s ease;
+    }
+
+    .scene-grid {
+      position: absolute;
+      inset: 11% 5% 6%;
+      border-radius: 34px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.86), rgba(237,243,248,.74)),
+        linear-gradient(90deg, rgba(20,58,91,.04) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(20,58,91,.04) 1px, transparent 1px);
+      background-size: auto, 52px 52px, 52px 52px;
+      border: 1px solid rgba(16,34,53,.08);
+      box-shadow: var(--shadow);
+      transform: translateZ(0);
+      overflow: hidden;
+    }
+
+    .scene-grid::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 34%;
+      background: linear-gradient(180deg, transparent, rgba(16,34,53,.04));
+      pointer-events: none;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(14px);
+      opacity: .5;
+      pointer-events: none;
+    }
+
+    .orb.a { width: 140px; height: 140px; background: rgba(95,141,255,.30); top: 14%; right: 8%; }
+    .orb.b { width: 110px; height: 110px; background: rgba(49,182,176,.28); left: 10%; bottom: 18%; }
+
+    .pipeline-node {
+      position: absolute;
+      width: 188px;
+      padding: 1rem;
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(247,250,252,.84));
+      border: 1px solid rgba(16,34,53,.09);
+      box-shadow: 0 26px 50px rgba(16,34,53,.10);
+      transform-style: preserve-3d;
+      backdrop-filter: blur(12px);
+    }
+
+    .pipeline-node::before {
+      content: "";
+      position: absolute;
+      inset: 9px;
+      border-radius: 16px;
+      border: 1px solid rgba(16,34,53,.05);
+      pointer-events: none;
+    }
+
+    .pipeline-node h3 {
+      margin: 0 0 .4rem;
+      font-size: 1rem;
+      letter-spacing: -.03em;
+    }
+
+    .pipeline-node p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .88rem;
+      line-height: 1.45;
+    }
+
+    .pipeline-node .node-badge {
+      display: inline-block;
+      margin-bottom: .55rem;
+      padding: .26rem .5rem;
+      border-radius: 999px;
+      font-size: .72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      background: rgba(49,182,176,.12);
+      color: #1c6d69;
+    }
+
+    .node-export { top: 9%; left: 6%; transform: translateZ(86px); }
+    .node-risk { top: 22%; right: 7%; transform: translateZ(54px); }
+    .node-review { top: 48%; left: 11%; transform: translateZ(102px); }
+    .node-recovery { top: 58%; right: 9%; transform: translateZ(64px); }
+    .node-roi { bottom: 7%; left: 35%; transform: translateZ(122px); }
+
+    .connector {
+      position: absolute;
+      height: 2px;
+      background: linear-gradient(90deg, rgba(49,182,176,.15), rgba(49,182,176,.65), rgba(95,141,255,.6));
+      transform-origin: left center;
+      box-shadow: 0 0 18px rgba(95,141,255,.14);
+      overflow: hidden;
+      border-radius: 999px;
+    }
+
+    .connector::after {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: -16%;
+      width: 26%;
+      height: 6px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.92), transparent);
+      animation: flow 4s linear infinite;
+    }
+
+    .c1 { top: 30%; left: 31%; width: 162px; transform: rotate(-9deg) translateZ(34px); }
+    .c2 { top: 49%; left: 34%; width: 144px; transform: rotate(18deg) translateZ(48px); }
+    .c3 { top: 62%; left: 49%; width: 118px; transform: rotate(-7deg) translateZ(42px); }
+    .c4 { top: 77%; left: 37%; width: 134px; transform: rotate(8deg) translateZ(72px); }
+
+    @keyframes flow {
+      from { transform: translateX(0); }
+      to { transform: translateX(460%); }
+    }
+
+    .queue-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      margin: .15rem .2rem .1rem 0;
+      padding: .22rem .48rem;
+      border-radius: 999px;
+      background: rgba(20,58,91,.06);
+      color: #38516a;
+      font-size: .72rem;
+      font-weight: 600;
+    }
+
+    .section {
+      padding: 1rem 0 0;
+    }
+
+    .trust-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin: 1rem 0 0;
+    }
+
+    .trust-card,
+    .metric-card,
+    .value-card,
+    .safety-card,
+    .workflow-card,
+    .cta-card {
+      background: var(--paper-strong);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+    }
+
+    .trust-card {
+      padding: 1rem;
+    }
+
+    .trust-card strong {
+      display: block;
+      margin-bottom: .25rem;
+      font-size: .95rem;
+    }
+
+    .trust-card span {
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin: 0 0 1.25rem;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      letter-spacing: -.04em;
+      line-height: 1.04;
+    }
+
+    .section-head p {
+      margin: .7rem 0 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .value-grid,
+    .proof-grid,
+    .safety-grid,
+    .workflow-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .value-grid { grid-template-columns: repeat(3, 1fr); }
+    .proof-grid { grid-template-columns: repeat(3, 1fr); }
+    .safety-grid { grid-template-columns: 1.15fr .85fr; }
+    .workflow-grid { grid-template-columns: 1.1fr .9fr; align-items: stretch; }
+
+    .value-card,
+    .metric-card,
+    .safety-card,
+    .workflow-card,
+    .cta-card {
+      padding: 1.25rem;
+    }
+
+    .value-card h3,
+    .safety-card h3,
+    .workflow-card h3,
+    .cta-card h3 {
+      margin: 0 0 .45rem;
+      font-size: 1.1rem;
+      letter-spacing: -.03em;
+    }
+
+    .value-card p,
+    .safety-card p,
+    .workflow-card p,
+    .cta-card p,
+    .metric-card p,
+    .metric-label {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .metric-card strong {
+      display: block;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      letter-spacing: -.05em;
+      margin-bottom: .35rem;
+      color: var(--navy);
+    }
+
+    .workflow-card ol {
+      margin: .95rem 0 0;
+      padding-left: 1.15rem;
+      color: var(--muted);
+      display: grid;
+      gap: .75rem;
+    }
+
+    .workflow-card li strong { color: var(--ink); }
+
+    .workflow-visual {
+      position: relative;
+      min-height: 390px;
+      padding: 1.2rem;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 80% 12%, rgba(95,141,255,.12), transparent 24%),
+        radial-gradient(circle at 18% 100%, rgba(49,182,176,.13), transparent 24%),
+        linear-gradient(180deg, rgba(255,255,255,.9), rgba(244,248,251,.9));
+    }
+
+    .ladder {
+      position: absolute;
+      inset: 1.2rem;
+      display: grid;
+      gap: .75rem;
+      align-content: center;
+    }
+
+    .ladder-step {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: .8rem;
+      align-items: center;
+      padding: .9rem 1rem;
+      border-radius: 18px;
+      background: rgba(255,255,255,.75);
+      border: 1px solid rgba(16,34,53,.08);
+      box-shadow: 0 14px 34px rgba(16,34,53,.08);
+      transform: translateX(var(--shift, 0px));
+    }
+
+    .ladder-step:nth-child(2) { --shift: 18px; }
+    .ladder-step:nth-child(3) { --shift: 34px; }
+    .ladder-step:nth-child(4) { --shift: 18px; }
+    .ladder-step:nth-child(5) { --shift: 0px; }
+
+    .step-num {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(20,58,91,.92), rgba(49,182,176,.88));
+      color: white;
+      font-weight: 800;
+      box-shadow: 0 12px 24px rgba(20,58,91,.18);
+    }
+
+    .step-copy strong {
+      display: block;
+      margin-bottom: .2rem;
+      letter-spacing: -.02em;
+    }
+
+    .safety-card.highlight {
+      background: linear-gradient(180deg, rgba(255,255,255,.94), rgba(233,246,243,.92));
+      border-color: rgba(49,182,176,.24);
+    }
+
+    .safety-list {
+      margin: 1rem 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: .8rem;
+    }
+
+    .safety-list li {
+      padding: .82rem .92rem;
+      border-radius: 16px;
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(16,34,53,.08);
+      color: var(--muted);
+    }
+
+    .safety-list strong { color: var(--ink); }
+
+    .cta-block {
+      padding: 1.4rem 0 4rem;
+    }
+
+    .cta-card {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 1rem;
+      align-items: center;
+      background: linear-gradient(135deg, rgba(255,255,255,.95), rgba(239,247,250,.92));
+    }
+
+    .cta-note {
+      padding: 1rem;
+      border-radius: 18px;
+      background: rgba(20,58,91,.05);
+      border: 1px solid rgba(20,58,91,.08);
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    footer {
+      padding: 0 0 2rem;
+      color: #68788a;
+      font-size: .88rem;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { scroll-behavior: auto !important; }
+      .scene,
+      .btn,
+      .connector::after { transition: none !important; animation: none !important; }
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .workflow-grid,
+      .safety-grid,
+      .cta-card {
+        grid-template-columns: 1fr;
+      }
+
+      .scene-wrap { min-height: 470px; }
+      .trust-strip,
+      .value-grid,
+      .proof-grid { grid-template-columns: 1fr 1fr; }
+      h1 { max-width: none; }
+    }
+
+    @media (max-width: 720px) {
+      .topbar-inner { align-items: flex-start; flex-direction: column; }
+      .trust-strip,
+      .value-grid,
+      .proof-grid { grid-template-columns: 1fr; }
+      .hero { padding-top: 2.2rem; }
+      .scene-wrap { min-height: 420px; }
+      .scene { transform: rotateX(10deg) rotateY(-10deg) scale(.94); }
+      .pipeline-node { width: 160px; padding: .85rem; }
+      .node-export { top: 9%; left: 2%; }
+      .node-risk { top: 21%; right: 2%; }
+      .node-review { top: 50%; left: 4%; }
+      .node-recovery { top: 61%; right: 2%; }
+      .node-roi { bottom: 5%; left: 25%; }
+      .c1 { left: 25%; width: 146px; }
+      .c2 { left: 28%; width: 126px; }
+      .c3 { left: 44%; width: 104px; }
+      .c4 { left: 28%; width: 124px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="#top">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>PMHNP Billing</span>
+      </a>
+      <nav class="topnav" aria-label="Mockup navigation">
+        <a href="#value">Value</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#proof">Proof</a>
+        <a href="#safety">Safety</a>
+        <a class="ghost-link" href="#cta">Start with exports</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="shell hero">
+      <div>
+        <div class="eyebrow">Safe premium + light 3D mockup</div>
+        <h1>Turn Tebra exports into claim-risk visibility and denial recovery</h1>
+        <p class="hero-copy">
+          PMHNP Claim Guard helps psychiatric practices catch risk before submission, prioritize denials,
+          and move recovery work forward with human review built in.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#cta">Book a demo</a>
+          <a class="btn btn-secondary" href="#workflow">Start intake</a>
+        </div>
+        <div class="micro-proof">
+          <span class="proof-pill">Tebra-first</span>
+          <span class="proof-pill">Human-reviewed</span>
+          <span class="proof-pill">Draft-only recommendations</span>
+          <span class="proof-pill">No automatic claim submission</span>
+        </div>
+      </div>
+
+      <div class="scene-wrap">
+        <div class="scene" id="scene">
+          <div class="scene-grid"></div>
+          <div class="orb a"></div>
+          <div class="orb b"></div>
+
+          <div class="connector c1"></div>
+          <div class="connector c2"></div>
+          <div class="connector c3"></div>
+          <div class="connector c4"></div>
+
+          <article class="pipeline-node node-export">
+            <span class="node-badge">Input</span>
+            <h3>Tebra export</h3>
+            <p>Upload the files the practice already has so work can start immediately.</p>
+            <div class="queue-chip">Roster</div>
+            <div class="queue-chip">Claims / A/R</div>
+            <div class="queue-chip">Appointments</div>
+          </article>
+
+          <article class="pipeline-node node-risk">
+            <span class="node-badge">Detection</span>
+            <h3>Risk scan</h3>
+            <p>Surface pre-submit claim risk and likely denial patterns before they pile up.</p>
+            <div class="queue-chip">Eligibility</div>
+            <div class="queue-chip">Taxonomy</div>
+            <div class="queue-chip">Missing data</div>
+          </article>
+
+          <article class="pipeline-node node-review">
+            <span class="node-badge">Control</span>
+            <h3>Human review</h3>
+            <p>Keep a reviewer in the loop before anything gets treated as an action-worthy draft.</p>
+            <div class="queue-chip">Approve</div>
+            <div class="queue-chip">Hold</div>
+            <div class="queue-chip">Escalate</div>
+          </article>
+
+          <article class="pipeline-node node-recovery">
+            <span class="node-badge">Worklist</span>
+            <h3>Recovery queue</h3>
+            <p>Organize denials and next-best steps into a queue that feels operational, not abstract.</p>
+            <div class="queue-chip">Appeals</div>
+            <div class="queue-chip">Corrections</div>
+            <div class="queue-chip">Follow-up</div>
+          </article>
+
+          <article class="pipeline-node node-roi">
+            <span class="node-badge">Proof</span>
+            <h3>ROI reporting</h3>
+            <p>Show what was surfaced, organized, and moved forward during the pilot.</p>
+            <div class="queue-chip">At-risk claims</div>
+            <div class="queue-chip">Denial buckets</div>
+            <div class="queue-chip">Recovery hours saved</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell section">
+      <div class="trust-strip">
+        <div class="trust-card"><strong>Tebra-first</strong><span>Built around the workflow practices already use.</span></div>
+        <div class="trust-card"><strong>Human-reviewed</strong><span>Operational control stays with people, not autopilot.</span></div>
+        <div class="trust-card"><strong>Draft-only guidance</strong><span>Recommendations stay reviewable before action.</span></div>
+        <div class="trust-card"><strong>No payer submission</strong><span>Trust and safety boundaries are explicit, not implied.</span></div>
+      </div>
+    </section>
+
+    <section class="shell section" id="value">
+      <div class="section-head">
+        <h2>Clear value, not flashy ambiguity</h2>
+        <p>
+          This version keeps the site mostly clean and conversion-focused, then uses one subtle 3D system visual
+          to make the workflow feel tangible.
+        </p>
+      </div>
+      <div class="value-grid">
+        <article class="value-card">
+          <h3>Catch risk before it becomes a denial</h3>
+          <p>Surface issues while they are still manageable instead of discovering them deep in follow-up work.</p>
+        </article>
+        <article class="value-card">
+          <h3>Prioritize recovery work that actually matters</h3>
+          <p>Turn scattered problems into a ranked queue the team can work through with confidence.</p>
+        </article>
+        <article class="value-card">
+          <h3>Prove operational ROI during the pilot</h3>
+          <p>Show practices what the workflow surfaced, organized, and moved forward in concrete terms.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="shell section" id="workflow">
+      <div class="section-head">
+        <h2>From export to action</h2>
+        <p>
+          This is the place where the light 3D treatment earns its keep: it helps explain how intake becomes review,
+          how review becomes recovery, and how the pilot produces proof.
+        </p>
+      </div>
+      <div class="workflow-grid">
+        <article class="workflow-card">
+          <h3>Workflow story</h3>
+          <p>Use one visual to explain the system in ten seconds instead of making visitors decode paragraphs.</p>
+          <ol>
+            <li><strong>Upload export:</strong> start with the files the office already has.</li>
+            <li><strong>Generate risk queue:</strong> surface likely denial issues and missing items fast.</li>
+            <li><strong>Review priorities:</strong> a human confirms what matters first.</li>
+            <li><strong>Organize recovery:</strong> convert issues into practical next-step worklists.</li>
+            <li><strong>Track pilot outcomes:</strong> show what was surfaced and what moved forward.</li>
+          </ol>
+        </article>
+        <article class="workflow-card workflow-visual">
+          <div class="ladder">
+            <div class="ladder-step"><div class="step-num">1</div><div class="step-copy"><strong>Upload export</strong><span>Start with Tebra files already on hand.</span></div></div>
+            <div class="ladder-step"><div class="step-num">2</div><div class="step-copy"><strong>Generate risk queue</strong><span>Flag denials, missing data, and likely blockers.</span></div></div>
+            <div class="ladder-step"><div class="step-num">3</div><div class="step-copy"><strong>Reviewer confirms</strong><span>Human review decides what becomes a priority.</span></div></div>
+            <div class="ladder-step"><div class="step-num">4</div><div class="step-copy"><strong>Recovery organized</strong><span>Appeals, corrections, and follow-up get shaped into a queue.</span></div></div>
+            <div class="ladder-step"><div class="step-num">5</div><div class="step-copy"><strong>ROI tracked</strong><span>The pilot ends with evidence, not just claims.</span></div></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="shell section" id="proof">
+      <div class="section-head">
+        <h2>Proof should feel operational</h2>
+        <p>
+          Even in early pilot mode, the site can feel credible by showing the kind of business outcomes practices actually care about.
+        </p>
+      </div>
+      <div class="proof-grid">
+        <article class="metric-card">
+          <strong>147</strong>
+          <p class="metric-label">claims at risk surfaced in the pilot queue</p>
+        </article>
+        <article class="metric-card">
+          <strong>12</strong>
+          <p class="metric-label">denial categories identified and routed</p>
+        </article>
+        <article class="metric-card">
+          <strong>Same day</strong>
+          <p class="metric-label">to organize the first recovery worklist from exports already available</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="shell section" id="safety">
+      <div class="section-head">
+        <h2>Safety and credibility should be visually prominent</h2>
+        <p>
+          For PMHNP Billing, trust is part of the product. The site should say the boundaries clearly and early.
+        </p>
+      </div>
+      <div class="safety-grid">
+        <article class="safety-card highlight">
+          <h3>Explicit trust boundary</h3>
+          <p>
+            PMHNP Claim Guard is positioned as risk visibility and recovery operations support — not an autonomous billing robot.
+          </p>
+          <ul class="safety-list">
+            <li><strong>No automatic claim submission.</strong> Nothing here should imply background payer actions.</li>
+            <li><strong>No direct payer changes.</strong> Recommendations remain drafts until a person reviews them.</li>
+            <li><strong>Human review stays in the loop.</strong> That is a strength, not a disclaimer buried in the footer.</li>
+          </ul>
+        </article>
+        <article class="safety-card">
+          <h3>Why this design choice works</h3>
+          <p>
+            The light 3D treatment elevates the brand without making the product feel toy-like. It says “modern, premium, organized” without saying “risky, experimental, flashy.”
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="shell cta-block" id="cta">
+      <article class="cta-card">
+        <div>
+          <h3>Start with the exports you already have</h3>
+          <p>
+            The site should end with a calm, practical CTA — not hype. That reinforces that PMHNP Billing is here to help practices start moving now.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#top">See the dashboard</a>
+            <a class="btn btn-secondary" href="#top">Start secure intake</a>
+          </div>
+        </div>
+        <div class="cta-note">
+          <strong>Mockup note:</strong> this is intentionally 90% clean premium SaaS and 10% subtle 3D storytelling. If you like the direction, I can turn this into a real homepage implementation next.
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="shell">
+    Local preview mockup • built as a lightweight static concept for review
+  </footer>
+
+  <script>
+    const scene = document.getElementById('scene');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (scene && !reduceMotion) {
+      const reset = () => {
+        scene.style.transform = 'rotateX(14deg) rotateY(-16deg)';
+      };
+
+      scene.addEventListener('mousemove', (event) => {
+        const rect = scene.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width;
+        const y = (event.clientY - rect.top) / rect.height;
+        const rotateY = -18 + (x * 14);
+        const rotateX = 18 - (y * 11);
+        scene.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      });
+
+      scene.addEventListener('mouseleave', reset);
+      reset();
+    }
+  </script>
+</body>
+</html>
