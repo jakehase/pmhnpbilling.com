@@ -468,4 +468,57 @@
       applyHeroTransform();
     }
   }
+
+  var leadForm = document.querySelector('form[data-lead-form]');
+  if (leadForm) {
+    var topicField = leadForm.querySelector('[name="lead_topic"]');
+    var formStatus = leadForm.querySelector('.form-status');
+    var submitButton = leadForm.querySelector('[type="submit"]');
+
+    leadForm.addEventListener('submit', function (event) {
+      if (!window.fetch || !window.FormData || leadForm.dataset.submitting === 'true') return;
+      event.preventDefault();
+      leadForm.dataset.submitting = 'true';
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending…';
+      }
+      if (formStatus) {
+        formStatus.textContent = 'Sending your message securely…';
+        formStatus.classList.remove('form-status--error');
+      }
+      if (window.pmhnpTrack) {
+        window.pmhnpTrack('form_submit', {
+          form_id: leadForm.id || 'contact-form',
+          lead_topic: topicField ? topicField.value : 'general'
+        });
+      }
+
+      window.fetch(leadForm.action, {
+        method: 'POST',
+        body: new FormData(leadForm),
+        headers: { Accept: 'application/json' }
+      }).then(function (response) {
+        if (!response.ok) throw new Error('Formspree rejected the submission with status ' + response.status);
+        try {
+          window.sessionStorage.setItem('pmhnp_form_success', JSON.stringify({
+            completed: true,
+            lead_topic: topicField ? topicField.value : 'general',
+            lead_source: (leadForm.querySelector('[name="lead_source"]') || {}).value || 'website'
+          }));
+        } catch (_) {}
+        window.location.assign('/thank-you.html');
+      }).catch(function () {
+        leadForm.dataset.submitting = 'false';
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = 'Request a billing-fit review';
+        }
+        if (formStatus) {
+          formStatus.textContent = 'Your message did not send. Please check your connection and try again.';
+          formStatus.classList.add('form-status--error');
+        }
+      });
+    });
+  }
 })();

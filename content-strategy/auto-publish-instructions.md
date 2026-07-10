@@ -48,6 +48,8 @@ For each run:
 - The article should be useful enough that an actual PMHNP owner or biller could apply it.
 - Use a concrete, search-intent-friendly title, a unique title tag, and a useful meta description. Keep the title tag concise enough to communicate the core query in a search result; the visible H1 may be longer when clarity requires it.
 - Include internal links to relevant service pages and related blog posts when appropriate. Link to primary external sources for time-sensitive rules.
+- Use `content-strategy/commercial-intent-map.md` to select exactly one owning service page. Do not create or reinforce a competing commercial landing page for the same intent.
+- Keep the current attributed conversion CTA near the end of the article. Its contact link must include `lead_source=article` plus the topic-specific `lead_topic`; do not replace it with a generic “contact us” link.
 - Keep the article honest: do not promise payer behavior or automation that the site cannot actually deliver.
 - Never publish unsupported revenue estimates, turnaround times, approval windows, visit thresholds, modifier rules, denial-rate benchmarks, clean-claim targets, or universal payer instructions. Scope every rule to the source, payer product, jurisdiction, and effective date that support it.
 - Prefer current primary sources: CMS, state Medicaid agencies, regulators, official payer manuals or bulletins, and current code-set authorities. Check every external URL before publishing and record material sources in the article.

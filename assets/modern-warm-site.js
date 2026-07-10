@@ -60,6 +60,7 @@
         '.article-content > .warning-box',
         '.article-content > .faq-block',
         '.article-content > .cta-section',
+        '.article-content > .conversion-cta',
         '.article-content > blockquote',
         '.back-to-blog'
       ]

@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index,follow,max-image-preview:large">
-    <title>PMHNP Billing Services Nationwide | Psychiatric Billing & RCM</title>
-    <meta name="description" content="PMHNP billing services for psychiatric practices nationwide: claims, authorizations, denial follow-up, payment posting, and revenue cycle support.">
+    <title>PMHNP Billing Services | 5% of Collections, No Minimum</title>
+    <meta name="description" content="Nationwide PMHNP billing for psychiatric practices at 5% of collections, with no setup fee or monthly minimum. Claims, denials, payments, and RCM.">
 
     <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="PMHNP Billing Services Nationwide | Psychiatric Billing & RCM">
-    <meta property="og:description" content="PMHNP billing services for psychiatric practices nationwide: claims, authorizations, denial follow-up, payment posting, and revenue cycle support.">
+    <meta property="og:title" content="PMHNP Billing Services | 5% of Collections, No Minimum">
+    <meta property="og:description" content="Nationwide PMHNP billing for psychiatric practices at 5% of collections, with no setup fee or monthly minimum. Claims, denials, payments, and RCM.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pmhnpbilling.com">
     <meta property="og:locale" content="en_US">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="PMHNP Billing Services Nationwide | Psychiatric Billing & RCM">
-    <meta name="twitter:description" content="PMHNP billing services for psychiatric practices nationwide: claims, authorizations, denial follow-up, payment posting, and revenue cycle support.">
+    <meta name="twitter:title" content="PMHNP Billing Services | 5% of Collections, No Minimum">
+    <meta name="twitter:description" content="Nationwide PMHNP billing for psychiatric practices at 5% of collections, with no setup fee or monthly minimum. Claims, denials, payments, and RCM.">
 
     <!-- Breadcrumb Schema -->
     <script type="application/ld+json">
@@ -871,6 +871,16 @@
             box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
         }
         .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4); }
+        .contact-kicker { margin-bottom: .75rem; color: #17685d; font-size: .74rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+        .contact-proof-list { display: grid; gap: .8rem; margin: 0; padding: 0; list-style: none; }
+        .contact-proof-list li { position: relative; padding-left: 1.6rem; color: #4b5563; }
+        .contact-proof-list li::before { content: "✓"; position: absolute; left: 0; color: #17685d; font-weight: 800; }
+        .form-group label span { color: #9ca3af; font-weight: 400; }
+        .form-honeypot { position: absolute !important; width: 1px !important; height: 1px !important; overflow: hidden !important; clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; }
+        .form-privacy-note { margin: -.25rem 0 1rem; color: #6b7280; font-size: .78rem; line-height: 1.5; }
+        .form-status { min-height: 1.4rem; margin: 0 0 .7rem; color: #17685d; font-size: .82rem; font-weight: 600; }
+        .form-status--error { color: #b42318; }
+        .submit-btn:disabled { cursor: wait; opacity: .7; transform: none; }
 
         footer { background: #111827; color: #9ca3af; text-align: center; padding: 2.5rem; font-size: 0.875rem; }
 
@@ -1239,30 +1249,49 @@
     <section id="contact" class="contact">
         <div class="contact-wrapper">
             <div class="contact-info fade-in">
-                <h2>Let's talk</h2>
-                <p>Interested in working together? Fill out the form and I'll respond within one business day to discuss your practice's needs.</p>
+                <div class="contact-kicker">No-pressure fit review</div>
+                <h2>See whether PMHNP Billing fits your practice</h2>
+                <p>Share the billing challenge you want to solve. Jake will respond within one business day with a practical next step—not a generic sales sequence.</p>
+                <ul class="contact-proof-list" aria-label="Billing offer highlights">
+                    <li><strong>5% of collections</strong> for full-service billing</li>
+                    <li><strong>No setup fee</strong> and no monthly minimum</li>
+                    <li><strong>Direct support</strong> for psychiatric practices nationwide</li>
+                </ul>
             </div>
-            <form class="contact-form fade-in" action="https://formspree.io/f/xkorlzor" method="POST">
+            <form id="contact-form" class="contact-form fade-in" action="https://formspree.io/f/xkorlzor" method="POST" data-lead-form>
+                <input type="hidden" name="_subject" value="New PMHNP Billing website inquiry">
+                <input type="hidden" name="lead_source" value="website">
+                <input type="hidden" name="lead_topic" value="general">
+                <input type="hidden" name="utm_source" value="">
+                <input type="hidden" name="utm_medium" value="">
+                <input type="hidden" name="utm_campaign" value="">
+                <input type="hidden" name="landing_page" value="/">
+                <input type="hidden" name="referrer" value="">
+                <div class="form-honeypot" aria-hidden="true"><label for="company-website">Leave this field empty</label><input type="text" id="company-website" name="_gotcha" tabindex="-1" autocomplete="off"></div>
                 <div class="form-row">
-                    <div class="form-group"><label for="name">Name</label><input type="text" id="name" name="name" required></div>
-                    <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" required></div>
+                    <div class="form-group"><label for="name">Name</label><input type="text" id="name" name="name" autocomplete="name" required></div>
+                    <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" autocomplete="email" required></div>
                 </div>
                 <div class="form-row">
-                    <div class="form-group"><label for="phone">Phone</label><input type="tel" id="phone" name="phone"></div>
-                    <div class="form-group"><label for="practice">Practice Name</label><input type="text" id="practice" name="practice"></div>
+                    <div class="form-group"><label for="phone">Phone <span>(optional)</span></label><input type="tel" id="phone" name="phone" autocomplete="tel"></div>
+                    <div class="form-group"><label for="practice">Practice name <span>(optional)</span></label><input type="text" id="practice" name="practice" autocomplete="organization"></div>
                 </div>
                 <div class="form-group full">
-                    <label for="services">Services interested in</label>
+                    <label for="services">What would you like help with?</label>
                     <select id="services" name="services">
                         <option value="">Select an option</option>
-                        <option value="full-service">Full service billing</option>
-                        <option value="claims-only">Claims management</option>
+                        <option value="full-service">Full-service billing</option>
+                        <option value="denials-appeals">Denials and appeals</option>
+                        <option value="credentialing">Credentialing and enrollment</option>
+                        <option value="telehealth">Telehealth billing</option>
                         <option value="prior-auth">Prior authorizations</option>
                         <option value="other">Other / Not sure yet</option>
                     </select>
                 </div>
-                <div class="form-group full"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell me about your practice..."></textarea></div>
-                <button type="submit" class="submit-btn">Send message</button>
+                <div class="form-group full"><label for="message">What is the main billing challenge?</label><textarea id="message" name="message" aria-describedby="contact-privacy" placeholder="A short, non-patient-specific summary is plenty."></textarea></div>
+                <p id="contact-privacy" class="form-privacy-note">Please do not include patient information or protected health information in this form.</p>
+                <p class="form-status" role="status" aria-live="polite"></p>
+                <button type="submit" class="submit-btn">Request a billing-fit review</button>
             </form>
         </div>
     </section>
@@ -1306,6 +1335,8 @@
   </div>
     </footer>
 
-    <script src="script.js?v=20260325k" defer></script>
+    <script src="script.js?v=20260709a" defer></script>
+  <script src="/assets/analytics-config.js?v=20260709a"></script>
+  <script src="/assets/analytics.js?v=20260709a" defer></script>
 </body>
 </html>
