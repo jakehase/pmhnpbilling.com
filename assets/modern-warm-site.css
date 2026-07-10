@@ -196,7 +196,7 @@ body.mw-site .site-footer__panel {
   border-radius: 20px;
   box-shadow: none;
 }
-body.mw-site .site-footer__panel h4 {
+body.mw-site .site-footer__panel h3 {
   margin: 0 0 .8rem;
   color: var(--mw-mint);
   font-family: var(--mw-display);
@@ -218,12 +218,16 @@ body.mw-site .site-footer__bottom {
   border-top: 1px solid rgba(255,255,255,.12);
   font-size: .7rem;
 }
-body.mw-claim > footer .container { width: min(1180px, 100%); color: rgba(255,255,255,.64); }
+body.mw-site .site-footer__legal { display: flex; flex-wrap: wrap; gap: .85rem; padding: .45rem .65rem; background: #143a35; border-radius: .65rem; }
+body.mw-site .site-footer__legal a { color: #fff; text-decoration: none; }
+body.mw-site .site-footer__legal a:hover { color: #fff; }
+body.mw-claim > footer .container { width: min(1180px, 100%); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; color: rgba(255,255,255,.64); }
 
 /* Service pages */
 body.mw-service { background: var(--mw-paper); }
 body.mw-service main.offer-section {
   position: relative;
+  overflow: hidden;
   width: min(1060px, calc(100% - 48px));
   max-width: none;
   margin: 0 auto;

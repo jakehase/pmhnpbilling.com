@@ -248,7 +248,7 @@ body > nav {
 .modern-activity > div > span { flex: 1; min-width: 0; }
 .modern-activity b { display: block; font-size: .62rem; }
 .modern-activity small { display: block; color: rgba(255,255,255,.46); font-size: .5rem; }
-.modern-activity em { padding: .28rem .45rem; color: var(--mw-mint); background: rgba(191,227,210,.1); border-radius: 99px; font-size: .43rem; font-style: normal; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.modern-activity em { padding: .28rem .45rem; color: #fff; background: #295a50; border-radius: 99px; font-size: .43rem; font-style: normal; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .modern-specialist-card {
   position: absolute;
   z-index: 4;
@@ -403,10 +403,13 @@ body > nav {
 .site-footer::after { display: none; }
 .site-footer__inner { width: min(760px, 100%); margin: 0 auto; gap: 1rem; }
 .site-footer__panel { padding: 1.3rem; background: rgba(255,255,255,.045); border: 1px solid rgba(255,255,255,.1); border-radius: 20px; box-shadow: none; }
-.site-footer__panel h4 { color: var(--mw-mint); font-family: var(--mw-display); font-size: 1.35rem; font-weight: 400; }
+.site-footer__panel h3 { color: var(--mw-mint); font-family: var(--mw-display); font-size: 1.35rem; font-weight: 400; }
 .site-footer__panel a { color: rgba(255,255,255,.68); }
 .site-footer__panel a:hover { color: #fff; }
 .site-footer__bottom { width: min(1180px, 100%); margin-top: 2rem; padding-top: 1.2rem; color: rgba(255,255,255,.52); border-color: rgba(255,255,255,.12); }
+.site-footer__legal { display: flex; flex-wrap: wrap; gap: .85rem; padding: .45rem .65rem; background: #143a35; border-radius: .65rem; }
+.site-footer__legal a { color: #fff; text-decoration: none; }
+.site-footer__legal a:hover { color: #fff; }
 
 /* Preserve scroll motion while respecting reduced-motion preferences. */
 .homepage-scroll-motion .service-card,

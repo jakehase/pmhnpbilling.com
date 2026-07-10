@@ -359,7 +359,7 @@ main.offer-section section:hover {
 }
 
 .site-footer__panel h3,
-.site-footer__panel h4 {
+.site-footer__panel h3 {
   margin: 0 0 0.7rem;
   color: #111827;
   line-height: 1.2;
@@ -370,7 +370,7 @@ main.offer-section section:hover {
   font-size: 1.2rem;
 }
 
-.site-footer__panel h4 {
+.site-footer__panel h3 {
   font-size: 0.95rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
