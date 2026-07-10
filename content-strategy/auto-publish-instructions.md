@@ -51,6 +51,17 @@ For each run:
 - Keep the article honest: do not promise payer behavior or automation that the site cannot actually deliver.
 - Avoid fluff. Prefer checklists, workflows, pitfalls, documentation rules, payer readiness steps, and denial-prevention details.
 
+## Required sitewide design shell
+
+Every new article must inherit the production modern-warm design rather than copying a standalone legacy layout:
+
+- Add `mw-site mw-article` to the `<body>` classes.
+- Load `../assets/modern-warm-site.css` after any article-specific styles.
+- Load `../assets/modern-warm-site.js` with `defer` before `</body>` so mobile navigation and reduced-motion-safe scroll reveals work.
+- Use the current article navigation and footer markup from a recently published indexed article.
+- Keep the structural classes `article-container`, `article-header`, `article-title`, `article-subtitle`, `article-meta`, and `article-content` so the shared editorial template applies consistently.
+- Verify desktop and mobile layout, no horizontal overflow, working navigation, and no browser-console errors before committing.
+
 ## End-of-run report
 
 At the end, report:
