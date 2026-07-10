@@ -1,5 +1,4 @@
-/* Public analytics configuration. A GA4 measurement ID is intentionally empty until
-   the PMHNP Billing Analytics account and web stream are provisioned. */
+/* Public analytics configuration for the PMHNP Billing GA4 web stream. */
 window.PMHNP_ANALYTICS = Object.freeze({
-  measurementId: ''
+  measurementId: 'G-K45P3YZNEY'
 });
