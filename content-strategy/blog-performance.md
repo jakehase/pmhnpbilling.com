@@ -10,6 +10,13 @@ Tracks performance of blog posts to inform future content strategy.
 
 ## Post Performance Log
 
+### 2026-07-11 - Illinois PMHNP Billing: IMPACT Revalidation, Disenrollment Risk, and Claims-Hold Prevention Checklist (2026)
+- **URL**: /blog/illinois-medicaid-impact-revalidation-pmhnp-disenrollment-claims-hold-checklist-2026.html
+- **Target Keywords**: Illinois Medicaid IMPACT revalidation PMHNP, Illinois Medicaid provider revalidation PMHNP, IMPACT renewal Illinois PMHNP, Illinois Medicaid disenrollment claims hold, PMHNP Illinois Medicaid reactivation
+- **Status**: 🟡 Newly published
+- **Week 1**: Pending...
+- **Notes**: Chosen as a high-intent Illinois credentialing-and-payment continuity gap that is distinct from the earlier IMPACT enrollment/first-claim post. Targets PMHNP owners and billers who are already enrolled but need a practical workflow for revalidation timing, location-level renewal tracking, Medicare-vs-Medicaid separation, and missed-deadline recovery before claim holds or enrollment gaps hit.
+
 ### 2026-07-04 - PMHNP Billing: G2211 Add-On Code, Visit Complexity Rules, and Payer Readiness Checklist (2026)
 - **URL**: /blog/pmhnp-billing-g2211-add-on-code-visit-complexity-payer-readiness-checklist-2026.html
 - **Target Keywords**: G2211 PMHNP billing, psychiatric longitudinal care add-on code, G2211 medication management billing, PMHNP visit complexity code, G2211 payer checklist
@@ -222,5 +229,5 @@ Based on performance data:
 3. 
 
 ---
-*Last Updated*: 2026-07-04
-*Next Review*: 2026-07-11
+*Last Updated*: 2026-07-11
+*Next Review*: 2026-07-18
