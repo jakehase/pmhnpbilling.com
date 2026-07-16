@@ -27,7 +27,6 @@
     "Claims Management",
     "Prior Authorization Services",
     "Revenue Cycle Management",
-    "Billing Workflow Support (Pilot)",
     "Psychiatric Medical Billing Services",
     "Mental Health Medical Billing Services",
     "Small Practice Medical Billing Company",
@@ -67,14 +66,6 @@
           "@type": "Service",
           "name": "Denial Management",
           "description": "Thorough review and appeals process for denied claims"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "PMHNP Claim Guard Pilot",
-          "description": "Optional workflow support pilot with human review before any action"
         }
       },
       {

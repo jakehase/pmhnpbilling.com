@@ -694,45 +694,6 @@
         }
 
 
-        /* Claim Guard Pilot Preview */
-        .pilot-preview { background: #f8fafc; border-top: 1px solid #e5e7eb; border-bottom: 1px solid #e5e7eb; padding: 3rem 2rem; }
-        .pilot-preview-card {
-            max-width: 900px;
-            margin: 0 auto;
-            background: #fff;
-            border: 1px solid #dbeafe;
-            border-radius: 14px;
-            padding: 2rem;
-            display: grid;
-            gap: 1rem;
-            box-shadow: 0 12px 30px rgba(37, 99, 235, 0.08);
-        }
-        .pilot-preview h3 { font-size: 1.25rem; color: #111827; }
-        .pilot-preview p { color: #4b5563; font-size: 1rem; }
-        .pilot-note {
-            font-size: 0.95rem;
-            color: #374151;
-            background: #eff6ff;
-            border: 1px solid #bfdbfe;
-            border-radius: 10px;
-            padding: 0.85rem 1rem;
-        }
-        .btn-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.45rem;
-            text-decoration: none;
-            font-weight: 500;
-            color: #1d4ed8;
-            border: 1px solid #93c5fd;
-            border-radius: 8px;
-            padding: 0.7rem 1.1rem;
-            width: fit-content;
-            background: #eff6ff;
-            transition: all 0.2s;
-        }
-        .btn-secondary:hover { background: #dbeafe; border-color: #60a5fa; }
-
         /* FAQ */
         .faq { background: #fff; }
         .faq-content { max-width: 720px; margin: 0 auto; }
@@ -912,8 +873,6 @@
             .form-row { grid-template-columns: 1fr; }
             .section-title { font-size: 1.75rem; }
             .testimonial-quote { font-size: 1.1rem; }
-            .pilot-preview { padding: 2rem 1.5rem; }
-            .pilot-preview-card { padding: 1.25rem; }
             /* Show fewer floating shapes on mobile - keep inside bounds */
             .floating-shape-1 { width: 120px; height: 120px; top: 10px; right: -40px; }
             .floating-shape-2 { width: 80px; height: 80px; bottom: 20px; left: -20px; }
@@ -928,7 +887,7 @@
         }
     </style>
     <link rel="stylesheet" href="assets/live-fixes.css?v=footerheading6">
-    <link rel="stylesheet" href="assets/modern-warm.css?v=20260709c">
+    <link rel="stylesheet" href="assets/modern-warm.css?v=20260716a">
 
     <meta property="og:image" content="https://pmhnpbilling.com/assets/pmhnp-billing-social-card.png">
     <meta property="og:image:secure_url" content="https://pmhnpbilling.com/assets/pmhnp-billing-social-card.png">
@@ -971,10 +930,8 @@
             <li><a href="#about">About</a></li>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="blog/">Blog</a></li>
-            <li><a href="claim-guard-pilot.html">Claim Guard Pilot</a></li>
-            <li><a href="#contact">Contact</a></li>
         </ul>
-        <a href="/app/" class="nav-intake-btn">Client App</a>
+        <a href="#contact" class="nav-intake-btn">Get in touch</a>
         <div class="menu-toggle" onclick="toggleMenu()">
             <span></span><span></span><span></span>
         </div>
@@ -987,10 +944,7 @@
         <a href="#about" onclick="toggleMenu()">About</a>
         <a href="#faq" onclick="toggleMenu()">FAQ</a>
         <a href="blog/" onclick="toggleMenu()">Blog</a>
-        <a href="claim-guard-pilot.html" onclick="toggleMenu()">Claim Guard Pilot</a>
         <a href="#contact" onclick="toggleMenu()">Contact</a>
-        <div class="mobile-menu-divider"></div>
-        <a href="/app/" onclick="toggleMenu()" class="mobile-intake-link">Client App</a>
     </div>
 
     <div class="hero-wrapper hero-wrapper--spheres-luxe">
@@ -1162,18 +1116,6 @@
         </div>
     </section>
 
-    <section class="pilot-preview">
-        <div class="pilot-preview-card fade-in">
-            <h3>Optional: PMHNP Claim Guard Pilot</h3>
-            <p>For PMHNP practices that want help both catching likely denials before submission and tightening recovery after they land, we also run PMHNP Claim Guard — an EHR-agnostic pilot for claim-risk checks, recovery worklists, reviewer queues, and measurable ROI.</p>
-            <p class="pilot-note"><strong>Important:</strong> Pilot only. Human review is required before any claim-facing action, and ROI proof depends on real pilot tracking.</p>
-            <div style="display:flex;gap:0.7rem;flex-wrap:wrap;">
-                <a href="claim-guard-pilot.html" class="btn-secondary">Learn about Claim Guard</a>
-                <a href="/app/" class="btn-secondary">Open Client App</a>
-            </div>
-        </div>
-    </section>
-
     <section id="faq" class="faq">
         <div class="section-header fade-in">
             <div class="section-label">FAQ</div>
@@ -1317,8 +1259,6 @@
                 <h3>Explore</h3>
                 <ul>
                     <li><a href="/blog/">Blog</a></li>
-                    <li><a href="/claim-guard-pilot.html">Claim Guard Pilot</a></li>
-                    <li><a href="/app/">Client App</a></li>
                     <li><a href="/#contact">Contact</a></li>
                 </ul>
             </div>

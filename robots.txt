@@ -6,8 +6,7 @@ Disallow: /private-dashboard/
 Disallow: /logo-preview.html
 Disallow: /logo-text-options.html
 
-# Client app pages carry their own noindex/nofollow meta tags. Do not block
-# them here; crawlers need access to see the noindex directive if the app URLs
-# are discovered through public navigation.
+# Retired client-app routes stay crawlable so search engines can process
+# their noindex response and remove old URLs from search results.
 
 Sitemap: https://pmhnpbilling.com/sitemap.xml

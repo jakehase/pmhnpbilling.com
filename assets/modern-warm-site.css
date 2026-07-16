@@ -92,7 +92,13 @@ body.mw-site .brand {
   font-weight: 800;
   letter-spacing: -.035em;
   text-decoration: none;
+  transform-origin: left center;
+  transition: transform .24s cubic-bezier(.2,.8,.2,1);
 }
+body.mw-site .logo:hover,
+body.mw-site .logo:focus-visible,
+body.mw-site .brand:hover,
+body.mw-site .brand:focus-visible { transform: scale(1.045); }
 body.mw-site .brand::before {
   content: "";
   width: 39px;
@@ -102,8 +108,18 @@ body.mw-site .brand::before {
   background-color: var(--mw-blue);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath d='M10 12h9a6 6 0 010 12h-9V12zm3 3v6h6a3 3 0 000-6h-6z' fill='white'/%3E%3Cpath d='M26 12h9a6 6 0 014.24 10.24L26 36V12zm3 3v12.5l7-7.5a3 3 0 00-4-4h-3z' fill='white' fill-opacity='.85'/%3E%3C/svg%3E");
   box-shadow: 0 8px 20px rgba(40,100,220,.16);
+  animation: mw-brand-breathe 7.2s ease-in-out infinite;
 }
-body.mw-site .logo-icon { width: 39px; height: 39px; border-radius: 12px; }
+body.mw-site .logo-icon {
+  width: 39px;
+  height: 39px;
+  border-radius: 12px;
+  animation: mw-brand-breathe 7.2s ease-in-out infinite;
+}
+@keyframes mw-brand-breathe {
+  0%, 70%, 100% { transform: scale(1); filter: drop-shadow(0 7px 10px rgba(40,100,220,.12)); }
+  82% { transform: scale(1.055); filter: drop-shadow(0 10px 17px rgba(40,100,220,.25)); }
+}
 body.mw-site .logo-text { display: flex; align-items: center; gap: .12rem; font-size: .98rem; }
 body.mw-site .logo-text .pmh,
 body.mw-site .logo-text .np {
@@ -923,6 +939,14 @@ body.mw-app td { border-color: var(--mw-line); }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  body.mw-site .logo,
+  body.mw-site .brand { transition: none; }
+  body.mw-site .logo:hover,
+  body.mw-site .logo:focus-visible,
+  body.mw-site .brand:hover,
+  body.mw-site .brand:focus-visible { transform: none; }
+  body.mw-site .logo-icon,
+  body.mw-site .brand::before { animation: none; }
   .mw-motion-ready .mw-reveal,
   .mw-motion-ready .mw-reveal.is-in-view { opacity: 1; transform: none; filter: none; transition: none; }
 }

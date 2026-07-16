@@ -49,8 +49,23 @@ body > nav {
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
 }
-.logo { gap: .72rem; }
-.logo-icon { width: 42px; height: 42px; border-radius: 13px; }
+.logo {
+  gap: .72rem;
+  transform-origin: left center;
+  transition: transform .24s cubic-bezier(.2,.8,.2,1);
+}
+.logo:hover,
+.logo:focus-visible { transform: scale(1.045); }
+.logo-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 13px;
+  animation: mw-brand-breathe 7.2s ease-in-out infinite;
+}
+@keyframes mw-brand-breathe {
+  0%, 70%, 100% { transform: scale(1); filter: drop-shadow(0 7px 10px rgba(40,100,220,.12)); }
+  82% { transform: scale(1.055); filter: drop-shadow(0 10px 17px rgba(40,100,220,.25)); }
+}
 .logo-text { gap: .12rem; font-family: var(--mw-body); font-size: 1.02rem; letter-spacing: -.035em; }
 .logo-text .pmh,
 .logo-text .np {
@@ -215,9 +230,27 @@ body > nav {
 
 .modern-hero-visual { position: relative; min-height: 555px; }
 .modern-shape { position: absolute; border-radius: 50%; pointer-events: none; }
-.modern-shape--coral { width: 128px; height: 128px; top: 4px; right: 24px; background: var(--mw-coral); }
-.modern-shape--mint { width: 180px; height: 180px; bottom: 7px; left: -30px; background: var(--mw-mint); }
+.modern-shape--coral {
+  width: 128px;
+  height: 128px;
+  top: 4px;
+  right: 24px;
+  background: var(--mw-coral);
+  animation: mw-warm-orb 8.5s ease-in-out infinite;
+}
+.modern-shape--mint {
+  width: 180px;
+  height: 180px;
+  bottom: 7px;
+  left: -30px;
+  background: var(--mw-mint);
+  animation: mw-warm-orb 10s ease-in-out -3.4s infinite reverse;
+}
 .modern-shape--blue { width: 72px; height: 72px; top: 110px; left: -12px; background: var(--mw-blue); }
+@keyframes mw-warm-orb {
+  0%, 100% { transform: scale(1); opacity: .92; }
+  50% { transform: scale(1.07); opacity: 1; }
+}
 .modern-ops-card {
   position: absolute;
   z-index: 2;
@@ -490,6 +523,12 @@ body > nav {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .logo { transition: none; }
+  .logo:hover,
+  .logo:focus-visible,
   .modern-ops-card,
   .modern-specialist-card { transform: none; }
+  .logo-icon,
+  .modern-shape--coral,
+  .modern-shape--mint { animation: none; }
 }
