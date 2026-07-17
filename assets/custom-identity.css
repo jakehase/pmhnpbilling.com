@@ -1,0 +1,281 @@
+/* PMHNP Billing custom identity — care + claim hand-drawn mark family.
+   Loaded after the canonical modern-warm styles on production pages. */
+
+:root {
+  --pmhnp-line: #17685d;
+  --pmhnp-coral: #ff8d70;
+  --pmhnp-cream: #f7e8d5;
+  --pmhnp-paper: #fffdf8;
+}
+
+@keyframes pmhnp-mark-pulse {
+  0%, 44%, 96%, 100% { transform: scale(1); }
+  48% { transform: scale(.96); }
+  74% { transform: scale(.93); }
+}
+
+/* Integrated wordmark: PMHNP [care + claim] Billing. */
+.logo > .logo-icon { display: none !important; }
+.logo .logo-text {
+  display: inline-flex !important;
+  align-items: center;
+  gap: .4rem !important;
+  white-space: nowrap;
+}
+.logo .logo-text .pmh { font-size: 0 !important; }
+.logo .logo-text .pmh::after {
+  content: "PMHNP";
+  color: var(--pmhnp-line);
+  font-family: Manrope, Inter, system-ui, sans-serif;
+  font-size: .98rem;
+  font-weight: 800;
+  letter-spacing: -.045em;
+}
+.logo .logo-text .np { display: none !important; }
+.logo .logo-text .dot {
+  width: 45px !important;
+  height: 39px !important;
+  display: block !important;
+  flex: 0 0 auto;
+  margin: 0 !important;
+  background: transparent url("/assets/identity/care-claim-mark.svg") no-repeat center / contain !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  animation: pmhnp-mark-pulse 2.3s ease-in-out infinite;
+  transform-origin: center;
+}
+.logo .logo-text .billing {
+  margin: 0 !important;
+  color: #102730 !important;
+  font-family: Manrope, Inter, system-ui, sans-serif;
+  font-size: .98rem;
+  font-weight: 800 !important;
+  letter-spacing: -.045em;
+}
+
+/* Shared service/policy pages use plain-text .brand anchors. Keep their
+   accessible text while composing the same visual wordmark with CSS. */
+body.mw-site .brand {
+  gap: .4rem !important;
+  font-size: 0 !important;
+  white-space: nowrap;
+}
+body.mw-site .brand::before {
+  content: "PMHNP" !important;
+  width: auto !important;
+  height: 42px !important;
+  display: inline-flex !important;
+  align-items: center;
+  flex: 0 0 auto;
+  padding-right: 49px;
+  color: var(--pmhnp-line);
+  background: transparent url("/assets/identity/care-claim-mark.svg") no-repeat right center / 45px 39px !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  font-family: Manrope, Inter, system-ui, sans-serif;
+  font-size: .98rem;
+  font-weight: 800;
+  letter-spacing: -.045em;
+  animation: none !important;
+}
+body.mw-site .brand::after {
+  content: "Billing";
+  color: #102730;
+  font-family: Manrope, Inter, system-ui, sans-serif;
+  font-size: .98rem;
+  font-weight: 800;
+  letter-spacing: -.045em;
+}
+
+/* The hero repeats the integrated mark at a larger, more expressive scale. */
+.hero-logo > svg { display: none !important; }
+.hero-logo .hero-logo-text {
+  display: inline-flex;
+  align-items: center;
+  gap: .52rem;
+  white-space: nowrap;
+}
+.hero-logo .hero-logo-text .pmh { font-size: 0 !important; }
+.hero-logo .hero-logo-text .pmh::after {
+  content: "PMHNP";
+  color: var(--pmhnp-line);
+  font-family: Manrope, Inter, system-ui, sans-serif;
+  font-size: 1.04rem;
+  font-weight: 800;
+  letter-spacing: -.045em;
+}
+.hero-logo .hero-logo-text .np { display: none !important; }
+.hero-logo .hero-logo-text .dot {
+  width: 58px !important;
+  height: 47px !important;
+  display: block !important;
+  flex: 0 0 auto;
+  margin: 0 !important;
+  background: transparent url("/assets/identity/care-claim-mark.svg") no-repeat center / contain !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  animation: pmhnp-mark-pulse 2.3s ease-in-out infinite -.35s;
+}
+.hero-logo .hero-logo-text .billing {
+  margin: 0 !important;
+  color: #102730 !important;
+  font-family: Manrope, Inter, system-ui, sans-serif;
+  font-size: 1.04rem;
+  font-weight: 800 !important;
+  letter-spacing: -.045em;
+}
+
+/* Hand-drawn section flourish replaces the generic rule. */
+.section-label::before {
+  width: 34px !important;
+  height: 22px !important;
+  flex: 0 0 auto;
+  background: transparent url("/assets/identity/spark-mark.svg") no-repeat center / contain !important;
+  border: 0 !important;
+}
+
+/* A little telephone mark makes direct contact feel personal, not sales-led. */
+.nav-intake-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .42rem;
+}
+.nav-intake-btn::before {
+  content: "";
+  width: 25px;
+  height: 23px;
+  display: block;
+  flex: 0 0 auto;
+  background: transparent url("/assets/identity/telephone-mark.svg") no-repeat center / contain;
+  animation: pmhnp-mark-pulse 2.3s ease-in-out infinite -.7s;
+}
+.contact-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+}
+.contact-kicker .contact-phone-mark {
+  width: 48px;
+  height: 43px;
+  display: block;
+  flex: 0 0 auto;
+  object-fit: contain;
+  animation: pmhnp-mark-pulse 2.3s ease-in-out infinite -.55s;
+}
+
+/* Bespoke service marks replace generic icon-library drawings. */
+.service-icon {
+  width: 66px !important;
+  height: 58px !important;
+  display: grid !important;
+  place-items: center;
+  overflow: visible;
+  color: var(--pmhnp-line) !important;
+  background: rgba(247,232,213,.72) !important;
+  border: 1px solid rgba(23,104,93,.14) !important;
+  border-radius: 48% 52% 46% 54% / 54% 44% 56% 46% !important;
+  box-shadow: 0 10px 30px rgba(23,104,93,.08);
+}
+.service-icon > img {
+  width: 61px;
+  height: 54px;
+  display: block;
+  object-fit: contain;
+  transform-origin: center;
+  animation: pmhnp-mark-pulse 2.3s ease-in-out infinite;
+}
+.service-card:nth-child(2) .service-icon > img { animation-delay: -.38s; }
+.service-card:nth-child(3) .service-icon > img { animation-delay: -.76s; }
+.service-card:nth-child(4) .service-icon > img { animation-delay: -1.14s; }
+.service-card:nth-child(5) .service-icon > img { animation-delay: -1.52s; }
+.service-card:nth-child(6) .service-icon > img { animation-delay: -1.9s; }
+.service-card:hover .service-icon {
+  color: var(--pmhnp-line) !important;
+  background: var(--pmhnp-paper) !important;
+  border-color: rgba(255,141,112,.42) !important;
+  transform: translateY(-4px) rotate(-1.5deg) !important;
+}
+.service-card:hover .service-icon > img { transform: scale(1.04); }
+
+/* Tiny workflow marks turn the existing operations card into a branded scene. */
+.modern-activity i {
+  color: transparent !important;
+  background-color: rgba(255,255,255,.08) !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: 28px 25px !important;
+  border-radius: 10px !important;
+  font-size: 0 !important;
+  animation: pmhnp-mark-pulse 2.3s ease-in-out infinite;
+}
+.modern-activity > div:nth-child(1) i { background-image: url("/assets/identity/claims-mark.svg") !important; }
+.modern-activity > div:nth-child(2) i { background-image: url("/assets/identity/prior-auth-mark.svg") !important; animation-delay: -.75s; }
+.modern-activity > div:nth-child(3) i { background-image: url("/assets/identity/denial-mark.svg") !important; animation-delay: -1.5s; }
+
+/* The trust row uses the same small illustration language. */
+.trust-item-icon {
+  width: 68px !important;
+  height: 62px !important;
+  display: grid !important;
+  place-items: center;
+  background: var(--pmhnp-paper) !important;
+  border: 1px solid rgba(255,255,255,.5);
+  border-radius: 48% 52% 45% 55% / 54% 44% 56% 46% !important;
+}
+.trust-item-icon > img {
+  width: 62px;
+  height: 55px;
+  display: block;
+  object-fit: contain;
+}
+.trust-item:nth-child(2) .trust-item-icon > img { animation: pmhnp-mark-pulse 2.3s ease-in-out infinite -.6s; }
+
+/* Repeat the signature mark in every shared footer. */
+.site-footer__inner::before {
+  content: "";
+  width: 92px;
+  height: 68px;
+  display: block;
+  grid-column: 1 / -1;
+  justify-self: center;
+  margin: -1.1rem auto .35rem;
+  background: transparent url("/assets/identity/care-claim-mark-light.svg") no-repeat center / contain;
+  animation: pmhnp-mark-pulse 2.3s ease-in-out infinite -.3s;
+}
+
+@media (max-width: 760px) {
+  .logo .logo-text { gap: .3rem !important; }
+  .logo .logo-text .pmh::after,
+  .logo .logo-text .billing,
+  body.mw-site .brand::before,
+  body.mw-site .brand::after { font-size: .9rem; }
+  .logo .logo-text .dot { width: 38px !important; height: 34px !important; }
+  body.mw-site .brand::before {
+    height: 36px !important;
+    padding-right: 41px;
+    background-size: 38px 34px !important;
+  }
+  .hero-logo .hero-logo-text { gap: .42rem; }
+  .hero-logo .hero-logo-text .dot { width: 50px !important; height: 42px !important; }
+  .hero-logo .hero-logo-text .pmh::after,
+  .hero-logo .hero-logo-text .billing { font-size: .96rem; }
+  .nav-intake-btn { display: none; }
+  .service-icon { width: 62px !important; height: 55px !important; }
+  .service-icon > img { width: 57px; height: 50px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo .logo-text .dot,
+  .hero-logo .hero-logo-text .dot,
+  .nav-intake-btn::before,
+  .contact-kicker .contact-phone-mark,
+  .service-icon > img,
+  .modern-activity i,
+  .trust-item-icon > img,
+  .site-footer__inner::before {
+    animation: none !important;
+    transform: none !important;
+  }
+  .service-card:hover .service-icon,
+  .service-card:hover .service-icon > img { transform: none !important; }
+}

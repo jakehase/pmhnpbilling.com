@@ -5,7 +5,11 @@
   window.toggleMenu = function toggleMenu() {
     var toggle = document.querySelector('.menu-toggle');
     var mobileMenu = document.getElementById('mobileMenu');
-    if (toggle) toggle.classList.toggle('active');
+    if (toggle) {
+      var isOpen = toggle.classList.toggle('active');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+      toggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+    }
     if (mobileMenu) mobileMenu.classList.toggle('active');
   };
 

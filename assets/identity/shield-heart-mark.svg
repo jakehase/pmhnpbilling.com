@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 72" role="img" aria-labelledby="title">
+  <title id="title">Hand-drawn secure care mark</title>
+  <g fill="none" stroke="#17685d" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round">
+    <path fill="#fffdf8" d="M40 7.2c8.8 5.3 16.6 7.8 25.4 8.4 1.2 21.5-7.1 38.2-25.4 48.9C21.7 53.8 13.4 37.1 14.6 15.6c8.8-.6 16.6-3.1 25.4-8.4z"/>
+    <path fill="#ff9b7d" d="M40.2 47.1c-2.7-3.5-11.6-9.1-11.6-16.3 0-6.9 8.7-9.7 11.6-3.4 2.8-6.3 11.6-3.5 11.6 3.4 0 7.2-8.9 12.8-11.6 16.3z"/>
+    <path stroke="#ff8d70" d="M31.1 8.3 29.2 4m10.9 2.3V1.7m9.1 6.7 2-4.1"/>
+  </g>
+</svg>
