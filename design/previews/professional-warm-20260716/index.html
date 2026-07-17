@@ -448,10 +448,9 @@
     .motion-ready .reveal {
       opacity: 0;
       transform: translateY(20px);
-      filter: blur(4px);
-      transition: opacity .65s ease, transform .65s cubic-bezier(.2,.8,.2,1), filter .65s ease;
+      transition: opacity .65s ease, transform .65s cubic-bezier(.2,.8,.2,1);
     }
-    .motion-ready .reveal.is-in-view { opacity: 1; transform: none; filter: none; }
+    .motion-ready .reveal.is-in-view { opacity: 1; transform: none; }
 
     @media (max-width: 980px) {
       .nav-links { display: none; }
