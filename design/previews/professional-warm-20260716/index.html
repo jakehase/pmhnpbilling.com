@@ -1,0 +1,762 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PMHNP Billing — Professional + Warm Homepage Mockup</title>
+  <meta name="description" content="Preview-only professional and warm homepage concept for PMHNP Billing.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #17312f;
+      --ink-2: #294844;
+      --body: #556864;
+      --paper: #f5f0e8;
+      --paper-2: #ece4d8;
+      --cream: #fffaf2;
+      --terracotta: #b96249;
+      --terracotta-dark: #974733;
+      --sage: #afc2b0;
+      --sage-pale: #dfe8dd;
+      --denim: #526f78;
+      --line: rgba(23,49,47,.15);
+      --shadow: 0 30px 80px rgba(40,56,51,.14);
+      --serif: "DM Serif Display", Georgia, serif;
+      --sans: Manrope, Inter, system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: var(--sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      pointer-events: none;
+      opacity: .11;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.25'/%3E%3C/svg%3E");
+      mix-blend-mode: multiply;
+    }
+    a { color: inherit; }
+    h1, h2, h3, p { margin-top: 0; }
+    .shell { width: min(1180px, calc(100% - 48px)); margin-inline: auto; }
+
+    .preview-ribbon {
+      padding: 8px 18px;
+      color: rgba(255,255,255,.82);
+      background: var(--ink);
+      text-align: center;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(245,240,232,.92);
+      backdrop-filter: blur(18px);
+    }
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: -.035em;
+      transform-origin: left center;
+      transition: transform .24s ease;
+    }
+    .brand:hover, .brand:focus-visible { transform: scale(1.045); }
+    .brand-mark {
+      width: 41px;
+      height: 41px;
+      display: block;
+      flex: 0 0 auto;
+      border-radius: 13px;
+      overflow: hidden;
+      box-shadow: 0 8px 22px rgba(23,49,47,.16);
+      animation: mw-brand-breathe 7.2s ease-in-out infinite;
+    }
+    .brand-mark svg { width: 100%; height: 100%; display: block; }
+    @keyframes mw-brand-breathe {
+      0%, 70%, 100% { transform: scale(1); filter: drop-shadow(0 7px 10px rgba(23,49,47,.12)); }
+      82% { transform: scale(1.055); filter: drop-shadow(0 10px 17px rgba(185,98,73,.24)); }
+    }
+    .brand span span { color: var(--terracotta); }
+    .nav-links { display: flex; align-items: center; gap: 29px; }
+    .nav-links a {
+      color: var(--ink-2);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .nav-links a:hover { color: var(--terracotta-dark); }
+    .nav-cta, .button {
+      min-height: 46px;
+      padding: 0 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 800;
+      transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+    }
+    .nav-cta { min-height: 42px; color: #fff; background: var(--ink); }
+    .nav-cta:hover, .button:hover { transform: translateY(-2px); }
+    .button-primary {
+      color: #fff;
+      background: var(--terracotta);
+      box-shadow: 0 13px 28px rgba(185,98,73,.22);
+    }
+    .button-primary:hover { background: var(--terracotta-dark); }
+    .button-secondary { border-color: var(--line); background: rgba(255,250,242,.58); }
+    .menu { display: none; border: 0; background: none; color: var(--ink); font: inherit; font-weight: 800; }
+    .mobile-menu {
+      display: none;
+      padding: 0 24px 20px;
+      border-top: 1px solid var(--line);
+      background: var(--paper);
+    }
+    .mobile-menu a { display: block; padding: 13px 0; border-bottom: 1px solid var(--line); text-decoration: none; font-size: 13px; font-weight: 750; }
+    .mobile-menu.is-open { display: block; }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 82px 0 70px;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      left: -330px;
+      top: 80px;
+      border: 1px solid rgba(185,98,73,.2);
+      border-radius: 50%;
+      box-shadow: 0 0 0 55px rgba(185,98,73,.025), 0 0 0 110px rgba(185,98,73,.018);
+    }
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(0, 1.04fr) minmax(420px, .96fr);
+      align-items: center;
+      gap: clamp(50px, 7vw, 94px);
+    }
+    .eyebrow {
+      margin-bottom: 23px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--terracotta-dark);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 28px; height: 2px; background: var(--terracotta); }
+    h1 {
+      max-width: 680px;
+      margin-bottom: 23px;
+      font-family: var(--serif);
+      font-size: clamp(59px, 5.5vw, 82px);
+      font-weight: 400;
+      line-height: .98;
+      letter-spacing: -.033em;
+    }
+    h1 em { color: var(--terracotta); font-weight: 400; }
+    .hero-copy > p {
+      max-width: 625px;
+      margin-bottom: 29px;
+      color: var(--body);
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 11px; }
+    .hero-proof {
+      margin-top: 27px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px 22px;
+      color: var(--ink-2);
+      font-size: 11px;
+      font-weight: 700;
+    }
+    .hero-proof span { display: inline-flex; align-items: center; gap: 8px; }
+    .hero-proof span::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--sage); box-shadow: 0 0 0 4px rgba(175,194,176,.23); }
+
+    .editorial-visual { position: relative; min-height: 540px; }
+    .editorial-orb {
+      position: absolute;
+      width: 390px;
+      height: 390px;
+      top: 48px;
+      left: 35px;
+      border-radius: 48% 52% 58% 42% / 45% 44% 56% 55%;
+      background: var(--sage-pale);
+      animation: mw-warm-orb 8.5s ease-in-out infinite;
+    }
+    .editorial-ring {
+      position: absolute;
+      width: 310px;
+      height: 310px;
+      right: -20px;
+      bottom: 20px;
+      border: 1px solid rgba(23,49,47,.2);
+      border-radius: 50%;
+    }
+    .letter {
+      position: absolute;
+      z-index: 3;
+      width: min(430px, calc(100% - 28px));
+      left: 0;
+      top: 24px;
+      padding: 44px 42px 38px;
+      color: var(--ink);
+      background: var(--cream);
+      border: 1px solid rgba(23,49,47,.13);
+      border-radius: 5px;
+      box-shadow: var(--shadow);
+      transform: rotate(-1.7deg) translate3d(0, calc(var(--scroll-progress, 0) * -7px), 0) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+      transform-style: preserve-3d;
+      transition: transform .24s ease;
+    }
+    .letter::before {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      pointer-events: none;
+      border: 1px solid rgba(185,98,73,.14);
+    }
+    .letter-kicker {
+      position: relative;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--terracotta-dark);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+    .letter-kicker::after { content: ""; width: 76px; height: 1px; background: rgba(185,98,73,.38); }
+    .letter h2 {
+      position: relative;
+      margin-bottom: 20px;
+      font-family: var(--serif);
+      font-size: 38px;
+      font-weight: 400;
+      line-height: 1.06;
+      letter-spacing: -.025em;
+    }
+    .letter p { position: relative; margin-bottom: 27px; color: var(--body); font-size: 13px; line-height: 1.75; }
+    .signature {
+      position: relative;
+      font-family: var(--serif);
+      font-size: 28px;
+      font-style: italic;
+      color: var(--terracotta-dark);
+    }
+    .signature small { margin-left: 8px; color: var(--body); font-family: var(--sans); font-size: 9px; font-style: normal; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .personal-stamp {
+      position: absolute;
+      z-index: 5;
+      right: 0;
+      bottom: 28px;
+      width: 192px;
+      padding: 20px 19px;
+      color: #fff;
+      background: var(--ink);
+      border-radius: 18px;
+      box-shadow: 0 18px 42px rgba(23,49,47,.23);
+      transform: rotate(2.5deg) translate3d(0, calc(var(--scroll-progress, 0) * 8px), 0) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+      transform-style: preserve-3d;
+      transition: transform .24s ease;
+    }
+    .personal-stamp b { display: block; margin-bottom: 4px; font-family: var(--serif); font-size: 27px; font-weight: 400; }
+    .personal-stamp span { color: rgba(255,255,255,.68); font-size: 9px; font-weight: 700; line-height: 1.4; text-transform: uppercase; letter-spacing: .08em; }
+    .small-seal {
+      position: absolute;
+      z-index: 4;
+      right: 38px;
+      top: 1px;
+      width: 90px;
+      height: 90px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: var(--terracotta);
+      border: 7px solid var(--paper);
+      border-radius: 50%;
+      text-align: center;
+      font-size: 8px;
+      font-weight: 800;
+      line-height: 1.35;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      animation: mw-warm-orb 10s ease-in-out -3.4s infinite reverse;
+    }
+    @keyframes mw-warm-orb {
+      0%, 100% { transform: scale(1); opacity: .92; }
+      50% { transform: scale(1.07); opacity: 1; }
+    }
+
+    .proof-strip { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: rgba(255,250,242,.36); }
+    .proof-grid { display: grid; grid-template-columns: 1.25fr repeat(3, 1fr); }
+    .proof-item { min-height: 122px; padding: 24px 30px; display: flex; flex-direction: column; justify-content: center; border-right: 1px solid var(--line); }
+    .proof-item:first-child { padding-left: 0; }
+    .proof-item:last-child { border-right: 0; }
+    .proof-item small { margin-bottom: 5px; color: var(--terracotta-dark); font-size: 8px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    .proof-item strong { font-family: var(--serif); font-size: 27px; font-weight: 400; line-height: 1.05; }
+    .proof-item span { margin-top: 6px; color: var(--body); font-size: 9px; }
+
+    .direct { padding: 110px 0; background: var(--cream); }
+    .direct-grid { display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: clamp(55px, 8vw, 108px); }
+    .portrait-frame {
+      position: relative;
+      min-height: 520px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+      color: #fff;
+      background: var(--ink);
+      border-radius: 40px 8px 40px 8px;
+      box-shadow: var(--shadow);
+      transform: perspective(1000px) translate3d(0, calc(var(--scroll-progress, 0) * -6px), 0) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+      transform-style: preserve-3d;
+      transition: transform .24s ease;
+    }
+    .portrait-frame::before {
+      content: "JH";
+      position: absolute;
+      right: -16px;
+      top: -44px;
+      color: rgba(255,255,255,.055);
+      font-family: var(--serif);
+      font-size: 270px;
+      line-height: 1;
+      letter-spacing: -.08em;
+    }
+    .portrait-frame::after {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      left: -74px;
+      top: 42px;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 50%;
+      box-shadow: 0 0 0 44px rgba(255,255,255,.025), 0 0 0 88px rgba(255,255,255,.018);
+    }
+    .desk-note { position: relative; z-index: 3; }
+    .desk-note small { display: block; margin-bottom: 14px; color: var(--sage); font-size: 9px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    .desk-note blockquote { max-width: 420px; margin: 0 0 19px; font-family: var(--serif); font-size: 34px; font-weight: 400; line-height: 1.13; }
+    .desk-note p { margin: 0; color: rgba(255,255,255,.61); font-size: 11px; }
+    .direct-copy h2, .services h2, .process h2, .cta h2 {
+      margin-bottom: 23px;
+      font-family: var(--serif);
+      font-size: clamp(45px, 4.6vw, 68px);
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: -.03em;
+    }
+    .direct-copy > p { max-width: 610px; margin-bottom: 34px; color: var(--body); font-size: 15px; line-height: 1.8; }
+    .commitments { display: grid; gap: 0; border-top: 1px solid var(--line); }
+    .commitment { padding: 22px 0; display: grid; grid-template-columns: 50px 1fr; gap: 18px; border-bottom: 1px solid var(--line); }
+    .commitment-num { color: var(--terracotta); font-family: var(--serif); font-size: 24px; }
+    .commitment h3 { margin-bottom: 5px; font-size: 14px; letter-spacing: -.01em; }
+    .commitment p { margin-bottom: 0; color: var(--body); font-size: 11px; line-height: 1.6; }
+
+    .services { padding: 108px 0 112px; }
+    .section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; margin-bottom: 50px; }
+    .section-head h2 { max-width: 690px; margin-bottom: 0; }
+    .section-head > p { max-width: 390px; margin-bottom: 7px; color: var(--body); font-size: 12px; line-height: 1.7; }
+    .service-list { border-top: 1px solid var(--line); }
+    .service-row {
+      min-height: 150px;
+      padding: 29px 0;
+      display: grid;
+      grid-template-columns: 90px 1.1fr 1fr 34px;
+      align-items: center;
+      gap: 28px;
+      border-bottom: 1px solid var(--line);
+      text-decoration: none;
+      transition: padding .22s ease, color .22s ease;
+    }
+    .service-row:hover { padding-left: 14px; color: var(--terracotta-dark); }
+    .service-num { color: var(--terracotta); font-family: var(--serif); font-size: 22px; }
+    .service-row h3 { margin: 0; font-family: var(--serif); font-size: 32px; font-weight: 400; line-height: 1.05; }
+    .service-row p { margin: 0; color: var(--body); font-size: 11px; line-height: 1.7; }
+    .service-arrow { font-size: 25px; }
+
+    .process { padding: 105px 0; color: #fff; background: var(--ink); }
+    .process .eyebrow { color: var(--sage); }
+    .process h2 { max-width: 720px; }
+    .process-intro { max-width: 610px; margin-bottom: 58px; color: rgba(255,255,255,.62); font-size: 14px; }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(255,255,255,.16); }
+    .step { min-height: 250px; padding: 32px 38px 0 0; border-right: 1px solid rgba(255,255,255,.16); }
+    .step + .step { padding-left: 38px; }
+    .step:last-child { border-right: 0; }
+    .step small { display: block; margin-bottom: 42px; color: var(--terracotta); font-family: var(--serif); font-size: 24px; }
+    .step h3 { margin-bottom: 10px; font-family: var(--serif); font-size: 29px; font-weight: 400; }
+    .step p { color: rgba(255,255,255,.56); font-size: 11px; line-height: 1.7; }
+
+    .cta { position: relative; overflow: hidden; padding: 105px 0; text-align: center; background: var(--sage-pale); }
+    .cta::before, .cta::after { content: ""; position: absolute; border: 1px solid rgba(23,49,47,.13); border-radius: 50%; }
+    .cta::before { width: 330px; height: 330px; left: -170px; top: -80px; }
+    .cta::after { width: 420px; height: 420px; right: -180px; bottom: -210px; }
+    .cta-inner { position: relative; z-index: 2; max-width: 820px; margin: 0 auto; }
+    .cta h2 { margin-bottom: 20px; }
+    .cta p { max-width: 590px; margin: 0 auto 28px; color: var(--body); font-size: 14px; }
+
+    footer { padding: 34px 0; color: rgba(255,255,255,.64); background: #102725; font-size: 10px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 24px; }
+
+    .motion-ready .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      filter: blur(4px);
+      transition: opacity .65s ease, transform .65s cubic-bezier(.2,.8,.2,1), filter .65s ease;
+    }
+    .motion-ready .reveal.is-in-view { opacity: 1; transform: none; filter: none; }
+
+    @media (max-width: 980px) {
+      .nav-links { display: none; }
+      .menu { display: block; }
+      .nav-cta { margin-left: auto; }
+      .hero-grid, .direct-grid { grid-template-columns: 1fr; }
+      .hero-copy { max-width: 760px; }
+      .editorial-visual { width: min(560px, 100%); margin: 0 auto; }
+      .proof-grid { grid-template-columns: repeat(2, 1fr); }
+      .proof-item:nth-child(2) { border-right: 0; }
+      .proof-item:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+      .proof-item:first-child { padding-left: 30px; }
+      .section-head { display: block; }
+      .section-head > p { margin-top: 22px; }
+    }
+    @media (max-width: 700px) {
+      .shell { width: min(100% - 32px, 1180px); }
+      .preview-ribbon { font-size: 8px; letter-spacing: .11em; }
+      .nav { min-height: 68px; }
+      .brand { font-size: 14px; }
+      .brand-mark { width: 37px; height: 37px; }
+      .nav-cta { display: none; }
+      .hero { padding: 62px 0 52px; }
+      h1 { font-size: clamp(48px, 14vw, 66px); }
+      .hero-copy > p { font-size: 14px; }
+      .hero-actions .button { width: 100%; }
+      .editorial-visual { min-height: 490px; margin-top: 20px; }
+      .editorial-orb { width: 310px; height: 310px; left: 22px; }
+      .letter { padding: 34px 28px 32px; }
+      .letter h2 { font-size: 32px; }
+      .personal-stamp { width: 165px; right: -4px; bottom: 26px; }
+      .small-seal { width: 74px; height: 74px; right: 14px; }
+      .proof-grid { grid-template-columns: 1fr 1fr; }
+      .proof-item { min-height: 115px; padding: 20px 18px; }
+      .proof-item:first-child { padding-left: 18px; }
+      .proof-item strong { font-size: 22px; }
+      .direct, .services, .process, .cta { padding: 78px 0; }
+      .portrait-frame { min-height: 430px; padding: 27px; }
+      .desk-note blockquote { font-size: 30px; }
+      .direct-copy h2, .services h2, .process h2, .cta h2 { font-size: 45px; }
+      .service-row { grid-template-columns: 42px 1fr 26px; gap: 14px; }
+      .service-row p { display: none; }
+      .service-row h3 { font-size: 26px; }
+      .steps { grid-template-columns: 1fr; }
+      .step, .step + .step { min-height: auto; padding: 28px 0; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.16); }
+      .step small { margin-bottom: 18px; }
+      .footer-inner { display: block; }
+      .footer-inner span { display: block; margin-top: 8px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
+      .brand:hover, .brand:focus-visible, .letter, .personal-stamp, .portrait-frame { transform: none !important; }
+      .motion-ready .reveal { opacity: 1 !important; transform: none !important; filter: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="preview-ribbon">Design concept · Professional + warm · Preview only</div>
+  <header>
+    <div class="shell nav">
+      <a class="brand" href="#">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+            <rect width="48" height="48" rx="12" fill="#17312f"/>
+            <path d="M10 12h9a6 6 0 010 12h-9V12zm3 3v6h6a3 3 0 000-6h-6z" fill="white"/>
+            <path d="M26 12h9a6 6 0 014.24 10.24L26 36V12zm3 3v12.5l7-7.5a3 3 0 00-4-4h-3z" fill="white" fill-opacity=".84"/>
+          </svg>
+        </span>
+        <span><span>PMHNP</span> Billing</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#services">Services</a>
+        <a href="#direct">About</a>
+        <a href="#process">How it works</a>
+        <a href="#">Resources</a>
+      </nav>
+      <a class="nav-cta" href="#contact">Start a conversation</a>
+      <button class="menu" type="button" aria-expanded="false" aria-controls="preview-mobile-menu">Menu</button>
+    </div>
+    <nav class="mobile-menu" id="preview-mobile-menu" aria-label="Mobile navigation">
+      <a href="#services">Services</a>
+      <a href="#direct">About</a>
+      <a href="#process">How it works</a>
+      <a href="#contact">Start a conversation</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" data-motion-section>
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Independent billing support for psychiatric practices</div>
+          <h1>A steady partner behind your <em>practice’s billing.</em></h1>
+          <p>Specialized PMHNP billing with careful follow-through, clear communication, and a real person who stays close to the details—from clean claims through denials and payment posting.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#contact">Start a conversation <span>→</span></a>
+            <a class="button button-secondary" href="#services">See how I can help</a>
+          </div>
+          <div class="hero-proof">
+            <span>5% of collections</span>
+            <span>No setup fee or monthly minimum</span>
+            <span>Nationwide support</span>
+          </div>
+        </div>
+
+        <div class="editorial-visual" aria-label="Personal note from PMHNP Billing">
+          <div class="editorial-orb"></div>
+          <div class="editorial-ring"></div>
+          <div class="small-seal">PMHNP<br>Focused</div>
+          <article class="letter motion-surface">
+            <div class="letter-kicker">From Jake’s desk</div>
+            <h2>Good billing should feel calm, clear, and cared for.</h2>
+            <p>I built PMHNP Billing to give psychiatric practices the attentive follow-through that is hard to find in large billing companies. You always know who is handling the work—and what is happening next.</p>
+            <div class="signature">Jake H. <small>PMHNP Billing</small></div>
+          </article>
+          <div class="personal-stamp motion-surface">
+            <b>Direct support</b>
+            <span>No call centers.<br>No account-manager shuffle.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof-strip reveal" aria-label="Service facts">
+      <div class="shell proof-grid">
+        <div class="proof-item"><small>Built differently</small><strong>Specialized, attentive support.</strong></div>
+        <div class="proof-item"><small>Simple pricing</small><strong>5%</strong><span>of collections</span></div>
+        <div class="proof-item"><small>Responsive workflow</small><strong>24–48 hrs</strong><span>clean-claim turnaround</span></div>
+        <div class="proof-item"><small>Service area</small><strong>Nationwide</strong><span>for psychiatric practices</span></div>
+      </div>
+    </section>
+
+    <section class="direct" id="direct" data-motion-section>
+      <div class="shell direct-grid reveal">
+        <div class="portrait-frame motion-surface">
+          <div class="desk-note">
+            <small>One accountable point of contact</small>
+            <blockquote>“Your billing should never disappear into a queue.”</blockquote>
+            <p>Personal oversight. Documented follow-through. Clear next steps.</p>
+          </div>
+        </div>
+        <div class="direct-copy">
+          <div class="eyebrow">A more personal kind of billing support</div>
+          <h2>You won’t be passed around.</h2>
+          <p>You work directly with the person responsible for keeping your billing moving. That means less repetition, fewer handoffs, and communication grounded in the actual details of your practice.</p>
+          <div class="commitments">
+            <div class="commitment">
+              <span class="commitment-num">01</span>
+              <div><h3>Direct communication</h3><p>Questions and updates stay connected to the person doing the work.</p></div>
+            </div>
+            <div class="commitment">
+              <span class="commitment-num">02</span>
+              <div><h3>Consistent follow-through</h3><p>Claims, denials, and payer issues are documented and carried through—not simply touched once.</p></div>
+            </div>
+            <div class="commitment">
+              <span class="commitment-num">03</span>
+              <div><h3>PMHNP-specific attention</h3><p>Your workflow is treated as psychiatric practice billing, not generic medical billing.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services" data-motion-section>
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">What I take off your plate</div>
+            <h2>The billing work your practice needs—without the corporate layers.</h2>
+          </div>
+          <p>Focused support across the core revenue-cycle work that keeps psychiatric practices paid and organized.</p>
+        </div>
+        <div class="service-list">
+          <a class="service-row reveal" href="#">
+            <span class="service-num">01</span>
+            <h3>Claims &amp; payment workflow</h3>
+            <p>Clean-claim review, submission, ERA posting, reconciliation, and organized reporting.</p>
+            <span class="service-arrow">↗</span>
+          </a>
+          <a class="service-row reveal" href="#">
+            <span class="service-num">02</span>
+            <h3>Denials &amp; payer follow-up</h3>
+            <p>Root-cause review, corrected claims, appeals, and follow-through that does not stop at the first touch.</p>
+            <span class="service-arrow">↗</span>
+          </a>
+          <a class="service-row reveal" href="#">
+            <span class="service-num">03</span>
+            <h3>Credentialing &amp; prior auth support</h3>
+            <p>Structured support for enrollment, payer requirements, and authorization work when your practice needs it.</p>
+            <span class="service-arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="process" id="process" data-motion-section>
+      <div class="shell">
+        <div class="eyebrow">A clear, steady process</div>
+        <h2 class="reveal">Professional structure without the impersonal experience.</h2>
+        <p class="process-intro reveal">The workflow stays organized and accountable, but the relationship remains direct, responsive, and human.</p>
+        <div class="steps reveal">
+          <div class="step"><small>01</small><h3>Understand the practice</h3><p>We clarify payers, systems, current pain points, and what a reliable handoff needs to look like.</p></div>
+          <div class="step"><small>02</small><h3>Build a clean workflow</h3><p>Responsibilities, access, reporting, and communication are made clear before the billing rhythm begins.</p></div>
+          <div class="step"><small>03</small><h3>Stay close to the details</h3><p>Claims keep moving, exceptions are surfaced, and you receive clear updates without chasing a call center.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact" data-motion-section>
+      <div class="shell cta-inner reveal">
+        <div class="eyebrow">A calmer billing relationship</div>
+        <h2>Let’s make the business side of your practice feel lighter.</h2>
+        <p>Tell me where the billing workflow feels heaviest. We’ll start with a straightforward conversation and determine whether PMHNP Billing is the right fit.</p>
+        <a class="button button-primary" href="#">Start a conversation <span>→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-inner">
+      <strong>PMHNP Billing</strong>
+      <span>Specialized billing support for psychiatric practices nationwide.</span>
+    </div>
+  </footer>
+  <script>
+    (() => {
+      const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const menuButton = document.querySelector('.menu');
+      const mobileMenu = document.querySelector('.mobile-menu');
+      if (menuButton && mobileMenu) {
+        const closeMenu = () => {
+          mobileMenu.classList.remove('is-open');
+          menuButton.setAttribute('aria-expanded', 'false');
+        };
+        menuButton.addEventListener('click', () => {
+          const open = !mobileMenu.classList.contains('is-open');
+          mobileMenu.classList.toggle('is-open', open);
+          menuButton.setAttribute('aria-expanded', String(open));
+        });
+        mobileMenu.addEventListener('click', (event) => { if (event.target.closest('a')) closeMenu(); });
+        window.addEventListener('resize', () => { if (window.innerWidth > 980) closeMenu(); }, { passive: true });
+      }
+
+      document.querySelectorAll('a[href^="#"]').forEach((link) => {
+        link.addEventListener('click', (event) => {
+          const selector = link.getAttribute('href');
+          if (!selector || selector === '#') return;
+          const target = document.querySelector(selector);
+          if (!target) return;
+          event.preventDefault();
+          target.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
+        });
+      });
+
+      const revealItems = Array.from(document.querySelectorAll('.reveal'));
+      if (!reduced && 'IntersectionObserver' in window) {
+        document.documentElement.classList.add('motion-ready');
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            entry.target.classList.toggle('is-in-view', entry.isIntersecting);
+          });
+        }, { threshold: .1, rootMargin: '0px 0px -7% 0px' });
+        revealItems.forEach((item) => observer.observe(item));
+      } else {
+        revealItems.forEach((item) => item.classList.add('is-in-view'));
+      }
+
+      if (reduced) return;
+
+      const sections = Array.from(document.querySelectorAll('[data-motion-section]'));
+      let frame = 0;
+      const updateScrollMotion = () => {
+        frame = 0;
+        const viewportHeight = window.innerHeight || 1;
+        const viewportCenter = viewportHeight / 2;
+        sections.forEach((section) => {
+          const rect = section.getBoundingClientRect();
+          const range = Math.max(1, viewportHeight / 2 + rect.height / 2);
+          const progress = Math.max(-1, Math.min(1, (rect.top + rect.height / 2 - viewportCenter) / range));
+          section.style.setProperty('--scroll-progress', progress.toFixed(3));
+        });
+      };
+      const scheduleScrollMotion = () => {
+        if (frame) return;
+        frame = requestAnimationFrame(updateScrollMotion);
+      };
+      updateScrollMotion();
+      addEventListener('scroll', scheduleScrollMotion, { passive: true });
+      addEventListener('resize', scheduleScrollMotion, { passive: true });
+
+      document.querySelectorAll('.motion-surface').forEach((surface) => {
+        surface.addEventListener('mousemove', (event) => {
+          const rect = surface.getBoundingClientRect();
+          if (!rect.width || !rect.height) return;
+          const x = (event.clientX - rect.left) / rect.width - .5;
+          const y = (event.clientY - rect.top) / rect.height - .5;
+          surface.style.setProperty('--tilt-x', (-y * 3.5).toFixed(2) + 'deg');
+          surface.style.setProperty('--tilt-y', (x * 4).toFixed(2) + 'deg');
+        });
+        surface.addEventListener('mouseleave', () => {
+          surface.style.removeProperty('--tilt-x');
+          surface.style.removeProperty('--tilt-y');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
