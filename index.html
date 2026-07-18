@@ -891,7 +891,7 @@
         }
     </style>
     <link rel="stylesheet" href="assets/live-fixes.css?v=footerheading6">
-    <link rel="stylesheet" href="assets/modern-warm.css?v=20260717a">
+    <link rel="stylesheet" href="assets/modern-warm.css?v=20260717b">
     <link rel="stylesheet" href="/assets/custom-identity.css?v=20260716d">
 
     <meta property="og:image" content="https://pmhnpbilling.com/assets/pmhnp-billing-social-card.png">
@@ -1001,23 +1001,63 @@
                 <div class="modern-hero-note"><span></span>Direct communication. No call centers. Human review comes first.</div>
             </div>
 
-            <div class="modern-hero-visual" aria-label="The claim journey from preparation through reconciliation">
+            <div class="modern-hero-visual claim-story-visual" aria-label="An animated claim journey from preparation through reconciliation">
                 <div class="modern-shape modern-shape--coral"></div>
                 <div class="modern-shape modern-shape--mint"></div>
                 <div class="modern-shape modern-shape--blue"></div>
-                <article class="editorial-journey">
+                <article class="editorial-journey story-ready" data-claim-story>
+                    <div class="journey-handler-tab" aria-hidden="true">
+                        <img src="/assets/identity/care-claim-mark.svg" alt="" width="96" height="72">
+                        <span>Handled by Jake</span>
+                    </div>
                     <header class="editorial-journey__head">
                         <div class="editorial-journey__kicker">Your billing, personally managed</div>
                         <h2>One careful set of eyes on every claim.</h2>
                     </header>
                     <div class="editorial-journey__steps">
-                        <div class="editorial-journey__step"><div><i>01</i><b></b>Prepared</div><p>Documentation and payer details reviewed.</p></div>
-                        <div class="editorial-journey__step"><div><i>02</i><b></b>Submitted</div><p>Clean claims sent within 1–2 business days.</p></div>
-                        <div class="editorial-journey__step"><div><i>03</i><b></b>Followed through</div><p>Rejections and denials actively worked.</p></div>
-                        <div class="editorial-journey__step"><div><i>04</i><b></b>Reconciled</div><p>Payments posted and outstanding claims tracked.</p></div>
+                        <svg class="editorial-journey__inkline" viewBox="0 0 30 280" preserveAspectRatio="none" aria-hidden="true">
+                            <path pathLength="1" d="M15 8 C11 36 19 50 14 70 C10 92 19 112 14 139 C10 163 19 184 14 210 C10 234 19 253 15 272"/>
+                            <circle class="ink-stop ink-stop--1" cx="15" cy="34" r="3.1"/>
+                            <circle class="ink-stop ink-stop--2" cx="14" cy="102" r="3.1"/>
+                            <circle class="ink-stop ink-stop--3" cx="14" cy="172" r="3.1"/>
+                            <circle class="ink-stop ink-stop--4" cx="15" cy="242" r="3.1"/>
+                        </svg>
+                        <div class="editorial-journey__step editorial-journey__step--prepared">
+                            <div><i>01</i><b></b>Prepared</div>
+                            <p>Documentation and payer details reviewed.</p>
+                            <span class="journey-stamp" aria-hidden="true">
+                                <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="15"/><path d="m12.5 20.5 5 5 10-12"/></svg><em>Reviewed</em>
+                            </span>
+                        </div>
+                        <div class="editorial-journey__step editorial-journey__step--submitted">
+                            <div><i>02</i><b></b>Submitted</div>
+                            <p>Clean claims sent within 1–2 business days.</p>
+                            <span class="journey-stamp" aria-hidden="true">
+                                <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="15"/><path d="m10.5 19 19-8-7.5 19-3.5-8zM18.5 22 29 11"/></svg><em>Sent clean</em>
+                            </span>
+                        </div>
+                        <div class="editorial-journey__step editorial-journey__step--followed">
+                            <div><i>03</i><b></b>Followed through</div>
+                            <p>Rejections and denials actively worked.</p>
+                            <span class="journey-stamp" aria-hidden="true">
+                                <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="15"/><path d="M11.5 20a8.5 8.5 0 0 1 14-6.4M28.5 20a8.5 8.5 0 0 1-14 6.4M24.8 9.8l1.2 4.4-4.5.8M15.2 30.2 14 25.8l4.5-.8"/></svg><em>Worked</em>
+                            </span>
+                        </div>
+                        <div class="editorial-journey__step editorial-journey__step--reconciled">
+                            <div><i>04</i><b></b>Reconciled</div>
+                            <p>Payments posted and outstanding claims tracked.</p>
+                            <span class="journey-stamp journey-stamp--final" aria-hidden="true">
+                                <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="15"/><path d="M11.5 14.5h17v11h-17zM14.5 17.5h11M14.5 21.5h7"/></svg><em>Accounted for</em>
+                            </span>
+                            <span class="journey-flourish" aria-hidden="true"><i></i><i></i><i></i></span>
+                        </div>
                     </div>
-                    <div class="editorial-journey__signoff">Direct communication. No ticket queue. No call center.</div>
+                    <div class="editorial-journey__signoff"><span>Direct communication. No ticket queue. No call center.</span></div>
                 </article>
+                <button class="claim-story-replay" type="button" aria-label="Replay the claim journey animation">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8.5A7.5 7.5 0 1 1 5 15M5.5 8.5V4M5.5 8.5H10"/></svg>
+                    Replay story
+                </button>
             </div>
         </section>
     </div>
@@ -1262,7 +1302,7 @@
   </div>
 </footer>
 
-    <script src="script.js?v=20260716b" defer></script>
+    <script src="script.js?v=20260717a" defer></script>
   <script src="/assets/analytics-config.js?v=20260709a"></script>
   <script src="/assets/analytics.js?v=20260709a" defer></script>
 </body>

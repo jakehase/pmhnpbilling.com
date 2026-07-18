@@ -526,3 +526,59 @@
     });
   }
 })();
+
+// Tactile claim-story sequence for the canonical homepage.
+(function () {
+  var card = document.querySelector('[data-claim-story]');
+  var visual = document.querySelector('.claim-story-visual');
+  var replay = document.querySelector('.claim-story-replay');
+  var reduce = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  if (!card || !visual) return;
+
+  var hasPlayed = false;
+  var play = function () {
+    if (reduce) {
+      card.classList.add('is-story-active', 'is-story-complete');
+      hasPlayed = true;
+      return;
+    }
+    card.classList.remove('is-story-active', 'is-story-complete');
+    void card.offsetWidth;
+    window.requestAnimationFrame(function () {
+      card.classList.add('is-story-active');
+      window.setTimeout(function () { card.classList.add('is-story-complete'); }, 3700);
+    });
+    hasPlayed = true;
+  };
+
+  if ('IntersectionObserver' in window && !reduce) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting && !hasPlayed) {
+          play();
+          observer.disconnect();
+        }
+      });
+    }, { threshold: .34 });
+    observer.observe(card);
+  } else {
+    play();
+  }
+
+  if (replay) replay.addEventListener('click', play);
+
+  if (!reduce && window.matchMedia && window.matchMedia('(pointer: fine)').matches) {
+    visual.addEventListener('pointermove', function (event) {
+      var rect = visual.getBoundingClientRect();
+      if (!rect.width || !rect.height) return;
+      var x = ((event.clientX - rect.left) / rect.width - .5) * 8;
+      var y = ((event.clientY - rect.top) / rect.height - .5) * 7;
+      visual.style.setProperty('--story-parallax-x', x.toFixed(2) + 'px');
+      visual.style.setProperty('--story-parallax-y', y.toFixed(2) + 'px');
+    });
+    visual.addEventListener('pointerleave', function () {
+      visual.style.setProperty('--story-parallax-x', '0px');
+      visual.style.setProperty('--story-parallax-y', '0px');
+    });
+  }
+})();
