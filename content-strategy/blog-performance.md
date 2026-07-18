@@ -10,6 +10,13 @@ Tracks performance of blog posts to inform future content strategy.
 
 ## Post Performance Log
 
+### 2026-07-18 - PMHNP Billing: CO-109 Denials, Behavioral Health Carve-Outs, and Benefit-Plan Verification Checklist (2026)
+- **URL**: /blog/pmhnp-billing-co-109-denials-behavioral-health-carve-outs-benefit-plan-verification-checklist-2026.html
+- **Target Keywords**: CO-109 denial PMHNP, behavioral health carve out PMHNP billing, claim not covered by this payer PMHNP, behavioral health payer routing psychiatry, PMHNP benefit plan verification
+- **Status**: 🟡 Newly published
+- **Week 1**: Pending...
+- **Notes**: Chosen as a high-intent denial-and-routing gap that is distinct from the earlier general carve-out, eligibility, and denial articles. Targets PMHNP owners and billers who need a practical workflow for separating active medical coverage from the real behavioral-health claims path, classifying CO-109 versus CO-204 versus behavioral-plan forwarding signals, and preventing repeat psychiatric claims from being sent to the wrong payer.
+
 ### 2026-07-11 - Illinois PMHNP Billing: IMPACT Revalidation, Disenrollment Risk, and Claims-Hold Prevention Checklist (2026)
 - **URL**: /blog/illinois-medicaid-impact-revalidation-pmhnp-disenrollment-claims-hold-checklist-2026.html
 - **Target Keywords**: Illinois Medicaid IMPACT revalidation PMHNP, Illinois Medicaid provider revalidation PMHNP, IMPACT renewal Illinois PMHNP, Illinois Medicaid disenrollment claims hold, PMHNP Illinois Medicaid reactivation
@@ -229,5 +236,5 @@ Based on performance data:
 3. 
 
 ---
-*Last Updated*: 2026-07-11
-*Next Review*: 2026-07-18
+*Last Updated*: 2026-07-18
+*Next Review*: 2026-07-25
