@@ -1,0 +1,40 @@
+name: Notify IndexNow after Pages deployment
+
+on:
+  workflow_run:
+    workflows:
+      - pages build and deployment
+    types:
+      - completed
+
+permissions:
+  contents: read
+
+concurrency:
+  group: indexnow-${{ github.event.workflow_run.head_branch }}
+  cancel-in-progress: true
+
+jobs:
+  notify-indexnow:
+    if: >-
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.head_branch == 'main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out the deployed revision
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+          fetch-depth: 2
+
+      - name: Notify IndexNow about changed indexable pages
+        run: |
+          set -euo pipefail
+          head_sha="${{ github.event.workflow_run.head_sha }}"
+          base_sha="$(git rev-parse "${head_sha}^" 2>/dev/null || true)"
+          args=(--head "$head_sha" --submit)
+          if [[ -n "$base_sha" ]]; then
+            args+=(--base "$base_sha")
+          fi
+          python3 scripts/submit-indexnow.py "${args[@]}"

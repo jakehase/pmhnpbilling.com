@@ -1,0 +1,7 @@
+{
+  "schemaVersion": "pmhnp-indexnow.v1",
+  "host": "pmhnpbilling.com",
+  "endpoint": "https://api.indexnow.org/indexnow",
+  "keyFile": "641fafce5fa3d593ab28ea8e2510c8d5.txt",
+  "keyLocation": "https://pmhnpbilling.com/641fafce5fa3d593ab28ea8e2510c8d5.txt"
+}
