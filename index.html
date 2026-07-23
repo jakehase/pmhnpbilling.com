@@ -43,6 +43,14 @@
   "name": "PMHNP Billing",
   "description": "Specialized billing and revenue cycle support for PMHNP and psychiatric practices nationwide.",
   "url": "https://pmhnpbilling.com/",
+  "foundingDate": "2025",
+  "founder": {
+    "@type": "Person",
+    "@id": "https://pmhnpbilling.com/#jake-hasenkamp",
+    "name": "Jacob Hasenkamp",
+    "alternateName": "Jake Hasenkamp",
+    "sameAs": "https://www.linkedin.com/in/jacob-hasenkamp"
+  },
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Chicago",
@@ -690,12 +698,54 @@
 
         /* About */
         .about { background: #fff; }
-        .about-content { max-width: 680px; margin: 0 auto; }
-        .about-content p { font-size: 1.1rem; color: #4b5563; margin-bottom: 1.5rem; }
-        .about-content p:first-of-type::first-letter {
-            font-size: 3.5rem; font-weight: 600; float: left;
-            line-height: 1; margin-right: 0.75rem; margin-top: 0.1rem; color: #2563eb;
+        .about-content { max-width: 980px; margin: 0 auto; }
+        .about-profile {
+            display: grid;
+            grid-template-columns: minmax(220px, .75fr) minmax(0, 1.5fr);
+            overflow: hidden;
+            background: linear-gradient(145deg, #f8fafc, #eff6ff);
+            border: 1px solid #dbeafe;
+            border-radius: 24px;
+            box-shadow: 0 22px 60px rgba(30, 64, 175, .09);
         }
+        .about-profile__identity { padding: 2.2rem; color: #fff; background: linear-gradient(145deg, #1e40af, #2563eb 58%, #0e7490); }
+        .about-profile__monogram {
+            width: 72px;
+            height: 72px;
+            display: grid;
+            place-items: center;
+            margin-bottom: 1.3rem;
+            color: #1e40af;
+            background: #fff;
+            border-radius: 20px;
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: -.03em;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, .15);
+        }
+        .about-profile__kicker { margin: 0 0 .55rem; color: rgba(255,255,255,.75); font-size: .72rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+        .about-profile__identity h3 { margin: 0 0 .8rem; color: #fff; font-size: 1.6rem; line-height: 1.2; }
+        .about-profile__identity p:last-child { margin: 0; color: rgba(255,255,255,.86); font-size: .94rem; line-height: 1.65; }
+        .about-profile__details { padding: 2.2rem; }
+        .about-profile__details > p { margin: 0 0 1.25rem; color: #4b5563; font-size: 1.02rem; }
+        .about-profile__facts { display: grid; gap: .8rem; margin: 0 0 1.5rem; padding: 0; list-style: none; }
+        .about-profile__facts li { position: relative; padding-left: 1.6rem; color: #4b5563; }
+        .about-profile__facts li::before { content: "✓"; position: absolute; left: 0; color: #17685d; font-weight: 800; }
+        .about-profile__links { display: flex; flex-wrap: wrap; gap: .7rem; }
+        .about-profile__links a {
+            display: inline-flex;
+            align-items: center;
+            min-height: 42px;
+            padding: .7rem 1rem;
+            color: #1e40af;
+            background: #fff;
+            border: 1px solid #bfdbfe;
+            border-radius: 999px;
+            font-size: .82rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .about-profile__links a:hover { color: #fff; background: #1e40af; border-color: #1e40af; }
 
 
         /* FAQ */
@@ -854,6 +904,7 @@
             .services-grid { grid-template-columns: repeat(2, 1fr); }
             .trust-grid { grid-template-columns: repeat(2, 1fr); }
             .contact-wrapper { grid-template-columns: 1fr; gap: 2.5rem; }
+            .about-profile { grid-template-columns: 1fr; }
         }
         @media (max-width: 768px) {
             .nav-links { display: none; }
@@ -1146,12 +1197,30 @@
     <section id="about" class="about">
         <div class="section-header fade-in">
             <div class="section-label">About</div>
-            <h2 class="section-title">How I work</h2>
+            <h2 class="section-title">Who runs PMHNP Billing</h2>
         </div>
         <div class="about-content fade-in">
-            <p>I started PMHNP Billing to provide psychiatric providers with reliable, attentive billing support across the United States. Many billing services treat you as one of hundreds of accounts. I take a different approach.</p>
-            <p>When you work with me, you get direct communication and consistent follow-through. I understand the specific requirements of psychiatric billing—from complex authorization processes to mental health parity regulations—and handle them with care.</p>
-            <p>My goal is straightforward: accurate claims, timely submissions, and fewer headaches for you.</p>
+            <article class="about-profile" aria-labelledby="jake-profile-name">
+                <div class="about-profile__identity">
+                    <div class="about-profile__monogram" aria-hidden="true">JH</div>
+                    <p class="about-profile__kicker">Founder and direct point of contact</p>
+                    <h3 id="jake-profile-name">Jacob “Jake” Hasenkamp</h3>
+                    <p>PMHNP Billing was founded in 2025, is based in Chicago, and supports PMHNP and psychiatric practices nationwide.</p>
+                </div>
+                <div class="about-profile__details">
+                    <p>Jake works directly with practices on claim readiness, submission, payment posting, payer follow-up, denials, authorizations, and enrollment dependencies. Work is not handed off to a call center or an anonymous ticket queue.</p>
+                    <ul class="about-profile__facts">
+                        <li><strong>Direct ownership:</strong> one accountable contact follows work from setup through resolution.</li>
+                        <li><strong>Source-grounded guidance:</strong> payer and regulatory statements are checked against current primary sources and the applicable product.</li>
+                        <li><strong>Clear boundaries:</strong> billing support does not replace clinical judgment, legal advice, or the provider’s responsibility for documented services and code selection.</li>
+                    </ul>
+                    <div class="about-profile__links" aria-label="About and trust resources">
+                        <a href="https://www.linkedin.com/in/jacob-hasenkamp" rel="me noopener">View Jake’s LinkedIn</a>
+                        <a href="/editorial-policy.html">Read the editorial policy</a>
+                        <a href="/resources/pmhnp-claim-readiness-audit-worksheet.html">Open the free audit worksheet</a>
+                    </div>
+                </div>
+            </article>
         </div>
     </section>
 

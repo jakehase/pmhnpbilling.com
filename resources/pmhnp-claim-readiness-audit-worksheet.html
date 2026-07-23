@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,follow">
+  <title>PMHNP Claim-Readiness Audit Worksheet | PMHNP Billing</title>
+  <meta name="description" content="A free, print-friendly worksheet for auditing PMHNP claim readiness without recording patient information.">
+  <link rel="canonical" href="https://pmhnpbilling.com/resources/pmhnp-claim-readiness-audit-worksheet.html">
+  <link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg?v=20260716b">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #102730;
+      --soft: #4b6268;
+      --paper: #f7f3eb;
+      --white: #fffdf8;
+      --blue: #2864dc;
+      --mint: #17685d;
+      --line: #cfd9d4;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: Manrope, system-ui, sans-serif; line-height: 1.5; }
+    a { color: var(--blue); }
+    .screen-nav { padding: 1rem max(24px, calc((100vw - 980px) / 2)); display: flex; justify-content: space-between; align-items: center; gap: 1rem; background: rgba(247,243,235,.95); border-bottom: 1px solid rgba(16,39,48,.14); }
+    .brand { color: var(--ink); font-weight: 800; text-decoration: none; }
+    .screen-actions { display: flex; flex-wrap: wrap; gap: .65rem; }
+    .screen-actions a, .screen-actions button { min-height: 40px; padding: .6rem .9rem; border: 1px solid var(--line); border-radius: 999px; font: inherit; font-size: .78rem; font-weight: 800; cursor: pointer; text-decoration: none; }
+    .screen-actions a { color: var(--ink); background: var(--white); }
+    .screen-actions button { color: #fff; background: var(--blue); border-color: var(--blue); }
+    main { width: min(980px, calc(100% - 32px)); margin: 2rem auto 4rem; }
+    .worksheet { padding: 2.25rem; background: var(--white); border: 1px solid var(--line); border-radius: 24px; box-shadow: 0 24px 70px rgba(16,39,48,.1); }
+    .worksheet-header { display: grid; grid-template-columns: 1fr auto; gap: 1.5rem; padding-bottom: 1.4rem; border-bottom: 3px solid var(--ink); }
+    .eyebrow { margin: 0 0 .4rem; color: var(--mint); font-size: .72rem; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
+    h1 { margin: 0; font-family: "DM Serif Display", Georgia, serif; font-size: clamp(2rem, 5vw, 3.25rem); font-weight: 400; line-height: 1.05; }
+    .version { align-self: end; color: var(--soft); font-size: .72rem; font-weight: 700; text-align: right; }
+    .warning { margin: 1.25rem 0; padding: 1rem 1.1rem; color: #704116; background: #fff4df; border: 1px solid #f0c98d; border-radius: 12px; font-size: .83rem; }
+    .fields { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: .8rem 1.2rem; margin: 1.2rem 0 1.8rem; }
+    .field { display: grid; grid-template-columns: max-content 1fr; gap: .55rem; align-items: end; font-size: .78rem; font-weight: 700; }
+    .field-line { height: 1.35rem; border-bottom: 1px solid var(--ink); }
+    .audit-section { margin-top: 1.5rem; break-inside: avoid; }
+    .audit-section h2 { display: flex; align-items: center; gap: .7rem; margin: 0 0 .7rem; font-size: 1rem; }
+    .step { width: 1.8rem; height: 1.8rem; display: inline-grid; place-items: center; flex: 0 0 auto; color: #fff; background: var(--mint); border-radius: 50%; font-size: .75rem; }
+    .checklist { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 0 1rem; margin: 0; padding: 0; list-style: none; }
+    .checklist li { position: relative; min-height: 2.55rem; padding: .45rem .4rem .45rem 2rem; border-top: 1px solid #e1e7e3; font-size: .78rem; break-inside: avoid; }
+    .checklist li::before { content: ""; position: absolute; left: .35rem; top: .58rem; width: .9rem; height: .9rem; background: #fff; border: 1.5px solid var(--ink); border-radius: 2px; }
+    .notes { display: grid; gap: .65rem; margin-top: .8rem; }
+    .note-line { min-height: 1.45rem; border-bottom: 1px solid #9dafaa; font-size: .72rem; color: var(--soft); }
+    .outcome-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: .7rem; }
+    .outcome { min-height: 4.4rem; padding: .7rem; border: 1px solid var(--line); border-radius: 10px; font-size: .7rem; font-weight: 700; }
+    .footer-note { margin: 1.6rem 0 0; padding-top: 1rem; color: var(--soft); border-top: 1px solid var(--line); font-size: .7rem; }
+    @media (max-width: 720px) {
+      .worksheet { padding: 1.3rem; border-radius: 16px; }
+      .worksheet-header, .fields, .checklist, .outcome-grid { grid-template-columns: 1fr; }
+      .version { text-align: left; }
+    }
+    @page { size: letter; margin: .45in; }
+    @media print {
+      body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .screen-nav { display: none; }
+      main { width: 100%; margin: 0; }
+      .worksheet { padding: 0; border: 0; border-radius: 0; box-shadow: none; }
+      .worksheet-header { grid-template-columns: 1fr auto; }
+      .fields, .checklist { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .outcome-grid { grid-template-columns: repeat(4, minmax(0,1fr)); }
+      h1 { font-size: 26pt; }
+      .audit-section { margin-top: .95rem; }
+      .checklist li { min-height: 2rem; padding-top: .3rem; padding-bottom: .3rem; font-size: 7.5pt; }
+      .checklist li::before { top: .42rem; }
+      .warning { margin: .8rem 0; }
+      .fields { margin: .8rem 0 1rem; }
+      .footer-note { margin-top: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="screen-nav" aria-label="Resource navigation">
+    <a class="brand" href="/">PMHNP Billing</a>
+    <div class="screen-actions">
+      <a href="/services/psychiatric-medical-billing-services.html">Psychiatric billing services</a>
+      <button type="button" onclick="window.print()">Print or save as PDF</button>
+    </div>
+  </nav>
+
+  <main>
+    <article class="worksheet">
+      <header class="worksheet-header">
+        <div>
+          <p class="eyebrow">Free operational resource</p>
+          <h1>PMHNP claim-readiness audit</h1>
+        </div>
+        <p class="version">PMHNP Billing<br>Version: July 2026</p>
+      </header>
+
+      <div class="warning"><strong>Keep this worksheet free of PHI.</strong> Do not enter patient names, dates of birth, member IDs, claim numbers, or clinical details. Use it to audit a de-identified sample or the practice’s overall workflow.</div>
+
+      <section class="fields" aria-label="Audit details">
+        <div class="field"><span>Practice:</span><span class="field-line"></span></div>
+        <div class="field"><span>Review date:</span><span class="field-line"></span></div>
+        <div class="field"><span>Payer/product:</span><span class="field-line"></span></div>
+        <div class="field"><span>Reviewer:</span><span class="field-line"></span></div>
+        <div class="field"><span>De-identified sample:</span><span class="field-line"></span></div>
+        <div class="field"><span>Policy checked through:</span><span class="field-line"></span></div>
+      </section>
+
+      <section class="audit-section">
+        <h2><span class="step">1</span> Enrollment and payer route</h2>
+        <ul class="checklist">
+          <li>Written participation and effective-date evidence is available for the applicable product.</li>
+          <li>Billing and rendering NPI/TIN configuration matches the payer enrollment record.</li>
+          <li>Taxonomy, service location, reassignment, and group roster are current.</li>
+          <li>The correct medical or behavioral-health administrator and payer ID are identified.</li>
+          <li>ERA/EFT enrollment status and remittance destination are confirmed.</li>
+          <li>Any unresolved enrollment dependency has an owner and follow-up date.</li>
+        </ul>
+      </section>
+
+      <section class="audit-section">
+        <h2><span class="step">2</span> Eligibility, benefits, and authorization</h2>
+        <ul class="checklist">
+          <li>Eligibility was checked for the date of service and exact product—not only the carrier name.</li>
+          <li>Behavioral-health benefits, carve-out routing, and network status were confirmed.</li>
+          <li>Referral and prior-authorization requirements were checked for provider, service, and setting.</li>
+          <li>Approved dates, units or visits, servicing provider, and renewal trigger are tracked.</li>
+          <li>Telehealth coverage, modality, patient location, POS, and modifier rules were verified.</li>
+          <li>The source, effective date, and verification date for the rule are recorded outside this sheet.</li>
+        </ul>
+      </section>
+
+      <section class="audit-section">
+        <h2><span class="step">3</span> Documentation and service integrity</h2>
+        <ul class="checklist">
+          <li>The signed record supports the service, medical necessity, diagnosis, and selected code.</li>
+          <li>Time-based services include the required time evidence under the applicable rule.</li>
+          <li>Psychotherapy add-on time, when used, is distinct from E/M work and documented separately.</li>
+          <li>Telehealth details that affect billing are supported by the record.</li>
+          <li>The rendering clinician—not an automated default—made the service and code selection.</li>
+          <li>Missing signatures, incomplete notes, or documentation questions are held before release.</li>
+        </ul>
+      </section>
+
+      <section class="audit-section">
+        <h2><span class="step">4</span> Claim construction and release</h2>
+        <ul class="checklist">
+          <li>Patient and subscriber data match the eligibility response in the billing system.</li>
+          <li>Billing, rendering, referring, and supervising fields are populated only when applicable.</li>
+          <li>Code, diagnosis pointer, units, POS, modifier, and authorization fields match the source record.</li>
+          <li>Duplicate-claim risk and any prior submission are checked before resubmission.</li>
+          <li>Practice and payer edits pass, with warnings resolved rather than automatically overridden.</li>
+          <li>The released claim retains a submission date and clearinghouse trace outside this worksheet.</li>
+        </ul>
+      </section>
+
+      <section class="audit-section">
+        <h2><span class="step">5</span> First response, payment, and exceptions</h2>
+        <ul class="checklist">
+          <li>277CA or equivalent acceptance is confirmed; “sent” is not treated as payer acceptance.</li>
+          <li>Rejections are assigned for correction before the timely-filing window is at risk.</li>
+          <li>Payer status, control number, and follow-up date are retained in the billing system.</li>
+          <li>ERA/EOB posting is reconciled to allowed amount, adjustments, and patient responsibility.</li>
+          <li>Denials and underpayments have a root cause, next action, owner, and deadline.</li>
+          <li>Repeated exceptions are fed back into enrollment, intake, authorization, or documentation controls.</li>
+        </ul>
+      </section>
+
+      <section class="audit-section">
+        <h2><span class="step">6</span> Audit outcome</h2>
+        <div class="outcome-grid">
+          <div class="outcome">Sample size:<br><br></div>
+          <div class="outcome">Ready without correction:<br><br></div>
+          <div class="outcome">Held or corrected:<br><br></div>
+          <div class="outcome">Highest-risk control:<br><br></div>
+        </div>
+        <div class="notes" aria-label="Action notes">
+          <div class="note-line">Priority action / owner / due date:</div>
+          <div class="note-line">Policy or workflow source to verify:</div>
+          <div class="note-line">Follow-up sampling date:</div>
+        </div>
+      </section>
+
+      <p class="footer-note">This worksheet is operational education, not legal, coding, clinical, or compliance advice. Verify current contracts, payer-product rules, code-set requirements, and state or federal guidance for the provider, member, setting, and date of service. Learn more at <strong>pmhnpbilling.com</strong>.</p>
+    </article>
+  </main>
+
+  <script src="/assets/analytics-config.js?v=20260709a"></script>
+  <script src="/assets/analytics.js?v=20260709a" defer></script>
+</body>
+</html>
