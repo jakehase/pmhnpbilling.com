@@ -10,6 +10,13 @@ Tracks performance of blog posts to inform future content strategy.
 
 ## Post Performance Log
 
+### 2026-07-25 - PMHNP Billing: Audio-Only Telehealth for Behavioral Health, Medicare Rules, and Claim QA Checklist (2026)
+- **URL**: /blog/pmhnp-billing-audio-only-telehealth-behavioral-health-medicare-claim-checklist-2026.html
+- **Target Keywords**: audio-only telehealth PMHNP, PMHNP audio only billing, Medicare behavioral telehealth PMHNP, telepsychiatry telephone billing PMHNP, modifier 93 PMHNP telehealth
+- **Status**: 🟡 Newly published
+- **Week 1**: Pending...
+- **Notes**: Chosen as a high-intent telehealth workflow gap that is distinct from the broader POS 02/10 and modifier 95 posts. Targets PMHNP owners and billers who need a practical audio-only decision framework grounded in current Medicare behavioral telehealth policy, while still protecting against payer-by-payer field mistakes on Medicaid, Medicare Advantage, and commercial products.
+
 ### 2026-07-18 - PMHNP Billing: CO-109 Denials, Behavioral Health Carve-Outs, and Benefit-Plan Verification Checklist (2026)
 - **URL**: /blog/pmhnp-billing-co-109-denials-behavioral-health-carve-outs-benefit-plan-verification-checklist-2026.html
 - **Target Keywords**: CO-109 denial PMHNP, behavioral health carve out PMHNP billing, claim not covered by this payer PMHNP, behavioral health payer routing psychiatry, PMHNP benefit plan verification
@@ -236,5 +243,5 @@ Based on performance data:
 3. 
 
 ---
-*Last Updated*: 2026-07-18
-*Next Review*: 2026-07-25
+*Last Updated*: 2026-07-25
+*Next Review*: 2026-08-01
