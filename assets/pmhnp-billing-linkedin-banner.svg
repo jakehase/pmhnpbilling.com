@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1584" height="396" viewBox="0 0 1584 396" role="img" aria-labelledby="title desc">
+  <title id="title">PMHNP Billing LinkedIn banner</title>
+  <desc id="desc">A warm editorial banner with the PMHNP Billing wordmark, care and claim logo, and psychiatric-practice billing message.</desc>
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbf8f2"/>
+      <stop offset="1" stop-color="#f2ebdf"/>
+    </linearGradient>
+    <linearGradient id="softMint" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d9efe5"/>
+      <stop offset="1" stop-color="#bfe3d2"/>
+    </linearGradient>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="9" stdDeviation="10" flood-color="#102730" flood-opacity=".12"/>
+    </filter>
+    <pattern id="dots" width="18" height="18" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.25" fill="#17685d" opacity=".12"/>
+    </pattern>
+  </defs>
+
+  <rect width="1584" height="396" fill="url(#paper)"/>
+  <rect width="1584" height="396" fill="url(#dots)" opacity=".42"/>
+
+  <!-- Left side intentionally remains quiet for LinkedIn's profile-photo overlay. -->
+  <circle cx="72" cy="350" r="184" fill="#2864dc" opacity=".055"/>
+  <circle cx="84" cy="352" r="132" fill="none" stroke="#2864dc" stroke-width="2" opacity=".16"/>
+  <path d="M0 84 C142 38 276 54 404 122" fill="none" stroke="#ff987b" stroke-width="3" opacity=".58"/>
+  <path d="M0 97 C140 51 272 67 396 134" fill="none" stroke="#17685d" stroke-width="1.5" opacity=".18"/>
+  <rect x="325" y="66" width="1" height="264" fill="#102730" opacity=".14"/>
+  <circle cx="325.5" cy="80" r="4" fill="#ff987b"/>
+  <circle cx="325.5" cy="316" r="4" fill="#17685d"/>
+
+  <!-- Main content safe zone. -->
+  <g transform="translate(414 0)">
+    <rect x="0" y="67" width="56" height="3" rx="1.5" fill="#ff987b"/>
+    <text x="76" y="74" fill="#17685d" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" letter-spacing="3.1">BILLING OPERATIONS FOR PSYCHIATRIC PRACTICES</text>
+
+    <g transform="translate(0 105)">
+      <text x="0" y="92" fill="#17685d" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="800" letter-spacing="-3.6">PMHNP</text>
+
+      <!-- Exact PMHNP Billing care-and-claim mark. -->
+      <g transform="translate(260 7) scale(1.32)" fill="none" stroke="#17685d" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" filter="url(#softShadow)">
+        <path fill="#fffdf8" d="M31 13.5c8.2-1.5 22.4-1.2 31 .7 2.2.5 3.5 2.2 3.4 4.3l-.9 27.2c-.1 3-2.3 5.2-5.1 5.3-8.7.4-18.5.2-27.3-.5-2.4-.2-4.1-2.3-4-4.8l.8-27.2c.1-2.5.8-4.5 2.1-5z"/>
+        <path d="M54.5 13.4c.1 4.7 1.8 7.4 7.2 8.6l3.5.8"/>
+        <path stroke="#ff8d70" stroke-width="3.2" d="M34.8 32.5h5.5l3-5.1 4.5 10 3.4-6.1h7.1"/>
+        <circle cx="58.7" cy="31.4" r="1.8" fill="#ff8d70" stroke="none"/>
+        <path d="M8.2 47.4c5-3.5 10-5.2 15.2-2.7l8.8 4.3c2.6 1.2 4.3 3.5 4.3 6.3-7.7.5-13.7-1.5-18.9-4.5 5 5.4 11.9 8.8 20.9 9.2 4.9.2 7.8-1.4 10.7-4.6"/>
+        <path d="M87.8 47.3c-4.8-3.3-9.8-5-14.9-2.5L64 49.2c-2.4 1.2-4 3.4-4 6 7.4.6 13.3-1.2 18.6-4.4-5.1 5.5-11.8 8.6-20.4 9.1-4.4.3-7.1-1.1-9-4.5"/>
+        <path stroke="#ff8d70" d="M39 7.3 37.1 3M48.2 6.2V1.5M57.2 7.4l2.1-4.1"/>
+      </g>
+
+      <text x="405" y="92" fill="#102730" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="800" letter-spacing="-3.6">Billing</text>
+    </g>
+
+    <text x="2" y="259" fill="#435b62" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="400">Direct support. Clean claims. Thoughtful follow-through.</text>
+    <g transform="translate(2 294)">
+      <rect width="222" height="42" rx="21" fill="#102730"/>
+      <circle cx="23" cy="21" r="5" fill="#bfe3d2"/>
+      <text x="42" y="27" fill="#fffdf8" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" letter-spacing=".5">pmhnpbilling.com</text>
+    </g>
+  </g>
+
+  <!-- Brand geometry, kept beyond the main message. -->
+  <circle cx="1464" cy="52" r="110" fill="none" stroke="#2864dc" stroke-width="2" opacity=".16"/>
+  <circle cx="1492" cy="40" r="56" fill="#2864dc" opacity=".09"/>
+  <circle cx="1452" cy="347" r="112" fill="url(#softMint)" opacity=".82"/>
+  <circle cx="1354" cy="303" r="32" fill="#ff987b" opacity=".92"/>
+  <path d="M1308 126c67-34 148-25 214 24" fill="none" stroke="#17685d" stroke-width="2" opacity=".28"/>
+  <path d="M1340 151c54-23 116-14 166 22" fill="none" stroke="#ff987b" stroke-width="3" opacity=".42"/>
+  <rect x="1294" y="68" width="38" height="38" rx="11" fill="#fffdf8" stroke="#102730" stroke-width="1.5" opacity=".8" transform="rotate(8 1313 87)"/>
+  <path d="M1306 87h6l4-7 6 13 4-7h6" fill="none" stroke="#ff8d70" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="0.75" y="0.75" width="1582.5" height="394.5" fill="none" stroke="#102730" stroke-width="1.5" opacity=".13"/>
+</svg>

@@ -13,6 +13,13 @@
   48% { transform: scale(.96); }
   74% { transform: scale(.93); }
 }
+@keyframes pmhnp-nav-mark-bounce {
+  0%, 44%, 96%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-1px) scale(.97); }
+  70% { transform: translateY(-3px) scale(.94); }
+  79% { transform: translateY(1px) scale(1.015); }
+  87% { transform: translateY(-.75px) scale(.995); }
+}
 
 /* Integrated wordmark: PMHNP [care + claim] Billing. */
 .logo > .logo-icon { display: none !important; }
@@ -41,7 +48,7 @@
   background: transparent url("/assets/identity/care-claim-mark.svg") no-repeat center / contain !important;
   border: 0 !important;
   border-radius: 0 !important;
-  animation: pmhnp-mark-pulse 2.3s ease-in-out infinite;
+  animation: pmhnp-nav-mark-bounce 2.3s ease-in-out infinite;
   transform-origin: center;
 }
 .logo .logo-text .billing {
