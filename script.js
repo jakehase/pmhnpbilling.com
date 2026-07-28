@@ -106,26 +106,42 @@
     });
     letterWaveHeading.classList.add('letter-wave--prepared');
 
-    var playLetterWave = function () {
-      if (letterWaveHeading.classList.contains('is-animated')) return;
+    var letterWaveReplayDelay = 7000;
+    var letterWaveHasPlayed = false;
+    var letterWaveIsVisible = false;
+    var letterWaveLeftAt = 0;
+    var playLetterWave = function (restart) {
+      if (!restart && letterWaveHeading.classList.contains('is-animated')) return;
+      if (restart) {
+        letterWaveHeading.classList.remove('is-animated');
+        void letterWaveHeading.offsetWidth;
+      }
       window.requestAnimationFrame(function () {
         letterWaveHeading.classList.add('is-animated');
       });
+      letterWaveHasPlayed = true;
     };
     if ('IntersectionObserver' in window) {
       var letterWaveObserver = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
-          if (!entry.isIntersecting) return;
-          playLetterWave();
-          letterWaveObserver.unobserve(entry.target);
+          var isVisible = entry.intersectionRatio >= 0.45;
+          if (isVisible && !letterWaveIsVisible) {
+            var wasAwayLongEnough = letterWaveLeftAt > 0
+              && Date.now() - letterWaveLeftAt >= letterWaveReplayDelay;
+            playLetterWave(letterWaveHasPlayed && wasAwayLongEnough);
+            letterWaveLeftAt = 0;
+          } else if (!isVisible && letterWaveIsVisible) {
+            letterWaveLeftAt = Date.now();
+          }
+          letterWaveIsVisible = isVisible;
         });
       }, {
-        threshold: 0.45,
+        threshold: [0, 0.45],
         rootMargin: '0px 0px -8% 0px'
       });
       letterWaveObserver.observe(letterWaveHeading);
     } else {
-      playLetterWave();
+      playLetterWave(false);
     }
   }
 
