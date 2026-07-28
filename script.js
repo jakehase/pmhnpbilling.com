@@ -80,6 +80,55 @@
     }
   }
 
+  var letterWaveHeading = document.querySelector('[data-letter-wave]');
+  if (letterWaveHeading && !prefersReducedMotion) {
+    var letterWaveText = (letterWaveHeading.textContent || '').trim();
+    var letterWaveWords = letterWaveText.split(/\s+/);
+    var letterWaveIndex = 0;
+    letterWaveHeading.textContent = '';
+    letterWaveHeading.setAttribute('aria-label', letterWaveText);
+    letterWaveWords.forEach(function (word, wordIndex) {
+      var wordElement = document.createElement('span');
+      wordElement.className = 'letter-wave__word';
+      wordElement.setAttribute('aria-hidden', 'true');
+      Array.from(word).forEach(function (letter) {
+        var letterElement = document.createElement('span');
+        letterElement.className = 'letter-wave__char';
+        letterElement.style.setProperty('--letter-index', String(letterWaveIndex));
+        letterElement.textContent = letter;
+        wordElement.appendChild(letterElement);
+        letterWaveIndex += 1;
+      });
+      letterWaveHeading.appendChild(wordElement);
+      if (wordIndex < letterWaveWords.length - 1) {
+        letterWaveHeading.appendChild(document.createTextNode(' '));
+      }
+    });
+    letterWaveHeading.classList.add('letter-wave--prepared');
+
+    var playLetterWave = function () {
+      if (letterWaveHeading.classList.contains('is-animated')) return;
+      window.requestAnimationFrame(function () {
+        letterWaveHeading.classList.add('is-animated');
+      });
+    };
+    if ('IntersectionObserver' in window) {
+      var letterWaveObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          playLetterWave();
+          letterWaveObserver.unobserve(entry.target);
+        });
+      }, {
+        threshold: 0.45,
+        rootMargin: '0px 0px -8% 0px'
+      });
+      letterWaveObserver.observe(letterWaveHeading);
+    } else {
+      playLetterWave();
+    }
+  }
+
   {
     if (allowContinuousHomepageMotion) {
       var motionSections = Array.prototype.slice.call(document.querySelectorAll([
