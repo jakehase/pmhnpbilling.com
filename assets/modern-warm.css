@@ -491,12 +491,11 @@ body > nav {
 .service-pathways .service-card { background: rgba(255,253,248,.68); }
 .service-pathways .service-card h3 { margin-top: .5rem; }
 
-.about { display: grid; grid-template-columns: .78fr 1.22fr; gap: clamp(40px, 7vw, 90px); align-items: start; }
-.about .section-header { width: 100%; margin: 0; text-align: left; }
-.about .section-label { justify-content: flex-start; }
-.about-content { margin: 0; padding: clamp(1.8rem, 4vw, 3rem); background: var(--mw-white); border: 1px solid var(--mw-line); border-radius: 28px; box-shadow: var(--mw-shadow); }
-.about-content p { color: var(--mw-ink-soft); font-size: .95rem; }
-.about-content p:last-child { margin-bottom: 0; color: var(--mw-ink); font-family: var(--mw-display); font-size: 1.55rem; line-height: 1.25; }
+.about { display: block; }
+.about .section-header { width: min(760px, 100%); margin: 0 auto 2.7rem; text-align: center; }
+.about .section-label { justify-content: center; }
+.about-content { margin: 0 auto; padding: 0; background: transparent; border: 0; border-radius: 0; box-shadow: none; }
+.about-content p { color: var(--mw-ink-soft); }
 
 .pilot-preview { padding-top: 0; }
 .pilot-preview-card { margin: 0 auto; padding: clamp(2rem, 5vw, 4rem); color: #fff; background: var(--mw-ink); border: 0; border-radius: 38px; box-shadow: var(--mw-shadow); }
@@ -636,9 +635,11 @@ body > nav {
   .trust-grid,
   .faq-content { grid-template-columns: 1fr; }
   .service-card { min-height: 240px; }
-  .about { display: grid; grid-template-columns: 1fr; gap: 2rem; }
-  .about .section-header { text-align: center; }
+  .about { display: block; }
+  .about .section-header { margin-bottom: 2rem; text-align: center; }
   .about .section-label { justify-content: center; }
+  .about-profile__identity { border-right: 0; border-bottom: 1px solid var(--mw-line); }
+  .about-profile__photo { width: 150px; }
   .pilot-preview { padding-top: 0; }
   .pilot-preview-card,
   .testimonial-content { border-radius: 28px; }
