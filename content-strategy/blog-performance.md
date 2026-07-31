@@ -67,7 +67,7 @@ Tracks performance of blog posts to inform future content strategy.
 - **Notes**: Chosen as a high-intent denial-and-documentation gap after the recent duplicate-claim, authorization, payer-roster, claim-status, and ADR posts. Targets PMHNP owners and billers who need a practical workflow for classifying medical-necessity denials, distinguishing coding-vs-documentation-vs-telehealth support issues, and building tighter appeal packets instead of sending broad unsupported records dumps.
 
 ### 2026-05-30 Strategy reset — national PMHNP audience
-- Morgan/Michigan lead signal suggests PMHNP interest is national, not only local.
+- A de-identified out-of-state lead signal suggests PMHNP interest is national, not only local.
 - Going forward, default blog strategy is national PMHNP billing intent first, with Illinois/local content reserved for genuinely state-specific rules.
 - Redirects/canonicals were added for former city-heavy slugs so old URLs can pass users and search engines to broader destination pages.
 
