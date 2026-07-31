@@ -174,6 +174,100 @@ body.mw-site .brand::after {
   background: transparent url("/assets/identity/telephone-mark.svg") no-repeat center / contain;
   animation: pmhnp-mark-pulse 2.3s ease-in-out infinite -.7s;
 }
+.nav-contact-write {
+  position: relative;
+  isolation: isolate;
+}
+.nav-contact-write::before {
+  transition: opacity .18s ease, transform .28s cubic-bezier(.2,.8,.2,1);
+}
+.nav-contact-write__label {
+  position: relative;
+  z-index: 1;
+  line-height: 1.25;
+  transition: color .2s ease, transform .28s cubic-bezier(.2,.8,.2,1);
+}
+.nav-contact-write__ink {
+  width: 59px;
+  height: 22px;
+  position: absolute;
+  z-index: 2;
+  left: calc(29px + .42rem - 2px);
+  top: 50%;
+  overflow: visible;
+  pointer-events: none;
+  transform: translateY(-35%);
+}
+.nav-contact-write__line {
+  width: 58px;
+  height: 12px;
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  overflow: visible;
+  fill: none;
+  stroke: #d87359;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+}
+.nav-contact-write__line path {
+  vector-effect: non-scaling-stroke;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset .12s ease;
+}
+.nav-contact-write__pen {
+  width: 17px;
+  height: 17px;
+  position: absolute;
+  left: -8px;
+  top: 6px;
+  overflow: visible;
+  opacity: 0;
+  transform: translate3d(0, 0, 0) rotate(-17deg) scale(.88);
+  transform-origin: 4px 16px;
+  filter: drop-shadow(0 2px 2px rgba(16, 39, 48, .16));
+}
+.nav-contact-write__pen-body {
+  fill: #f7e8d5;
+  stroke: #163f3a;
+  stroke-width: 1.35;
+  stroke-linejoin: round;
+}
+.nav-contact-write__pen-band,
+.nav-contact-write__pen-nib {
+  fill: none;
+  stroke: #d87359;
+  stroke-width: 1.35;
+  stroke-linecap: round;
+}
+.nav-contact-write:hover::before,
+.nav-contact-write:focus-visible::before {
+  opacity: 0;
+  transform: scale(.72) rotate(-12deg);
+  animation-play-state: paused;
+}
+.nav-contact-write:hover .nav-contact-write__label,
+.nav-contact-write:focus-visible .nav-contact-write__label {
+  color: #163f3a;
+  transform: translateY(-2px);
+}
+.nav-contact-write:hover .nav-contact-write__line path,
+.nav-contact-write:focus-visible .nav-contact-write__line path {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset .64s cubic-bezier(.16,.72,.28,1) .05s;
+}
+.nav-contact-write:hover .nav-contact-write__pen,
+.nav-contact-write:focus-visible .nav-contact-write__pen {
+  animation: pmhnp-contact-pen-write .7s cubic-bezier(.2,.74,.27,1) .02s both;
+}
+@keyframes pmhnp-contact-pen-write {
+  0% { opacity: 0; transform: translate3d(0, 0, 0) rotate(-17deg) scale(.88); }
+  8% { opacity: 1; }
+  32% { opacity: 1; transform: translate3d(18px, -2px, 0) rotate(-10deg) scale(1); }
+  62% { opacity: 1; transform: translate3d(37px, 0, 0) rotate(-15deg) scale(1); }
+  88%, 100% { opacity: 1; transform: translate3d(54px, -1px, 0) rotate(-11deg) scale(.94); }
+}
 .contact-kicker {
   display: inline-flex;
   align-items: center;
@@ -395,4 +489,14 @@ body.mw-site .site-footer__legal a { font-size: .68rem; font-weight: 500; }
   }
   .service-card:hover .service-icon,
   .service-card:hover .service-icon > img { transform: none !important; }
+  .nav-contact-write::before,
+  .nav-contact-write__label,
+  .nav-contact-write__line path,
+  .nav-contact-write__pen { transition: none !important; }
+  .nav-contact-write:hover .nav-contact-write__pen,
+  .nav-contact-write:focus-visible .nav-contact-write__pen {
+    opacity: 1;
+    transform: translate3d(54px, -1px, 0) rotate(-11deg) scale(.94);
+    animation: none !important;
+  }
 }
