@@ -1,0 +1,17 @@
+# Public-site repository: private operations never belong in this tree.
+/private-dashboard/
+/outreach-log.json
+/tasks/
+/dual-notification-system.js
+/dynamic-task-system.js
+/pmhnp-email-monitor.js
+/pmhnp-email-webhook-system.js
+
+# Common private operational artifacts.
+**/.htpasswd
+**/prospects.json
+**/current-tasks.json
+**/live-alerts.json
+**/outreach.json
+**/*lead-database*
+**/*prospect-research*

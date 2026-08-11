@@ -1,9 +1,6 @@
 User-agent: *
 Allow: /
 
-# Keep private and utility pages out of discovery.
-Disallow: /private-dashboard/
-
 # Retired client-app routes stay crawlable so search engines can process
 # their noindex response and remove old URLs from search results.
 
