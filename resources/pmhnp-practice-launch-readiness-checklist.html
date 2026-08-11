@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <title>PMHNP Practice Launch Readiness Checklist | Billing Setup</title>
+  <meta name="description" content="A practical PMHNP launch checklist for identifiers, payer enrollment, EHR and clearinghouse setup, ERA/EFT, front-end workflows, and first claims.">
+  <link rel="canonical" href="https://pmhnpbilling.com/resources/pmhnp-practice-launch-readiness-checklist.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="PMHNP Practice Launch Readiness Checklist">
+  <meta property="og:description" content="Use seven billing-readiness gates to find what is ready, pending, payer-controlled, or blocking a PMHNP practice launch.">
+  <meta property="og:url" content="https://pmhnpbilling.com/resources/pmhnp-practice-launch-readiness-checklist.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PMHNP Practice Launch Readiness Checklist">
+  <meta name="twitter:description" content="An ungated worksheet for payer, system, workflow, claim, and remit readiness.">
+  <link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg?v=20260716b">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/modern-warm-site.css?v=20260811a">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://pmhnpbilling.com/"},
+          {"@type": "ListItem", "position": 2, "name": "PMHNP Practice Launch Readiness Checklist", "item": "https://pmhnpbilling.com/resources/pmhnp-practice-launch-readiness-checklist.html"}
+        ]
+      },
+      {
+        "@type": "Article",
+        "@id": "https://pmhnpbilling.com/resources/pmhnp-practice-launch-readiness-checklist.html#article",
+        "headline": "PMHNP Practice Launch Readiness Checklist",
+        "description": "A practical worksheet for validating identifiers, payer status, systems, front-end workflows, claims, remits, and recurring billing operations before launch.",
+        "datePublished": "2026-08-11",
+        "dateModified": "2026-08-11",
+        "mainEntityOfPage": "https://pmhnpbilling.com/resources/pmhnp-practice-launch-readiness-checklist.html",
+        "author": {"@type": "Organization", "@id": "https://pmhnpbilling.com/#organization", "name": "PMHNP Billing"},
+        "publisher": {"@type": "Organization", "@id": "https://pmhnpbilling.com/#organization", "name": "PMHNP Billing"}
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "What does billing-ready mean for a new PMHNP practice?", "acceptedAnswer": {"@type": "Answer", "text": "Billing-ready means the practice has verified entity, provider, location, payer, system, front-end, claim, remit, and payment-routing facts for the services it plans to provide. It is more than having an NPI, EHR account, or credentialing approval."}},
+          {"@type": "Question", "name": "Should every checklist item be revalidated for every claim?", "acceptedAnswer": {"@type": "Answer", "text": "No. Core configuration is validated during setup and after material changes. Routine clean claims can rely on established configuration, provider-approved encounters, ordinary scrubbing, and visible-field checks unless an exception or planned audit calls for deeper review."}},
+          {"@type": "Question", "name": "Does completing this checklist guarantee payer approval or payment?", "acceptedAnswer": {"@type": "Answer", "text": "No. The checklist reduces preventable operational gaps but cannot guarantee payer panel availability, credentialing, effective dates, coverage, adjudication, timing, or payment."}}
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="mw-site mw-service mw-resource">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <nav aria-label="Primary navigation">
+    <a class="logo" href="/" aria-label="PMHNP Billing home"><img class="logo-icon" src="/assets/identity/care-claim-mark.svg" alt="" aria-hidden="true" width="56" height="42"><span class="logo-text"><span>PMHNP</span><span class="dot"></span><span>BILLING</span></span></a>
+    <div class="nav-links"><a href="/services/pmhnp-billing-services.html">Billing</a><a href="/services/pmhnp-credentialing-services.html">Credentialing</a><a href="/services/pmhnp-practice-launch-support.html">Practice launch</a><a href="/blog/">Guides</a></div>
+    <a class="nav-cta" href="/?lead_source=launch-checklist&amp;lead_topic=practice-launch#contact" data-conversion-link data-lead-topic="practice-launch">Review launch readiness</a>
+  </nav>
+
+  <main id="main-content" class="offer-section">
+    <p class="eyebrow">Ungated working checklist</p>
+    <h1>PMHNP practice launch readiness checklist.</h1>
+    <p class="lead">Use this worksheet to separate what is verified, pending, payer-controlled, and actually blocking the billing path. It is designed for a solo or growing psychiatric practice preparing to see insured patients.</p>
+    <div class="service-actions" aria-label="Page actions"><a class="service-button service-button--primary" href="#checklist">Start the checklist</a><button class="service-button service-button--secondary print-button" type="button" onclick="window.print()">Print worksheet</button></div>
+
+    <section aria-labelledby="use-heading">
+      <p class="service-kicker">How to use it</p>
+      <h2 id="use-heading">Record evidence and the next action—not just a checkmark.</h2>
+      <p>For each item, mark one status: <strong>verified</strong>, <strong>in progress</strong>, <strong>payer/vendor controlled</strong>, <strong>blocked</strong>, or <strong>not applicable</strong>. Add the evidence, owner, and next action in your private operations record. Do not write credentials, banking data, patient information, PHI, or claim details on a public or shared copy.</p>
+      <div class="service-grid service-grid--three">
+        <article class="service-card"><h3>Verified</h3><p>There is current evidence for the actual provider/entity/location/payer combination—not an assumption or a status for a different setup.</p></article>
+        <article class="service-card"><h3>Controlled but pending</h3><p>The payer or vendor owns the next decision or processing step, and the follow-up date/reference is documented.</p></article>
+        <article class="service-card"><h3>Blocking</h3><p>A missing or conflicting fact prevents the next safe step. Name the owner and resolve it before treating that pathway as ready.</p></article>
+      </div>
+    </section>
+
+    <section id="checklist" aria-labelledby="gate-one">
+      <p class="service-kicker">Gate 1</p>
+      <h2 id="gate-one">Practice, provider, and location facts</h2>
+      <ul class="resource-checklist">
+        <li><span aria-hidden="true">□</span> Legal entity name, ownership, tax classification, EIN, and W-9 agree.</li>
+        <li><span aria-hidden="true">□</span> Individual NPI and—where the billing structure requires it—organization NPI are active and accurate.</li>
+        <li><span aria-hidden="true">□</span> Primary and secondary taxonomy choices reflect the provider and intended services.</li>
+        <li><span aria-hidden="true">□</span> Service, billing, mailing, and pay-to addresses are intentionally mapped.</li>
+        <li><span aria-hidden="true">□</span> State licenses, controlled-substance registrations where applicable, and malpractice coverage are current for the intended footprint.</li>
+        <li><span aria-hidden="true">□</span> Group/individual claim and payment structure is defined rather than inferred from practice size.</li>
+      </ul>
+      <div class="worksheet-row"><strong>Status:</strong> ____________________ <strong>Owner:</strong> ____________________ <strong>Next evidence/action:</strong> ________________________________________</div>
+    </section>
+
+    <section aria-labelledby="gate-two">
+      <p class="service-kicker">Gate 2</p>
+      <h2 id="gate-two">Payer enrollment and network status</h2>
+      <ul class="resource-checklist">
+        <li><span aria-hidden="true">□</span> Target payers and specific products/networks are listed by priority.</li>
+        <li><span aria-hidden="true">□</span> CAQH profile facts and documents match NPI, W-9, licenses, malpractice, addresses, ownership, and work history.</li>
+        <li><span aria-hidden="true">□</span> Each payer path has an application/reference number, current milestone, last contact, next follow-up, and owner.</li>
+        <li><span aria-hidden="true">□</span> Credentialing approval, contract execution, enrollment/roster load, group affiliation, directory status, and effective date are tracked separately.</li>
+        <li><span aria-hidden="true">□</span> Payer/product/location combinations that are not ready are explicitly blocked from being labeled “in network.”</li>
+        <li><span aria-hidden="true">□</span> Recredentialing, reattestation, and expiring-document dates have an owner.</li>
+      </ul>
+      <div class="worksheet-row"><strong>Status:</strong> ____________________ <strong>Owner:</strong> ____________________ <strong>Next evidence/action:</strong> ________________________________________</div>
+    </section>
+
+    <section aria-labelledby="gate-three">
+      <p class="service-kicker">Gate 3</p>
+      <h2 id="gate-three">EHR, clearinghouse, portals, EDI, ERA, and EFT</h2>
+      <ul class="resource-checklist">
+        <li><span aria-hidden="true">□</span> The selected EHR/practice-management system supports the intended providers, locations, services, telehealth workflows, and reporting needs.</li>
+        <li><span aria-hidden="true">□</span> Billing provider, rendering provider, facility/location, taxonomy, and payer IDs are configured for representative claim paths.</li>
+        <li><span aria-hidden="true">□</span> Clearinghouse enrollment and payer-specific EDI requirements are active where required.</li>
+        <li><span aria-hidden="true">□</span> Payer portal roles follow least-privilege access and have a named account owner.</li>
+        <li><span aria-hidden="true">□</span> ERA delivery is routed to the correct system and remits can be retrieved when an ERA is absent.</li>
+        <li><span aria-hidden="true">□</span> EFT/check payment routing and bank reconciliation ownership are documented without exposing banking credentials in this worksheet.</li>
+      </ul>
+      <div class="worksheet-row"><strong>Status:</strong> ____________________ <strong>Owner:</strong> ____________________ <strong>Next evidence/action:</strong> ________________________________________</div>
+    </section>
+
+    <section aria-labelledby="gate-four">
+      <p class="service-kicker">Gate 4</p>
+      <h2 id="gate-four">Scheduling, eligibility, benefits, and authorization controls</h2>
+      <ul class="resource-checklist">
+        <li><span aria-hidden="true">□</span> Patient demographic and insurance capture has a visible-field quality check.</li>
+        <li><span aria-hidden="true">□</span> Eligibility and benefits checks document the payer/product, date, source, and material limitations without treating them as a payment guarantee.</li>
+        <li><span aria-hidden="true">□</span> Referral and prior-authorization rules have a defined owner and tracking method where genuinely required.</li>
+        <li><span aria-hidden="true">□</span> Telehealth location/POS and modifier workflows are validated for the actual payer and service.</li>
+        <li><span aria-hidden="true">□</span> Patient estimates, financial policies, consent, and out-of-network communication are aligned with verified payer status.</li>
+        <li><span aria-hidden="true">□</span> Staff know which exceptions require a hold or escalation before the visit/claim.</li>
+      </ul>
+      <div class="worksheet-row"><strong>Status:</strong> ____________________ <strong>Owner:</strong> ____________________ <strong>Next evidence/action:</strong> ________________________________________</div>
+    </section>
+
+    <section aria-labelledby="gate-five">
+      <p class="service-kicker">Gate 5</p>
+      <h2 id="gate-five">Documentation, coding, and claim configuration</h2>
+      <ul class="resource-checklist">
+        <li><span aria-hidden="true">□</span> The provider understands that diagnoses and service codes must be selected or approved from the signed encounter.</li>
+        <li><span aria-hidden="true">□</span> Documentation completion and charge handoff have an ordinary cutoff and exception path.</li>
+        <li><span aria-hidden="true">□</span> Fee schedules and service lists are configured intentionally without using fabricated or placeholder codes.</li>
+        <li><span aria-hidden="true">□</span> Provider, payer, location, telehealth, and claim defaults are validated once and after material changes.</li>
+        <li><span aria-hidden="true">□</span> Routine clean claims use normal scrubbing and visible-field checks; new/conflicting/missing facts trigger deeper review.</li>
+        <li><span aria-hidden="true">□</span> Corrected claim, reconsideration, appeal, medical-record request, and timely-filing evidence paths are defined.</li>
+      </ul>
+      <div class="worksheet-row"><strong>Status:</strong> ____________________ <strong>Owner:</strong> ____________________ <strong>Next evidence/action:</strong> ________________________________________</div>
+    </section>
+
+    <section aria-labelledby="gate-six">
+      <p class="service-kicker">Gate 6</p>
+      <h2 id="gate-six">Representative claim and remit proof</h2>
+      <ul class="resource-checklist">
+        <li><span aria-hidden="true">□</span> A representative claim path reaches clearinghouse acceptance and payer acknowledgment.</li>
+        <li><span aria-hidden="true">□</span> Rejections enter an owned correction queue rather than disappearing after transmission.</li>
+        <li><span aria-hidden="true">□</span> Claim status can be followed through adjudication using the appropriate payer/clearinghouse evidence.</li>
+        <li><span aria-hidden="true">□</span> ERA/EOB can be retrieved, posted, and matched to the claim.</li>
+        <li><span aria-hidden="true">□</span> EFT/check activity can be reconciled to the remit and bank path.</li>
+        <li><span aria-hidden="true">□</span> A denial, underpayment, takeback, or missing-remit exception has a visible owner and next action.</li>
+      </ul>
+      <div class="worksheet-row"><strong>Status:</strong> ____________________ <strong>Owner:</strong> ____________________ <strong>Next evidence/action:</strong> ________________________________________</div>
+    </section>
+
+    <section aria-labelledby="gate-seven">
+      <p class="service-kicker">Gate 7</p>
+      <h2 id="gate-seven">Recurring operations after launch</h2>
+      <ul class="resource-checklist">
+        <li><span aria-hidden="true">□</span> Claim, posting, reconciliation, A/R, denial, and reporting cadences have named owners.</li>
+        <li><span aria-hidden="true">□</span> Missing encounters, rejections, aging claims, unapplied remits, and recoupments appear in actionable queues.</li>
+        <li><span aria-hidden="true">□</span> Payer, provider, location, EHR, clearinghouse, ownership, and banking changes trigger controlled revalidation.</li>
+        <li><span aria-hidden="true">□</span> Provider questions are limited to real clinical/documentation decisions; normal biller work stays with the billing owner.</li>
+        <li><span aria-hidden="true">□</span> Reporting distinguishes submitted, accepted, adjudicated, paid, denied, adjusted, and reconciled amounts.</li>
+        <li><span aria-hidden="true">□</span> A small planned sample audit supplements—not replaces—the routine clean-claim workflow.</li>
+      </ul>
+      <div class="worksheet-row"><strong>Status:</strong> ____________________ <strong>Owner:</strong> ____________________ <strong>Next evidence/action:</strong> ________________________________________</div>
+    </section>
+
+    <section aria-labelledby="launch-gate-heading">
+      <p class="service-kicker">Final launch gate</p>
+      <h2 id="launch-gate-heading">What must be true before “billing-ready” is accurate?</h2>
+      <div class="service-callout"><p>The actual provider, entity, location, payer/product, EHR, clearinghouse, claim, remit, and payment-routing combination has current evidence; known gaps have owners; payer-controlled items are labeled as such; staff know the front-end workflow; and no planned opening date is being used as a substitute for network or effective-date proof.</p></div>
+      <p>This does not guarantee payer approval, coverage, adjudication, processing time, or payment. It establishes a defensible operational starting point and a clear exception path.</p>
+    </section>
+
+    <section class="related" aria-labelledby="related-heading"><h2 id="related-heading">Turn the checklist into an operating plan</h2><ul><li><a href="/services/pmhnp-practice-launch-support.html">PMHNP practice-launch support</a></li><li><a href="/services/pmhnp-credentialing-services.html">Credentialing and payer enrollment support</a></li><li><a href="/services/pmhnp-billing-services.html">Full-service PMHNP billing</a></li><li><a href="/blog/starting-private-practice-pmhnp-billing-roadmap.html">Private-practice billing roadmap</a></li></ul></section>
+
+    <section class="cta" aria-labelledby="cta-heading"><p class="service-kicker">Direct review</p><h2 id="cta-heading">Know which missing item is actually blocking launch.</h2><p>Share your state, practice structure, target opening date, payer plans, EHR status, and the gates that remain uncertain. Keep the public-form summary patient-free.</p><div class="service-actions"><a class="service-button service-button--light" href="/?lead_source=launch-checklist&amp;lead_topic=practice-launch#contact" data-conversion-link data-lead-topic="practice-launch">Request a launch-readiness review</a></div></section>
+  </main>
+
+  <footer class="site-footer" aria-label="Site footer"><div class="site-footer__inner"><section class="site-footer__panel"><h3>Services</h3><ul><li><a href="/services/pmhnp-billing-services.html">Full-service billing</a></li><li><a href="/services/pmhnp-credentialing-services.html">Credentialing</a></li><li><a href="/services/pmhnp-practice-launch-support.html">Practice launch</a></li></ul></section><section class="site-footer__panel"><h3>Resources</h3><ul><li><a href="/resources/pmhnp-practice-launch-readiness-checklist.html">Launch-readiness checklist</a></li><li><a href="/blog/">Billing guides</a></li><li><a href="/#contact">Contact</a></li></ul></section></div><div class="site-footer__bottom"><span>&copy; 2026 PMHNP Billing LLC</span><nav class="site-footer__legal" aria-label="Site policies"><a href="/editorial-policy.html">Editorial policy</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></nav></div></footer>
+  <script src="/script.js?v=20260811a" defer></script>
+  <script src="/assets/analytics-config.js?v=20260709a"></script>
+  <script src="/assets/analytics.js?v=20260810a" defer></script>
+</body>
+</html>

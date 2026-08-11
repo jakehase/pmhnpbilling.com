@@ -545,8 +545,23 @@
     var submitButton = leadForm.querySelector('[type="submit"]');
 
     leadForm.addEventListener('submit', function (event) {
-      if (!window.fetch || !window.FormData || leadForm.dataset.submitting === 'true') return;
+      if (leadForm.dataset.submitting === 'true') {
+        event.preventDefault();
+        return;
+      }
+      if (!window.fetch || !window.FormData) return;
+
       event.preventDefault();
+      var submissionMeta = window.pmhnpPrepareLeadSubmission
+        ? window.pmhnpPrepareLeadSubmission(leadForm)
+        : {
+            lead_id: (leadForm.querySelector('[name="lead_id"]') || {}).value || '',
+            submission_type: (leadForm.querySelector('[name="submission_type"]') || {}).value || 'prospect',
+            attribution_version: (leadForm.querySelector('[name="attribution_version"]') || {}).value || '',
+            lead_topic: topicField ? topicField.value : 'general',
+            lead_source: (leadForm.querySelector('[name="lead_source"]') || {}).value || 'website'
+          };
+
       leadForm.dataset.submitting = 'true';
       if (submitButton) {
         submitButton.disabled = true;
@@ -557,9 +572,10 @@
         formStatus.classList.remove('form-status--error');
       }
       if (window.pmhnpTrack) {
-        window.pmhnpTrack('form_submit', {
+        window.pmhnpTrack('form_submit_attempt', {
           form_id: leadForm.id || 'contact-form',
-          lead_topic: topicField ? topicField.value : 'general'
+          lead_topic: submissionMeta.lead_topic,
+          submission_type: submissionMeta.submission_type
         });
       }
 
@@ -569,16 +585,34 @@
         headers: { Accept: 'application/json' }
       }).then(function (response) {
         if (!response.ok) throw new Error('Formspree rejected the submission with status ' + response.status);
+        if (window.pmhnpTrack) {
+          window.pmhnpTrack('form_submit_success', {
+            form_id: leadForm.id || 'contact-form',
+            lead_topic: submissionMeta.lead_topic,
+            submission_type: submissionMeta.submission_type
+          });
+        }
         try {
           window.sessionStorage.setItem('pmhnp_form_success', JSON.stringify({
             completed: true,
-            lead_topic: topicField ? topicField.value : 'general',
-            lead_source: (leadForm.querySelector('[name="lead_source"]') || {}).value || 'website'
+            accepted_at: new Date().toISOString(),
+            lead_id: submissionMeta.lead_id,
+            submission_type: submissionMeta.submission_type,
+            attribution_version: submissionMeta.attribution_version,
+            lead_topic: submissionMeta.lead_topic,
+            lead_source: submissionMeta.lead_source
           }));
         } catch (_) {}
         window.location.assign('/thank-you.html');
       }).catch(function () {
         leadForm.dataset.submitting = 'false';
+        if (window.pmhnpTrack) {
+          window.pmhnpTrack('form_submit_error', {
+            form_id: leadForm.id || 'contact-form',
+            lead_topic: submissionMeta.lead_topic,
+            submission_type: submissionMeta.submission_type
+          });
+        }
         if (submitButton) {
           submitButton.disabled = false;
           submitButton.textContent = 'Request a billing-fit review';
