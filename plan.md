@@ -6,7 +6,7 @@
 - Plan owner: Jake / Cortex
 - Created: 2026-08-10
 - Last updated: 2026-08-11
-- Status: release_candidate
+- Status: complete
 - Fidelity target: production_slice
 - Primary stop condition: `release_candidate_green_then_live_release_verified_or_blocker`
 - Status file: `STATUS.md`
@@ -312,7 +312,7 @@ No unresolved decision blocks the approved release.
 
 ## 19. Current milestone
 
-Current milestone: Phase D release. Privacy containment is deployed and live-verified; the acquisition release candidate is mechanically green and awaiting the reviewed commit, push, and production verification.
+Current milestone: complete. Privacy hotfix `7bda29b` and acquisition release `7b3f890` are on `origin/main`; the focused 91-check smoke and selected 12-endpoint live verification passed. Day-7/day-14/day-30 measurement is ongoing operations, not unfinished release implementation.
 
 ## 20. Truth boundary and stop condition
 
@@ -320,4 +320,4 @@ Claim allowed on release: the package was implemented, one focused smoke passed,
 
 Claim not allowed until measured: the release increased traffic, caused leads, achieved the 30-day targets, or improved conversion rate. Current-tree removal also does not prove historical Git copies, third-party caches, forks, or prior clones were erased.
 
-Stop when the release is live and verified with a recorded baseline/cadence, or when a concrete release blocker is recorded in `STATUS.md`.
+Stop condition reached on 2026-08-11: the release is live and verified with a recorded baseline and measurement cadence. No efficacy claim is made before post-release evidence exists.

@@ -59,3 +59,11 @@ Append-only durable decisions for this release.
 - Evidence: The focused smoke exercises accepted prospect, accepted test, unclassified success, direct thank-you, one-time consumption, and attribution initialization branches.
 - Supersedes: Any assumption that a production Formspree write is required for the mechanical release gate.
 - Follow-up: Reconcile the first naturally accepted prospect submission by `lead_id`; controlled future tests must use `lead_test=1` and remain excluded from `generate_lead`.
+
+## 2026-08-11 — Close the release at mechanical deployment truth
+
+- Decision: Mark the production slice complete after release commit `7b3f890`, the 91-check focused smoke, and the 12-surface live verification passed.
+- Reason: The approved implementation and publication contract is satisfied; acquisition efficacy requires later observation rather than more release scope.
+- Evidence: Restricted `focused-release-smoke.json`, `live-release-verification.json`, and `release-baseline.json` under the acquisition evidence root.
+- Supersedes: Release-candidate status.
+- Follow-up: Measure on 2026-08-18, 2026-08-25, and 2026-09-10 without converting operating targets into forecasts or retroactive success claims.
