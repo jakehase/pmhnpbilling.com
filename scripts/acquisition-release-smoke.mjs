@@ -108,6 +108,7 @@ try {
   assert(privacyOutput.includes('PASS'), 'tracked public tree privacy guard passes');
 
   run('node', ['--check', 'assets/analytics.js']);
+  run('node', ['--check', 'assets/modern-warm-site.js']);
   run('node', ['--check', 'script.js']);
   assert(true, 'JavaScript syntax checks pass');
 
@@ -160,6 +161,22 @@ try {
     assert(page.h1s.length === 1, `exactly one H1: ${page.rel}`);
     assert(page.jsonLd.length >= 1, `JSON-LD parses: ${page.rel}`, `${page.jsonLd.length} block(s)`);
   });
+
+  const sharedShellPages = pages.filter((page) => [
+    'services/pmhnp-billing-services.html',
+    'services/pmhnp-credentialing-services.html',
+    'services/pmhnp-practice-launch-support.html',
+    'resources/pmhnp-practice-launch-readiness-checklist.html'
+  ].includes(page.rel));
+  sharedShellPages.forEach((page) => {
+    assert(/<nav[^>]+aria-label=["']Primary navigation["'][^>]*>[\s\S]*?<div class=["']nav-inner["']>[\s\S]*?<ul class=["']nav-links["']>/i.test(page.html), `shared navigation shell is structurally compatible: ${page.rel}`);
+    assert(!/<div class=["']nav-links["']>/i.test(page.html), `navigation links use semantic list rather than unstyled div: ${page.rel}`);
+    assert(page.html.includes('/assets/modern-warm-site.js?v=20260811b'), `mobile navigation controller is loaded: ${page.rel}`);
+    assert(page.html.includes('/assets/modern-warm-site.css?v=20260811b'), `navigation CSS cache version is current: ${page.rel}`);
+  });
+  const sharedCss = read('assets/modern-warm-site.css');
+  assert(sharedCss.includes('body.mw-site .skip-link') && sharedCss.includes('body.mw-site .skip-link:focus'), 'skip link is visually hidden until keyboard focus');
+  assert(sharedCss.includes('body.mw-site nav ul a.nav-cta') && sharedCss.includes('body.mw-menu-open nav ul a.nav-cta'), 'desktop and mobile navigation CTA styles are present');
 
   const allHtml = [];
   function walkHtml(dir) {
