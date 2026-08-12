@@ -96,8 +96,7 @@ body > nav {
 .nav-intake-btn:hover { color: #fff; border-color: var(--mw-blue); background: var(--mw-blue); transform: translateY(-1px); }
 
 /* Hero */
-.hero-wrapper,
-.hero-wrapper--spheres-luxe {
+.hero-wrapper {
   min-height: auto;
   padding-top: 78px;
   overflow: hidden;
@@ -116,9 +115,6 @@ body > nav {
   box-shadow: 0 0 0 60px rgba(40,100,220,.025), 0 0 0 120px rgba(40,100,220,.018);
   pointer-events: none;
 }
-.hero-bg,
-.hero-luxe-stage,
-.hero-shape { display: none; }
 .hero {
   width: min(1180px, calc(100% - 48px));
   max-width: none;
