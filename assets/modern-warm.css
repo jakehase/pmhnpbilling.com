@@ -441,7 +441,7 @@ body > nav {
   margin: 0 auto;
   padding: 1.45rem 1.65rem;
   display: grid;
-  grid-template-columns: 104px minmax(0, 1fr) auto;
+  grid-template-columns: 92px minmax(0, 1fr) auto;
   gap: 1.5rem;
   align-items: center;
   background: var(--mw-white);
@@ -449,14 +449,20 @@ body > nav {
   border-radius: 24px;
   box-shadow: 0 18px 46px rgba(34, 55, 61, .09);
 }
-.founder-intro__photo {
-  width: 104px;
-  height: 104px;
+.founder-intro__mark {
+  width: 92px;
+  height: 92px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(145deg, rgba(40, 100, 220, .1), rgba(191, 227, 210, .58));
+  border: 1px solid rgba(40, 100, 220, .12);
+  border-radius: 24px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.9), 0 12px 26px rgba(16, 39, 48, .1);
+}
+.founder-intro__mark img {
+  width: 62px;
+  height: auto;
   display: block;
-  object-fit: cover;
-  border: 4px solid #fff;
-  border-radius: 20px;
-  box-shadow: 0 12px 26px rgba(16, 39, 48, .14);
 }
 .founder-intro__copy .section-label { margin-bottom: .38rem; }
 .founder-intro__copy h2 {
@@ -741,11 +747,12 @@ body > nav {
   .founder-intro { padding: 2.6rem 1rem; }
   .founder-intro__card {
     padding: 1.2rem;
-    grid-template-columns: 76px minmax(0, 1fr);
+    grid-template-columns: 68px minmax(0, 1fr);
     gap: 1rem;
     border-radius: 20px;
   }
-  .founder-intro__photo { width: 76px; height: 76px; border-radius: 16px; }
+  .founder-intro__mark { width: 68px; height: 68px; border-radius: 18px; }
+  .founder-intro__mark img { width: 48px; }
   .founder-intro__copy .section-label { margin-bottom: .3rem; }
   .founder-intro__copy h2 { font-size: 1.45rem; }
   .founder-intro__copy p { margin-top: .45rem; font-size: .9375rem; }
