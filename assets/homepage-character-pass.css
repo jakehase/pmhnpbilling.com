@@ -1,0 +1,222 @@
+/* Homepage service hierarchy approved 2026-08-26. Loaded after the base theme. */
+.services .services-grid {
+    display: grid;
+    width: min(1160px, 100%);
+    max-width: 1160px;
+    grid-template-columns: minmax(0, 1fr) minmax(330px, 1.28fr) minmax(0, 1fr);
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+    gap: 1rem 1.2rem;
+    align-items: stretch;
+}
+.services .service-card {
+    border: 1px solid #dfe7ea;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, .96);
+    box-shadow: 0 8px 24px rgba(16, 39, 48, .055);
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.services .service-card:hover {
+    transform: translateY(-4px);
+    border-color: #9ccfdf;
+    box-shadow: 0 18px 38px rgba(16, 63, 85, .10);
+}
+.services .service-card.service-card--satellite {
+    display: grid;
+    min-height: 170px;
+    padding: 1.25rem;
+    grid-template-columns: 66px minmax(0, 1fr);
+    grid-template-areas:
+        "icon title"
+        "icon copy"
+        "icon link";
+    column-gap: 1rem;
+    row-gap: .42rem;
+    align-content: center;
+    color: #102730;
+    background: rgba(255, 255, 255, .96);
+}
+.services .service-card--credentialing { grid-column: 1; grid-row: 1; }
+.services .service-card--launch { grid-column: 1; grid-row: 2; }
+.services .service-card--prior-auth { grid-column: 1; grid-row: 3; }
+.services .service-card--denials { grid-column: 3; grid-row: 1; }
+.services .service-card--telehealth { grid-column: 3; grid-row: 2; }
+.services .service-card--revenue { grid-column: 3; grid-row: 3; }
+.services .service-card.service-card--core {
+    position: relative;
+    display: flex;
+    min-height: 100%;
+    padding: clamp(2rem, 4vw, 3rem);
+    overflow: hidden;
+    grid-column: 2;
+    grid-row: 1 / 4;
+    flex-direction: column;
+    justify-content: center;
+    border: 0;
+    border-radius: 28px;
+    background: linear-gradient(155deg, #2864dc 0%, #164f74 62%, #17685d 100%);
+    box-shadow: 0 24px 56px rgba(16, 63, 85, .22);
+    color: #fff;
+}
+.services .service-card--core:hover {
+    transform: translateY(-4px);
+    border-color: transparent;
+    box-shadow: 0 30px 64px rgba(16, 63, 85, .26);
+}
+.services .service-card--core::before {
+    content: "";
+    position: absolute;
+    top: -110px;
+    right: -85px;
+    width: 230px;
+    height: 230px;
+    border: 1px solid rgba(255, 255, 255, .17);
+    border-radius: 50%;
+    box-shadow: 0 0 0 36px rgba(255, 255, 255, .045), 0 0 0 76px rgba(255, 255, 255, .025);
+}
+.services .service-core-kicker {
+    position: relative;
+    align-self: flex-start;
+    margin: 0 0 1.1rem;
+    padding: .48rem .72rem;
+    border: 1px solid rgba(255, 255, 255, .22);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .10);
+    color: #d9f6e9;
+    font-size: .7rem;
+    font-weight: 800;
+    letter-spacing: .11em;
+    text-transform: uppercase;
+}
+.services .service-card--satellite .service-icon {
+    grid-area: icon;
+    align-self: start;
+    margin: 0;
+}
+.services .service-card--core .service-icon {
+    position: relative;
+    width: 78px !important;
+    height: 68px !important;
+    margin: 0 0 1.35rem;
+    border-color: rgba(255, 255, 255, .7) !important;
+    background: rgba(255, 255, 255, .94) !important;
+}
+.services .service-card--core .service-icon > img {
+    width: 72px;
+    height: 64px;
+    max-height: 64px;
+}
+.services .service-card--core:hover .service-icon {
+    transform: translateY(-2px) rotate(-1deg) !important;
+    background: #fff !important;
+}
+.services .service-card--satellite h3 {
+    grid-area: title;
+    margin: 0;
+    color: #102730;
+    font-family: var(--mw-display), 'DM Serif Display', Georgia, serif;
+    font-size: 1.08rem;
+    font-weight: 400;
+    line-height: 1.15;
+}
+.services .service-card--satellite p {
+    grid-area: copy;
+    margin: 0;
+    color: #64747b;
+    font-size: .82rem;
+    line-height: 1.52;
+}
+.services .service-card--satellite .service-link {
+    grid-area: link;
+    align-self: start;
+    margin: .1rem 0 0;
+    color: #1d4ed8;
+    font-size: .78rem;
+    font-weight: 750;
+    line-height: 1.35;
+}
+.services .service-card--core h3 {
+    position: relative;
+    margin: 0 0 .85rem;
+    color: #fff;
+    font-family: var(--mw-display), 'DM Serif Display', Georgia, serif;
+    font-size: clamp(2rem, 3vw, 2.65rem);
+    font-weight: 400;
+    line-height: 1.03;
+    letter-spacing: -.025em;
+}
+.services .service-card--core > p {
+    position: relative;
+    margin: 0 0 1.4rem;
+    color: rgba(255, 255, 255, .79);
+    font-size: .98rem;
+    line-height: 1.68;
+}
+.services .service-core-list {
+    position: relative;
+    display: grid;
+    gap: .72rem;
+    margin: 0 0 1.7rem;
+    padding: 0;
+    list-style: none;
+}
+.services .service-core-list li {
+    position: relative;
+    padding-left: 1.55rem;
+    color: rgba(255, 255, 255, .93);
+    font-size: .88rem;
+    font-weight: 650;
+    line-height: 1.4;
+}
+.services .service-core-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #9be1bf;
+    font-weight: 900;
+}
+.services .service-card.service-card--core .service-link,
+.services .service-card.service-card--core .service-link:visited {
+    position: relative;
+    align-self: flex-start;
+    margin: 0;
+    padding: .8rem 1rem;
+    border-radius: 999px;
+    background: #fff;
+    color: #103f55;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
+    font-size: .88rem;
+    font-weight: 800;
+}
+.services .service-card--core .service-link:hover {
+    transform: translateY(-1px);
+    text-decoration: none;
+}
+@media (max-width: 1050px) {
+    .services .services-grid {
+        max-width: 900px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto;
+    }
+    .services .service-card.service-card--core {
+        min-height: 390px;
+        grid-column: 1 / -1;
+        grid-row: auto;
+    }
+    .services .service-card.service-card--satellite { grid-column: auto; grid-row: auto; }
+}
+@media (max-width: 640px) {
+    .services .services-grid { grid-template-columns: 1fr; }
+    .services .service-card.service-card--core {
+        min-height: auto;
+        padding: 2rem;
+        grid-column: 1;
+    }
+    .services .service-card.service-card--satellite {
+        min-height: 0;
+        grid-template-columns: 62px minmax(0, 1fr);
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .services .service-card,
+    .services .service-icon { transition: none; }
+}

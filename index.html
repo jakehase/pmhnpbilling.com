@@ -708,7 +708,7 @@
 
         /* Mobile */
         @media (max-width: 900px) {
-            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             .trust-grid { grid-template-columns: repeat(2, 1fr); }
             .contact-wrapper { grid-template-columns: 1fr; gap: 2.5rem; }
             .about-profile { grid-template-columns: 1fr; }
@@ -752,6 +752,8 @@
     <link rel="stylesheet" href="assets/live-fixes.css?v=20260812mobilescroll">
     <link rel="stylesheet" href="assets/modern-warm.css?v=20260812mobilescroll">
     <link rel="stylesheet" href="/assets/custom-identity.css?v=20260731contactpen">
+    <link rel="stylesheet" href="/assets/site-side-rails.css?v=20260826a">
+    <link rel="stylesheet" href="/assets/homepage-character-pass.css?v=20260826a">
 
     <meta property="og:image" content="https://pmhnpbilling.com/assets/pmhnp-billing-social-card.png">
     <meta property="og:image:secure_url" content="https://pmhnpbilling.com/assets/pmhnp-billing-social-card.png">
@@ -941,48 +943,56 @@
             <h2 class="section-title">What I offer</h2>
         </div>
         <div class="services-grid">
-            <div class="service-card fade-in">
-                <a class="service-icon" href="/services/pmhnp-billing-services.html" aria-label="Explore PMHNP Billing Services"><img src="/assets/identity/claims-mark.svg" alt="" aria-hidden="true" width="80" height="72"></a>
-                <h3>Claims Management</h3>
-                <p>Accurate claim submission with payer follow-up and clean-claim controls to protect reimbursement speed.</p>
+            <article class="service-card service-card--core fade-in">
+                <div class="service-core-kicker">Core service</div>
+                <a class="service-icon" href="/services/pmhnp-billing-services.html" aria-label="Explore Full-Service PMHNP Billing"><img src="/assets/identity/claims-mark.svg" alt="" aria-hidden="true" width="80" height="72"></a>
+                <h3>Full-Service Claims Management</h3>
+                <p>The central billing workflow—from a careful claim review through payment reconciliation and payer follow-up.</p>
+                <ul class="service-core-list" aria-label="Full-service billing includes">
+                    <li>Clean-claim review and submission</li>
+                    <li>Payment posting and reconciliation</li>
+                    <li>Payer follow-up through resolution</li>
+                </ul>
                 <a class="service-link" href="/services/pmhnp-billing-services.html">Explore PMHNP Billing Services →</a>
-            </div>
-            <div class="service-card fade-in">
-                <a class="service-icon" href="/services/prior-authorization-support.html" aria-label="Explore Prior Authorization Support"><img src="/assets/identity/prior-auth-mark.svg" alt="" aria-hidden="true" width="80" height="72"></a>
-                <h3>Prior Authorization Support</h3>
-                <p>Structured medication authorization workflows, status tracking, and escalation steps to prevent treatment delays.</p>
-                <a class="service-link" href="/services/prior-authorization-support.html">Explore Prior Authorization Support →</a>
-            </div>
-            <div class="service-card fade-in">
+            </article>
+
+            <article class="service-card service-card--satellite service-card--credentialing fade-in">
                 <a class="service-icon" href="/services/pmhnp-credentialing-services.html" aria-label="Explore Credentialing Services"><img src="/assets/identity/credential-mark.svg" alt="" aria-hidden="true" width="80" height="72"></a>
                 <h3>PMHNP Credentialing Services</h3>
                 <p>Enrollment planning, CAQH upkeep, and payer follow-through from application through first-claim readiness.</p>
                 <a class="service-link" href="/services/pmhnp-credentialing-services.html">Explore Credentialing Services →</a>
-            </div>
-            <div class="service-card fade-in">
+            </article>
+            <article class="service-card service-card--satellite service-card--launch fade-in">
                 <a class="service-icon" href="/services/pmhnp-practice-launch-support.html" aria-label="Explore PMHNP Practice Launch Support"><img src="/assets/identity/care-claim-mark.svg" alt="" aria-hidden="true" width="80" height="72"></a>
                 <h3>PMHNP Practice Launch Support</h3>
                 <p>Coordinate payer enrollment, EHR and clearinghouse setup, front-end workflows, and first-claim reconciliation.</p>
                 <a class="service-link" href="/services/pmhnp-practice-launch-support.html">Explore Practice Launch Support →</a>
-            </div>
-            <div class="service-card fade-in">
+            </article>
+            <article class="service-card service-card--satellite service-card--prior-auth fade-in">
+                <a class="service-icon" href="/services/prior-authorization-support.html" aria-label="Explore Prior Authorization Support"><img src="/assets/identity/prior-auth-mark.svg" alt="" aria-hidden="true" width="80" height="72"></a>
+                <h3>Prior Authorization Support</h3>
+                <p>Structured medication authorization workflows, status tracking, and escalation steps to prevent treatment delays.</p>
+                <a class="service-link" href="/services/prior-authorization-support.html">Explore Prior Authorization Support →</a>
+            </article>
+
+            <article class="service-card service-card--satellite service-card--denials fade-in">
                 <a class="service-icon" href="/services/denial-management-appeals-pmhnp.html" aria-label="Explore Denial Management and Appeals"><img src="/assets/identity/denial-mark.svg" alt="" aria-hidden="true" width="80" height="72"></a>
                 <h3>Denial Management &amp; Appeals</h3>
                 <p>Denial triage, root-cause tracking, and structured appeals built for PMHNP claim patterns.</p>
                 <a class="service-link" href="/services/denial-management-appeals-pmhnp.html">Explore Denial Management &amp; Appeals →</a>
-            </div>
-            <div class="service-card fade-in">
+            </article>
+            <article class="service-card service-card--satellite service-card--telehealth fade-in">
                 <a class="service-icon" href="/services/telehealth-billing-compliance-support.html" aria-label="Explore Telehealth Billing Compliance Support"><img src="/assets/identity/telehealth-mark.svg" alt="" aria-hidden="true" width="80" height="72"></a>
                 <h3>Telehealth Billing Compliance Support</h3>
                 <p>POS 02/10, modifier usage, and documentation controls that keep PMHNP telehealth claims clean.</p>
                 <a class="service-link" href="/services/telehealth-billing-compliance-support.html">Explore Telehealth Billing Compliance →</a>
-            </div>
-            <div class="service-card fade-in">
+            </article>
+            <article class="service-card service-card--satellite service-card--revenue fade-in">
                 <a class="service-icon" href="/services/pmhnp-billing-services.html" aria-label="See Full PMHNP Billing Services"><img src="/assets/identity/payment-mark.svg" alt="" aria-hidden="true" width="80" height="72"></a>
                 <h3>Revenue Review</h3>
                 <p>Periodic review of billing operations to find leakage points and improve PMHNP reimbursement performance.</p>
                 <a class="service-link" href="/services/pmhnp-billing-services.html">See Full PMHNP Billing Services →</a>
-            </div>
+            </article>
         </div>
     </section>
 
@@ -1209,6 +1219,7 @@
 </footer>
 
     <script src="script.js?v=20260812mobilescroll" defer></script>
+  <script src="/assets/site-side-rails.js?v=20260826a" defer></script>
   <script src="/assets/analytics-config.js?v=20260709a"></script>
   <script src="/assets/analytics.js?v=20260810a" defer></script>
 </body>
