@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="index,follow,max-image-preview:large">
+    <base href="https://pmhnpbilling.com/">
+    <meta name="robots" content="noindex,nofollow,noarchive">
     <meta name="pmhnp-release" content="acquisition-2026-08-v1">
-    <title>PMHNP Billing Services | 5% of Collections, No Minimum</title>
+    <title>[Interactive Preview] PMHNP Billing Side Rails</title>
     <meta name="description" content="Nationwide PMHNP billing for psychiatric practices at 5% of collections, with no setup fee or monthly minimum. Claims, denials, payments, and RCM.">
 
     <!-- Open Graph / Social Media -->
@@ -773,6 +774,267 @@
   }
 }
 </script>
+    <style id="side-rail-preview-styles">
+/* Interactive side-rail concept — preview branch only. */
+#side-rail-concept {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #123f55;
+  display: none;
+}
+#side-rail-concept * { box-sizing: border-box; }
+.side-rail-left,
+.side-rail-right {
+  position: absolute;
+  top: 126px;
+  bottom: 34px;
+  width: 112px;
+}
+.side-rail-left { left: 18px; }
+.side-rail-right { right: 18px; }
+.side-rail-spine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 31px;
+  width: 1px;
+  background: linear-gradient(180deg, rgba(18,63,85,.08), rgba(18,63,85,.35) 15%, rgba(18,63,85,.28) 84%, rgba(18,63,85,.05));
+}
+.side-rail-progress {
+  position: absolute;
+  top: 0;
+  left: 30px;
+  width: 3px;
+  height: 12%;
+  border-radius: 9px;
+  background: #f47e68;
+  box-shadow: 0 0 0 4px rgba(244,126,104,.10);
+  transition: height .25s ease;
+}
+.side-rail-kicker {
+  position: absolute;
+  left: 7px;
+  top: 0;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 9px;
+  letter-spacing: .17em;
+  font-weight: 800;
+  color: rgba(18,63,85,.62);
+}
+.side-rail-steps {
+  position: absolute;
+  left: 20px;
+  top: 82px;
+  right: 0;
+  display: grid;
+  gap: 54px;
+}
+.side-rail-step {
+  display: grid;
+  grid-template-columns: 23px 1fr;
+  gap: 9px;
+  align-items: center;
+  color: rgba(18,63,85,.50);
+}
+.side-rail-dot {
+  width: 23px;
+  height: 23px;
+  border: 1px solid rgba(18,63,85,.22);
+  border-radius: 50%;
+  background: #faf6ed;
+  display: grid;
+  place-items: center;
+  font-size: 10px;
+  font-weight: 900;
+  box-shadow: 0 3px 12px rgba(18,63,85,.05);
+}
+.side-rail-step span:last-child {
+  font-size: 9px;
+  line-height: 1.25;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  font-weight: 800;
+  white-space: nowrap;
+}
+.side-rail-step.active { color: #123f55; }
+.side-rail-step.active .side-rail-dot {
+  background: #f47e68;
+  border-color: #f47e68;
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(244,126,104,.28);
+}
+.side-rail-step.done .side-rail-dot {
+  background: #7ec7a8;
+  border-color: #7ec7a8;
+  color: #0c3f54;
+}
+.side-rail-note {
+  position: absolute;
+  right: 0;
+  top: 58px;
+  width: 102px;
+  padding: 13px 11px 12px;
+  background: #fffdf8;
+  border: 1px solid rgba(18,63,85,.20);
+  box-shadow: 0 7px 20px rgba(18,63,85,.10);
+  transform: rotate(1.8deg);
+}
+.side-rail-note::before {
+  content: '';
+  position: absolute;
+  top: -7px;
+  left: 31px;
+  width: 36px;
+  height: 13px;
+  background: rgba(108,203,231,.50);
+  transform: rotate(-3deg);
+}
+.side-rail-note strong {
+  display: block;
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 14px;
+  line-height: 1.05;
+  color: #123f55;
+  margin-bottom: 5px;
+}
+.side-rail-note small {
+  display: block;
+  font-size: 9px;
+  line-height: 1.35;
+  color: rgba(18,63,85,.66);
+}
+.side-rail-check {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 8px;
+  font-size: 9px;
+  font-weight: 800;
+  color: #123f55;
+}
+.side-rail-check b {
+  display: grid;
+  place-items: center;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #7ec7a8;
+  font-size: 10px;
+}
+.side-rail-tabs {
+  position: absolute;
+  right: 0;
+  top: 272px;
+  display: grid;
+  gap: 8px;
+  justify-items: end;
+}
+.side-rail-tab {
+  min-width: 72px;
+  padding: 9px 9px 8px;
+  border: 1px solid rgba(18,63,85,.16);
+  border-right: 0;
+  border-radius: 4px 0 0 4px;
+  background: #faf6ed;
+  box-shadow: 0 4px 12px rgba(18,63,85,.06);
+  font-size: 9px;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-weight: 850;
+  color: rgba(18,63,85,.58);
+  transform: translateX(18px);
+  transition: transform .2s ease, background .2s ease, color .2s ease;
+}
+.side-rail-tab.active {
+  transform: translateX(6px);
+  background: #6ccbe7;
+  color: #0d3f54;
+  border-color: #6ccbe7;
+  min-width: 88px;
+}
+.side-rail-stamp {
+  position: absolute;
+  right: 3px;
+  bottom: 4px;
+  width: 89px;
+  height: 89px;
+  border: 2px solid rgba(244,126,104,.55);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  transform: rotate(-7deg);
+  color: rgba(205,80,63,.74);
+  font-size: 9px;
+  line-height: 1.15;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  background: rgba(250,246,237,.72);
+}
+.side-rail-stamp::after {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border: 1px dashed rgba(244,126,104,.52);
+  border-radius: 50%;
+}
+#side-rail-preview-toolbar {
+  position: fixed;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: calc(100vw - 28px);
+  padding: 7px 8px 7px 13px;
+  border: 1px solid rgba(18,63,85,.18);
+  border-radius: 999px;
+  background: rgba(255,253,248,.96);
+  box-shadow: 0 8px 28px rgba(18,63,85,.16);
+  color: #123f55;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+#side-rail-preview-toolbar button {
+  border: 0;
+  border-radius: 999px;
+  padding: 7px 11px;
+  background: #123f55;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+#side-rail-preview-toolbar .wide-screen-note { display: none; }
+body.side-rails-hidden #side-rail-concept { display: none !important; }
+.preview-form-message {
+  margin-top: .75rem;
+  color: #123f55;
+  font-size: .9rem;
+  font-weight: 700;
+}
+@media (min-width: 1380px) {
+  #side-rail-concept { display: block; }
+}
+@media (max-width: 1379px) {
+  #side-rail-preview-toolbar .desktop-note { display: none; }
+  #side-rail-preview-toolbar .wide-screen-note { display: inline; }
+  #side-rail-preview-toolbar button { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .side-rail-progress,
+  .side-rail-tab { transition: none; }
+}
+</style>
 </head>
 <body id="top" class="mw-site">
     <nav>
@@ -1209,7 +1471,121 @@
 </footer>
 
     <script src="script.js?v=20260812mobilescroll" defer></script>
-  <script src="/assets/analytics-config.js?v=20260709a"></script>
-  <script src="/assets/analytics.js?v=20260810a" defer></script>
+  <!-- Analytics intentionally disabled in this public design mockup. -->
+  <script id="side-rail-preview-script">
+(() => {
+  const rail = document.createElement('div');
+  rail.id = 'side-rail-concept';
+  rail.setAttribute('aria-hidden', 'true');
+  rail.innerHTML = `
+    <div class="side-rail-left">
+      <div class="side-rail-kicker">YOUR CLAIM, PERSONALLY MANAGED</div>
+      <div class="side-rail-spine"></div>
+      <div class="side-rail-progress"></div>
+      <div class="side-rail-steps">
+        <div class="side-rail-step active"><span class="side-rail-dot">01</span><span>Set up<br>carefully</span></div>
+        <div class="side-rail-step"><span class="side-rail-dot">02</span><span>Submit<br>clean</span></div>
+        <div class="side-rail-step"><span class="side-rail-dot">03</span><span>Follow<br>through</span></div>
+        <div class="side-rail-step"><span class="side-rail-dot">04</span><span>Reconcile<br>&amp; report</span></div>
+      </div>
+    </div>
+    <div class="side-rail-right">
+      <div class="side-rail-note">
+        <strong>Handled<br>by Jake</strong>
+        <small>One careful set of eyes from setup through follow-up.</small>
+        <div class="side-rail-check"><b>✓</b> Personally reviewed</div>
+      </div>
+      <div class="side-rail-tabs">
+        <div class="side-rail-tab active" data-preview-section="overview">Overview</div>
+        <div class="side-rail-tab" data-preview-section="services">Services</div>
+        <div class="side-rail-tab" data-preview-section="about">About Jake</div>
+        <div class="side-rail-tab" data-preview-section="faq">FAQ</div>
+        <div class="side-rail-tab" data-preview-section="contact">Contact</div>
+      </div>
+      <div class="side-rail-stamp">Direct<br>accountability<br>nationwide</div>
+    </div>`;
+  document.body.appendChild(rail);
+
+  const toolbar = document.createElement('div');
+  toolbar.id = 'side-rail-preview-toolbar';
+  toolbar.innerHTML = `
+    <span class="desktop-note">Interactive concept · production unchanged</span>
+    <span class="wide-screen-note">Open on a wider screen to see the side rails</span>
+    <button type="button" aria-pressed="true">Hide rails</button>`;
+  document.body.appendChild(toolbar);
+
+  const button = toolbar.querySelector('button');
+  button.addEventListener('click', () => {
+    const hidden = document.body.classList.toggle('side-rails-hidden');
+    button.textContent = hidden ? 'Show rails' : 'Hide rails';
+    button.setAttribute('aria-pressed', String(!hidden));
+  });
+
+  const progress = rail.querySelector('.side-rail-progress');
+  const steps = [...rail.querySelectorAll('.side-rail-step')];
+  const tabs = [...rail.querySelectorAll('.side-rail-tab')];
+  const targets = [
+    { key: 'overview', element: document.querySelector('main') },
+    { key: 'services', element: document.getElementById('services') },
+    { key: 'about', element: document.getElementById('about') },
+    { key: 'faq', element: document.getElementById('faq') },
+    { key: 'contact', element: document.getElementById('contact') }
+  ].filter(item => item.element);
+
+  let ticking = false;
+  const update = () => {
+    const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    const ratio = Math.max(0, Math.min(1, window.scrollY / maxScroll));
+    progress.style.height = `${Math.max(12, Math.min(94, 12 + ratio * 82))}%`;
+
+    const stepIndex = Math.min(steps.length - 1, Math.floor(ratio * steps.length));
+    steps.forEach((step, index) => {
+      step.classList.toggle('active', index === stepIndex);
+      step.classList.toggle('done', index < stepIndex);
+    });
+
+    const checkpoint = window.scrollY + window.innerHeight * 0.42;
+    let activeKey = targets[0]?.key || 'overview';
+    for (const target of targets) {
+      if (target.element.offsetTop <= checkpoint) activeKey = target.key;
+    }
+    tabs.forEach(tab => tab.classList.toggle('active', tab.dataset.previewSection === activeKey));
+    ticking = false;
+  };
+  const scheduleUpdate = () => {
+    if (!ticking) {
+      ticking = true;
+      window.requestAnimationFrame(update);
+    }
+  };
+  window.addEventListener('scroll', scheduleUpdate, { passive: true });
+  window.addEventListener('resize', scheduleUpdate, { passive: true });
+  update();
+
+  // Keep the mockup safely read-only: no lead submission or analytics event leaves this preview.
+  const form = document.getElementById('contact-form');
+  if (form) {
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      let message = form.querySelector('.preview-form-message');
+      if (!message) {
+        message = document.createElement('p');
+        message.className = 'preview-form-message';
+        form.appendChild(message);
+      }
+      message.textContent = 'Preview only — form submission is disabled on this mockup.';
+    }, true);
+  }
+
+  // Keep same-page navigation inside the mockup despite the live-site base URL.
+  document.querySelectorAll('a[href^="/#"]').forEach(link => {
+    const id = link.getAttribute('href').slice(2);
+    const target = document.getElementById(id);
+    if (!target) return;
+    link.setAttribute('href', `#${id}`);
+  });
+})();
+</script>
 </body>
 </html>
