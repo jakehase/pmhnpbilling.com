@@ -211,6 +211,14 @@
             text-decoration: underline;
         }
 
+        /* Critical first-paint sizing prevents the inline search SVG from expanding before shared CSS loads. */
+        .blog-search-input-wrap .blog-search-icon {
+            display: block;
+            width: 16px;
+            height: 16px;
+            flex: 0 0 16px;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             nav { padding: 1rem; }
@@ -297,7 +305,7 @@
         <div class="blog-search-panel motion-surface" data-scroll-reveal data-reveal-delay="80">
             <label class="blog-search-label" for="blogSearch">Search billing guides</label>
             <div class="blog-search-input-wrap">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path stroke-linecap="round" d="m20 20-3.5-3.5"></path></svg>
+                <svg class="blog-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path stroke-linecap="round" d="m20 20-3.5-3.5"></path></svg>
                 <input id="blogSearch" type="search" placeholder="Search credentialing, denials, prior auth, telehealth..." />
             </div>
             <div id="blogSearchMeta" class="blog-search-meta" aria-live="polite"></div>
