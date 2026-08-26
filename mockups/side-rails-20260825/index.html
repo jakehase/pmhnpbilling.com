@@ -872,63 +872,10 @@
   border-color: #7ec7a8;
   color: #0c3f54;
 }
-.side-rail-note {
-  position: absolute;
-  right: 0;
-  top: 58px;
-  width: 102px;
-  padding: 13px 11px 12px;
-  background: #fffdf8;
-  border: 1px solid rgba(18,63,85,.20);
-  box-shadow: 0 7px 20px rgba(18,63,85,.10);
-  transform: rotate(1.8deg);
-}
-.side-rail-note::before {
-  content: '';
-  position: absolute;
-  top: -7px;
-  left: 31px;
-  width: 36px;
-  height: 13px;
-  background: rgba(108,203,231,.50);
-  transform: rotate(-3deg);
-}
-.side-rail-note strong {
-  display: block;
-  font-family: 'DM Serif Display', Georgia, serif;
-  font-size: 14px;
-  line-height: 1.05;
-  color: #123f55;
-  margin-bottom: 5px;
-}
-.side-rail-note small {
-  display: block;
-  font-size: 9px;
-  line-height: 1.35;
-  color: rgba(18,63,85,.66);
-}
-.side-rail-check {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  margin-top: 8px;
-  font-size: 9px;
-  font-weight: 800;
-  color: #123f55;
-}
-.side-rail-check b {
-  display: grid;
-  place-items: center;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background: #7ec7a8;
-  font-size: 10px;
-}
 .side-rail-tabs {
   position: absolute;
   right: 0;
-  top: 272px;
+  top: 126px;
   display: grid;
   gap: 8px;
   justify-items: end;
@@ -956,33 +903,6 @@
   color: #0d3f54;
   border-color: #6ccbe7;
   min-width: 88px;
-}
-.side-rail-stamp {
-  position: absolute;
-  right: 3px;
-  bottom: 4px;
-  width: 89px;
-  height: 89px;
-  border: 2px solid rgba(244,126,104,.55);
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  text-align: center;
-  transform: rotate(-7deg);
-  color: rgba(205,80,63,.74);
-  font-size: 9px;
-  line-height: 1.15;
-  font-weight: 900;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  background: rgba(250,246,237,.72);
-}
-.side-rail-stamp::after {
-  content: '';
-  position: absolute;
-  inset: 6px;
-  border: 1px dashed rgba(244,126,104,.52);
-  border-radius: 50%;
 }
 #side-rail-preview-toolbar {
   position: fixed;
@@ -1490,11 +1410,6 @@ body.side-rails-hidden #side-rail-concept { display: none !important; }
       </div>
     </div>
     <div class="side-rail-right">
-      <div class="side-rail-note">
-        <strong>Handled<br>by Jake</strong>
-        <small>One careful set of eyes from setup through follow-up.</small>
-        <div class="side-rail-check"><b>✓</b> Personally reviewed</div>
-      </div>
       <div class="side-rail-tabs">
         <div class="side-rail-tab active" data-preview-section="overview">Overview</div>
         <div class="side-rail-tab" data-preview-section="services">Services</div>
@@ -1502,7 +1417,6 @@ body.side-rails-hidden #side-rail-concept { display: none !important; }
         <div class="side-rail-tab" data-preview-section="faq">FAQ</div>
         <div class="side-rail-tab" data-preview-section="contact">Contact</div>
       </div>
-      <div class="side-rail-stamp">Direct<br>accountability<br>nationwide</div>
     </div>`;
   document.body.appendChild(rail);
 
