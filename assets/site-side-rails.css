@@ -1,4 +1,4 @@
-/* Homepage claim-progress rails. Decorative and intentionally desktop-only. */
+/* Desktop-only homepage claim progress and section shortcuts. */
 #site-side-rails {
     position: fixed;
     inset: 0;
@@ -103,31 +103,50 @@
     gap: 8px;
     justify-items: end;
     transform: translateY(-50%);
+    pointer-events: auto;
 }
 .site-side-rail-tab {
+    display: block;
     min-width: 72px;
     padding: 9px 9px 8px;
-    transform: translateX(18px);
+    transform: translateX(8px);
     border: 1px solid rgba(18, 63, 85, .16);
     border-right: 0;
     border-radius: 4px 0 0 4px;
     background: rgba(250, 246, 237, .94);
     box-shadow: 0 4px 12px rgba(18, 63, 85, .06);
     color: rgba(18, 63, 85, .58);
+    cursor: pointer;
     font-size: 9px;
     font-weight: 850;
     line-height: 1;
     letter-spacing: .08em;
+    text-decoration: none;
     text-transform: uppercase;
-    transition: transform .2s ease, background .2s ease, color .2s ease;
+    touch-action: manipulation;
+    transition: transform .2s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease, color .2s ease;
+}
+.site-side-rail-tab:hover {
+    transform: translateX(4px);
+    border-color: rgba(18, 63, 85, .28);
+    background: #fff;
+    box-shadow: 0 6px 16px rgba(18, 63, 85, .11);
+    color: #123f55;
 }
 .site-side-rail-tab.active {
     min-width: 88px;
-    transform: translateX(6px);
+    transform: translateX(0);
     border-color: #6ccbe7;
     background: #6ccbe7;
     color: #0d3f54;
 }
+.site-side-rail-tab.active:hover { transform: translateX(0); }
+.site-side-rail-tab:focus-visible {
+    transform: translateX(2px);
+    outline: 3px solid rgba(40, 100, 220, .28);
+    outline-offset: 2px;
+}
+.site-side-rail-tab.active:focus-visible { transform: translateX(0); }
 @media (min-width: 1380px) {
     #site-side-rails { display: block; }
 }

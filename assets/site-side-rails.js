@@ -1,9 +1,8 @@
 (() => {
     const rail = document.createElement('div');
     rail.id = 'site-side-rails';
-    rail.setAttribute('aria-hidden', 'true');
     rail.innerHTML = `
-        <div class="site-side-rail-left">
+        <div class="site-side-rail-left" aria-hidden="true">
             <div class="site-side-rail-kicker">YOUR CLAIM, PERSONALLY MANAGED</div>
             <div class="site-side-rail-spine"></div>
             <div class="site-side-rail-progress"></div>
@@ -15,13 +14,13 @@
             </div>
         </div>
         <div class="site-side-rail-right">
-            <div class="site-side-rail-tabs">
-                <div class="site-side-rail-tab active" data-site-section="overview">Overview</div>
-                <div class="site-side-rail-tab" data-site-section="services">Services</div>
-                <div class="site-side-rail-tab" data-site-section="about">About Jake</div>
-                <div class="site-side-rail-tab" data-site-section="faq">FAQ</div>
-                <div class="site-side-rail-tab" data-site-section="contact">Contact</div>
-            </div>
+            <nav class="site-side-rail-tabs" aria-label="Homepage sections">
+                <a class="site-side-rail-tab active" data-site-section="overview" href="#main-content">Overview</a>
+                <a class="site-side-rail-tab" data-site-section="services" href="#services">Services</a>
+                <a class="site-side-rail-tab" data-site-section="about" href="#about">About Jake</a>
+                <a class="site-side-rail-tab" data-site-section="faq" href="#faq">FAQ</a>
+                <a class="site-side-rail-tab" data-site-section="contact" href="#contact">Contact</a>
+            </nav>
         </div>`;
     document.body.appendChild(rail);
 
@@ -53,7 +52,12 @@
         for (const target of targets) {
             if (target.element.offsetTop <= checkpoint) activeKey = target.key;
         }
-        tabs.forEach(tab => tab.classList.toggle('active', tab.dataset.siteSection === activeKey));
+        tabs.forEach(tab => {
+            const isActive = tab.dataset.siteSection === activeKey;
+            tab.classList.toggle('active', isActive);
+            if (isActive) tab.setAttribute('aria-current', 'location');
+            else tab.removeAttribute('aria-current');
+        });
         ticking = false;
     };
 
