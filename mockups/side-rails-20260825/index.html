@@ -1,0 +1,1591 @@
+<!DOCTYPE html>
+<!-- Deployment marker: verified public-history rewrite 2026-07-31. -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="https://pmhnpbilling.com/">
+    <meta name="robots" content="noindex,nofollow,noarchive">
+    <meta name="pmhnp-release" content="acquisition-2026-08-v1">
+    <title>[Interactive Preview] PMHNP Billing Side Rails</title>
+    <meta name="description" content="Nationwide PMHNP billing for psychiatric practices at 5% of collections, with no setup fee or monthly minimum. Claims, denials, payments, and RCM.">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="PMHNP Billing Services | 5% of Collections, No Minimum">
+    <meta property="og:description" content="Nationwide PMHNP billing for psychiatric practices at 5% of collections, with no setup fee or monthly minimum. Claims, denials, payments, and RCM.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pmhnpbilling.com">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PMHNP Billing Services | 5% of Collections, No Minimum">
+    <meta name="twitter:description" content="Nationwide PMHNP billing for psychiatric practices at 5% of collections, with no setup fee or monthly minimum. Claims, denials, payments, and RCM.">
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://pmhnpbilling.com/"
+    }
+  ]
+}
+</script>
+
+    <!-- LocalBusiness Schema -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "PMHNP Billing",
+  "legalName": "PMHNP BILLING LLC",
+  "description": "Specialized billing and revenue cycle support for PMHNP and psychiatric practices nationwide.",
+  "url": "https://pmhnpbilling.com/",
+  "foundingDate": "2025",
+  "founder": {
+    "@type": "Person",
+    "@id": "https://pmhnpbilling.com/#jake-hasenkamp",
+    "name": "Jacob Hasenkamp",
+    "alternateName": "Jake Hasenkamp",
+    "sameAs": "https://www.linkedin.com/in/jacob-hasenkamp"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Chicago",
+    "addressRegion": "IL",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    {
+      "@type": "State",
+      "name": "Illinois"
+    },
+    {
+      "@type": "Country",
+      "name": "United States"
+    }
+  ],
+  "@id": "https://pmhnpbilling.com/#organization",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://pmhnpbilling.com/assets/pmhnp-billing-logo.svg",
+    "width": 512,
+    "height": 512
+  },
+  "knowsAbout": [
+    "Medical Billing Services",
+    "Claims Management",
+    "Prior Authorization Services",
+    "Revenue Cycle Management",
+    "PMHNP Practice Launch Operations",
+    "Billing Workflow Support (Pilot)"
+  ]
+}
+</script>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://pmhnpbilling.com/">
+
+    <link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg?v=20260716b">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: #374151;
+            background: #fff;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            text-decoration: none;
+        }
+        .logo-icon { width: 36px; height: 36px; border-radius: 8px; }
+        .logo-text { display: flex; align-items: center; gap: 0.35rem; font-size: 1.1rem; }
+        .logo-text .pmh {
+            font-weight: 700;
+            background: linear-gradient(135deg, #1e40af, #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            border-bottom: 2px solid #2563eb;
+            padding-bottom: 1px;
+        }
+        .logo-text .np {
+            font-weight: 700;
+            background: linear-gradient(135deg, #1e40af, #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .logo-text .dot { width: 4px; height: 4px; background: #60a5fa; border-radius: 50%; margin: 0 0.1rem; }
+        .logo-text .billing { font-weight: 500; color: #374151; }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #6b7280;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: #2563eb; }
+
+        .nav-intake-btn {
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #6b7280;
+            padding: 0.4rem 0.9rem;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            transition: all 0.2s;
+            margin-left: 1rem;
+        }
+        .nav-intake-btn:hover {
+            color: #2563eb;
+            border-color: #2563eb;
+            background: rgba(37, 99, 235, 0.05);
+        }
+
+        /* Hamburger Menu */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 1001;
+            appearance: none;
+            border: 0;
+            background: transparent;
+            color: inherit;
+        }
+        .menu-toggle span {
+            width: 24px;
+            height: 2px;
+            background: #374151;
+            transition: all 0.3s;
+        }
+        .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .menu-toggle.active span:nth-child(2) { opacity: 0; }
+        .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255,255,255,0.98);
+            z-index: 999;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+        }
+        .mobile-menu.active { display: flex; }
+        .mobile-menu a {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1f2937;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .mobile-menu a:hover { color: #2563eb; }
+        .mobile-menu-divider { height: 1px; background: #e5e7eb; width: 100%; margin: 0.5rem 0; }
+        .mobile-intake-link { font-size: 0.9rem; color: #9ca3af !important; }
+
+        /* Hero Section */
+        .hero-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            min-height: 100vh;
+        }
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 50%, #f0f9ff 100%);
+            z-index: 0;
+        }
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 150%;
+            background: radial-gradient(ellipse, rgba(37, 99, 235, 0.08) 0%, transparent 70%);
+            animation: pulse-bg 8s ease-in-out infinite;
+        }
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 60%;
+            height: 100%;
+            background: radial-gradient(ellipse, rgba(14, 165, 233, 0.06) 0%, transparent 70%);
+            animation: pulse-bg 10s ease-in-out infinite reverse;
+        }
+        @keyframes pulse-bg {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+        .hero {
+            padding: 10rem 2rem 6rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .hero-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        .hero-logo svg {
+            width: 120px;
+            height: 120px;
+            border-radius: 28px;
+            box-shadow: 0 8px 40px rgba(37, 99, 235, 0.25);
+            animation: float-logo 4s ease-in-out infinite;
+        }
+        @keyframes float-logo {
+            0%, 100% { transform: translateY(0); box-shadow: 0 8px 40px rgba(37, 99, 235, 0.25); }
+            50% { transform: translateY(-14px); box-shadow: 0 20px 50px rgba(37, 99, 235, 0.35); }
+        }
+        /* Hero floating shapes */
+        .hero-shape {
+            position: absolute;
+            opacity: 0.4;
+            pointer-events: none;
+        }
+        .hero-shape-1 {
+            width: 12px; height: 12px;
+            background: #3b82f6;
+            border-radius: 50%;
+            top: 20%; left: 8%;
+            animation: hero-float 8s ease-in-out infinite;
+        }
+        .hero-shape-2 {
+            width: 8px; height: 8px;
+            background: #0ea5e9;
+            border-radius: 2px;
+            transform: rotate(45deg);
+            top: 35%; right: 12%;
+            animation: hero-float 10s ease-in-out infinite 1s;
+        }
+        .hero-shape-3 {
+            width: 16px; height: 16px;
+            border: 2px solid #3b82f6;
+            border-radius: 50%;
+            bottom: 30%; left: 12%;
+            animation: hero-float 12s ease-in-out infinite 2s;
+        }
+        .hero-shape-4 {
+            width: 6px; height: 6px;
+            background: #2563eb;
+            border-radius: 50%;
+            top: 25%; right: 20%;
+            animation: hero-float 7s ease-in-out infinite 0.5s;
+        }
+        .hero-shape-5 {
+            width: 10px; height: 10px;
+            border: 2px solid #0ea5e9;
+            border-radius: 2px;
+            transform: rotate(45deg);
+            bottom: 35%; right: 8%;
+            animation: hero-float 9s ease-in-out infinite 1.5s;
+        }
+        .hero-shape-6 {
+            width: 14px; height: 2px;
+            background: #3b82f6;
+            top: 45%; left: 5%;
+            animation: hero-float 11s ease-in-out infinite 3s;
+        }
+        .hero-shape-6::after {
+            content: '';
+            position: absolute;
+            width: 2px; height: 14px;
+            background: #3b82f6;
+            left: 6px; top: -6px;
+        }
+        @keyframes hero-float {
+            0%, 100% { transform: translate(0, 0) rotate(var(--rotate, 0deg)); }
+            25% { transform: translate(8px, -12px) rotate(var(--rotate, 0deg)); }
+            50% { transform: translate(-5px, -8px) rotate(var(--rotate, 0deg)); }
+            75% { transform: translate(10px, 5px) rotate(var(--rotate, 0deg)); }
+        }
+        .hero-shape-2, .hero-shape-5 { --rotate: 45deg; }
+        .hero-logo-text {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 2.25rem;
+        }
+        .hero-logo-text .pmh {
+            font-weight: 700;
+            background: linear-gradient(135deg, #1e40af, #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 2px;
+        }
+        .hero-logo-text .np {
+            font-weight: 700;
+            background: linear-gradient(135deg, #1e40af, #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-logo-text .dot {
+            width: 8px;
+            height: 8px;
+            background: #60a5fa;
+            border-radius: 50%;
+            margin: 0 0.2rem;
+        }
+        .hero-logo-text .billing {
+            font-weight: 500;
+            color: #374151;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            color: #111827;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            max-width: 600px;
+            letter-spacing: -0.035em;
+        }
+        .hero h1 span {
+            background: linear-gradient(135deg, #2563eb, #0ea5e9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero p {
+            font-size: 1.15rem;
+            color: #6b7280;
+            margin-bottom: 2.5rem;
+            max-width: 520px;
+            line-height: 1.75;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.95rem 1.85rem;
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+        .btn svg { width: 18px; height: 18px; transition: transform 0.2s; }
+        .btn:hover svg { transform: translateX(3px); }
+
+
+        /* Sections */
+        section { padding: 6rem 2rem; }
+        .section-header { max-width: 1100px; margin: 0 auto 3.5rem; }
+        .section-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #2563eb;
+            margin-bottom: 0.75rem;
+        }
+        .section-title { font-size: 2rem; font-weight: 600; color: #111827; letter-spacing: -0.025em; }
+
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-in.visible, .fade-in.is-in-view { opacity: 1; transform: translateY(0); }
+
+        /* Services */
+        .services { background: linear-gradient(180deg, #f9fafb 0%, #fff 100%); border-top: 1px solid #e5e7eb; }
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1100px; margin: 0 auto; }
+        .service-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.1);
+            border-color: #93c5fd;
+        }
+        .service-icon {
+            width: 48px; height: 48px;
+            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 1.25rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .service-icon:focus-visible {
+            outline: 3px solid rgba(37, 99, 235, 0.28);
+            outline-offset: 4px;
+        }
+        .service-icon svg { width: 24px; height: 24px; color: #2563eb; transition: all 0.3s ease; }
+        .service-card:hover .service-icon {
+            background: linear-gradient(135deg, #2563eb, #0ea5e9);
+            transform: scale(1.05);
+        }
+        .service-card:hover .service-icon svg { color: white; }
+        .service-card h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.6rem; color: #111827; }
+        .service-card p { color: #6b7280; font-size: 0.9rem; line-height: 1.65; }
+        .service-link { display: inline-block; margin-top: 0.8rem; color: #1d4ed8; font-weight: 600; text-decoration: none; font-size: 0.9rem; }
+        .service-link:hover { text-decoration: underline; }
+
+
+        .service-pathways { background: #fff; border-top: 1px solid #e5e7eb; }
+        .service-pathways .section-header { margin-bottom: 2rem; }
+        .service-pathways .service-card { background: linear-gradient(180deg, #ffffff, #eff6ff); }
+
+        /* About */
+        .about { background: #fff; }
+        .about-content { max-width: 1040px; margin: 0 auto; }
+        .about-profile {
+            display: grid;
+            grid-template-columns: minmax(260px, .82fr) minmax(0, 1.48fr);
+            overflow: hidden;
+            background: #fff;
+            border: 1px solid #d7e1e5;
+            border-radius: 28px;
+            box-shadow: 0 22px 60px rgba(16, 39, 48, .10);
+        }
+        .about-profile__identity {
+            padding: clamp(1.8rem, 4vw, 2.6rem);
+            color: #102730;
+            background: linear-gradient(145deg, #edf4ff, #f1f8f5);
+            border-right: 1px solid #d7e1e5;
+        }
+        .about-profile__photo {
+            width: min(190px, 100%);
+            height: auto;
+            display: block;
+            margin: 0 0 1.5rem;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border: 5px solid #fff;
+            border-radius: 26px;
+            box-shadow: 0 16px 34px rgba(16, 39, 48, .16);
+        }
+        .about-profile__kicker { margin: 0 0 .55rem; color: #17685d; font-size: .72rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+        .about-profile__identity h3 { margin: 0 0 .8rem; color: #102730; font-size: 1.65rem; line-height: 1.15; }
+        .about-content .about-profile__identity p:last-child { margin: 0; color: #53666d; font-family: inherit; font-size: .92rem; line-height: 1.65; }
+        .about-profile__details { padding: clamp(1.8rem, 4vw, 2.6rem); }
+        .about-profile__details > p { margin: 0 0 1.35rem; color: #53666d; font-size: 1rem; line-height: 1.75; }
+        .about-profile__facts { display: grid; gap: .95rem; margin: 0 0 1.65rem; padding: 0; list-style: none; }
+        .about-profile__facts li { position: relative; padding-left: 1.65rem; color: #53666d; line-height: 1.55; }
+        .about-profile__facts li::before { content: "✓"; position: absolute; left: 0; color: #17685d; font-weight: 800; }
+        .about-profile__links { display: flex; flex-wrap: wrap; gap: .7rem; }
+        .about-profile__links a {
+            display: inline-flex;
+            align-items: center;
+            min-height: 42px;
+            padding: .7rem 1rem;
+            color: #1e40af;
+            background: #f8fbff;
+            border: 1px solid #cbdcf4;
+            border-radius: 999px;
+            font-size: .78rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .about-profile__links a:first-child { color: #fff; background: #1e40af; border-color: #1e40af; }
+        .about-profile__links a:hover { color: #fff; background: #17368f; border-color: #17368f; }
+
+
+        /* FAQ */
+        .faq { background: #fff; }
+        .faq-content { max-width: 720px; margin: 0 auto; }
+        .faq-item {
+            padding: 1.75rem 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-item h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 0.75rem;
+        }
+        .faq-item p {
+            color: #6b7280;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* Trust */
+        .trust {
+            background: linear-gradient(135deg, #1e40af 0%, #2563eb 50%, #0ea5e9 100%);
+            color: white; position: relative; overflow: hidden;
+        }
+        .trust::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.08);
+            pointer-events: none;
+        }
+        .floating-shape-1 {
+            width: 300px; height: 300px;
+            top: -100px; right: -50px;
+            animation: float-shape 12s ease-in-out infinite;
+        }
+        .floating-shape-2 {
+            width: 200px; height: 200px;
+            bottom: -80px; left: 10%;
+            animation: float-shape 10s ease-in-out infinite reverse;
+        }
+        .floating-shape-3 {
+            width: 150px; height: 150px;
+            top: 50%; right: 15%;
+            animation: float-shape 14s ease-in-out infinite 2s;
+        }
+        .floating-shape-4 {
+            width: 80px; height: 80px;
+            top: 20%; left: 5%;
+            animation: float-shape 8s ease-in-out infinite 1s;
+        }
+        @keyframes float-shape {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(15px, -20px) scale(1.05); }
+            66% { transform: translate(-10px, 15px) scale(0.95); }
+        }
+        .trust .section-label { color: rgba(255,255,255,0.8); }
+        .trust .section-title { color: white; }
+        .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+        .trust-item { text-align: center; padding: 1.5rem; }
+        .trust-item-icon {
+            width: 52px; height: 52px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 1rem;
+        }
+        .trust-item-icon svg { width: 26px; height: 26px; color: white; }
+        .trust-item h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem; }
+        .trust-item p { font-size: 0.875rem; opacity: 0.85; line-height: 1.6; }
+
+        /* Testimonial */
+        .testimonial { background: #fff; border-top: 1px solid #e5e7eb; }
+        .testimonial-content { max-width: 700px; margin: 0 auto; text-align: center; }
+        .testimonial-quote {
+            font-size: 1.35rem;
+            color: #374151;
+            line-height: 1.8;
+            font-style: italic;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .testimonial-quote::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: -10px;
+            font-size: 4rem;
+            color: #dbeafe;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        .testimonial-author {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        .testimonial-author-name {
+            font-weight: 600;
+            color: #111827;
+            font-size: 1.05rem;
+        }
+        .testimonial-author-title {
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        /* Contact */
+        .contact { background: #f9fafb; border-top: 1px solid #e5e7eb; }
+        .contact-wrapper { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.3fr; gap: 4rem; align-items: start; }
+        .contact-info h2 { font-size: 2rem; font-weight: 600; color: #111827; margin-bottom: 1rem; letter-spacing: -0.025em; }
+        .contact-info p { color: #6b7280; font-size: 1.05rem; line-height: 1.75; margin-bottom: 2rem; }
+        .contact-form { background: #fff; padding: 2.5rem; border-radius: 16px; border: 1px solid #e5e7eb; box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .form-group { margin-bottom: 1.25rem; }
+        .form-group.full { grid-column: 1 / -1; }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; font-size: 0.875rem; color: #374151; }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%; padding: 0.8rem 1rem; border: 1.5px solid #e5e7eb; border-radius: 8px;
+            font-size: 0.95rem; font-family: inherit; background: #fff; transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1); }
+        .form-group textarea { min-height: 110px; resize: vertical; }
+        .submit-btn {
+            width: 100%; padding: 0.95rem;
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
+            color: white; border: none; border-radius: 8px;
+            font-size: 0.95rem; font-weight: 500; cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+        }
+        .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4); }
+        .contact-kicker { margin-bottom: .75rem; color: #17685d; font-size: .74rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+        .contact-proof-list { display: grid; gap: .8rem; margin: 0; padding: 0; list-style: none; }
+        .contact-proof-list li { position: relative; padding-left: 1.6rem; color: #4b5563; }
+        .contact-proof-list li::before { content: "✓"; position: absolute; left: 0; color: #17685d; font-weight: 800; }
+        .form-group label span { color: #9ca3af; font-weight: 400; }
+        .form-honeypot { position: absolute !important; width: 1px !important; height: 1px !important; overflow: hidden !important; clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; }
+        .form-privacy-note { margin: -.25rem 0 1rem; color: #6b7280; font-size: .78rem; line-height: 1.5; }
+        .form-status { min-height: 1.4rem; margin: 0 0 .7rem; color: #17685d; font-size: .82rem; font-weight: 600; }
+        .form-status--error { color: #b42318; }
+        .submit-btn:disabled { cursor: wait; opacity: .7; transform: none; }
+
+        footer { background: #111827; color: #9ca3af; text-align: center; padding: 2.5rem; font-size: 0.875rem; }
+
+        /* Mobile */
+        @media (max-width: 900px) {
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .trust-grid { grid-template-columns: repeat(2, 1fr); }
+            .contact-wrapper { grid-template-columns: 1fr; gap: 2.5rem; }
+            .about-profile { grid-template-columns: 1fr; }
+            .about-profile__identity { border-right: 0; border-bottom: 1px solid #d7e1e5; }
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-intake-btn { display: none; }
+            .menu-toggle { display: flex; }
+            .hero h1 { font-size: 2.25rem; }
+            .hero p { font-size: 1.05rem; }
+            .hero-logo svg { width: 100px; height: 100px; }
+            .hero-logo-text { font-size: 1.75rem; }
+            .testimonial-quote { font-size: 1.15rem; }
+        }
+        @media (max-width: 640px) {
+            .hero-wrapper { min-height: auto; }
+            .hero { padding: 8rem 1.5rem 5rem; }
+            .hero h1 { font-size: 1.85rem; }
+            .hero-logo svg { width: 80px; height: 80px; border-radius: 20px; }
+            .hero-logo-text { font-size: 1.5rem; }
+            section { padding: 4rem 1.5rem; }
+            .services-grid { grid-template-columns: 1fr; }
+            .trust-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .form-row { grid-template-columns: 1fr; }
+            .section-title { font-size: 1.75rem; }
+            .testimonial-quote { font-size: 1.1rem; }
+            /* Show fewer floating shapes on mobile - keep inside bounds */
+            .floating-shape-1 { width: 120px; height: 120px; top: 10px; right: -40px; }
+            .floating-shape-2 { width: 80px; height: 80px; bottom: 20px; left: -20px; }
+            .floating-shape-3, .floating-shape-4 { display: none; }
+            /* Show fewer, repositioned shapes on mobile */
+            .hero-shape { opacity: 0.3; }
+            .hero-shape-3, .hero-shape-6 { display: none; }
+            .hero-shape-1 { top: 15%; left: 5%; }
+            .hero-shape-2 { top: 20%; right: 5%; }
+            .hero-shape-4 { bottom: 25%; left: 8%; }
+            .hero-shape-5 { bottom: 20%; right: 5%; }
+        }
+    </style>
+    <link rel="stylesheet" href="assets/live-fixes.css?v=20260812mobilescroll">
+    <link rel="stylesheet" href="assets/modern-warm.css?v=20260812mobilescroll">
+    <link rel="stylesheet" href="/assets/custom-identity.css?v=20260731contactpen">
+
+    <meta property="og:image" content="https://pmhnpbilling.com/assets/pmhnp-billing-social-card.png">
+    <meta property="og:image:secure_url" content="https://pmhnpbilling.com/assets/pmhnp-billing-social-card.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="PMHNP Billing — calmer claims, healthier revenue">
+    <meta name="twitter:image" content="https://pmhnpbilling.com/assets/pmhnp-billing-social-card.png">
+    <meta name="twitter:image:alt" content="PMHNP Billing — calmer claims, healthier revenue">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://pmhnpbilling.com/#website",
+  "url": "https://pmhnpbilling.com/",
+  "name": "PMHNP Billing",
+  "publisher": {
+    "@id": "https://pmhnpbilling.com/#organization"
+  }
+}
+</script>
+    <style id="side-rail-preview-styles">
+/* Interactive side-rail concept — preview branch only. */
+#side-rail-concept {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #123f55;
+  display: none;
+}
+#side-rail-concept * { box-sizing: border-box; }
+.side-rail-left,
+.side-rail-right {
+  position: absolute;
+  top: 126px;
+  bottom: 34px;
+  width: 112px;
+}
+.side-rail-left { left: 18px; }
+.side-rail-right { right: 18px; }
+.side-rail-spine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 31px;
+  width: 1px;
+  background: linear-gradient(180deg, rgba(18,63,85,.08), rgba(18,63,85,.35) 15%, rgba(18,63,85,.28) 84%, rgba(18,63,85,.05));
+}
+.side-rail-progress {
+  position: absolute;
+  top: 0;
+  left: 30px;
+  width: 3px;
+  height: 12%;
+  border-radius: 9px;
+  background: #f47e68;
+  box-shadow: 0 0 0 4px rgba(244,126,104,.10);
+  transition: height .25s ease;
+}
+.side-rail-kicker {
+  position: absolute;
+  left: 7px;
+  top: 0;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 9px;
+  letter-spacing: .17em;
+  font-weight: 800;
+  color: rgba(18,63,85,.62);
+}
+.side-rail-steps {
+  position: absolute;
+  left: 20px;
+  top: 82px;
+  right: 0;
+  display: grid;
+  gap: 54px;
+}
+.side-rail-step {
+  display: grid;
+  grid-template-columns: 23px 1fr;
+  gap: 9px;
+  align-items: center;
+  color: rgba(18,63,85,.50);
+}
+.side-rail-dot {
+  width: 23px;
+  height: 23px;
+  border: 1px solid rgba(18,63,85,.22);
+  border-radius: 50%;
+  background: #faf6ed;
+  display: grid;
+  place-items: center;
+  font-size: 10px;
+  font-weight: 900;
+  box-shadow: 0 3px 12px rgba(18,63,85,.05);
+}
+.side-rail-step span:last-child {
+  font-size: 9px;
+  line-height: 1.25;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  font-weight: 800;
+  white-space: nowrap;
+}
+.side-rail-step.active { color: #123f55; }
+.side-rail-step.active .side-rail-dot {
+  background: #f47e68;
+  border-color: #f47e68;
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(244,126,104,.28);
+}
+.side-rail-step.done .side-rail-dot {
+  background: #7ec7a8;
+  border-color: #7ec7a8;
+  color: #0c3f54;
+}
+.side-rail-note {
+  position: absolute;
+  right: 0;
+  top: 58px;
+  width: 102px;
+  padding: 13px 11px 12px;
+  background: #fffdf8;
+  border: 1px solid rgba(18,63,85,.20);
+  box-shadow: 0 7px 20px rgba(18,63,85,.10);
+  transform: rotate(1.8deg);
+}
+.side-rail-note::before {
+  content: '';
+  position: absolute;
+  top: -7px;
+  left: 31px;
+  width: 36px;
+  height: 13px;
+  background: rgba(108,203,231,.50);
+  transform: rotate(-3deg);
+}
+.side-rail-note strong {
+  display: block;
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 14px;
+  line-height: 1.05;
+  color: #123f55;
+  margin-bottom: 5px;
+}
+.side-rail-note small {
+  display: block;
+  font-size: 9px;
+  line-height: 1.35;
+  color: rgba(18,63,85,.66);
+}
+.side-rail-check {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 8px;
+  font-size: 9px;
+  font-weight: 800;
+  color: #123f55;
+}
+.side-rail-check b {
+  display: grid;
+  place-items: center;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #7ec7a8;
+  font-size: 10px;
+}
+.side-rail-tabs {
+  position: absolute;
+  right: 0;
+  top: 272px;
+  display: grid;
+  gap: 8px;
+  justify-items: end;
+}
+.side-rail-tab {
+  min-width: 72px;
+  padding: 9px 9px 8px;
+  border: 1px solid rgba(18,63,85,.16);
+  border-right: 0;
+  border-radius: 4px 0 0 4px;
+  background: #faf6ed;
+  box-shadow: 0 4px 12px rgba(18,63,85,.06);
+  font-size: 9px;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-weight: 850;
+  color: rgba(18,63,85,.58);
+  transform: translateX(18px);
+  transition: transform .2s ease, background .2s ease, color .2s ease;
+}
+.side-rail-tab.active {
+  transform: translateX(6px);
+  background: #6ccbe7;
+  color: #0d3f54;
+  border-color: #6ccbe7;
+  min-width: 88px;
+}
+.side-rail-stamp {
+  position: absolute;
+  right: 3px;
+  bottom: 4px;
+  width: 89px;
+  height: 89px;
+  border: 2px solid rgba(244,126,104,.55);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  transform: rotate(-7deg);
+  color: rgba(205,80,63,.74);
+  font-size: 9px;
+  line-height: 1.15;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  background: rgba(250,246,237,.72);
+}
+.side-rail-stamp::after {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border: 1px dashed rgba(244,126,104,.52);
+  border-radius: 50%;
+}
+#side-rail-preview-toolbar {
+  position: fixed;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: calc(100vw - 28px);
+  padding: 7px 8px 7px 13px;
+  border: 1px solid rgba(18,63,85,.18);
+  border-radius: 999px;
+  background: rgba(255,253,248,.96);
+  box-shadow: 0 8px 28px rgba(18,63,85,.16);
+  color: #123f55;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+#side-rail-preview-toolbar button {
+  border: 0;
+  border-radius: 999px;
+  padding: 7px 11px;
+  background: #123f55;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+#side-rail-preview-toolbar .wide-screen-note { display: none; }
+body.side-rails-hidden #side-rail-concept { display: none !important; }
+.preview-form-message {
+  margin-top: .75rem;
+  color: #123f55;
+  font-size: .9rem;
+  font-weight: 700;
+}
+@media (min-width: 1380px) {
+  #side-rail-concept { display: block; }
+}
+@media (max-width: 1379px) {
+  #side-rail-preview-toolbar .desktop-note { display: none; }
+  #side-rail-preview-toolbar .wide-screen-note { display: inline; }
+  #side-rail-preview-toolbar button { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .side-rail-progress,
+  .side-rail-tab { transition: none; }
+}
+</style>
+</head>
+<body id="top" class="mw-site">
+    <nav>
+        <a href="#top" class="logo">
+            <svg class="logo-icon" viewBox="0 0 48 48" fill="none">
+                <defs><linearGradient id="logo-grad" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#2563eb"/><stop offset="1" stop-color="#0ea5e9"/></linearGradient></defs>
+                <rect width="48" height="48" rx="12" fill="url(#logo-grad)"/>
+                <path d="M10 12h9a6 6 0 010 12h-9V12zm3 3v6h6a3 3 0 000-6h-6z" fill="white"/>
+                <path d="M26 12h9a6 6 0 014.24 10.24L26 36V12zm3 3v12.5l7-7.5a3 3 0 00-4-4h-3z" fill="white" fill-opacity="0.85"/>
+            </svg>
+            <span class="logo-text">
+                <span class="pmh">PMH</span><span class="np">NP</span>
+                <span class="dot"></span>
+                <span class="billing">Billing</span>
+            </span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="blog/">Blog</a></li>
+        </ul>
+        <a href="#contact" class="nav-intake-btn nav-contact-write">
+            <span class="nav-contact-write__label">Contact</span>
+            <span class="nav-contact-write__ink" aria-hidden="true">
+                <svg class="nav-contact-write__line" viewBox="0 0 58 12" focusable="false">
+                    <path pathLength="1" d="M2 8.6c10-2.5 18-1.7 27-.3 9.2 1.4 17.7 1.3 27-1.2"/>
+                </svg>
+                <svg class="nav-contact-write__pen" viewBox="0 0 20 20" focusable="false">
+                    <path class="nav-contact-write__pen-body" d="M4.2 14.9 6 10.1 14.4 1.7c.8-.8 2-.8 2.8 0l1.1 1.1c.8.8.8 2 0 2.8L9.9 14l-4.8 1.8-.9-.9Z"/>
+                    <path class="nav-contact-write__pen-band" d="m13 3.1 3.9 3.9M6 10.1 9.9 14"/>
+                    <path class="nav-contact-write__pen-nib" d="m4.2 14.9-.7 1.9 1.6-1"/>
+                </svg>
+            </span>
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="mobileMenu" aria-expanded="false" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <main id="main-content">
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#services" onclick="toggleMenu()">Services</a>
+        <a href="#about" onclick="toggleMenu()">About</a>
+        <a href="#faq" onclick="toggleMenu()">FAQ</a>
+        <a href="blog/" onclick="toggleMenu()">Blog</a>
+        <a href="#contact" onclick="toggleMenu()">Contact</a>
+    </div>
+
+    <div class="hero-wrapper">
+        <section class="hero">
+            <div class="modern-hero-copy">
+                <div class="modern-eyebrow">Billing operations for psychiatric practices</div>
+                <h1>
+                    <span class="hero-inline-brand">
+                        <img src="/assets/identity/care-claim-mark.svg" alt="" width="96" height="72">
+                        <span><strong>PMHNP</strong> <strong>Billing</strong></span>
+                    </span> services for
+                    <span class="hero-accent">psychiatric providers nationwide</span>
+                </h1>
+                <p>I support PMHNP practices nationally with claims, prior authorizations, denials, payment posting, and revenue cycle management so you can focus on patient care.</p>
+                <div class="modern-hero-actions">
+                    <a href="#contact" class="btn">
+                        Get in touch
+                        <svg class="contact-hover-mark" viewBox="0 0 32 32" aria-hidden="true" fill="none">
+                            <path class="contact-hover-mark__sweep" d="M3.8 21.2c4.5-6.7 8.8-7 13-.8 3.6 5.2 7.1 4.8 10.9-.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+                            <circle class="contact-hover-mark__dot" cx="19.2" cy="15" r="3.25" fill="#bfe3d2" stroke="currentColor" stroke-width="1.65"/>
+                            <g class="contact-hover-mark__rays" stroke="#ffb099" stroke-width="1.8" stroke-linecap="round">
+                                <path d="M19.2 7.4V4.5"/><path d="m24.4 9.2 2.2-2.1"/><path d="m14.1 9.1-2-2.2"/>
+                            </g>
+                        </svg>
+                    </a>
+                    <a href="#services" class="modern-secondary-btn">Explore services</a>
+                </div>
+                <div class="modern-hero-note"><span></span>Direct communication. No call centers. Human review comes first.</div>
+            </div>
+
+            <div class="modern-hero-visual claim-story-visual" aria-label="An animated claim journey from preparation through reconciliation">
+                <div class="modern-shape modern-shape--coral"></div>
+                <div class="modern-shape modern-shape--mint"></div>
+                <div class="modern-shape modern-shape--blue"></div>
+                <article class="editorial-journey story-ready" data-claim-story>
+                    <div class="journey-handler-tab" aria-hidden="true">
+                        <img src="/assets/identity/care-claim-mark.svg" alt="" width="96" height="72">
+                        <span>Handled by Jake</span>
+                    </div>
+                    <header class="editorial-journey__head">
+                        <div class="editorial-journey__kicker">Your billing, personally managed</div>
+                        <h2>One careful set of eyes on every claim.</h2>
+                    </header>
+                    <div class="editorial-journey__steps">
+                        <svg class="editorial-journey__inkline" viewBox="0 0 30 280" preserveAspectRatio="none" aria-hidden="true">
+                            <path pathLength="1" d="M15 8 C11 36 19 50 14 70 C10 92 19 112 14 139 C10 163 19 184 14 210 C10 234 19 253 15 272"/>
+                            <circle class="ink-stop ink-stop--1" cx="15" cy="34" r="3.1"/>
+                            <circle class="ink-stop ink-stop--2" cx="14" cy="102" r="3.1"/>
+                            <circle class="ink-stop ink-stop--3" cx="14" cy="172" r="3.1"/>
+                            <circle class="ink-stop ink-stop--4" cx="15" cy="242" r="3.1"/>
+                        </svg>
+                        <div class="editorial-journey__step editorial-journey__step--prepared">
+                            <div><i>01</i><b></b>Prepared</div>
+                            <p>Documentation and payer details reviewed.</p>
+                            <span class="journey-stamp" aria-hidden="true">
+                                <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="15"/><path d="m12.5 20.5 5 5 10-12"/></svg><em>Reviewed</em>
+                            </span>
+                        </div>
+                        <div class="editorial-journey__step editorial-journey__step--submitted">
+                            <div><i>02</i><b></b>Submitted</div>
+                            <p>Clean claims sent within 1–2 business days.</p>
+                            <span class="journey-stamp" aria-hidden="true">
+                                <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="15"/><path d="m10.5 19 19-8-7.5 19-3.5-8zM18.5 22 29 11"/></svg><em>Sent clean</em>
+                            </span>
+                        </div>
+                        <div class="editorial-journey__step editorial-journey__step--followed">
+                            <div><i>03</i><b></b>Followed through</div>
+                            <p>Rejections and denials actively worked.</p>
+                            <span class="journey-stamp" aria-hidden="true">
+                                <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="15"/><path d="M11.5 20a8.5 8.5 0 0 1 14-6.4M28.5 20a8.5 8.5 0 0 1-14 6.4M24.8 9.8l1.2 4.4-4.5.8M15.2 30.2 14 25.8l4.5-.8"/></svg><em>Worked</em>
+                            </span>
+                        </div>
+                        <div class="editorial-journey__step editorial-journey__step--reconciled">
+                            <div><i>04</i><b></b>Reconciled</div>
+                            <p>Payments posted and outstanding claims tracked.</p>
+                            <span class="journey-stamp journey-stamp--final" aria-hidden="true">
+                                <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="15"/><path d="M11.5 14.5h17v11h-17zM14.5 17.5h11M14.5 21.5h7"/></svg><em>Accounted for</em>
+                            </span>
+                            <span class="journey-flourish" aria-hidden="true"><i></i><i></i><i></i></span>
+                        </div>
+                    </div>
+                    <div class="editorial-journey__signoff"><span>Direct communication. No ticket queue. No call center.</span></div>
+                </article>
+                <button class="claim-story-replay" type="button" aria-label="Replay the claim journey animation">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8.5A7.5 7.5 0 1 1 5 15M5.5 8.5V4M5.5 8.5H10"/></svg>
+                    Replay story
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <section class="modern-proof-strip" aria-label="PMHNP Billing service facts">
+        <div class="modern-proof-grid">
+            <div><span>Built differently</span><strong>Specialized, attentive support.</strong></div>
+            <div><span>Simple pricing</span><strong>5%</strong><small>No setup fees or monthly minimums</small></div>
+            <div><span>Responsive workflow</span><strong>24–48 hrs</strong><small>Claims submitted after service</small></div>
+            <div><span>Service area</span><strong>Nationwide</strong><small>Support for psychiatric practices</small></div>
+        </div>
+    </section>
+
+    <section class="founder-intro" aria-labelledby="founder-intro-title">
+        <div class="founder-intro__card fade-in">
+            <div class="founder-intro__mark" aria-hidden="true">
+                <img src="/assets/identity/telephone-mark.svg" width="80" height="72" alt="">
+            </div>
+            <div class="founder-intro__copy">
+                <div class="section-label">Direct accountability</div>
+                <h2 id="founder-intro-title">One accountable person from setup through resolution.</h2>
+                <p>Jake works directly with psychiatric practices nationwide—no call center and no anonymous ticket queue.</p>
+            </div>
+            <a class="founder-intro__link" href="#about">Meet Jake and see how I work →</a>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="section-header fade-in">
+            <div class="section-label">Services</div>
+            <h2 class="section-title">What I offer</h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card fade-in">
+                <a class="service-icon" href="/services/pmhnp-billing-services.html" aria-label="Explore PMHNP Billing Services"><img src="/assets/identity/claims-mark.svg" alt="" aria-hidden="true" width="80" height="72"></a>
+                <h3>Claims Management</h3>
+                <p>Accurate claim submission with payer follow-up and clean-claim controls to protect reimbursement speed.</p>
+                <a class="service-link" href="/services/pmhnp-billing-services.html">Explore PMHNP Billing Services →</a>
+            </div>
+            <div class="service-card fade-in">
+                <a class="service-icon" href="/services/prior-authorization-support.html" aria-label="Explore Prior Authorization Support"><img src="/assets/identity/prior-auth-mark.svg" alt="" aria-hidden="true" width="80" height="72"></a>
+                <h3>Prior Authorization Support</h3>
+                <p>Structured medication authorization workflows, status tracking, and escalation steps to prevent treatment delays.</p>
+                <a class="service-link" href="/services/prior-authorization-support.html">Explore Prior Authorization Support →</a>
+            </div>
+            <div class="service-card fade-in">
+                <a class="service-icon" href="/services/pmhnp-credentialing-services.html" aria-label="Explore Credentialing Services"><img src="/assets/identity/credential-mark.svg" alt="" aria-hidden="true" width="80" height="72"></a>
+                <h3>PMHNP Credentialing Services</h3>
+                <p>Enrollment planning, CAQH upkeep, and payer follow-through from application through first-claim readiness.</p>
+                <a class="service-link" href="/services/pmhnp-credentialing-services.html">Explore Credentialing Services →</a>
+            </div>
+            <div class="service-card fade-in">
+                <a class="service-icon" href="/services/pmhnp-practice-launch-support.html" aria-label="Explore PMHNP Practice Launch Support"><img src="/assets/identity/care-claim-mark.svg" alt="" aria-hidden="true" width="80" height="72"></a>
+                <h3>PMHNP Practice Launch Support</h3>
+                <p>Coordinate payer enrollment, EHR and clearinghouse setup, front-end workflows, and first-claim reconciliation.</p>
+                <a class="service-link" href="/services/pmhnp-practice-launch-support.html">Explore Practice Launch Support →</a>
+            </div>
+            <div class="service-card fade-in">
+                <a class="service-icon" href="/services/denial-management-appeals-pmhnp.html" aria-label="Explore Denial Management and Appeals"><img src="/assets/identity/denial-mark.svg" alt="" aria-hidden="true" width="80" height="72"></a>
+                <h3>Denial Management &amp; Appeals</h3>
+                <p>Denial triage, root-cause tracking, and structured appeals built for PMHNP claim patterns.</p>
+                <a class="service-link" href="/services/denial-management-appeals-pmhnp.html">Explore Denial Management &amp; Appeals →</a>
+            </div>
+            <div class="service-card fade-in">
+                <a class="service-icon" href="/services/telehealth-billing-compliance-support.html" aria-label="Explore Telehealth Billing Compliance Support"><img src="/assets/identity/telehealth-mark.svg" alt="" aria-hidden="true" width="80" height="72"></a>
+                <h3>Telehealth Billing Compliance Support</h3>
+                <p>POS 02/10, modifier usage, and documentation controls that keep PMHNP telehealth claims clean.</p>
+                <a class="service-link" href="/services/telehealth-billing-compliance-support.html">Explore Telehealth Billing Compliance →</a>
+            </div>
+            <div class="service-card fade-in">
+                <a class="service-icon" href="/services/pmhnp-billing-services.html" aria-label="See Full PMHNP Billing Services"><img src="/assets/identity/payment-mark.svg" alt="" aria-hidden="true" width="80" height="72"></a>
+                <h3>Revenue Review</h3>
+                <p>Periodic review of billing operations to find leakage points and improve PMHNP reimbursement performance.</p>
+                <a class="service-link" href="/services/pmhnp-billing-services.html">See Full PMHNP Billing Services →</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-pathways">
+        <div class="section-header fade-in">
+            <div class="section-label">Medical billing support</div>
+            <h2 class="section-title">Explore billing help by practice need</h2>
+        </div>
+        <div class="service-pathway-list" role="navigation" aria-label="Billing help by practice need">
+            <div class="service-pathway-row fade-in">
+                <h3>Small Practice Medical Billing</h3>
+                <div class="service-pathway-links">
+                    <a class="service-link" href="/services/medical-billing-services.html">Medical billing support →</a>
+                    <a class="service-link" href="/services/medical-billing-company-small-practices.html">Small-practice billing company →</a>
+                </div>
+            </div>
+            <div class="service-pathway-row fade-in">
+                <h3>Psychiatric &amp; Mental Health Billing</h3>
+                <div class="service-pathway-links">
+                    <a class="service-link" href="/services/psychiatric-medical-billing-services.html">Psychiatric billing support →</a>
+                    <a class="service-link" href="/services/mental-health-medical-billing-services.html">Mental health billing support →</a>
+                    <a class="service-link" href="/blog/pmhnp-billing-90791-90792-em-psychotherapy-add-on-coding-guide-2026.html">90791 vs 90792 coding guide →</a>
+                </div>
+            </div>
+            <div class="service-pathway-row fade-in">
+                <h3>Revenue Cycle Management</h3>
+                <div class="service-pathway-links">
+                    <a class="service-link" href="/services/revenue-cycle-management-services.html">RCM support →</a>
+                    <a class="service-link" href="/services/pmhnp-billing-services.html">PMHNP billing services →</a>
+                </div>
+            </div>
+            <div class="service-pathway-row fade-in">
+                <h3>Starting a PMHNP Practice</h3>
+                <div class="service-pathway-links">
+                    <a class="service-link" href="/services/pmhnp-practice-launch-support.html">Practice-launch support →</a>
+                    <a class="service-link" href="/resources/pmhnp-practice-launch-readiness-checklist.html">Launch-readiness checklist →</a>
+                    <a class="service-link" href="/blog/starting-private-practice-pmhnp-billing-roadmap.html">Private-practice roadmap →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="section-header fade-in">
+            <div class="section-label">About</div>
+            <h2 class="section-title about-title-wave" data-letter-wave>Who runs PMHNP Billing</h2>
+        </div>
+        <div class="about-content fade-in">
+            <article class="about-profile" aria-labelledby="jake-profile-name">
+                <div class="about-profile__identity">
+                    <img class="about-profile__photo" src="/assets/jake-hasenkamp-headshot.webp?v=20260727enhanced" width="400" height="400" loading="lazy" decoding="async" alt="Jacob Jake Hasenkamp, founder of PMHNP Billing">
+                    <p class="about-profile__kicker">Founder and direct point of contact</p>
+                    <h3 id="jake-profile-name">Jacob “Jake” Hasenkamp</h3>
+                    <p>PMHNP Billing was founded in 2025, is based in Chicago, and supports PMHNP and psychiatric practices nationwide.</p>
+                </div>
+                <div class="about-profile__details">
+                    <p>Jake works directly with practices on claim readiness, submission, payment posting, payer follow-up, denials, authorizations, and enrollment dependencies. Work is not handed off to a call center or an anonymous ticket queue.</p>
+                    <ul class="about-profile__facts">
+                        <li><strong>Direct ownership:</strong> one accountable contact follows work from setup through resolution.</li>
+                        <li><strong>Source-grounded guidance:</strong> payer and regulatory statements are checked against current primary sources and the applicable product.</li>
+                        <li><strong>Clear boundaries:</strong> billing support does not replace clinical judgment, legal advice, or the provider’s responsibility for documented services and code selection.</li>
+                    </ul>
+                    <div class="about-profile__links" aria-label="About and trust resources">
+                        <a href="https://www.linkedin.com/in/jacob-hasenkamp" rel="me noopener">View Jake’s LinkedIn</a>
+                        <a href="/editorial-policy.html">Read the editorial policy</a>
+                        <a href="/resources/pmhnp-claim-readiness-audit-worksheet.html">Open the free audit worksheet</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section id="faq" class="faq">
+        <div class="section-header fade-in">
+            <div class="section-label">FAQ</div>
+            <h2 class="section-title">Common questions</h2>
+        </div>
+        <div class="faq-content fade-in">
+            <div class="faq-item">
+                <h3>What do you charge?</h3>
+                <p>I charge 5% of collections—no setup fees, no monthly minimums. You only pay when you get paid. Prior authorizations are billed separately at $25 each.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What's included?</h3>
+                <p>Full claims management, payment posting, denial management, insurance follow-up, and periodic revenue reviews. Everything you need to keep your billing running smoothly.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How does onboarding work?</h3>
+                <p>After we confirm fit and sign the service agreement and Business Associate Agreement, access is set up through the practice's approved EHR, practice-management system, clearinghouse, or payer portal. Do not upload or email patient rosters, claims, appointment exports, or other patient information through this public website.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Do you work with my EHR?</h3>
+                <p>I work with most major EHR and practice management systems used by psychiatric providers. If you're unsure, just ask—I'm happy to check compatibility.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="trust">
+        <div class="floating-shape floating-shape-1"></div>
+        <div class="floating-shape floating-shape-2"></div>
+        <div class="floating-shape floating-shape-3"></div>
+        <div class="floating-shape floating-shape-4"></div>
+        <div class="section-header fade-in">
+            <div class="section-label">Why work with me</div>
+            <h2 class="section-title">Built for psychiatric practices</h2>
+        </div>
+        <div class="trust-grid">
+            <div class="trust-item fade-in">
+                <div class="trust-item-icon"><img src="/assets/identity/care-claim-mark.svg" alt="" aria-hidden="true" width="96" height="72"></div>
+                <h3>PMHNP Focused</h3>
+                <p>Specialized knowledge of psychiatric billing codes and requirements</p>
+            </div>
+            <div class="trust-item fade-in">
+                <div class="trust-item-icon"><img src="/assets/identity/telephone-mark.svg" alt="" aria-hidden="true" width="80" height="72"></div>
+                <h3>Direct Communication</h3>
+                <p>You work with me directly—no call centers or ticket systems</p>
+            </div>
+            <div class="trust-item fade-in">
+                <div class="trust-item-icon"><img src="/assets/identity/claims-mark.svg" alt="" aria-hidden="true" width="80" height="72"></div>
+                <h3>Quick Turnaround</h3>
+                <p>Claims submitted within 24–48 hours of service</p>
+            </div>
+            <div class="trust-item fade-in">
+                <div class="trust-item-icon"><img src="/assets/identity/shield-heart-mark.svg" alt="" aria-hidden="true" width="80" height="72"></div>
+                <h3>HIPAA Compliant</h3>
+                <p>Documented privacy and security safeguards guide PHI-facing work.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial">
+        <div class="section-header fade-in">
+            <div class="section-label">Testimonial</div>
+            <h2 class="section-title">What clients say</h2>
+        </div>
+        <div class="testimonial-content fade-in">
+            <p class="testimonial-quote">Working with Jake has been a game-changer. I used to dread the billing side of things—hours lost to claims and phone calls with insurance. Now I just focus on my patients and trust that Jake's got the rest. He's responsive, thorough, and actually cares about getting it right.</p>
+            <div class="testimonial-author">
+                <span class="testimonial-author-name">Kate</span>
+                <span class="testimonial-author-title">Katie's Hope</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="contact-wrapper">
+            <div class="contact-info fade-in">
+                <div class="contact-kicker"><img class="contact-phone-mark" src="/assets/identity/telephone-mark.svg" alt="" aria-hidden="true" width="80" height="72">No-pressure fit review</div>
+                <h2>See whether PMHNP Billing fits your practice</h2>
+                <p>Share the billing challenge you want to solve. Jake will respond within one business day with a practical next step—not a generic sales sequence.</p>
+                <ul class="contact-proof-list" aria-label="Billing offer highlights">
+                    <li><strong>5% of collections</strong> for full-service billing</li>
+                    <li><strong>No setup fee</strong> and no monthly minimum</li>
+                    <li><strong>Direct support</strong> for psychiatric practices nationwide</li>
+                </ul>
+            </div>
+            <form id="contact-form" class="contact-form fade-in" action="https://formspree.io/f/xkorlzor" method="POST" data-lead-form>
+                <input type="hidden" name="_subject" value="New PMHNP Billing website inquiry">
+                <input type="hidden" name="_next" value="https://pmhnpbilling.com/thank-you.html">
+                <input type="hidden" name="lead_id" value="">
+                <input type="hidden" name="submitted_at" value="">
+                <input type="hidden" name="submission_type" value="prospect">
+                <input type="hidden" name="attribution_version" value="2026-08-v2">
+                <input type="hidden" name="lead_source" value="website">
+                <input type="hidden" name="lead_topic" value="general">
+                <input type="hidden" name="utm_source" value="">
+                <input type="hidden" name="utm_medium" value="">
+                <input type="hidden" name="utm_campaign" value="">
+                <input type="hidden" name="landing_page" value="/">
+                <input type="hidden" name="referrer" value="">
+                <div class="form-honeypot" aria-hidden="true"><label for="company-website">Leave this field empty</label><input type="text" id="company-website" name="_gotcha" tabindex="-1" autocomplete="off"></div>
+                <div class="form-row">
+                    <div class="form-group"><label for="name">Name</label><input type="text" id="name" name="name" autocomplete="name" required></div>
+                    <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" autocomplete="email" required></div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group"><label for="phone">Phone <span>(optional)</span></label><input type="tel" id="phone" name="phone" autocomplete="tel"></div>
+                    <div class="form-group"><label for="practice">Practice name <span>(optional)</span></label><input type="text" id="practice" name="practice" autocomplete="organization"></div>
+                </div>
+                <div class="form-group full">
+                    <label for="services-needed">What would you like help with?</label>
+                    <select id="services-needed" name="services">
+                        <option value="">Select an option</option>
+                        <option value="full-service">Full-service billing</option>
+                        <option value="denials-appeals">Denials and appeals</option>
+                        <option value="credentialing">Credentialing and enrollment</option>
+                        <option value="practice-launch">New-practice launch support</option>
+                        <option value="telehealth">Telehealth billing</option>
+                        <option value="prior-auth">Prior authorizations</option>
+                        <option value="other">Other / Not sure yet</option>
+                    </select>
+                </div>
+                <div class="form-group full"><label for="message">What is the main billing challenge?</label><textarea id="message" name="message" aria-describedby="contact-privacy" placeholder="A short, non-patient-specific summary is plenty."></textarea></div>
+                <p id="contact-privacy" class="form-privacy-note">Please do not include patient information or protected health information in this form.</p>
+                <p class="form-status" role="status" aria-live="polite"></p>
+                <button type="submit" class="submit-btn">Request a billing-fit review</button>
+            </form>
+        </div>
+    </section>
+
+
+    </main>
+
+    <footer class="site-footer" aria-label="Site footer">
+  <div class="site-footer__inner">
+    <a class="site-footer__brand" href="/" aria-label="PMHNP Billing home">
+      <img src="/assets/identity/care-claim-mark-light.svg" alt="" aria-hidden="true" width="96" height="72">
+      <span><strong>PMHNP Billing</strong><small>Human review comes first.</small></span>
+    </a>
+    <nav class="site-footer__links" aria-label="Footer navigation">
+      <a href="/services/pmhnp-billing-services.html">Services</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+  </div>
+  <div class="site-footer__bottom">
+    <span>&copy; 2026 PMHNP Billing LLC</span>
+    <nav class="site-footer__legal" aria-label="Site policies">
+      <a href="/editorial-policy.html">Editorial policy</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+    </nav>
+  </div>
+</footer>
+
+    <script src="script.js?v=20260812mobilescroll" defer></script>
+  <!-- Analytics intentionally disabled in this public design mockup. -->
+  <script id="side-rail-preview-script">
+(() => {
+  const rail = document.createElement('div');
+  rail.id = 'side-rail-concept';
+  rail.setAttribute('aria-hidden', 'true');
+  rail.innerHTML = `
+    <div class="side-rail-left">
+      <div class="side-rail-kicker">YOUR CLAIM, PERSONALLY MANAGED</div>
+      <div class="side-rail-spine"></div>
+      <div class="side-rail-progress"></div>
+      <div class="side-rail-steps">
+        <div class="side-rail-step active"><span class="side-rail-dot">01</span><span>Set up<br>carefully</span></div>
+        <div class="side-rail-step"><span class="side-rail-dot">02</span><span>Submit<br>clean</span></div>
+        <div class="side-rail-step"><span class="side-rail-dot">03</span><span>Follow<br>through</span></div>
+        <div class="side-rail-step"><span class="side-rail-dot">04</span><span>Reconcile<br>&amp; report</span></div>
+      </div>
+    </div>
+    <div class="side-rail-right">
+      <div class="side-rail-note">
+        <strong>Handled<br>by Jake</strong>
+        <small>One careful set of eyes from setup through follow-up.</small>
+        <div class="side-rail-check"><b>✓</b> Personally reviewed</div>
+      </div>
+      <div class="side-rail-tabs">
+        <div class="side-rail-tab active" data-preview-section="overview">Overview</div>
+        <div class="side-rail-tab" data-preview-section="services">Services</div>
+        <div class="side-rail-tab" data-preview-section="about">About Jake</div>
+        <div class="side-rail-tab" data-preview-section="faq">FAQ</div>
+        <div class="side-rail-tab" data-preview-section="contact">Contact</div>
+      </div>
+      <div class="side-rail-stamp">Direct<br>accountability<br>nationwide</div>
+    </div>`;
+  document.body.appendChild(rail);
+
+  const toolbar = document.createElement('div');
+  toolbar.id = 'side-rail-preview-toolbar';
+  toolbar.innerHTML = `
+    <span class="desktop-note">Interactive concept · production unchanged</span>
+    <span class="wide-screen-note">Open on a wider screen to see the side rails</span>
+    <button type="button" aria-pressed="true">Hide rails</button>`;
+  document.body.appendChild(toolbar);
+
+  const button = toolbar.querySelector('button');
+  button.addEventListener('click', () => {
+    const hidden = document.body.classList.toggle('side-rails-hidden');
+    button.textContent = hidden ? 'Show rails' : 'Hide rails';
+    button.setAttribute('aria-pressed', String(!hidden));
+  });
+
+  const progress = rail.querySelector('.side-rail-progress');
+  const steps = [...rail.querySelectorAll('.side-rail-step')];
+  const tabs = [...rail.querySelectorAll('.side-rail-tab')];
+  const targets = [
+    { key: 'overview', element: document.querySelector('main') },
+    { key: 'services', element: document.getElementById('services') },
+    { key: 'about', element: document.getElementById('about') },
+    { key: 'faq', element: document.getElementById('faq') },
+    { key: 'contact', element: document.getElementById('contact') }
+  ].filter(item => item.element);
+
+  let ticking = false;
+  const update = () => {
+    const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    const ratio = Math.max(0, Math.min(1, window.scrollY / maxScroll));
+    progress.style.height = `${Math.max(12, Math.min(94, 12 + ratio * 82))}%`;
+
+    const stepIndex = Math.min(steps.length - 1, Math.floor(ratio * steps.length));
+    steps.forEach((step, index) => {
+      step.classList.toggle('active', index === stepIndex);
+      step.classList.toggle('done', index < stepIndex);
+    });
+
+    const checkpoint = window.scrollY + window.innerHeight * 0.42;
+    let activeKey = targets[0]?.key || 'overview';
+    for (const target of targets) {
+      if (target.element.offsetTop <= checkpoint) activeKey = target.key;
+    }
+    tabs.forEach(tab => tab.classList.toggle('active', tab.dataset.previewSection === activeKey));
+    ticking = false;
+  };
+  const scheduleUpdate = () => {
+    if (!ticking) {
+      ticking = true;
+      window.requestAnimationFrame(update);
+    }
+  };
+  window.addEventListener('scroll', scheduleUpdate, { passive: true });
+  window.addEventListener('resize', scheduleUpdate, { passive: true });
+  update();
+
+  // Keep the mockup safely read-only: no lead submission or analytics event leaves this preview.
+  const form = document.getElementById('contact-form');
+  if (form) {
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      let message = form.querySelector('.preview-form-message');
+      if (!message) {
+        message = document.createElement('p');
+        message.className = 'preview-form-message';
+        form.appendChild(message);
+      }
+      message.textContent = 'Preview only — form submission is disabled on this mockup.';
+    }, true);
+  }
+
+  // Keep same-page navigation inside the mockup despite the live-site base URL.
+  document.querySelectorAll('a[href^="/#"]').forEach(link => {
+    const id = link.getAttribute('href').slice(2);
+    const target = document.getElementById(id);
+    if (!target) return;
+    link.setAttribute('href', `#${id}`);
+  });
+})();
+</script>
+</body>
+</html>
