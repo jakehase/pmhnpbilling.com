@@ -1,0 +1,45 @@
+/* Isolated visual-only preview. Does not modify the production stylesheet. */
+/* 1. Mobile homepage hierarchy: more breathing room for copy, single clear CTA column. */
+@media (max-width: 768px) {
+  .hero { padding-top: 2.35rem; padding-bottom: 2.6rem; }
+  .hero h1 { font-size: clamp(2.6rem, 10.5vw, 3.2rem); line-height: 1.1; margin-bottom: 1.1rem; }
+  .hero-inline-brand { align-items: center; gap: .23em; margin-bottom: .2em; }
+  .hero-inline-brand img { width: 1.05em; height: .8em; }
+  .hero p { margin-bottom: 1.45rem; line-height: 1.62; }
+  .modern-hero-actions { display: grid; grid-template-columns: minmax(0, 1fr); gap: .65rem; width: 100%; }
+  .modern-hero-actions .btn,
+  .modern-hero-actions .modern-secondary-btn { width: 100%; min-height: 48px; }
+  .modern-hero-note { margin-top: 1.05rem; }
+}
+/* 2. The top nav already provides section navigation; soften left story rail, omit the right tabs. */
+@media (min-width: 1380px) {
+  #site-side-rails .site-side-rail-right { display: none; }
+  #site-side-rails .site-side-rail-left { opacity: .46; }
+}
+/* 3. Shorter credentialing introduction while preserving headline and both actions. */
+body.mw-service main.offer-section { padding-top: 5.4rem; }
+body.mw-service main > h1 { font-size: clamp(3.45rem, 6vw, 5.45rem); line-height: 1; }
+body.mw-service main > .lead { margin-top: 1.35rem; margin-bottom: 3.4rem; }
+@media (max-width: 760px) {
+  body.mw-service main.offer-section { padding-top: 3.2rem; }
+  body.mw-service main > h1 { font-size: clamp(2.7rem, 10.7vw, 3.2rem); line-height: 1.02; }
+  body.mw-service main > .lead { margin-top: 1.15rem; margin-bottom: 2.2rem; }
+  body.mw-service .service-actions { margin-top: -.6rem; margin-bottom: 2.8rem; }
+}
+/* 4. More deliberate section rhythm and tighter contact-form field spacing. */
+.services { padding-top: 4.9rem; padding-bottom: 4.9rem; }
+.service-pathways { padding-top: 4.1rem; padding-bottom: 4.1rem; }
+.about { padding-top: 4.9rem; padding-bottom: 4.9rem; }
+.contact { padding-top: 5.1rem; padding-bottom: 5.1rem; }
+.contact-form .form-group { margin-bottom: .88rem; }
+.contact-form .form-row { gap: .7rem; }
+@media (max-width: 768px) {
+  .services, .service-pathways, .about, .contact { padding-top: 3.2rem; padding-bottom: 3.2rem; }
+  .contact-wrapper { gap: 1.4rem; }
+  .contact-info { padding-bottom: .15rem; }
+  .contact-form { padding: 1.05rem; }
+  .contact-form .form-group { margin-bottom: .76rem; }
+}
+/* Preview-only indicator, outside the main CTA flow. */
+.preview-label { display: table; margin: .6rem .9rem .9rem auto; padding: .48rem .68rem; border: 1px solid rgba(16,39,48,.18); border-radius: 999px; background: #fffdf8; color: #123f55; box-shadow: 0 4px 14px rgba(16,39,48,.11); font: 700 .69rem/1.15 'Manrope',sans-serif; letter-spacing: .01em; text-decoration: none; }
+.preview-label:hover, .preview-label:focus-visible { background: #fff; }
