@@ -212,3 +212,142 @@
     transition: none !important;
   }
 }
+
+/*
+ * Localized paper ruffles. These occupy only the blank outer gutters of the
+ * document; the preview injector adds the three decorative spans.
+ */
+.paper-ruffle {
+  position: absolute;
+  z-index: 4;
+  width: 122px;
+  height: 25px;
+  pointer-events: none;
+  opacity: .86;
+  clip-path: polygon(
+    0 58%, 7% 38%, 14% 57%, 21% 31%, 29% 55%, 37% 27%,
+    45% 52%, 54% 29%, 62% 55%, 70% 34%, 78% 58%, 86% 39%,
+    93% 59%, 100% 45%, 100% 79%, 92% 86%, 84% 75%, 76% 88%,
+    68% 74%, 60% 87%, 51% 73%, 42% 86%, 33% 72%, 24% 84%,
+    15% 72%, 7% 82%, 0 74%
+  );
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, .76) 0%,
+      rgba(255, 255, 255, .44) 29%,
+      rgba(113, 88, 54, .055) 48%,
+      rgba(91, 68, 39, .13) 60%,
+      rgba(255, 255, 255, .14) 76%,
+      transparent 100%
+    ),
+    repeating-linear-gradient(
+      102deg,
+      transparent 0 8px,
+      rgba(255, 255, 255, .32) 9px 11px,
+      rgba(104, 80, 49, .045) 12px 14px,
+      transparent 15px 22px
+    ),
+    url('/assets/paper-texture-preview.png') 0 0 / 210px 210px repeat;
+  filter:
+    drop-shadow(0 1px .45px rgba(65, 48, 28, .08))
+    drop-shadow(0 2px 2px rgba(54, 48, 37, .045));
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+
+.paper-ruffle::before,
+.paper-ruffle::after {
+  content: "";
+  position: absolute;
+  right: 5%;
+  left: 5%;
+  pointer-events: none;
+}
+
+.paper-ruffle::before {
+  top: 5px;
+  height: 4px;
+  background: repeating-linear-gradient(
+    96deg,
+    transparent 0 10px,
+    rgba(255, 255, 255, .58) 11px 13px,
+    transparent 14px 20px
+  );
+  filter: blur(.25px);
+}
+
+.paper-ruffle::after {
+  bottom: 4px;
+  height: 3px;
+  background: repeating-linear-gradient(
+    98deg,
+    transparent 0 9px,
+    rgba(83, 61, 34, .12) 10px 12px,
+    transparent 13px 21px
+  );
+  filter: blur(.3px);
+}
+
+.paper-ruffle--top {
+  top: -3px;
+  right: 51px;
+  transform: rotate(-.8deg);
+}
+
+.paper-ruffle--left {
+  top: 176px;
+  left: -48px;
+  width: 120px;
+  transform: rotate(89deg);
+}
+
+.paper-ruffle--right {
+  top: 268px;
+  right: -51px;
+  width: 128px;
+  transform: rotate(91deg);
+}
+
+@media (min-width: 769px) and (max-width: 1100px) {
+  .paper-ruffle--top {
+    right: 48px;
+  }
+
+  .paper-ruffle--left {
+    left: -46px;
+  }
+
+  .paper-ruffle--right {
+    right: -48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .paper-ruffle {
+    width: 96px;
+    height: 21px;
+    opacity: .78;
+    background-size: auto, auto, 170px 170px;
+    filter:
+      drop-shadow(0 1px .4px rgba(65, 48, 28, .07))
+      drop-shadow(0 1.5px 1.5px rgba(54, 48, 37, .04));
+  }
+
+  .paper-ruffle--top {
+    top: -2px;
+    right: 35px;
+  }
+
+  .paper-ruffle--left {
+    top: 169px;
+    left: -37px;
+    width: 94px;
+  }
+
+  .paper-ruffle--right {
+    top: 253px;
+    right: -39px;
+    width: 101px;
+  }
+}
