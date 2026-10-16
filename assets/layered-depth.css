@@ -60,7 +60,6 @@ body.mw-site > nav {
     drop-shadow(0 8px 12px rgba(40, 100, 220, .11));
 }
 
-.nav-intake-btn,
 .hero .btn,
 .submit-btn,
 .founder-intro__link {
@@ -70,6 +69,14 @@ body.mw-site > nav {
     0 20px 38px rgba(16, 39, 48, .09),
     inset 0 1px 0 rgba(255, 255, 255, .2),
     inset 0 -2px 0 rgba(0, 0, 0, .13);
+}
+
+/* The handwritten navigation contact treatment intentionally stays flat. */
+.nav-intake-btn,
+.nav-intake-btn:hover,
+.nav-intake-btn:focus-visible,
+.nav-intake-btn:active {
+  box-shadow: none !important;
 }
 
 .modern-secondary-btn {
@@ -425,7 +432,6 @@ body.mw-site > nav {
 }
 
 @media (hover: hover) {
-  .nav-intake-btn:hover,
   .hero .btn:hover,
   .submit-btn:hover,
   .founder-intro__link:hover {
