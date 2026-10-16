@@ -1,0 +1,214 @@
+/*
+ * Premium paper treatment preview — 2026-10-15
+ * Isolated to /previews/paper-depth/. The live homepage does not link this file.
+ */
+
+.claim-story-visual {
+  isolation: isolate;
+}
+
+.claim-story-visual .modern-shape {
+  z-index: 0;
+}
+
+/* A second sheet sits just beneath the working document. */
+.claim-story-visual::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: min(500px, 91%);
+  height: min(510px, calc(100% - 88px));
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 15% 8%, rgba(255, 255, 255, .68), transparent 31%),
+    radial-gradient(ellipse at 87% 92%, rgba(126, 98, 61, .055), transparent 42%),
+    url('/assets/paper-texture-preview.png') 0 0 / 320px 320px repeat;
+  border: 1px solid rgba(112, 91, 63, .13);
+  border-radius: 2px;
+  box-shadow:
+    0 1px 1px rgba(60, 47, 31, .045),
+    0 7px 14px rgba(31, 46, 48, .065),
+    0 22px 46px rgba(31, 46, 48, .075),
+    inset 0 1px 0 rgba(255, 255, 255, .86),
+    inset 0 -2px 0 rgba(112, 91, 63, .065);
+  transform: translate(-47.8%, -47.4%) rotate(.7deg);
+}
+
+.editorial-journey {
+  z-index: 2;
+  overflow: visible;
+  background-color: #faf7ef;
+  background-image:
+    radial-gradient(circle at 12% 7%, rgba(255, 255, 255, .82), transparent 30%),
+    radial-gradient(ellipse at 89% 91%, rgba(123, 93, 57, .065), transparent 43%),
+    linear-gradient(115deg, rgba(255, 255, 255, .2), transparent 22%, rgba(111, 88, 58, .018) 74%, transparent 100%),
+    url('/assets/paper-texture-preview.png');
+  background-position: 0 0, 0 0, 0 0, 0 0;
+  background-size: auto, auto, auto, 320px 320px;
+  background-repeat: no-repeat, no-repeat, no-repeat, repeat;
+  border-color: rgba(101, 80, 53, .16);
+  border-bottom-color: rgba(91, 69, 42, .22);
+  border-radius: 2px;
+  box-shadow:
+    0 1px 1px rgba(57, 43, 27, .07),
+    0 3px 5px rgba(39, 49, 48, .075),
+    0 13px 25px rgba(30, 44, 46, .11),
+    0 38px 72px rgba(30, 44, 46, .12),
+    14px 28px 56px rgba(40, 100, 220, .03),
+    -11px 31px 52px rgba(23, 104, 93, .027),
+    inset 0 1px 0 rgba(255, 255, 255, .92),
+    inset 1px 0 0 rgba(255, 255, 255, .32),
+    inset -1px 0 0 rgba(105, 83, 55, .025),
+    inset 0 -1px 0 rgba(105, 83, 55, .1),
+    inset 0 -3px 5px -4px rgba(105, 83, 55, .18);
+}
+
+/* Fine printed rule plus a pale impressed edge. */
+.editorial-journey::before {
+  border-color: rgba(38, 73, 83, .76);
+  box-shadow:
+    0 0 0 .5px rgba(255, 255, 255, .62),
+    inset 0 0 0 .5px rgba(105, 83, 55, .025);
+  opacity: .9;
+}
+
+/* The existing folded corner becomes a minute paper curl. */
+.editorial-journey::after {
+  background:
+    linear-gradient(225deg, #eee5d5 0%, #f7f1e6 38%, #fffdf8 72%, #faf6ed 100%);
+  border-left-color: rgba(38, 73, 83, .62);
+  border-bottom-color: rgba(38, 73, 83, .62);
+  box-shadow:
+    -1px 1px 1px rgba(86, 67, 43, .08),
+    -3px 4px 7px rgba(61, 50, 34, .075),
+    inset 1px -1px 0 rgba(255, 255, 255, .72);
+}
+
+.editorial-journey__head,
+.editorial-journey__step {
+  border-bottom-color: rgba(38, 73, 83, .58);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, .56),
+    inset 0 -1px 0 rgba(38, 73, 83, .025);
+}
+
+.editorial-journey__kicker,
+.editorial-journey__step > div,
+.editorial-journey__step p,
+.editorial-journey__signoff {
+  text-shadow: 0 .5px .45px rgba(255, 255, 255, .38);
+}
+
+.editorial-journey h2 {
+  text-shadow:
+    0 .5px .4px rgba(255, 255, 255, .52),
+    0 1px .8px rgba(31, 48, 50, .025);
+}
+
+.editorial-journey h2::after {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, .52),
+    inset 0 -1px 0 rgba(121, 60, 48, .08);
+}
+
+.editorial-journey__inkline,
+.journey-stamp {
+  filter: drop-shadow(0 .6px .45px rgba(31, 50, 54, .11));
+}
+
+.journey-handler-tab {
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, .6), rgba(247, 242, 232, .3)),
+    url('/assets/paper-texture-preview.png') 0 0 / 260px 260px repeat;
+  border-color: rgba(101, 80, 53, .14);
+  box-shadow:
+    0 1px 1px rgba(57, 43, 27, .05),
+    0 5px 11px rgba(31, 46, 48, .075),
+    inset 0 1px 0 rgba(255, 255, 255, .86),
+    inset 0 -1px 0 rgba(105, 83, 55, .06);
+}
+
+.claim-story-replay {
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, .76), rgba(247, 242, 232, .5)),
+    url('/assets/paper-texture-preview.png') 0 0 / 250px 250px repeat;
+}
+
+/* Keep the treatment crisp and inexpensive on tablet/touch hardware. */
+@media (min-width: 769px) and (max-width: 1100px) {
+  .claim-story-visual::before {
+    width: min(500px, 90%);
+    height: min(500px, calc(100% - 92px));
+    box-shadow:
+      0 1px 1px rgba(60, 47, 31, .04),
+      0 6px 13px rgba(31, 46, 48, .06),
+      0 18px 38px rgba(31, 46, 48, .065),
+      inset 0 1px 0 rgba(255, 255, 255, .84),
+      inset 0 -2px 0 rgba(112, 91, 63, .06);
+  }
+
+  .editorial-journey {
+    box-shadow:
+      0 1px 1px rgba(57, 43, 27, .065),
+      0 3px 5px rgba(39, 49, 48, .07),
+      0 11px 23px rgba(30, 44, 46, .1),
+      0 31px 61px rgba(30, 44, 46, .105),
+      inset 0 1px 0 rgba(255, 255, 255, .9),
+      inset 0 -1px 0 rgba(105, 83, 55, .095),
+      inset 0 -3px 5px -4px rgba(105, 83, 55, .15);
+  }
+}
+
+@media (max-width: 768px) {
+  .claim-story-visual::before {
+    width: 92%;
+    height: min(475px, calc(100% - 82px));
+    background-size: auto, auto, 240px 240px;
+    box-shadow:
+      0 1px 1px rgba(60, 47, 31, .04),
+      0 5px 11px rgba(31, 46, 48, .055),
+      0 15px 30px rgba(31, 46, 48, .06),
+      inset 0 1px 0 rgba(255, 255, 255, .82),
+      inset 0 -2px 0 rgba(112, 91, 63, .055);
+    transform: translate(-48.6%, -47.8%) rotate(.45deg);
+  }
+
+  .editorial-journey {
+    background-size: auto, auto, auto, 240px 240px;
+    box-shadow:
+      0 1px 1px rgba(57, 43, 27, .06),
+      0 3px 5px rgba(39, 49, 48, .065),
+      0 10px 21px rgba(30, 44, 46, .09),
+      0 27px 52px rgba(30, 44, 46, .09),
+      inset 0 1px 0 rgba(255, 255, 255, .9),
+      inset 0 -1px 0 rgba(105, 83, 55, .09),
+      inset 0 -3px 5px -4px rgba(105, 83, 55, .14);
+  }
+
+  .journey-handler-tab,
+  .claim-story-replay {
+    background-size: auto, 220px 220px;
+  }
+}
+
+@media (max-width: 420px) {
+  .claim-story-visual::before {
+    width: 94%;
+    height: min(440px, calc(100% - 76px));
+    transform: translate(-49%, -48.2%) rotate(.35deg);
+  }
+
+  .editorial-journey::after {
+    width: 19px;
+    height: 19px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .editorial-journey,
+  .claim-story-visual::before {
+    transition: none !important;
+  }
+}

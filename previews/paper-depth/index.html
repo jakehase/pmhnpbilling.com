@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>PMHNP Billing — Premium Paper Preview</title>
+  <style>
+    html,
+    body,
+    #preview-frame {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      border: 0;
+      background: #faf7f0;
+    }
+
+    body { overflow: hidden; }
+  </style>
+</head>
+<body>
+  <iframe
+    id="preview-frame"
+    src="/"
+    title="PMHNP Billing premium-paper visual preview"
+    sandbox="allow-same-origin allow-scripts allow-popups"
+  ></iframe>
+  <script>
+    (() => {
+      const frame = document.getElementById('preview-frame');
+
+      frame.addEventListener('load', () => {
+        const previewDocument = frame.contentDocument;
+        if (!previewDocument || previewDocument.querySelector('link[data-paper-depth-preview]')) return;
+
+        const stylesheet = previewDocument.createElement('link');
+        stylesheet.rel = 'stylesheet';
+        stylesheet.href = '/assets/paper-depth-preview.css?v=20261015a';
+        stylesheet.dataset.paperDepthPreview = 'true';
+        previewDocument.head.appendChild(stylesheet);
+
+        previewDocument.querySelectorAll('form').forEach((form) => {
+          form.addEventListener('submit', (event) => event.preventDefault());
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
