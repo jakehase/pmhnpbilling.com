@@ -36,17 +36,17 @@
 
         const stylesheet = previewDocument.createElement('link');
         stylesheet.rel = 'stylesheet';
-        stylesheet.href = '/assets/paper-depth-preview.css?v=20261015b';
+        stylesheet.href = '/assets/paper-depth-preview.css?v=20261015c';
         stylesheet.dataset.paperDepthPreview = 'true';
         previewDocument.head.appendChild(stylesheet);
 
         const paper = previewDocument.querySelector('.editorial-journey');
-        if (paper && !paper.querySelector('.paper-ruffle')) {
-          ['top', 'left', 'right'].forEach((position) => {
-            const ruffle = previewDocument.createElement('span');
-            ruffle.className = `paper-ruffle paper-ruffle--${position}`;
-            ruffle.setAttribute('aria-hidden', 'true');
-            paper.appendChild(ruffle);
+        if (paper && !paper.querySelector('.paper-corner')) {
+          ['top-right', 'bottom-left', 'bottom-right'].forEach((position) => {
+            const corner = previewDocument.createElement('span');
+            corner.className = `paper-corner paper-corner--${position}`;
+            corner.setAttribute('aria-hidden', 'true');
+            paper.appendChild(corner);
           });
         }
 

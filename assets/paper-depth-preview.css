@@ -214,140 +214,172 @@
 }
 
 /*
- * Localized paper ruffles. These occupy only the blank outer gutters of the
- * document; the preview injector adds the three decorative spans.
+ * Natural paper corners. The original geometric fold is replaced with three
+ * small, irregular lifts that sit almost entirely outside the text frame.
  */
-.paper-ruffle {
-  position: absolute;
-  z-index: 4;
-  width: 122px;
-  height: 25px;
-  pointer-events: none;
-  opacity: .86;
-  clip-path: polygon(
-    0 58%, 7% 38%, 14% 57%, 21% 31%, 29% 55%, 37% 27%,
-    45% 52%, 54% 29%, 62% 55%, 70% 34%, 78% 58%, 86% 39%,
-    93% 59%, 100% 45%, 100% 79%, 92% 86%, 84% 75%, 76% 88%,
-    68% 74%, 60% 87%, 51% 73%, 42% 86%, 33% 72%, 24% 84%,
-    15% 72%, 7% 82%, 0 74%
-  );
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255, 255, 255, .76) 0%,
-      rgba(255, 255, 255, .44) 29%,
-      rgba(113, 88, 54, .055) 48%,
-      rgba(91, 68, 39, .13) 60%,
-      rgba(255, 255, 255, .14) 76%,
-      transparent 100%
-    ),
-    repeating-linear-gradient(
-      102deg,
-      transparent 0 8px,
-      rgba(255, 255, 255, .32) 9px 11px,
-      rgba(104, 80, 49, .045) 12px 14px,
-      transparent 15px 22px
-    ),
-    url('/assets/paper-texture-preview.png') 0 0 / 210px 210px repeat;
-  filter:
-    drop-shadow(0 1px .45px rgba(65, 48, 28, .08))
-    drop-shadow(0 2px 2px rgba(54, 48, 37, .045));
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+.editorial-journey {
+  border-radius: 3px 1px 4px 2px;
 }
 
-.paper-ruffle::before,
-.paper-ruffle::after {
+.editorial-journey::after {
+  opacity: 0;
+}
+
+.paper-corner {
+  position: absolute;
+  z-index: 5;
+  display: block;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 34% 22%, rgba(255, 255, 255, .76), transparent 38%),
+    linear-gradient(145deg, rgba(255, 255, 255, .74), rgba(238, 229, 214, .92) 48%, rgba(191, 171, 142, .34) 73%, rgba(255, 253, 247, .9)),
+    url('/assets/paper-texture-preview.png') 0 0 / 185px 185px repeat;
+  filter:
+    drop-shadow(0 1px .6px rgba(72, 54, 31, .1))
+    drop-shadow(0 4px 4px rgba(47, 45, 37, .085));
+}
+
+.paper-corner::before,
+.paper-corner::after {
   content: "";
   position: absolute;
-  right: 5%;
-  left: 5%;
   pointer-events: none;
 }
 
-.paper-ruffle::before {
-  top: 5px;
-  height: 4px;
-  background: repeating-linear-gradient(
-    96deg,
-    transparent 0 10px,
-    rgba(255, 255, 255, .58) 11px 13px,
-    transparent 14px 20px
-  );
+/* A rolled upper corner with a visible shaded underside and highlight ridge. */
+.paper-corner--top-right {
+  top: -20px;
+  right: -20px;
+  width: 46px;
+  height: 46px;
+  border-radius: 3px 1px 10px 72%;
+  clip-path: polygon(24% 0, 100% 0, 100% 100%, 88% 95%, 73% 82%, 61% 66%, 50% 48%, 36% 31%);
+  transform: rotate(1.4deg);
+}
+
+.paper-corner--top-right::before {
+  top: 6px;
+  right: 2px;
+  width: 26px;
+  height: 33px;
+  border-radius: 5% 0 38% 78%;
+  background:
+    linear-gradient(215deg, rgba(255, 255, 255, .68) 0 28%, rgba(144, 119, 82, .18) 48%, rgba(96, 73, 42, .25) 61%, rgba(246, 239, 227, .86) 66% 100%);
+  box-shadow:
+    -2px 2px 3px rgba(65, 48, 27, .08),
+    inset 2px -1px 2px rgba(255, 255, 255, .44);
+  transform: rotate(-7deg) skewY(6deg);
+}
+
+.paper-corner--top-right::after {
+  top: 7px;
+  right: 6px;
+  width: 23px;
+  height: 1px;
+  border-radius: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .82), transparent);
+  transform: rotate(39deg);
   filter: blur(.25px);
 }
 
-.paper-ruffle::after {
-  bottom: 4px;
-  height: 3px;
-  background: repeating-linear-gradient(
-    98deg,
-    transparent 0 9px,
-    rgba(83, 61, 34, .12) 10px 12px,
-    transparent 13px 21px
-  );
-  filter: blur(.3px);
+/* Lower corners barely leave the desk, creating an imperfect paper edge. */
+.paper-corner--bottom-left,
+.paper-corner--bottom-right {
+  bottom: -19px;
+  width: 67px;
+  height: 30px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, .72) 0 22%, rgba(243, 236, 224, .9) 44%, rgba(133, 105, 68, .16) 66%, rgba(255, 252, 245, .84) 100%),
+    url('/assets/paper-texture-preview.png') 0 0 / 175px 175px repeat;
+  filter:
+    drop-shadow(0 1px .5px rgba(72, 54, 31, .08))
+    drop-shadow(2px 4px 4px rgba(47, 45, 37, .075));
 }
 
-.paper-ruffle--top {
-  top: -3px;
-  right: 51px;
-  transform: rotate(-.8deg);
+.paper-corner--bottom-left {
+  left: -6px;
+  bottom: -27px;
+  border-radius: 2px 8px 70% 10px;
+  clip-path: polygon(0 0, 22% 7%, 45% 2%, 67% 13%, 100% 26%, 91% 58%, 74% 76%, 49% 88%, 22% 81%, 0 64%);
+  transform: rotate(1.8deg) skewX(-3deg);
 }
 
-.paper-ruffle--left {
-  top: 176px;
-  left: -48px;
-  width: 120px;
-  transform: rotate(89deg);
+.paper-corner--bottom-right {
+  right: -6px;
+  border-radius: 8px 2px 10px 70%;
+  clip-path: polygon(0 25%, 28% 12%, 54% 3%, 77% 8%, 100% 0, 100% 63%, 78% 82%, 51% 89%, 25% 75%, 8% 57%);
+  transform: rotate(-1.6deg) skewX(3deg);
 }
 
-.paper-ruffle--right {
-  top: 268px;
-  right: -51px;
-  width: 128px;
-  transform: rotate(91deg);
+.paper-corner--bottom-left::before,
+.paper-corner--bottom-right::before {
+  right: 10%;
+  bottom: 7px;
+  left: 10%;
+  height: 2px;
+  border-radius: 100%;
+  background: linear-gradient(90deg, transparent, rgba(103, 76, 42, .17), transparent);
+  filter: blur(.35px);
+}
+
+.paper-corner--bottom-left::after,
+.paper-corner--bottom-right::after {
+  top: 5px;
+  right: 12%;
+  left: 12%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .78), transparent);
 }
 
 @media (min-width: 769px) and (max-width: 1100px) {
-  .paper-ruffle--top {
-    right: 48px;
+  .paper-corner--top-right {
+    top: -18px;
+    right: -18px;
+    width: 43px;
+    height: 43px;
   }
 
-  .paper-ruffle--left {
-    left: -46px;
+  .paper-corner--bottom-left,
+  .paper-corner--bottom-right {
+    width: 62px;
+    height: 28px;
+    bottom: -18px;
   }
 
-  .paper-ruffle--right {
-    right: -48px;
-  }
+  .paper-corner--bottom-left { bottom: -26px; }
 }
 
 @media (max-width: 768px) {
-  .paper-ruffle {
-    width: 96px;
-    height: 21px;
-    opacity: .78;
-    background-size: auto, auto, 170px 170px;
+  .paper-corner--top-right {
+    top: -17px;
+    right: -17px;
+    width: 38px;
+    height: 38px;
     filter:
-      drop-shadow(0 1px .4px rgba(65, 48, 28, .07))
-      drop-shadow(0 1.5px 1.5px rgba(54, 48, 37, .04));
+      drop-shadow(0 1px .5px rgba(72, 54, 31, .085))
+      drop-shadow(0 3px 3px rgba(47, 45, 37, .07));
   }
 
-  .paper-ruffle--top {
-    top: -2px;
-    right: 35px;
+  .paper-corner--top-right::before {
+    top: 5px;
+    width: 22px;
+    height: 27px;
   }
 
-  .paper-ruffle--left {
-    top: 169px;
-    left: -37px;
-    width: 94px;
+  .paper-corner--bottom-left,
+  .paper-corner--bottom-right {
+    bottom: -15px;
+    width: 53px;
+    height: 24px;
+    background-size: auto, 150px 150px;
+    filter:
+      drop-shadow(0 1px .4px rgba(72, 54, 31, .07))
+      drop-shadow(1px 3px 3px rgba(47, 45, 37, .06));
   }
 
-  .paper-ruffle--right {
-    top: 253px;
-    right: -39px;
-    width: 101px;
+  .paper-corner--bottom-left {
+    left: -4px;
+    bottom: -22px;
   }
+  .paper-corner--bottom-right { right: -4px; }
 }
