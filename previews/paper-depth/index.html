@@ -36,18 +36,21 @@
 
         const stylesheet = previewDocument.createElement('link');
         stylesheet.rel = 'stylesheet';
-        stylesheet.href = '/assets/paper-depth-preview.css?v=20261015c';
+        stylesheet.href = '/assets/paper-depth-preview.css?v=20261015d';
         stylesheet.dataset.paperDepthPreview = 'true';
         previewDocument.head.appendChild(stylesheet);
 
         const paper = previewDocument.querySelector('.editorial-journey');
-        if (paper && !paper.querySelector('.paper-corner')) {
-          ['top-right', 'bottom-left', 'bottom-right'].forEach((position) => {
-            const corner = previewDocument.createElement('span');
-            corner.className = `paper-corner paper-corner--${position}`;
-            corner.setAttribute('aria-hidden', 'true');
-            paper.appendChild(corner);
-          });
+        if (paper && !paper.closest('.paper-stage')) {
+          const stage = previewDocument.createElement('div');
+          stage.className = 'paper-stage';
+          paper.parentNode.insertBefore(stage, paper);
+          stage.appendChild(paper);
+
+          const fold = previewDocument.createElement('span');
+          fold.className = 'paper-fold';
+          fold.setAttribute('aria-hidden', 'true');
+          stage.appendChild(fold);
         }
 
         previewDocument.querySelectorAll('form').forEach((form) => {
