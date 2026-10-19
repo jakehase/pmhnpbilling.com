@@ -5,13 +5,34 @@
   window.toggleMenu = function toggleMenu() {
     var toggle = document.querySelector('.menu-toggle');
     var mobileMenu = document.getElementById('mobileMenu');
+    var isOpen = false;
     if (toggle) {
-      var isOpen = toggle.classList.toggle('active');
+      isOpen = toggle.classList.toggle('active');
       toggle.setAttribute('aria-expanded', String(isOpen));
       toggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
     }
-    if (mobileMenu) mobileMenu.classList.toggle('active');
+    if (mobileMenu) mobileMenu.classList.toggle('active', isOpen);
+    document.body.classList.toggle('homepage-menu-open', isOpen);
   };
+
+  function closeMenu() {
+    var toggle = document.querySelector('.menu-toggle');
+    var mobileMenu = document.getElementById('mobileMenu');
+    if (toggle) {
+      toggle.classList.remove('active');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Open navigation menu');
+    }
+    if (mobileMenu) mobileMenu.classList.remove('active');
+    document.body.classList.remove('homepage-menu-open');
+  }
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') closeMenu();
+  });
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 900) closeMenu();
+  }, { passive: true });
 
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener('click', function (event) {

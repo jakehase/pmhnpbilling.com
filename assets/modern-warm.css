@@ -50,6 +50,7 @@ body > nav {
   -webkit-backdrop-filter: blur(18px);
 }
 .logo {
+  min-height: 44px;
   gap: .72rem;
   transform-origin: left center;
   transition: transform .24s cubic-bezier(.2,.8,.2,1);
@@ -79,10 +80,10 @@ body > nav {
 .logo-text .dot { display: none; }
 .logo-text .billing { margin-left: .18rem; color: var(--mw-ink); font-weight: 800; }
 .nav-links { gap: clamp(1.1rem, 2vw, 2rem); }
-.nav-links a { color: var(--mw-ink-soft); font-size: .76rem; font-weight: 700; }
+.nav-links a { min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; color: var(--mw-ink-soft); font-size: .8125rem; font-weight: 700; }
 .nav-links a:hover { color: var(--mw-blue); }
 .nav-intake-btn {
-  min-height: 42px;
+  min-height: 44px;
   display: inline-flex;
   align-items: center;
   padding: 0 1.05rem;
@@ -655,7 +656,7 @@ body > nav {
 .form-group label { color: var(--mw-ink-soft); font-size: .63rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .form-group input,
 .form-group textarea,
-.form-group select { color: var(--mw-ink); background: var(--mw-paper); border: 1px solid var(--mw-line); border-radius: 13px; font-family: var(--mw-body); }
+.form-group select { color: var(--mw-ink); background: var(--mw-paper); border: 1px solid var(--mw-line); border-radius: 13px; font-family: var(--mw-body); font-size: 1rem; }
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus { border-color: var(--mw-blue); box-shadow: 0 0 0 3px rgba(40,100,220,.1); }
@@ -694,7 +695,7 @@ body > nav {
 
 @media (max-width: 1040px) {
   .nav-links { gap: 1.1rem; }
-  .nav-links a { font-size: .7rem; }
+  .nav-links a { font-size: .8125rem; }
   .hero { grid-template-columns: minmax(0, 1fr); gap: 1.2rem; }
   .modern-hero-copy { max-width: 760px; }
   .modern-hero-visual { width: min(610px, 100%); min-height: 590px; margin: 0 auto; }
@@ -710,7 +711,7 @@ body > nav {
   .nav-intake-btn { display: none; }
   .menu-toggle span { background: var(--mw-ink); }
   .mobile-menu { color: var(--mw-ink); background: rgba(247,243,235,.98); }
-  .mobile-menu a { color: var(--mw-ink); font-family: var(--mw-display); font-size: 1.7rem; font-weight: 400; }
+  .mobile-menu a { min-height: 44px; display: flex; align-items: center; color: var(--mw-ink); font-family: var(--mw-display); font-size: 1.7rem; font-weight: 400; }
   .hero-wrapper { padding-top: 68px; }
   .hero { width: min(100% - 28px, 1180px); min-height: auto; padding: 3.5rem 0 3rem; }
   .hero h1 { font-size: clamp(3rem, 13vw, 3.5rem); }
@@ -1040,8 +1041,8 @@ body > nav {
   z-index: 9;
   right: 8px;
   bottom: 6px;
-  min-height: 34px;
-  padding: 0 11px;
+  min-height: 44px;
+  padding: 0 13px;
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -1050,7 +1051,7 @@ body > nav {
   border: 1px solid rgba(23,104,93,.22);
   border-radius: 999px;
   box-shadow: 0 8px 20px rgba(16,39,48,.1);
-  font: 800 .56rem/1 Arial,sans-serif;
+  font: 800 .75rem/1 Arial,sans-serif;
   letter-spacing: .06em;
   text-transform: uppercase;
   cursor: pointer;
@@ -1077,16 +1078,16 @@ body > nav {
   .editorial-journey__head { padding-left: 12px; padding-right: 12px; }
   .editorial-journey h2 { font-size: 1.92rem; }
   .editorial-journey__step { min-height: 65px; padding: 12px 82px 11px 40px; }
-  .editorial-journey__step > div { gap: .4rem; font-size: .59rem; letter-spacing: .1em; }
-  .editorial-journey__step p { font-size: .57rem; line-height: 1.35; }
+  .editorial-journey__step > div { gap: .4rem; font-size: .64rem; letter-spacing: .08em; }
+  .editorial-journey__step p { font-size: .62rem; line-height: 1.42; }
   .editorial-journey__inkline { left: 14px; width: 22px; }
   .journey-stamp { width: 68px; right: 4px; gap: 2px; }
   .journey-stamp svg { width: 25px; height: 25px; }
-  .journey-stamp em { font-size: .39rem; }
+  .journey-stamp em { font-size: .48rem; }
   .journey-stamp--final { width: 76px; }
-  .journey-handler-tab { top: -20px; right: 18px; min-width: 122px; min-height: 38px; padding: 5px 10px 5px 7px; }
+  .journey-handler-tab { top: -20px; right: 18px; min-width: 128px; min-height: 44px; padding: 6px 10px 6px 7px; }
   .journey-handler-tab img { width: 26px; height: 22px; }
-  .journey-handler-tab span { font-size: .48rem; }
+  .journey-handler-tab span { font-size: .56rem; }
   .editorial-journey__signoff { font-size: .76rem; }
 }
 @media (prefers-reduced-motion: reduce) {

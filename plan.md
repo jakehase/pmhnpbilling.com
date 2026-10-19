@@ -321,3 +321,56 @@ Claim allowed on release: the package was implemented, one focused smoke passed,
 Claim not allowed until measured: the release increased traffic, caused leads, achieved the 30-day targets, or improved conversion rate. Current-tree removal also does not prove historical Git copies, third-party caches, forks, or prior clones were erased.
 
 Stop condition reached on 2026-08-11: the release is live and verified with a recorded baseline and measurement cadence. No efficacy claim is made before post-release evidence exists.
+
+---
+
+## 21. 2026-10-19 mobile and tablet responsive-hardening addendum
+
+### Objective and fidelity
+
+- Reply anchor: Jake's 2026-10-19 request to make the tablet and mobile versions of PMHNPBilling.com fully polished.
+- Active path: `/root/clawd/pmhnpbilling-site` on `main`.
+- Fidelity: `parity_for_scope` for the public site's phone and tablet presentation; no desktop redesign or copy rewrite.
+- Stop condition: `responsive_smoke_green_and_live_release_verified_or_blocker`.
+- Truth boundary: one focused automated smoke plus representative screenshot inspection can prove the tested responsive contract, not flawless rendering on every possible browser/device combination.
+
+### Scope and surface matrix
+
+| Surface | Coverage | Acceptance condition |
+|---|---|---|
+| Public routes | Every same-origin URL in `sitemap.xml`, plus legal/utility pages linked from the public tree | HTTP success and no route-specific horizontal overflow at tested breakpoints |
+| Homepage | Header/nav, hero, trust/proof, services, CTA, form, footer, decorative layers | No clipping/overlap; menu and CTAs usable; text and form controls remain legible |
+| Service/resource templates | Representative service and resource pages plus route-wide geometry checks | Content, cards, tables/lists, CTAs, and footer remain within the viewport |
+| Blog templates | Blog index and representative long-form article plus route-wide geometry checks | Article typography, media, callouts, and navigation remain readable and unbroken |
+| Legal/utility templates | Privacy, terms, editorial policy, thank-you | No overflow or controls hidden behind fixed elements |
+| Breakpoints | 360×800, 390×844, 430×932, 768×1024, 820×1180, and 1024×768 | Phone and portrait/landscape tablet layouts satisfy the same mechanical checks |
+
+### Implementation sequence
+
+1. Capture the exact repository/live baseline and enumerate public routes.
+2. Run a browser-backed audit on the remote execution plane, recording overflow, out-of-bounds elements, navigation state, form geometry, and representative screenshots.
+3. Fix only confirmed responsive defects in the canonical shared CSS/JavaScript or the affected product page.
+4. Run exactly one focused responsive smoke across the defined route/breakpoint matrix and inspect representative screenshots.
+5. Inspect the diff, commit, push `main`, and verify the public site serves the release and passes the focused live smoke.
+
+### Confusion-prevention rules
+
+- Do not treat a desktop screenshot or HTTP 200 as mobile/tablet proof.
+- Do not hide content merely to silence overflow; preserve content and functionality.
+- Do not alter pricing, clinical/payer claims, analytics semantics, or the Formspree endpoint.
+- Do not count preview-only CSS as the live responsive implementation unless the public HTML imports it.
+- A single focused smoke is mechanical evidence only; avoid claims of universal device/browser perfection.
+
+### Estimate
+
+- Elapsed time: approximately 1–3 hours, including live publication propagation.
+- Compute: browser-backed route/breakpoint audit on Hetzner; lightweight edits and Git operations on the control plane.
+- External writes: one repository push/deployment after the focused smoke passes; no form submissions or customer communications.
+
+### Acceptance checkpoint
+
+- Baseline: 66 routes × 6 viewports, 396 checks, 29 failing route/viewport combinations.
+- Implemented: responsive navigation through 900px, 44px-or-larger touch targets, 16px phone form/search controls, safer menu state/scroll locking, 48px conversion controls, footer legibility/touch sizing, and shared-asset cache-busting.
+- Focused acceptance smoke: PASS, 396/396 checks, zero failures, zero warnings.
+- Evidence: `/root/clawd/artifacts/pmhnp-responsive-20261019/final-smoke/report.json` and representative captures under `final-smoke/screenshots/`.
+- Remaining before stop condition: publish the exact release commit and verify the live versioned assets and representative public routes.

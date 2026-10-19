@@ -5,8 +5,8 @@
 - Project slug: `pmhnpbilling-acquisition-2026-08`
 - Canonical plan: `/root/clawd/pmhnpbilling-site/plan.md`
 - Decisions log: `/root/clawd/pmhnpbilling-site/DECISIONS.md`
-- Last updated: 2026-08-11
-- Status: complete
+- Last updated: 2026-10-19
+- Status: responsive hardening release candidate green; publication verification pending (the 2026-08 acquisition release remains complete)
 - Current fidelity: production_slice
 
 ## Released state
@@ -44,9 +44,17 @@ Restricted evidence root:
 /root/clawd/clients/pmhnp-billing/acquisition/artifacts/2026-08-10-launch
 ```
 
+## Responsive-hardening evidence (2026-10-19)
+
+- Baseline browser audit: 66 routes × 6 phone/tablet viewports; 29 failing route/viewport checks identified.
+- Implemented shared fixes for touch targets, phone form/search sizing, portrait-tablet navigation, menu state/scroll locking, conversion controls, footer links, and cache-busting.
+- Focused acceptance smoke: PASS, 396/396 route/viewport checks, zero failures and zero warnings.
+- Representative homepage, service, blog, article, resource, and legal screenshots were inspected at phone and tablet widths.
+- Evidence root: `/root/clawd/artifacts/pmhnp-responsive-20261019/`; acceptance report: `final-smoke/report.json`.
+
 ## Active blockers
 
-- None for this release.
+- None. Publication and live verification remain before the responsive addendum is closed.
 
 ## Measurement cadence
 
@@ -59,6 +67,7 @@ Restricted evidence root:
 Allowed claim:
 
 - The current-tree privacy remediation and approved acquisition package are deployed and mechanically verified.
+- The responsive release candidate passed the declared 66-route, six-viewport mechanical contract locally; no live-deployment claim is allowed until publication is verified.
 
 Not allowed:
 

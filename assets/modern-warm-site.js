@@ -43,7 +43,7 @@
       if (event.key === 'Escape') setOpen(false);
     });
     window.addEventListener('resize', () => {
-      if (window.innerWidth > 760) setOpen(false);
+      if (window.innerWidth > 900) setOpen(false);
     }, { passive: true });
 
     return { button, menu, setOpen };

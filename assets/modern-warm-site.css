@@ -29,6 +29,7 @@ body.mw-site {
   font-family: var(--mw-body);
   line-height: 1.68;
 }
+body.mw-site.mw-menu-open { overflow: hidden; }
 body.mw-site::before {
   content: "";
   position: fixed;
@@ -100,6 +101,7 @@ body.mw-site .topbar-inner {
 }
 body.mw-site .logo,
 body.mw-site .brand {
+  min-height: 44px;
   display: inline-flex;
   align-items: center;
   gap: .72rem;
@@ -163,9 +165,14 @@ body.mw-site nav li { margin: 0; }
 body.mw-site nav ul a,
 body.mw-site .topnav a,
 body.mw-site .links a {
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: var(--mw-ink-soft);
   font-family: var(--mw-body);
-  font-size: .73rem;
+  font-size: .8125rem;
   font-weight: 800;
   letter-spacing: .01em;
   text-decoration: none;
@@ -183,8 +190,8 @@ body.mw-site nav ul a.nav-cta {
 body.mw-site nav ul a.nav-cta:hover,
 body.mw-site nav ul a.nav-cta:focus-visible { color: #fff; background: var(--mw-blue-dark); }
 .mw-menu-toggle {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   display: none;
   place-items: center;
   padding: 0;
@@ -261,8 +268,18 @@ body.mw-site .site-footer__bottom {
   border-top: 1px solid rgba(255,255,255,.12);
   font-size: .7rem;
 }
-body.mw-site .site-footer__legal { display: flex; flex-wrap: wrap; gap: .85rem; padding: .45rem .65rem; background: #143a35; border-radius: .65rem; }
-body.mw-site .site-footer__legal a { color: #fff; text-decoration: none; }
+body.mw-site .site-footer__legal { display: flex; flex-wrap: wrap; gap: .55rem; padding: .45rem .65rem; background: #143a35; border-radius: .65rem; }
+body.mw-site .site-footer__legal a {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 .35rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: .875rem;
+  text-decoration: none;
+}
 body.mw-site .site-footer__legal a:hover { color: #fff; }
 body.mw-site .site-footer nav.site-footer__legal,
 body.mw-article footer nav.site-footer__legal {
@@ -423,7 +440,7 @@ body.mw-blog-index .blog-search-panel {
 }
 body.mw-blog-index .blog-search-label { color: var(--mw-mint-dark); font-size: .65rem; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
 body.mw-blog-index .blog-search-input-wrap { background: var(--mw-paper); border-color: var(--mw-line); border-radius: 15px; }
-body.mw-blog-index .blog-search-input-wrap input { color: var(--mw-ink); background: transparent; font-family: var(--mw-body); }
+body.mw-blog-index .blog-search-input-wrap input { min-height: 44px; color: var(--mw-ink); background: transparent; font-family: var(--mw-body); font-size: 1rem; }
 body.mw-blog-index .blog-posts {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -660,7 +677,7 @@ body.mw-site a.conversion-cta__link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 44px;
+  min-height: 48px;
   padding: .78rem 1.05rem;
   border-radius: 999px;
   font-size: .75rem;
@@ -880,6 +897,40 @@ body.mw-app td { border-color: var(--mw-line); }
   body.mw-blog-index .blog-post { min-height: 235px; }
   body.mw-claim .grid,
   body.mw-app .grid-two { grid-template-columns: 1fr; }
+}
+
+/* Portrait tablets use touch-first navigation instead of compressed desktop links. */
+@media (min-width: 761px) and (max-width: 900px) {
+  body.mw-site > nav,
+  body.mw-site > header.topbar { min-height: 72px; padding: 0 1rem; }
+  body.mw-site .nav-inner,
+  body.mw-site .topbar-inner { width: calc(100% - 28px); min-height: 72px; position: relative; }
+  .mw-menu-toggle { display: grid; z-index: 2; }
+  body.mw-site nav ul,
+  body.mw-site .topnav,
+  body.mw-site .links { display: none !important; }
+  body.mw-menu-open nav ul,
+  body.mw-menu-open .topnav,
+  body.mw-menu-open .links {
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 0;
+    right: 0;
+    z-index: 50;
+    min-height: calc(100vh - 72px);
+    padding: 2.3rem 1.2rem;
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: .45rem;
+    background: rgba(247,243,235,.985);
+    border-bottom: 1px solid var(--mw-line);
+    box-shadow: 0 26px 60px rgba(16,39,48,.12);
+  }
+  body.mw-menu-open nav ul a,
+  body.mw-menu-open .topnav a,
+  body.mw-menu-open .links a { display: flex; padding: .5rem; color: var(--mw-ink); font-family: var(--mw-display); font-size: 1.75rem; font-weight: 400; }
 }
 
 @media (max-width: 760px) {

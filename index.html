@@ -98,6 +98,7 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
+        body.homepage-menu-open { overflow: hidden; }
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.7;
@@ -182,9 +183,13 @@
         .menu-toggle {
             display: none;
             flex-direction: column;
+            align-items: center;
+            justify-content: center;
             gap: 5px;
             cursor: pointer;
-            padding: 5px;
+            width: 44px;
+            height: 44px;
+            padding: 0;
             z-index: 1001;
             appearance: none;
             border: 0;
@@ -713,11 +718,12 @@
             .contact-wrapper { grid-template-columns: 1fr; gap: 2.5rem; }
             .about-profile { grid-template-columns: 1fr; }
             .about-profile__identity { border-right: 0; border-bottom: 1px solid #d7e1e5; }
-        }
-        @media (max-width: 768px) {
             .nav-links { display: none; }
             .nav-intake-btn { display: none; }
             .menu-toggle { display: flex; }
+            .mobile-menu a { min-height: 44px; display: flex; align-items: center; }
+        }
+        @media (max-width: 768px) {
             .hero h1 { font-size: 2.25rem; }
             .hero p { font-size: 1.05rem; }
             .hero-logo svg { width: 100px; height: 100px; }
@@ -750,8 +756,8 @@
         }
     </style>
     <link rel="stylesheet" href="assets/live-fixes.css?v=20260812mobilescroll">
-    <link rel="stylesheet" href="assets/modern-warm.css?v=20260812mobilescroll">
-    <link rel="stylesheet" href="/assets/custom-identity.css?v=20260731contactpen">
+    <link rel="stylesheet" href="assets/modern-warm.css?v=20261019responsive">
+    <link rel="stylesheet" href="/assets/custom-identity.css?v=20261019responsive">
     <link rel="stylesheet" href="/assets/site-side-rails.css?v=20260826b">
     <link rel="stylesheet" href="/assets/homepage-character-pass.css?v=20260826b">
     <link rel="stylesheet" href="/assets/visual-refinements-20260928.css?v=20260928a">
@@ -1220,7 +1226,7 @@
   </div>
 </footer>
 
-    <script src="script.js?v=20260812mobilescroll" defer></script>
+    <script src="script.js?v=20261019responsive" defer></script>
   <script src="/assets/site-side-rails.js?v=20260826b" defer></script>
   <script src="/assets/analytics-config.js?v=20260709a"></script>
   <script src="/assets/analytics.js?v=20260810a" defer></script>
