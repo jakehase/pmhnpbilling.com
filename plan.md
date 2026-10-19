@@ -373,4 +373,6 @@ Stop condition reached on 2026-08-11: the release is live and verified with a re
 - Implemented: responsive navigation through 900px, 44px-or-larger touch targets, 16px phone form/search controls, safer menu state/scroll locking, 48px conversion controls, footer legibility/touch sizing, and shared-asset cache-busting.
 - Focused acceptance smoke: PASS, 396/396 checks, zero failures, zero warnings.
 - Evidence: `/root/clawd/artifacts/pmhnp-responsive-20261019/final-smoke/report.json` and representative captures under `final-smoke/screenshots/`.
-- Remaining before stop condition: publish the exact release commit and verify the live versioned assets and representative public routes.
+- Product release commit `473e0958ce4a83f0fdc5b7c8b244bff48aaaca5a` was pushed to `origin/main`.
+- GitHub Pages deployment run `39315979078` completed successfully; the live homepage and versioned responsive CSS were retrieved with the release markers/rules present.
+- Stop condition reached: `responsive_smoke_green_and_live_release_verified_or_blocker` resolved green.

@@ -67,3 +67,10 @@ Append-only durable decisions for this release.
 - Evidence: Restricted `focused-release-smoke.json`, `live-release-verification.json`, and `release-baseline.json` under the acquisition evidence root.
 - Supersedes: Release-candidate status.
 - Follow-up: Measure on 2026-08-18, 2026-08-25, and 2026-09-10 without converting operating targets into forecasts or retroactive success claims.
+## 2026-10-19 — Close responsive hardening at the declared phone/tablet contract
+
+- Decision: Use shared responsive CSS/JavaScript and cache-busted public templates, then close the addendum after one route-by-breakpoint acceptance contract and live Pages verification.
+- Reason: The confirmed defects were shared navigation, touch-target, form/search sizing, menu-state, and footer issues; a parallel mobile site or desktop redesign would add unnecessary divergence.
+- Evidence: Product commit `473e0958ce4a83f0fdc5b7c8b244bff48aaaca5a`; acceptance report `/root/clawd/artifacts/pmhnp-responsive-20261019/final-smoke/report.json` (396/396, zero failures/warnings); Pages run `39315979078`; post-deploy live homepage and versioned CSS retrieval.
+- Supersedes: Responsive-hardening release-candidate state.
+- Follow-up: Treat future device-specific reports as bounded defects; do not claim universal browser/device perfection from this smoke.

@@ -6,7 +6,7 @@
 - Canonical plan: `/root/clawd/pmhnpbilling-site/plan.md`
 - Decisions log: `/root/clawd/pmhnpbilling-site/DECISIONS.md`
 - Last updated: 2026-10-19
-- Status: responsive hardening release candidate green; publication verification pending (the 2026-08 acquisition release remains complete)
+- Status: complete — responsive hardening deployed and verified (the 2026-08 acquisition release remains complete)
 - Current fidelity: production_slice
 
 ## Released state
@@ -51,10 +51,13 @@ Restricted evidence root:
 - Focused acceptance smoke: PASS, 396/396 route/viewport checks, zero failures and zero warnings.
 - Representative homepage, service, blog, article, resource, and legal screenshots were inspected at phone and tablet widths.
 - Evidence root: `/root/clawd/artifacts/pmhnp-responsive-20261019/`; acceptance report: `final-smoke/report.json`.
+- Product release commit: `473e0958ce4a83f0fdc5b7c8b244bff48aaaca5a`, pushed to `origin/main`.
+- GitHub Pages deployment run `39315979078` completed successfully.
+- The live homepage and versioned responsive CSS were retrieved after deployment and contained the new responsive release markers and rules.
 
 ## Active blockers
 
-- None. Publication and live verification remain before the responsive addendum is closed.
+- None. The responsive addendum stop condition is reached.
 
 ## Measurement cadence
 
@@ -67,7 +70,7 @@ Restricted evidence root:
 Allowed claim:
 
 - The current-tree privacy remediation and approved acquisition package are deployed and mechanically verified.
-- The responsive release candidate passed the declared 66-route, six-viewport mechanical contract locally; no live-deployment claim is allowed until publication is verified.
+- The responsive hardening release is deployed. Its declared 66-route, six-viewport mechanical contract passed locally, and the live homepage/versioned responsive asset were verified after the successful Pages deployment.
 
 Not allowed:
 
