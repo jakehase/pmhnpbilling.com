@@ -424,6 +424,21 @@ body > nav {
 .modern-proof-grid span { color: var(--mw-ink-soft); font-size: .57rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
 .modern-proof-grid strong { margin-top: .3rem; font-family: var(--mw-display); font-size: 1.75rem; font-weight: 400; line-height: 1.1; }
 .modern-proof-grid small { margin-top: .35rem; color: var(--mw-ink-soft); font-size: .62rem; }
+.modern-proof-grid .proof-calculator-link {
+  width: fit-content;
+  margin-top: .55rem;
+  color: var(--mw-deep-teal);
+  font-size: .72rem;
+  font-weight: 800;
+  line-height: 1.35;
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--mw-deep-teal), transparent 48%);
+}
+.modern-proof-grid .proof-calculator-link:hover,
+.modern-proof-grid .proof-calculator-link:focus-visible {
+  color: var(--mw-coral-strong);
+  border-bottom-color: currentColor;
+}
 
 /* Early founder credibility */
 .founder-intro {

@@ -458,3 +458,12 @@ Stop condition: `seo_smoke_green_and_live_release_verified_or_blocker`.
 - Current-source boundary: canonical pricing evidence was verified. Cortex browser retrieval of the CMS references failed twice, so coding edits were deliberately limited to metadata, direct-answer presentation, navigation, accessibility, and schema alignment; no new coding rule was added.
 - Focused package smoke: `PASS`, 169 checks across 9 pages; artifact at `/root/clawd/artifacts/pmhnp-seo-content-20261020/package-smoke.json`.
 - Monthly review: enabled OpenClaw job `a40f38d4-5b71-4cdb-a626-b66dd28f540c`, schedule `0 9 1 * *` in `America/Chicago`, delivery `none`; it reads existing GSC evidence and writes one local proposal without publishing.
+
+### Homepage calculator-discoverability correction (2026-10-20)
+
+- Observed defect: the live homepage exposes the calculator only through a sentence inside the pricing FAQ. There is no desktop-navigation, mobile-menu, hero/pricing-strip, or footer entry, so the original “site integration” claim was technically true but operationally too weak.
+- Correction scope: add clearly labeled calculator links to the desktop navigation, mobile menu, hero action row, pricing proof strip, and footer. Preserve the existing FAQ link and calculator implementation; do not change pricing, coding, payer, privacy, or contact-form claims.
+- Acceptance: one focused source/browser smoke must confirm all five homepage discovery surfaces point to the canonical calculator and remain usable at desktop and mobile widths; then commit, push, verify Pages/privacy/IndexNow results, and retrieve the live homepage.
+- Stop condition: `calculator_discoverability_green_live_verified_or_blocker`.
+- Truth boundary: this correction proves navigation and live reachability, not traffic, engagement, CTR, lead, or conversion improvement.
+- Focused smoke checkpoint: product assertions passed `12/12` with desktop and mobile-menu captures at `/root/clawd/artifacts/pmhnp-calculator-discoverability-20261020/`. After the pass report was written, the runner returned nonzero only while deleting Chrome's temporary profile (`ENOTEMPTY`); the cleanup retry was corrected without rerunning the smoke, preserving the exactly-one-smoke contract.
