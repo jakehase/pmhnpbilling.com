@@ -6,7 +6,7 @@
 - Canonical plan: `/root/clawd/pmhnpbilling-site/plan.md`
 - Decisions log: `/root/clawd/pmhnpbilling-site/DECISIONS.md`
 - Last updated: 2026-10-19
-- Status: SEO metadata hardening release candidate green; publication verification pending (responsive and 2026-08 acquisition releases remain complete)
+- Status: complete — SEO technical health verified and metadata gaps deployed (responsive and 2026-08 acquisition releases remain complete)
 - Current fidelity: production_slice
 
 ## Released state
@@ -63,10 +63,13 @@ Restricted evidence root:
 - Performance attention: clicks fell 39.0%, impressions 15.6%, and CTR 27.7% versus the preceding 28 days, while weighted average position improved from 12.45 to 8.86. This is a traffic/CTR issue, not evidence of a crawl outage.
 - Fixed missing Open Graph/Twitter images on four indexable service/resource pages and refreshed their sitemap `lastmod` dates.
 - Focused source smoke: PASS, 60/60 sitemap pages, 1,321 internal references, zero failures or warnings. Evidence: `/root/clawd/artifacts/pmhnp-seo-check-20261019/`.
+- Product release commit: `88e13db22caed4ecb7ae5cbd6ccce74be4279d09` on `origin/main`.
+- GitHub Pages run `39363568892`, IndexNow run `39363569090`, and public-tree privacy run `39363569086` completed successfully.
+- Live post-deploy retrieval confirmed the affected service page and the sitemap with all four refreshed `2026-10-19` entries.
 
 ## Active blockers
 
-- None. Publication and live verification remain before the SEO metadata addendum is closed.
+- None. The SEO metadata addendum stop condition is reached. Search-performance monitoring remains active because clicks/CTR declined in the current 28-day window.
 
 ## Measurement cadence
 

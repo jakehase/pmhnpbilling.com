@@ -74,3 +74,11 @@ Append-only durable decisions for this release.
 - Evidence: Product commit `473e0958ce4a83f0fdc5b7c8b244bff48aaaca5a`; acceptance report `/root/clawd/artifacts/pmhnp-responsive-20261019/final-smoke/report.json` (396/396, zero failures/warnings); Pages run `39315979078`; post-deploy live homepage and versioned CSS retrieval.
 - Supersedes: Responsive-hardening release-candidate state.
 - Follow-up: Treat future device-specific reports as bounded defects; do not claim universal browser/device perfection from this smoke.
+
+## 2026-10-19 — Separate technical SEO health from search-performance outcomes
+
+- Decision: Close the technical SEO addendum after complete sitemap/source validation, successful Pages/IndexNow publication, and live retrieval; keep the current click/CTR decline as an active monitoring signal rather than mislabeling it as a crawl failure.
+- Reason: Search Console, robots, sitemap, 60/60 live URLs, and source-level SEO gates are healthy, while current clicks, impressions, and CTR declined despite improved average position.
+- Changes: Added missing Open Graph/Twitter images to four indexable service/resource pages, added Article images to the launch-readiness resource, and refreshed the four sitemap `lastmod` values.
+- Evidence: Product commit `88e13db22caed4ecb7ae5cbd6ccce74be4279d09`; SEO smoke `/root/clawd/artifacts/pmhnp-seo-check-20261019/report.json` (60 pages, 1,321 internal references, zero failures/warnings); Pages `39363568892`; IndexNow `39363569090`; privacy guard `39363569086`.
+- Truth boundary: This proves current technical/on-page delivery for the audited scope, not guaranteed rankings, indexing of every URL, future clicks, or lead volume.

@@ -400,4 +400,7 @@ Stop condition: `seo_smoke_green_and_live_release_verified_or_blocker`.
 - Source defects repaired: four indexable pages missing Open Graph/Twitter images; sitemap freshness updated for those pages.
 - Focused smoke: PASS, 60 pages, 1,321 internal references, zero failures/warnings.
 - Performance truth: current clicks/visibility declined versus the prior 28-day window even though average position improved; technical green does not prove traffic growth.
-- Remaining before stop: publish and verify the live metadata/sitemap.
+- Product release commit `88e13db22caed4ecb7ae5cbd6ccce74be4279d09` is on `origin/main`.
+- GitHub Pages run `39363568892`, IndexNow run `39363569090`, and public-tree privacy run `39363569086` completed successfully.
+- Live retrieval confirmed the affected service page and the sitemap with all four refreshed `2026-10-19` entries.
+- Stop condition reached: `seo_smoke_green_and_live_release_verified_or_blocker` resolved green.
