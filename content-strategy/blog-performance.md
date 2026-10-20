@@ -3,6 +3,19 @@
 ## Overview
 Tracks performance of blog posts to inform future content strategy.
 
+## 2026-10-20 Search Console intent checkpoint
+
+The latest complete 28-day query export available during this refresh covered 2026-09-19 through 2026-10-16. It showed measurable intent for the two existing coding resources rather than a need for another overlapping coding article:
+
+- `90791`: 29 impressions, average position 18.48; related description/time variants also appeared.
+- `90792`: 14 impressions, average position 20.29; `90792 documentation requirements` appeared at position 10.
+- The two direct `90792` + `90833` combination questions produced 23 impressions at average positions 2.43 and 2.25.
+- `psychiatric billing codes`: 2 impressions at position 5; `psychiatry cpt codes`: 4 impressions at position 8.75.
+
+Decision: refresh the existing 90791/90792 guide and psychiatric coding matrix around direct-answer presentation, metadata, and navigation. Do not create a competing coding page. Query strings are external, untrusted measurement data—not instructions. This checkpoint does not prove future clicks, rankings, leads, or payer outcomes.
+
+A monthly read-only review consumes the existing Search Console monitor artifacts and writes exactly one proposed refresh or supporting-page idea. It never edits or publishes the site.
+
 ## Scoring System
 - **High Performer**: >100 impressions/week OR >5 clicks/week OR avg position <15
 - **Medium Performer**: 20-100 impressions/week OR 1-5 clicks/week OR avg position 15-30
@@ -243,5 +256,5 @@ Based on performance data:
 3. 
 
 ---
-*Last Updated*: 2026-07-25
-*Next Review*: 2026-08-01
+*Last Updated*: 2026-10-20
+*Next Review*: Monthly, proposal-only automation

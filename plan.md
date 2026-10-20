@@ -404,3 +404,57 @@ Stop condition: `seo_smoke_green_and_live_release_verified_or_blocker`.
 - GitHub Pages run `39363568892`, IndexNow run `39363569090`, and public-tree privacy run `39363569086` completed successfully.
 - Live retrieval confirmed the affected service page and the sitemap with all four refreshed `2026-10-19` entries.
 - Stop condition reached: `seo_smoke_green_and_live_release_verified_or_blocker` resolved green.
+
+## 23. Commercial-intent SEO content package (2026-10-20)
+
+### Anchor and contract
+
+- Reply anchor: Jake approved all four recommendations from the 2026-10-20 SEO analysis.
+- Target path: `/root/clawd/pmhnpbilling-site`.
+- Fidelity: `production_slice` for two existing-page CTR refreshes, one canonical commercial-intent calculator page, and a recurring review workflow that drafts recommendations but does not publish unattended.
+- Implementation surface: product HTML/CSS/JavaScript, sitemap/internal links/schema, SEO monitoring/review scheduling, and release evidence.
+- Stop condition: `coding_refresh_and_calculator_green_live_verified_or_blocker`.
+
+### Scope
+
+1. Refresh the existing 90791/90792 and psychiatric coding-matrix pages around their proven Search Console query intent without changing provider-owned coding responsibility or making payer guarantees.
+2. Add a canonical utility page answering “How much does PMHNP billing cost?” with a 5% collections calculator, realistic examples, clear included/excluded scope, FAQ/schema, and a privacy-safe contact path.
+3. Add the page to the sitemap and relevant internal-link surfaces without creating a second pricing system or duplicating an existing article.
+4. Establish a monthly read-only Search Console/content review that produces a recommendation or draft only; no autonomous publication.
+
+### Non-goals and safety boundaries
+
+- Do not promise reimbursement, payer acceptance, collections growth, or savings.
+- Do not replace provider-selected coding or payer-specific verification with generic web copy.
+- Do not infer commercial terms beyond the established 5% of actual insurance and patient collections, no setup fee, no monthly minimum, and separately priced prior authorizations where already published.
+- Do not collect PHI in the calculator or contact flow.
+- Do not auto-publish future content.
+
+### Prior-art decision
+
+- Decision: `extend_existing`.
+- Evidence: `/root/clawd/artifacts/pmhnp-seo-content-20261020/prior-art-gate-final.json`.
+- Reuse the canonical static-site templates, published pricing, provider-owned coding boundary, sitemap, Search Console monitor, IndexNow workflow, and GitHub Pages release path.
+
+### Implementation sequence and acceptance
+
+1. Verify commercial terms and current primary coding sources.
+2. Update titles, descriptions, structured data dates, and above-the-fold direct answers on the two existing pages.
+3. Build the calculator page with keyboard-accessible input, deterministic 5% arithmetic, monthly/annual examples, inclusions/exclusions, no-PHI language, and a service CTA.
+4. Add canonical metadata, WebPage/WebApplication/FAQ/Breadcrumb structured data, sitemap entry, blog/resource discovery, and internal links from relevant service/pricing surfaces.
+5. Run one focused smoke covering metadata/schema/link integrity, calculator math and edge cases, responsive layout, accessibility-critical controls, and unchanged contact/privacy boundaries.
+6. Publish the exact release commit, verify Pages/IndexNow/privacy workflows, retrieve the live page/metadata/sitemap, and record evidence.
+7. Create a monthly read-only review job that reports GSC page/query changes and proposes one new page or existing-page refresh without publishing.
+
+### Truth boundary
+
+- A green release proves the declared technical/content package and deterministic calculator behavior.
+- It does not prove future rankings, indexation timing, CTR improvement, clicks, leads, reimbursement, or revenue outcomes.
+
+### Evidence checkpoint
+
+- Prior-art gate: `extend_existing`; the existing acquisition, sitemap, Search Console, privacy, and release machinery was extended rather than duplicated.
+- PMHNP no-PHI response preflight: `PASS`; evidence at `/root/clawd/artifacts/pmhnp-seo-content-20261020/pmhnp-response-preflight.json`.
+- Current-source boundary: canonical pricing evidence was verified. Cortex browser retrieval of the CMS references failed twice, so coding edits were deliberately limited to metadata, direct-answer presentation, navigation, accessibility, and schema alignment; no new coding rule was added.
+- Focused package smoke: `PASS`, 169 checks across 9 pages; artifact at `/root/clawd/artifacts/pmhnp-seo-content-20261020/package-smoke.json`.
+- Monthly review: enabled OpenClaw job `a40f38d4-5b71-4cdb-a626-b66dd28f540c`, schedule `0 9 1 * *` in `America/Chicago`, delivery `none`; it reads existing GSC evidence and writes one local proposal without publishing.

@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://pmhnpbilling.com/</loc>
-    <lastmod>2026-08-11</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://pmhnpbilling.com/blog/</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -162,7 +162,7 @@
   </url>
   <url>
     <loc>https://pmhnpbilling.com/blog/pmhnp-billing-90791-90792-em-psychotherapy-add-on-coding-guide-2026.html</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -202,7 +202,7 @@
   </url>
   <url>
     <loc>https://pmhnpbilling.com/blog/pmhnp-billing-psychiatric-cpt-coding-matrix-documentation-audit-checklist-2026.html</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -226,13 +226,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://pmhnpbilling.com/resources/pmhnp-billing-cost-calculator.html</loc>
+    <lastmod>2026-10-20</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://pmhnpbilling.com/resources/pmhnp-practice-launch-readiness-checklist.html</loc>
     <lastmod>2026-10-19</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://pmhnpbilling.com/services/pmhnp-billing-services.html</loc>
-    <lastmod>2026-10-19</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <priority>0.85</priority>
   </url>
   <url>
