@@ -6,7 +6,7 @@
 - Canonical plan: `/root/clawd/pmhnpbilling-site/plan.md`
 - Decisions log: `/root/clawd/pmhnpbilling-site/DECISIONS.md`
 - Last updated: 2026-10-19
-- Status: complete — responsive hardening deployed and verified (the 2026-08 acquisition release remains complete)
+- Status: SEO metadata hardening release candidate green; publication verification pending (responsive and 2026-08 acquisition releases remain complete)
 - Current fidelity: production_slice
 
 ## Released state
@@ -55,9 +55,18 @@ Restricted evidence root:
 - GitHub Pages deployment run `39315979078` completed successfully.
 - The live homepage and versioned responsive CSS were retrieved after deployment and contained the new responsive release markers and rules.
 
+## SEO health checkpoint (2026-10-19)
+
+- Fresh read-only Search Console window: 25 clicks, 1,585 impressions, 1.58% CTR, and weighted average position 8.86 for 2026-09-19 through 2026-10-16.
+- Search Console is functioning and downloaded the sitemap on 2026-10-19; submitted/live sitemap count is 60.
+- Live monitor: homepage, robots, sitemap, and 60/60 sitemap URLs healthy; no crawl errors reported by the monitor.
+- Performance attention: clicks fell 39.0%, impressions 15.6%, and CTR 27.7% versus the preceding 28 days, while weighted average position improved from 12.45 to 8.86. This is a traffic/CTR issue, not evidence of a crawl outage.
+- Fixed missing Open Graph/Twitter images on four indexable service/resource pages and refreshed their sitemap `lastmod` dates.
+- Focused source smoke: PASS, 60/60 sitemap pages, 1,321 internal references, zero failures or warnings. Evidence: `/root/clawd/artifacts/pmhnp-seo-check-20261019/`.
+
 ## Active blockers
 
-- None. The responsive addendum stop condition is reached.
+- None. Publication and live verification remain before the SEO metadata addendum is closed.
 
 ## Measurement cadence
 
@@ -71,6 +80,7 @@ Allowed claim:
 
 - The current-tree privacy remediation and approved acquisition package are deployed and mechanically verified.
 - The responsive hardening release is deployed. Its declared 66-route, six-viewport mechanical contract passed locally, and the live homepage/versioned responsive asset were verified after the successful Pages deployment.
+- Technical SEO delivery and Search Console connectivity are healthy. Search traffic is under performance attention; rankings and future clicks are not guaranteed by source-level validation.
 
 Not allowed:
 

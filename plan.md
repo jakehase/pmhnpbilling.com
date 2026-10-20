@@ -376,3 +376,28 @@ Stop condition reached on 2026-08-11: the release is live and verified with a re
 - Product release commit `473e0958ce4a83f0fdc5b7c8b244bff48aaaca5a` was pushed to `origin/main`.
 - GitHub Pages deployment run `39315979078` completed successfully; the live homepage and versioned responsive CSS were retrieved with the release markers/rules present.
 - Stop condition reached: `responsive_smoke_green_and_live_release_verified_or_blocker` resolved green.
+
+## 22. SEO health and social-discovery hardening addendum (2026-10-19)
+
+### Anchor and scope
+
+- Reply anchor: Jake asked, “Can you make sure the SEO is working on the website?”
+- Target: canonical `/root/clawd/pmhnpbilling-site` and read-only Search Console/weekly-monitor evidence.
+- Fidelity: `parity_for_scope` for technical/on-page SEO and current search-health observation; not a ranking guarantee.
+
+### Execution and acceptance
+
+1. Refresh read-only Search Console and live monitor evidence.
+2. Validate robots, sitemap, indexability, canonical metadata, social metadata, JSON-LD, H1s, internal references, images, uniqueness, and homepage reachability across all sitemap pages.
+3. Repair objective source defects only; do not rewrite medical/coding content merely to chase traffic.
+4. Publish after the focused smoke passes, then verify Pages deployment and the live metadata/sitemap.
+
+Stop condition: `seo_smoke_green_and_live_release_verified_or_blocker`.
+
+### Checkpoint
+
+- Fresh live monitor: homepage/robots/sitemap healthy; 60/60 sitemap URLs passed; GSC sitemap count 60 and no monitor errors.
+- Source defects repaired: four indexable pages missing Open Graph/Twitter images; sitemap freshness updated for those pages.
+- Focused smoke: PASS, 60 pages, 1,321 internal references, zero failures/warnings.
+- Performance truth: current clicks/visibility declined versus the prior 28-day window even though average position improved; technical green does not prove traffic growth.
+- Remaining before stop: publish and verify the live metadata/sitemap.
