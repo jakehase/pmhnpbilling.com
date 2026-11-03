@@ -274,7 +274,7 @@
         submitButton.textContent = 'Sending…';
       }
       if (formStatus) {
-        formStatus.textContent = 'Sending your message securely…';
+        formStatus.textContent = 'Sending your availability request…';
         formStatus.classList.remove('form-status--error');
       }
       if (window.pmhnpTrack) {
@@ -321,7 +321,7 @@
         }
         if (submitButton) {
           submitButton.disabled = false;
-          submitButton.textContent = 'Request a billing-fit review';
+          submitButton.textContent = 'Send availability request';
         }
         if (formStatus) {
           formStatus.textContent = 'Your message did not send. Please check your connection and try again.';

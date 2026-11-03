@@ -113,7 +113,8 @@
     if (!form) return {};
     var leadIdField = form.querySelector('[name="lead_id"]');
     var leadId = leadIdField && leadIdField.value ? clean(leadIdField.value, 80) : createLeadId();
-    var submissionType = params.get('lead_test') === '1' ? 'test' : 'prospect';
+    var declaredType = clean((form.querySelector('[name="submission_type"]') || {}).value || 'prospect', 20);
+    var submissionType = params.get('lead_test') === '1' ? 'test' : declaredType;
     setField(form, 'lead_id', leadId, 80);
     setField(form, 'submitted_at', new Date().toISOString(), 40);
     setField(form, 'submission_type', submissionType, 20);
@@ -175,6 +176,8 @@
         window.pmhnpTrack('form_test_success', eventParams);
       } else if (success.submission_type === 'prospect') {
         window.pmhnpTrack('generate_lead', eventParams);
+      } else if (success.submission_type === 'availability_request') {
+        window.pmhnpTrack('availability_request_success', eventParams);
       } else {
         window.pmhnpTrack('form_unclassified_success', eventParams);
       }
